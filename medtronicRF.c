@@ -124,30 +124,36 @@ void usbReceiveData( void ) {
 		uartRxBuffer[uartRxIndex] = tempData[i];
 
 		if( uartRxIndex == 0 ) {
-			if( uartRxBuffer[0] == '\x01' ) {
+			switch( uartRxBuffer[0] ) {
+			case 0x01u:
 				uartRxIndex++;
 				txCalcCRC = 0;
 				txCalcCRC16 = 0;
 				enableTimerInt( );
-			} else if( uartRxBuffer[0] == '\x81' ) {
+				break;
+			case 0x81u:
 				uartRxIndex++;
 				txCalcCRC = 1;
 				txCalcCRC16 = 0;
 				enableTimerInt( );
-			} else if( uartRxBuffer[0] == '\xC1' ) {
+				break;
+			case 0xC1u:
 				uartRxIndex++;
 				txCalcCRC = 0;
 				txCalcCRC16 = 1;
 				enableTimerInt( );
-			} else if( (uartRxBuffer[0] == '\x03') ||
-				(uartRxBuffer[0] == '\x13') ) {
+				break;
+			case 0x03u:
+			case 0x13u:
 				txFilterEnabled = 1;
 				P1_1 = 0;
-				uartRxBuffer[0] = '\x03';
+				uartRxBuffer[0] = (uint8_t)0x03u;
 				halUartWrite( (uint8_t const *)uartRxBuffer, 1 );
-			} else if( uartRxBuffer[0] == '\x00' ) {
+				break;
+			case 0:
 				uartRxBuffer[0] = _MMCOMMANDER_VERSION_;
 				halUartWrite( (uint8_t const *)uartRxBuffer, 1 );
+				break;
 			}
 		} else if( uartRxIndex == 1 ) {
 			txLength = uartRxBuffer[1];

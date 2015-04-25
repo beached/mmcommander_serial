@@ -58,7 +58,7 @@ int main( void ) {
 		if( dataLength > 0 ) {
 			repeatedMessage = 0;
 			if( (_REPEATED_COMMAND_ENABLED_ == 1) &&
-				(dataErr == ((uartTxBuffer[0] >> '\7') & '\x01')) &&
+				(dataErr == ((uartTxBuffer[0] >> 7u) & 0x01u)) &&
 				(dataLength == (uartTxLength - 2))
 				) {
 				repeatedMessage = 1;

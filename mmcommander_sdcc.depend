@@ -148,7 +148,7 @@
 
 1429938928 c:\devel\github\mmcommander_serial\constants.h
 
-1429971387 c:\devel\github\mmcommander_serial\globals.h
+1429977962 c:\devel\github\mmcommander_serial\globals.h
 	"hw/hal_types.h"
 	"constants.h"
 
@@ -177,9 +177,10 @@
 1429923684 c:\devel\github\mmcommander_serial\usb\others\hal_uart.h
 	"../../hal_types.h"
 
-1429939088 c:\devel\github\mmcommander_serial\txfilter.h
+1429976989 c:\devel\github\mmcommander_serial\txfilter.h
+	<stdint.h>
 
-1429976443 source:c:\devel\github\mmcommander_serial\medtronicrf.c
+1429977908 source:c:\devel\github\mmcommander_serial\medtronicrf.c
 	"common.h"
 	"hw/ioCCxx10_bitdef.h"
 	"hw/cc1110.h"
@@ -193,7 +194,7 @@
 	"interrupts.h"
 	<stdint.h>
 
-1429975942 source:c:\devel\github\mmcommander_serial\mmcommander.c
+1429977406 source:c:\devel\github\mmcommander_serial\mmcommander.c
 	"crc_4b6b.h"
 	"init.h"
 	"constants.h"
@@ -210,8 +211,9 @@
 	"../../hal_cc8051.h"
 	"usb_uart.h"
 
-1429972686 source:c:\devel\github\mmcommander_serial\txfilter.c
+1429977406 source:c:\devel\github\mmcommander_serial\txfilter.c
 	"configuration.h"
+	<stdint.h>
 
 1429924573 source:c:\devel\github\mmcommander_serial\usb\class_cdc\usb_cdc_hooks.c
 	"usb_firmware_library_headers.h"
