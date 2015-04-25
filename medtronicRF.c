@@ -74,27 +74,27 @@ char receiveMedtronicMessage( char *message, unsigned int *length ) {
 	calcCRC = crc8( message, (*length) - 1 );
 
 	if( calcCRC == message[(*length) - 1] ) {
-		return (0);
+		return 0;
 	}
 
 	calcCRC16 = crc16( message, (*length) - 2 );
 	if( ((char)(calcCRC16 & 0x00FF) == message[(*length) - 1]) &&
 		((char)((calcCRC16 >> 8) & 0x00FF) == message[(*length) - 2]) ) {
-		return (0);
+		return 0;
 	}
 
 	calcCRC = crc8( message, (*length) - 2 );
 
 	if( calcCRC == message[(*length) - 2] ) {
 		(*length) = (*length) - 1;
-		return (0);
+		return 0;
 	}
 
 	calcCRC16 = crc16( message, (*length) - 3 );
 	if( ((char)(calcCRC16 & 0x00FF) == message[(*length) - 2]) &&
 		((char)((calcCRC16 >> 8) & 0x00FF) == message[(*length) - 3]) ) {
 		(*length) = (*length) - 1;
-		return (0);
+		return 0;
 	}
 
 	crc16Init( );
@@ -122,28 +122,28 @@ void usbReceiveData( void ) {
 		uartRxBuffer[uartRxIndex] = tempData[i];
 
 		if( uartRxIndex == 0 ) {
-			if( uartRxBuffer[0] == (char)0x01 ) {
+			if( (int)uartRxBuffer[0] == 0x01 ) {
 				uartRxIndex++;
 				txCalcCRC = 0;
 				txCalcCRC16 = 0;
 				enableTimerInt( );
-			} else if( uartRxBuffer[0] == (char)0x81 ) {
+			} else if( (int)uartRxBuffer[0] == 0x81 ) {
 				uartRxIndex++;
 				txCalcCRC = 1;
 				txCalcCRC16 = 0;
 				enableTimerInt( );
-			} else if( uartRxBuffer[0] == (char)0xC1 ) {
+			} else if( (int)uartRxBuffer[0] == 0xC1 ) {
 				uartRxIndex++;
 				txCalcCRC = 0;
 				txCalcCRC16 = 1;
 				enableTimerInt( );
-			} else if( (uartRxBuffer[0] == (char)0x03) ||
-				(uartRxBuffer[0] == (char)0x13) ) {
+			} else if( ((int)uartRxBuffer[0] == 0x03) ||
+				((int)uartRxBuffer[0] == 0x13) ) {
 				txFilterEnabled = 1;
 				P1_1 = 0;
 				uartRxBuffer[0] = (char)0x03;
 				halUartWrite( (uint8_t const *)uartRxBuffer, 1 );
-			} else if( uartRxBuffer[0] == (char)0x00 ) {
+			} else if( (int)uartRxBuffer[0] == 0x00 ) {
 				uartRxBuffer[0] = _MMCOMMANDER_VERSION_;
 				halUartWrite( (uint8_t const *)uartRxBuffer, 1 );
 			}

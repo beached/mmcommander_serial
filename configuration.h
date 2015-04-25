@@ -20,7 +20,7 @@
 // and any message will be transmitted. This filter will prevent a possible
 // hacker from sending commands to your pump in case your smartphone or
 // computer gets hacked. USE THIS MODE WITH CAUTION.
-#define _TX_FILTER_ENABLE_ 1
+#define _TX_FILTER_ENABLE_ 0
 
 // The parameter _SUPPORT_SUSPEND_WHEN_FILTERED_ must be set to 1
 // if you want the interface to allow SUSPEND commands in filtered mode.
