@@ -81,16 +81,16 @@
 
 /* uint32_t processing */
 #define BREAK_UINT32( var, ByteNum ) \
-    (uint8)((uint32)(((var) >>((ByteNum) * 8)) & 0x00FF))
+    (uint8_t)((uint32_t)(((var) >>((ByteNum) * 8)) & 0x00FF))
 
 #define BUILD_UINT32(Byte0, Byte1, Byte2, Byte3) \
-    ((uint32)((uint32)((Byte0) & 0x00FF) \
-        + ((uint32)((Byte1) & 0x00FF) << 8) \
-            + ((uint32)((Byte2) & 0x00FF) << 16) \
-                + ((uint32)((Byte3) & 0x00FF) << 24)))
+    ((uint32_t)((uint32_t)((Byte0) & 0x00FF) \
+        + ((uint32_t)((Byte1) & 0x00FF) << 8) \
+            + ((uint32_t)((Byte2) & 0x00FF) << 16) \
+                + ((uint32_t)((Byte3) & 0x00FF) << 24)))
 
-#define HI_UINT32(a) ((uint16) (((uint32)(a)) >> 16))
-#define LO_UINT32(a) ((uint16) ((uint32)(a)))
+#define HI_UINT32(a) ((uint16_t) (((uint32_t)(a)) >> 16))
+#define LO_UINT32(a) ((uint16_t) ((uint32_t)(a)))
 
 
 /* uint16_t processing */
@@ -112,11 +112,11 @@
  * Host to network byte order macros
  */
 #ifdef BIG_ENDIAN
-#define UINT16_HTON(x)  st( utilReverseBuf((uint8_t*)&x, sizeof(uint16)); )
-#define UINT16_NTOH(x)  st( utilReverseBuf((uint8_t*)&x, sizeof(uint16)); )
+#define UINT16_HTON(x)  st( utilReverseBuf((uint8_t*)&x, sizeof(uint16_t)); )
+#define UINT16_NTOH(x)  st( utilReverseBuf((uint8_t*)&x, sizeof(uint16_t)); )
 
-#define UINT32_HTON(x)  st( utilReverseBuf((uint8_t*)&x, sizeof(uint32)); )
-#define UINT32_NTOH(x)  st( utilReverseBuf((uint8_t*)&x, sizeof(uint32)); )
+#define UINT32_HTON(x)  st( utilReverseBuf((uint8_t*)&x, sizeof(uint32_t)); )
+#define UINT32_NTOH(x)  st( utilReverseBuf((uint8_t*)&x, sizeof(uint32_t)); )
 #else
 #define UINT16_HTON(x)
 #define UINT16_NTOH(x)

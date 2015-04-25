@@ -1,11 +1,11 @@
 #include "crc_4b6b.h"
 #include "common.h"
 
-static uint16_t __xdata crc16Tab[256];
+static int16_t __xdata crc16Tab[256];
 
-uint8_t crc8( char *message, uint32_t nBytes ) {
+uint8_t crc8( uint8_t *message, uint16_t nBytes ) {
 	uint8_t remainder = 0;
-	unsigned int byte = 0;
+	uint16_t byte = 0;
 	uint8_t bit = 0;
 
 	for( byte = 0; byte < nBytes; ++byte ) {
@@ -22,14 +22,14 @@ uint8_t crc8( char *message, uint32_t nBytes ) {
 }
 
 void crc16Init( void ) {
-	unsigned int i = 0;
-	unsigned int j = 0;
-	unsigned short crc = 0;
-	unsigned short c = 0;
+	uint16_t i = 0;
+	uint16_t j = 0;
+	uint16_t crc = 0;
+	uint16_t c = 0;
 
 	for( i = 0; i < 256; i++ ) {
 		crc = 0;
-		c = ((unsigned short)i) << 8;
+		c = ((uint16_t)i) << 8;
 		for( j = 0; j < 8; j++ ) {
 			if( (crc^c) & 0x8000 ) crc = (crc << 1) ^ 0x1021;
 			else                    crc = crc << 1;
@@ -39,23 +39,22 @@ void crc16Init( void ) {
 	}
 }
 
-short crc16( char *message, unsigned int nBytes ) {
-	unsigned int i = 0;
-	unsigned short crc = 0;
-	unsigned short short_c = 0;
-	unsigned short tmp = 0;
+int16_t crc16( uint8_t *message, uint16_t nBytes ) {
+	uint16_t i = 0;
+	uint16_t crc = 0;
+	uint16_t short_c = 0;
+	uint16_t tmp = 0;
 
 	crc = 0xffff;
 	for( i = 0; i < nBytes; i++ ) {
-		short_c = 0x00ff & (unsigned short)message[i];
+		short_c = 0x00ff & (uint16_t)message[i];
 		tmp = (crc >> 8) ^ short_c;
 		crc = (crc << 8) ^ crc16Tab[tmp];
 	}
-
 	return crc;
 }
 
-char get4b6bsymbol( char inSymbol ) {
+uint8_t get4b6bsymbol( uint8_t inSymbol ) {
 	switch( inSymbol ) {
 	case 0x00: return 0x15;
 	case 0x01: return 0x31;
@@ -77,7 +76,7 @@ char get4b6bsymbol( char inSymbol ) {
 	}
 }
 
-char decode4b6bsymbol( char inSymbol, char *outSymbol ) {
+uint8_t decode4b6bsymbol( uint8_t inSymbol, uint8_t *outSymbol ) {
 	switch( inSymbol ) {
 	case 0x15: {*outSymbol = 0x00; return 0; }
 	case 0x31: {*outSymbol = 0x01; return 0; }
@@ -99,13 +98,13 @@ char decode4b6bsymbol( char inSymbol, char *outSymbol ) {
 	}
 }
 
-void encode4b6b( char *messageIn, unsigned int bytesIn, char *messageOut, unsigned int *bytesOut ) {
-	unsigned int i = 0;
-	unsigned int j = 0;
-	int intBuffer = 0;
-	int mask = 0;
-	int intBitsAvailable = 0;
-	char symbol = 0;
+void encode4b6b( uint8_t *messageIn, uint16_t bytesIn, uint8_t *messageOut, uint16_t *bytesOut ) {
+	uint16_t i = 0;
+	uint16_t j = 0;
+	int16_t intBuffer = 0;
+	int16_t mask = 0;
+	int16_t intBitsAvailable = 0;
+	uint8_t symbol = 0;
 
 	*bytesOut = 0;
 	intBitsAvailable = 0;
@@ -142,14 +141,14 @@ void encode4b6b( char *messageIn, unsigned int bytesIn, char *messageOut, unsign
 	}
 }
 
-void decode4b6b( char *messageIn, unsigned int bytesIn, char *messageOut, unsigned int *bytesOut ) {
-	unsigned int i = 0;
-	int intBuffer = 0;
-	int intBitsAvailable = 0;
-	char symbol = 0;
-	char recByte = 0;
-	char nibbleFlag = 0;
-	char outBytes = 0;
+void decode4b6b( uint8_t *messageIn, uint16_t bytesIn, uint8_t *messageOut, uint16_t *bytesOut ) {
+	uint16_t i = 0;
+	int16_t intBuffer = 0;
+	int16_t intBitsAvailable = 0;
+	uint8_t symbol = 0;
+	uint8_t recByte = 0;
+	uint8_t nibbleFlag = 0;
+	uint8_t outBytes = 0;
 
 	intBitsAvailable = 0;
 	nibbleFlag = 0;
@@ -178,9 +177,9 @@ void decode4b6b( char *messageIn, unsigned int bytesIn, char *messageOut, unsign
 	*bytesOut = outBytes;
 }
 
-void sleep( int time ) {
-	int j = 0;
-	int i = 0;
+void sleep( int16_t time ) {
+	int16_t j = 0;
+	int16_t i = 0;
 	for( j = 0; j < time * 4; j++ ) {
 		for( i = 0; i < 0xFFFF; i++ ) {
 			Nop( );

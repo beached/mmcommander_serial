@@ -1,7 +1,9 @@
 #pragma once
 
-void sendMedtronicMessage( char *message, unsigned int length, int times );
-char receiveMedtronicMessage( char *message, unsigned int *length );
+#include <stdint.h>
+
+void sendMedtronicMessage( uint8_t *message, uint16_t length, int16_t times );
+uint8_t receiveMedtronicMessage( uint8_t *message, uint16_t *length );
 void usbReceiveData( void );
 
 #pragma once

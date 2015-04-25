@@ -25,23 +25,23 @@
 * GLOBAL VARIABLES
 */
 
-char   __xdata uartRxBuffer[SIZE_OF_UART_RX_BUFFER];
-char   __xdata uartTxBuffer[SIZE_OF_UART_TX_BUFFER];
-int    __xdata uartTxLength;
-int    __xdata uartTxIndex;
-int    __xdata uartRxIndex;
+uint8_t __xdata uartRxBuffer[SIZE_OF_UART_RX_BUFFER];
+uint8_t __xdata uartTxBuffer[SIZE_OF_UART_TX_BUFFER];
+uint16_t __xdata uartTxLength;
+int16_t __xdata uartTxIndex;
+int16_t __xdata uartRxIndex;
 
 /******************************************************************************
 * MAIN FUNCTION
 */
 
 int main( void ) {
-	char dataPacket[256];
-	char repPacket[3];
-	char dataErr = 0;
-	unsigned int dataLength = 0;
-	char i = 0;
-	char repeatedMessage = 0;
+	uint8_t dataPacket[256];
+	uint8_t repPacket[3];
+	uint8_t dataErr = 0;
+	uint16_t dataLength = 0;
+	uint8_t i = 0;
+	uint8_t repeatedMessage = 0;
 
 	/* Configure system */
 	initGlobals( );
@@ -53,12 +53,12 @@ int main( void ) {
 	halUartInit( HAL_UART_BAUDRATE_57600, 0 );
 
 	/* Reception loop */
-	while( 1 ) {
+	while( TRUE ) {
 		dataErr = receiveMedtronicMessage( dataPacket, &dataLength );
 		if( dataLength > 0 ) {
 			repeatedMessage = 0;
 			if( (_REPEATED_COMMAND_ENABLED_ == 1) &&
-				(dataErr == ((uartTxBuffer[0] >> 7) & 0x01)) &&
+				(dataErr == ((uartTxBuffer[0] >> '\7') & '\x01')) &&
 				(dataLength == (uartTxLength - 2))
 				) {
 				repeatedMessage = 1;

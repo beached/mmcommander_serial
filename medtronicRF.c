@@ -12,17 +12,17 @@
 #include <stdint.h>
 
 // Globals
-static char   __xdata rfMessage[512];
-static unsigned int __xdata rfLength;
-static int    __xdata txCalcCRC;
-static int    __xdata txCalcCRC16;
-static char   __xdata txLength;
-static int    __xdata txTimes;
-static char   __xdata lastData;
+static uint8_t __xdata rfMessage[512];
+static uint16_t __xdata rfLength;
+static int16_t __xdata txCalcCRC;
+static int16_t __xdata txCalcCRC16;
+static uint8_t __xdata txLength;
+static int16_t __xdata txTimes;
+static uint8_t __xdata lastData;
 
-void sendMedtronicMessage( char *message, unsigned int length, int times ) {
-	int i = 0;
-	int j = 0;
+void sendMedtronicMessage( uint8_t *message, uint16_t length, int16_t times ) {
+	int16_t i = 0;
+	int16_t j = 0;
 
 	encode4b6b( message, length, rfMessage, &rfLength );
 	PKTLEN = rfLength;
@@ -32,14 +32,16 @@ void sendMedtronicMessage( char *message, unsigned int length, int times ) {
 	for( j = 0; j < times; j++ ) {
 		RFST = RFST_STX;
 		for( i = 0; i < rfLength; i++ ) {
-			while( !RFTXRXIF );
+			while( !RFTXRXIF ) { };
 			TCON &= 0xFD;
 			RFD = rfMessage[i];
 		}
 
 		i = 4096;
 		/* Add NOP to avoid that the loop is optimized away */
-		while( --i ) Nop( );
+		while( --i ) {
+				Nop( );
+		}
 	}
 
 	PKTLEN = 0xFF;
@@ -47,10 +49,10 @@ void sendMedtronicMessage( char *message, unsigned int length, int times ) {
 	RFST = RFST_SRX;
 }
 
-char receiveMedtronicMessage( char *message, unsigned int *length ) {
-	unsigned int i = 0;
-	char calcCRC = 0;
-	short calcCRC16 = 0;
+uint8_t receiveMedtronicMessage( uint8_t *message, uint16_t *length ) {
+	uint16_t i = 0;
+	uint8_t calcCRC = 0;
+	uint16_t calcCRC16 = 0;
 
 	RFST = RFST_SIDLE;
 	RFST = RFST_SRX;
@@ -78,8 +80,8 @@ char receiveMedtronicMessage( char *message, unsigned int *length ) {
 	}
 
 	calcCRC16 = crc16( message, (*length) - 2 );
-	if( ((char)(calcCRC16 & 0x00FF) == message[(*length) - 1]) &&
-		((char)((calcCRC16 >> 8) & 0x00FF) == message[(*length) - 2]) ) {
+	if( ((uint8_t)(calcCRC16 & 0x00FFu) == message[(*length) - 1]) &&
+		((uint8_t)((calcCRC16 >> 8) & 0x00FFu) == message[(*length) - 2]) ) {
 		return 0;
 	}
 
@@ -91,8 +93,8 @@ char receiveMedtronicMessage( char *message, unsigned int *length ) {
 	}
 
 	calcCRC16 = crc16( message, (*length) - 3 );
-	if( ((char)(calcCRC16 & 0x00FF) == message[(*length) - 2]) &&
-		((char)((calcCRC16 >> 8) & 0x00FF) == message[(*length) - 3]) ) {
+	if( ((uint8_t)(calcCRC16 & 0x00FFu) == message[(*length) - 2]) &&
+		((uint8_t)((calcCRC16 >> 8) & 0x00FFu) == message[(*length) - 3]) ) {
 		(*length) = (*length) - 1;
 		return 0;
 	}
@@ -102,11 +104,11 @@ char receiveMedtronicMessage( char *message, unsigned int *length ) {
 }
 
 void usbReceiveData( void ) {
-	char  tempData[128];
-	short tmpCRC16 = 0;
-	unsigned int nBytes = 0;
-	unsigned int readBytes = 0;
-	unsigned int i = 0;
+	uint8_t tempData[128];
+	int16_t tmpCRC16 = 0;
+	uint16_t nBytes = 0;
+	uint16_t readBytes = 0;
+	uint16_t i = 0;
 
 	nBytes = halUartGetNumRxBytes( );
 	for( i = 0; i < nBytes; i = i + 48 ) {
@@ -122,28 +124,28 @@ void usbReceiveData( void ) {
 		uartRxBuffer[uartRxIndex] = tempData[i];
 
 		if( uartRxIndex == 0 ) {
-			if( (int)uartRxBuffer[0] == 0x01 ) {
+			if( uartRxBuffer[0] == '\x01' ) {
 				uartRxIndex++;
 				txCalcCRC = 0;
 				txCalcCRC16 = 0;
 				enableTimerInt( );
-			} else if( (int)uartRxBuffer[0] == 0x81 ) {
+			} else if( uartRxBuffer[0] == '\x81' ) {
 				uartRxIndex++;
 				txCalcCRC = 1;
 				txCalcCRC16 = 0;
 				enableTimerInt( );
-			} else if( (int)uartRxBuffer[0] == 0xC1 ) {
+			} else if( uartRxBuffer[0] == '\xC1' ) {
 				uartRxIndex++;
 				txCalcCRC = 0;
 				txCalcCRC16 = 1;
 				enableTimerInt( );
-			} else if( ((int)uartRxBuffer[0] == 0x03) ||
-				((int)uartRxBuffer[0] == 0x13) ) {
+			} else if( (uartRxBuffer[0] == '\x03') ||
+				(uartRxBuffer[0] == '\x13') ) {
 				txFilterEnabled = 1;
 				P1_1 = 0;
-				uartRxBuffer[0] = (char)0x03;
+				uartRxBuffer[0] = '\x03';
 				halUartWrite( (uint8_t const *)uartRxBuffer, 1 );
-			} else if( (int)uartRxBuffer[0] == 0x00 ) {
+			} else if( uartRxBuffer[0] == '\x00' ) {
 				uartRxBuffer[0] = _MMCOMMANDER_VERSION_;
 				halUartWrite( (uint8_t const *)uartRxBuffer, 1 );
 			}
@@ -160,11 +162,11 @@ void usbReceiveData( void ) {
 			if( uartRxIndex == (txLength + 2) ) {
 				stopTimerInt( );
 				if( txCalcCRC == 1 ) {
-					uartRxBuffer[++uartRxIndex] = crc8( &uartRxBuffer[3], (int)txLength );
+					uartRxBuffer[++uartRxIndex] = crc8( &uartRxBuffer[3], txLength );
 					txLength++;
 				}
 				if( txCalcCRC16 == 1 ) {
-					tmpCRC16 = crc16( &uartRxBuffer[3], (int)txLength );
+					tmpCRC16 = crc16( &uartRxBuffer[3], txLength );
 					uartRxBuffer[++uartRxIndex] = (char)((tmpCRC16 >> 8) & 0x00FF);
 					uartRxBuffer[++uartRxIndex] = (char)(tmpCRC16 & 0x00FF);
 					txLength += 2;
