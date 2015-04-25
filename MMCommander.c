@@ -17,8 +17,8 @@
 #include "constants.h"
 #include "interrupts.h"
 #include "medtronicRF.h"
-#include "hal_board.h"
-#include "hal_uart.h"
+#include "hw/hal_board.h"
+#include "hw/hal_uart.h"
 #include "configuration.h"
 
 /******************************************************************************

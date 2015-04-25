@@ -1,14 +1,13 @@
 #include "init.h"
 #include "common.h"
-#include "hal_types.h"
-#include "hal_defs.h"
-#include "hal_cc8051.h"
-#include "ioCCxx10_bitdef.h"
-#include "cc1110.h"
+#include "hw/hal_types.h"
+#include "hw/hal_defs.h"
+#include "hw/hal_cc8051.h"
+#include "hw/ioCCxx10_bitdef.h"
+#include "hw/cc1110.h"
 #include "constants.h"
 #include "globals.h"
 #include "configuration.h"
-#include "common.h"
 
 /***********************************************************************************
 * LOCAL FUNCTIONS

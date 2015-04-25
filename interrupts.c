@@ -1,12 +1,12 @@
 #include "interrupts.h"
 #include "common.h"
 #include "globals.h"
-#include "ioCCxx10_bitdef.h"
-#include "cc1110.h"
+#include "hw/ioCCxx10_bitdef.h"
+#include "hw/cc1110.h"
 #include "crc_4b6b.h"
 #include "interrupts.h"
 #include "medtronicRF.h"
-#include "hal_uart.h"
+#include "hw/hal_uart.h"
 #include "txFilter.h"
 
 // Globals

@@ -15,6 +15,7 @@
 				<Option projectCompilerOptionsRelation="2" />
 				<Compiler>
 					<Add option="--out-fmt-ihx" />
+					<Add option="--model-large" />
 					<Add option="-mmcs51" />
 					<Add option="--verbose" />
 					<Add option="--debug" />
@@ -29,6 +30,7 @@
 				<Option projectCompilerOptionsRelation="0" />
 				<Compiler>
 					<Add option="--out-fmt-ihx" />
+					<Add option="--model-large" />
 					<Add option="-mmcs51" />
 					<Add option="--opt-code-size" />
 				</Compiler>
@@ -67,6 +69,9 @@
 		</Unit>
 		<Unit filename="hal_mcu.h" />
 		<Unit filename="hal_types.h" />
+		<Unit filename="hal_uart.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="hal_uart.h" />
 		<Unit filename="init.c">
 			<Option compilerVar="CC" />

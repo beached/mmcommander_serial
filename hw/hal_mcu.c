@@ -8,7 +8,7 @@
 
 #include "hal_types.h"
 #include "hal_mcu.h"
-#include "common.h"
+#include "../common.h"
 #include "clock.h"
 
 /***********************************************************************************

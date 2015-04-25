@@ -317,3 +317,43 @@
 1429938196 source:c:\devel\github\mmcommander_serial\hal_uart.c
 	"hal_uart.h"
 
+1429919605 source:c:\devel\github\mmcommander_serial\hw\hal_board.c
+	"hal_types.h"
+	"hal_mcu.h"
+	"hal_board.h"
+
+1429923627 c:\devel\github\mmcommander_serial\hw\hal_types.h
+	<stdint.h>
+	<intrins.h>
+	"windows.h"
+
+1429935163 c:\devel\github\mmcommander_serial\hw\hal_mcu.h
+	"hal_types.h"
+
+1429935074 c:\devel\github\mmcommander_serial\hw\hal_board.h
+	"hal_types.h"
+	"hal_defs.h"
+	"cc1110.h"
+	"hal_cc8051.h"
+	"usb_uart.h"
+
+1429923684 c:\devel\github\mmcommander_serial\hw\hal_defs.h
+
+1429919648 c:\devel\github\mmcommander_serial\hw\cc1110.h
+	<compiler.h>
+
+1429939088 c:\devel\github\mmcommander_serial\hw\hal_cc8051.h
+	"hal_types.h"
+	"hal_defs.h"
+
+1429935606 source:c:\devel\github\mmcommander_serial\hw\hal_int.c
+	"hal_types.h"
+	"hal_defs.h"
+	"hal_int.h"
+	"hal_board.h"
+	<stdint.h>
+
+1429935661 c:\devel\github\mmcommander_serial\hw\hal_int.h
+	"hal_types.h"
+	<stdint.h>
+

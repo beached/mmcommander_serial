@@ -1,6 +1,6 @@
 #pragma once
 
-#include "hal_types.h"
+#include "hw/hal_types.h"
 #include "constants.h"
 
 extern char   __xdata uartRxBuffer[SIZE_OF_UART_RX_BUFFER];
