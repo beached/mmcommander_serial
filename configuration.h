@@ -1,10 +1,10 @@
 #pragma once
 
-// The _USA_FREQUENCY_MODE_ must be set to 1 if you are planning to use
-// this interface in the US and must be set to 0 in Europe and Asia. When set
-// to 1 the operation frequency will be 916.5 MHz and when 0 will be 868.35
-// MHz.
-#define _USA_FREQUENCY_MODE_ 1
+// The _NA_FREQUENCY_MODE_ must be set to 1 if you are planning to use
+// this interface in North America(verified US & Canada) and must be set to 0
+// in Europe and Asia. When set to 1 the operation frequency will be 916.5 MHz
+// and when 0 will be 868.35MHz.
+#define _NA_FREQUENCY_MODE_ 1
 
 // The parameter _TX_ENABLE_ must be set to 1 if you want the interface
 // to be capable of transmitting any signal to the air. If 0, the MMCommander

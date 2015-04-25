@@ -58,9 +58,8 @@ int main( void ) {
 		if( dataLength > 0 ) {
 			repeatedMessage = 0;
 			if( (_REPEATED_COMMAND_ENABLED_ == 1) &&
-				(dataErr == ((uartTxBuffer[0] >> 7u) & 0x01u)) &&
-				(dataLength == (uartTxLength - 2))
-				) {
+				(dataErr == ((uartTxBuffer[0] >> 7) & 0x01)) &&
+				(dataLength == (uartTxLength - 2)) ) {
 				repeatedMessage = 1;
 				for( i = 0; i < dataLength; i++ ) {
 					if( dataPacket[i] != uartTxBuffer[i + 2] ) {

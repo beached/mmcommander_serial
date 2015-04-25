@@ -47,15 +47,15 @@ void configureMedtronicRFMode( void ) {
 	ADDR = 0x00;
 	CHANNR = 0x00;
 	FSCTRL1 = 0x06; FSCTRL0 = 0x00;
-	#if _USA_FREQUENCY_MODE_ == 0
-		FREQ2 = 0x24;
-		FREQ1 = 0x2E;
-		FREQ0 = 0x38;
-	#else
-		FREQ2 = 0x26;
-		FREQ1 = 0x30;
-		FREQ0 = 0x00;
-	#endif
+#if _NA_FREQUENCY_MODE_ == 0
+	FREQ2 = 0x24;
+	FREQ1 = 0x2E;
+	FREQ0 = 0x38;
+#else
+	FREQ2 = 0x26;
+	FREQ1 = 0x30;
+	FREQ0 = 0x00;
+#endif
 	MDMCFG4 = 0x59;
 	MDMCFG3 = 0x66;
 	MDMCFG2 = 0x33;
