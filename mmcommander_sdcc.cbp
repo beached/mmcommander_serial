@@ -61,42 +61,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="txFilter.h" />
-		<Unit filename="usb/class_cdc/usb_cdc.h" />
-		<Unit filename="usb/class_cdc/usb_cdc_hooks.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="usb/class_cdc/usb_firmware_library_config.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="usb/class_cdc/usb_firmware_library_config.h" />
-		<Unit filename="usb/class_cdc/usb_firmware_library_headers.h" />
-		<Unit filename="usb/class_cdc/usb_uart.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="usb/class_cdc/usb_uart.h" />
-		<Unit filename="usb/library/usb_descriptor.h" />
-		<Unit filename="usb/library/usb_descriptor_parser.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="usb/library/usb_descriptor_parser.h" />
-		<Unit filename="usb/library/usb_framework.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="usb/library/usb_framework.h" />
-		<Unit filename="usb/library/usb_framework_structs.h" />
-		<Unit filename="usb/library/usb_interrupt.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="usb/library/usb_interrupt.h" />
-		<Unit filename="usb/library/usb_reg.h" />
-		<Unit filename="usb/library/usb_standard_requests.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="usb/library/usb_standard_requests.h" />
-		<Unit filename="usb/library/usb_suspend.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="usb/library/usb_suspend.h" />
 		<Unit filename="usb/others/clock.c">
 			<Option compilerVar="CC" />
 		</Unit>

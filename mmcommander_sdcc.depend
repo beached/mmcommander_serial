@@ -107,3 +107,192 @@
 1429924087 source:c:\devel\repos\mmcommander_sdcc\txfilter.c
 	"configuration.h"
 
+1429919610 source:c:\devel\github\mmcommander_serial\crc_4b6b.c
+	"crc_4b6b.h"
+	"common.h"
+
+1429919618 c:\devel\github\mmcommander_serial\crc_4b6b.h
+
+1429919649 c:\devel\github\mmcommander_serial\common.h
+
+1429920512 source:c:\devel\github\mmcommander_serial\init.c
+	"init.h"
+	"common.h"
+	"hal_types.h"
+	"hal_defs.h"
+	"hal_cc8051.h"
+	"ioCCxx10_bitdef.h"
+	"cc1110.h"
+	"constants.h"
+	"globals.h"
+	"configuration.h"
+	"common.h"
+
+1429919623 c:\devel\github\mmcommander_serial\init.h
+
+1429923627 c:\devel\github\mmcommander_serial\hal_types.h
+	<stdint.h>
+	<intrins.h>
+	"windows.h"
+
+1429923684 c:\devel\github\mmcommander_serial\hal_defs.h
+
+1429919620 c:\devel\github\mmcommander_serial\hal_cc8051.h
+	"hal_types.h"
+	"hal_defs.h"
+
+1429919625 c:\devel\github\mmcommander_serial\ioccxx10_bitdef.h
+
+1429919648 c:\devel\github\mmcommander_serial\cc1110.h
+	<compiler.h>
+
+1429919617 c:\devel\github\mmcommander_serial\constants.h
+
+1429921722 c:\devel\github\mmcommander_serial\globals.h
+	"hal_types.h"
+	"constants.h"
+
+1429919616 c:\devel\github\mmcommander_serial\configuration.h
+
+1429923024 source:c:\devel\github\mmcommander_serial\interrupts.c
+	"interrupts.h"
+	"common.h"
+	"globals.h"
+	"ioCCxx10_bitdef.h"
+	"cc1110.h"
+	"crc_4b6b.h"
+	"interrupts.h"
+	"medtronicRF.h"
+	"usb/class_cdc/usb_uart.h"
+	"usb/others/hal_uart.h"
+	"txFilter.h"
+
+1429919624 c:\devel\github\mmcommander_serial\interrupts.h
+
+1429919626 c:\devel\github\mmcommander_serial\medtronicrf.h
+
+1429923024 c:\devel\github\mmcommander_serial\usb\class_cdc\usb_uart.h
+	<stdint.h>
+
+1429923684 c:\devel\github\mmcommander_serial\usb\others\hal_uart.h
+	"../../hal_types.h"
+
+1429919627 c:\devel\github\mmcommander_serial\txfilter.h
+
+1429923278 source:c:\devel\github\mmcommander_serial\medtronicrf.c
+	"common.h"
+	"ioCCxx10_bitdef.h"
+	"cc1110.h"
+	"medtronicRF.h"
+	"crc_4b6b.h"
+	"constants.h"
+	"globals.h"
+	"usb/class_cdc/usb_uart.h"
+	"usb/others/hal_uart.h"
+	"txFilter.h"
+	"configuration.h"
+	"interrupts.h"
+	<stdint.h>
+
+1429923394 source:c:\devel\github\mmcommander_serial\mmcommander.c
+	"crc_4b6b.h"
+	"init.h"
+	"constants.h"
+	"interrupts.h"
+	"medtronicRF.h"
+	"usb/others/hal_board.h"
+	"usb/others/hal_uart.h"
+	"usb/class_cdc/usb_uart.h"
+	"configuration.h"
+
+1429923835 c:\devel\github\mmcommander_serial\usb\others\hal_board.h
+	"../../hal_types.h"
+	"../../hal_defs.h"
+	"../../cc1110.h"
+	"../../hal_cc8051.h"
+	"usb_uart.h"
+
+1429924087 source:c:\devel\github\mmcommander_serial\txfilter.c
+	"configuration.h"
+
+1429924573 source:c:\devel\github\mmcommander_serial\usb\class_cdc\usb_cdc_hooks.c
+	"usb_firmware_library_headers.h"
+	"usb_cdc.h"
+	"usb_uart.h"
+	"../others/hal_led.h"
+
+1429924145 c:\devel\github\mmcommander_serial\usb\class_cdc\usb_firmware_library_headers.h
+	"usb_firmware_library_config.h"
+	"../library/usb_descriptor.h"
+	"../library/usb_descriptor_parser.h"
+	"../library/usb_interrupt.h"
+	"../library/usb_framework.h"
+	"../library/usb_reg.h"
+	"../library/usb_standard_requests.h"
+	"../library/usb_suspend.h"
+
+1429919629 c:\devel\github\mmcommander_serial\usb\class_cdc\usb_firmware_library_config.h
+
+1429923024 c:\devel\github\mmcommander_serial\usb\library\usb_descriptor.h
+	"usb_framework_structs.h"
+
+1429925364 c:\devel\github\mmcommander_serial\usb\library\usb_framework_structs.h
+	<stdint.h>
+	"../../hal_types.h"
+	"../class_cdc/usb_firmware_library_config.h"
+
+1429923024 c:\devel\github\mmcommander_serial\usb\library\usb_descriptor_parser.h
+	"usb_descriptor.h"
+
+1429925449 c:\devel\github\mmcommander_serial\usb\library\usb_interrupt.h
+
+1429925660 c:\devel\github\mmcommander_serial\usb\library\usb_framework.h
+	<stdint.h>
+	"../../hal_defs.h"
+	"usb_framework_structs.h"
+
+1429919637 c:\devel\github\mmcommander_serial\usb\library\usb_reg.h
+
+1429923025 c:\devel\github\mmcommander_serial\usb\library\usb_standard_requests.h
+
+1429924500 c:\devel\github\mmcommander_serial\usb\library\usb_suspend.h
+	"../class_cdc/usb_firmware_library_headers.h"
+
+1429919628 c:\devel\github\mmcommander_serial\usb\class_cdc\usb_cdc.h
+
+1429924654 c:\devel\github\mmcommander_serial\usb\others\hal_led.h
+	"../../hal_types.h"
+
+1429923025 source:c:\devel\github\mmcommander_serial\clock.c
+	"clock.h"
+
+1429935111 c:\devel\github\mmcommander_serial\clock.h
+	"hal_types.h"
+	"cc1110.h"
+
+1429919605 source:c:\devel\github\mmcommander_serial\hal_board.c
+	"hal_types.h"
+	"hal_mcu.h"
+	"hal_board.h"
+
+1429935163 c:\devel\github\mmcommander_serial\hal_mcu.h
+	"hal_types.h"
+
+1429935074 c:\devel\github\mmcommander_serial\hal_board.h
+	"hal_types.h"
+	"hal_defs.h"
+	"cc1110.h"
+	"hal_cc8051.h"
+	"usb_uart.h"
+
+1429935606 source:c:\devel\github\mmcommander_serial\hal_int.c
+	"hal_types.h"
+	"hal_defs.h"
+	"hal_int.h"
+	"hal_board.h"
+	<stdint.h>
+
+1429935661 c:\devel\github\mmcommander_serial\hal_int.h
+	"hal_types.h"
+	<stdint.h>
+
