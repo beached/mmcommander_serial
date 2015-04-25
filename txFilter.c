@@ -15,15 +15,15 @@ char txFilter( char *message, int length ) {
 }
 #else
 char txFilter( char *message, int length ) {
-	if( length < 1 ) return(0);
+	if( length < 1 ) return 0;
 
 	if( txFilterEnabled == 1 ) {
 		// We won't allow glucometer readings
-		if( (int)message[0] == 0xA5 ) return(1);
+		if( (int)message[0] == 0xA5 ) return 1;
 
 		// We won't allow enlite sensors readings
-		if( (int)message[0] == 0xAA ) return(1);
-		if( (int)message[0] == 0xAB ) return(1);
+		if( (int)message[0] == 0xAA ) return 1;
+		if( (int)message[0] == 0xAB ) return 1;
 
 		// When talking to a pump...
 		if( (int)message[0] == 0xA7 ) {

@@ -18,7 +18,7 @@ uint8_t crc8( char *message, uint32_t nBytes ) {
 			}
 		}
 	}
-	return(remainder);
+	return remainder;
 }
 
 void crc16Init( void ) {
@@ -52,7 +52,7 @@ short crc16( char *message, unsigned int nBytes ) {
 		crc = (crc << 8) ^ crc16Tab[tmp];
 	}
 
-	return(crc);
+	return crc;
 }
 
 char get4b6bsymbol( char inSymbol ) {
@@ -79,23 +79,23 @@ char get4b6bsymbol( char inSymbol ) {
 
 char decode4b6bsymbol( char inSymbol, char *outSymbol ) {
 	switch( inSymbol ) {
-	case 0x15: {*outSymbol = 0x00; return(0); }
-	case 0x31: {*outSymbol = 0x01; return(0); }
-	case 0x32: {*outSymbol = 0x02; return(0); }
-	case 0x23: {*outSymbol = 0x03; return(0); }
-	case 0x34: {*outSymbol = 0x04; return(0); }
-	case 0x25: {*outSymbol = 0x05; return(0); }
-	case 0x26: {*outSymbol = 0x06; return(0); }
-	case 0x16: {*outSymbol = 0x07; return(0); }
-	case 0x1A: {*outSymbol = 0x08; return(0); }
-	case 0x19: {*outSymbol = 0x09; return(0); }
-	case 0x2A: {*outSymbol = 0x0A; return(0); }
-	case 0x0B: {*outSymbol = 0x0B; return(0); }
-	case 0x2C: {*outSymbol = 0x0C; return(0); }
-	case 0x0D: {*outSymbol = 0x0D; return(0); }
-	case 0x0E: {*outSymbol = 0x0E; return(0); }
-	case 0x1C: {*outSymbol = 0x0F; return(0); }
-	default:   {*outSymbol = 0x00; return(1); }
+	case 0x15: {*outSymbol = 0x00; return 0; }
+	case 0x31: {*outSymbol = 0x01; return 0; }
+	case 0x32: {*outSymbol = 0x02; return 0; }
+	case 0x23: {*outSymbol = 0x03; return 0; }
+	case 0x34: {*outSymbol = 0x04; return 0; }
+	case 0x25: {*outSymbol = 0x05; return 0; }
+	case 0x26: {*outSymbol = 0x06; return 0; }
+	case 0x16: {*outSymbol = 0x07; return 0; }
+	case 0x1A: {*outSymbol = 0x08; return 0; }
+	case 0x19: {*outSymbol = 0x09; return 0; }
+	case 0x2A: {*outSymbol = 0x0A; return 0; }
+	case 0x0B: {*outSymbol = 0x0B; return 0; }
+	case 0x2C: {*outSymbol = 0x0C; return 0; }
+	case 0x0D: {*outSymbol = 0x0D; return 0; }
+	case 0x0E: {*outSymbol = 0x0E; return 0; }
+	case 0x1C: {*outSymbol = 0x0F; return 0; }
+	default:   {*outSymbol = 0x00; return 1; }
 	}
 }
 

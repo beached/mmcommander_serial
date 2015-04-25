@@ -98,7 +98,7 @@ char receiveMedtronicMessage( char *message, unsigned int *length ) {
 	}
 
 	crc16Init( );
-	return(1);
+	return 1;
 }
 
 void usbReceiveData( void ) {
