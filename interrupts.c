@@ -14,7 +14,7 @@ void PORT1_ISR( void ) __interrupt( P1INT_VECTOR ) {
 	int i = 0;
 	int j = 0;
 	int modeChange = 0;
-	char txString[2];
+	char txString[2] = { 0 };
 
 	// Clear Port 1 Interrupt Flag
 	P1IFG = 0;

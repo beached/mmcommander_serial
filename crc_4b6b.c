@@ -41,11 +41,10 @@ void crc16Init( void ) {
 
 int16_t crc16( uint8_t *message, uint16_t nBytes ) {
 	uint16_t i = 0;
-	uint16_t crc = 0;
+	uint16_t crc = 0xffff;
 	uint16_t short_c = 0;
 	uint16_t tmp = 0;
 
-	crc = 0xffff;
 	for( i = 0; i < nBytes; i++ ) {
 		short_c = 0x00ff & (uint16_t)message[i];
 		tmp = (crc >> 8) ^ short_c;
@@ -107,8 +106,6 @@ void encode4b6b( uint8_t *messageIn, uint16_t bytesIn, uint8_t *messageOut, uint
 	uint8_t symbol = 0;
 
 	*bytesOut = 0;
-	intBitsAvailable = 0;
-	intBuffer = 0;
 
 	for( i = 0; i < bytesIn * 2; i++ ) {
 		j = i >> 1;
@@ -150,9 +147,6 @@ void decode4b6b( uint8_t *messageIn, uint16_t bytesIn, uint8_t *messageOut, uint
 	uint8_t nibbleFlag = 0;
 	uint8_t outBytes = 0;
 
-	intBitsAvailable = 0;
-	nibbleFlag = 0;
-	outBytes = 0;
 	for( i = 0; i < bytesIn; i++ ) {
 		intBuffer = intBuffer << 8;
 		intBuffer |= messageIn[i];

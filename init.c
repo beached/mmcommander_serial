@@ -33,7 +33,7 @@ void configureIO( void ) {
 
 void configureOsc( void ) {
 	SLEEP &= ~OSC_PD_BIT;     // powering down all oscillators
-	while( !XOSC_STABLE );      // waiting until the oscillator is stable
+	while( !XOSC_STABLE ) { }      // waiting until the oscillator is stable
 	Nop( );
 	CLKCON &= 0xF8;
 	CLKCON &= ~MAIN_OSC_BITS; // starting the Crystal Oscillator
@@ -77,7 +77,7 @@ void configureMedtronicRFMode( void ) {
 
 
 void initGlobals( void ) {
-	int i = 0;
+	uint8_t i = 0;
 
 	for( i = 0; i < SIZE_OF_UART_RX_BUFFER; i++ ) {
 		uartRxBuffer[i] = 0x00;

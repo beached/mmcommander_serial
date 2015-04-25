@@ -28,7 +28,7 @@
 * @return  none
 */
 void bufInit( ringBuf_t *pBuf ) {
-	uint16_t s;
+	uint16_t s = 0;
 
 	// Critical section start
 	s = halIntLock( );
@@ -54,8 +54,8 @@ void bufInit( ringBuf_t *pBuf ) {
 * @return  Number of bytes copied to the buffer
 */
 uint8_t bufPut( ringBuf_t *pBuf, const uint8_t *pData, uint8_t nBytes ) {
-	uint8_t i;
-	uint16_t s;
+	uint8_t i = 0;
+	uint16_t s = 0;
 
 	// Critical section start
 	s = halIntLock( );
@@ -93,13 +93,12 @@ uint8_t bufPut( ringBuf_t *pBuf, const uint8_t *pData, uint8_t nBytes ) {
 * @return  Bytes actually returned
 */
 uint8_t bufGet( ringBuf_t *pBuf, uint8_t *pData, uint8_t nBytes ) {
-	uint8_t i;
-	uint16_t s;
+	uint8_t i = 0;
+	uint16_t s = 0;
 
 	// Critical section start
 	s = halIntLock( );
 
-	i = 0;
 	while( i < nBytes && i < pBuf->nBytes ) {
 		pData[i] = pBuf->pData[pBuf->iHead];
 		pBuf->iHead++;
@@ -127,8 +126,9 @@ uint8_t bufGet( ringBuf_t *pBuf, uint8_t *pData, uint8_t nBytes ) {
 * @return  Bytes actually returned
 */
 uint8_t bufPeek( ringBuf_t *pBuf, uint8_t *pData, uint8_t nBytes ) {
-	uint8_t i, j;
-	uint16_t s;
+	uint8_t i = 0;
+	uint8_t j = 0;
+	uint16_t s = 0;
 
 	// Critical section start
 	s = halIntLock( );
