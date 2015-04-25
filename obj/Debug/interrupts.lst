@@ -1,10 +1,10 @@
                                       1 ;--------------------------------------------------------
                                       2 ; File Created by SDCC : free open source ANSI-C Compiler
                                       3 ; Version 3.4.0 #8981 (Apr  5 2014) (MINGW64)
-                                      4 ; This file was generated Fri Apr 24 20:01:27 2015
+                                      4 ; This file was generated Sat Apr 25 00:05:13 2015
                                       5 ;--------------------------------------------------------
                                       6 	.module interrupts
-                                      7 	.optsdcc -mmcs51 --model-small
+                                      7 	.optsdcc -mmcs51 --model-large
                                       8 	
                                       9 ;--------------------------------------------------------
                                      10 ; Public variables in this module
@@ -924,788 +924,831 @@
                                     924 ; internal ram data
                                     925 ;--------------------------------------------------------
                                     926 	.area DSEG    (DATA)
-                           000000   927 Linterrupts.PORT1_ISR$txString$1$27==.
-      000000                        928 _PORT1_ISR_txString_1_27:
-      000000                        929 	.ds 2
+                                    927 ;--------------------------------------------------------
+                                    928 ; overlayable items in internal ram 
+                                    929 ;--------------------------------------------------------
                                     930 ;--------------------------------------------------------
-                                    931 ; overlayable items in internal ram 
+                                    931 ; indirectly addressable internal ram data
                                     932 ;--------------------------------------------------------
-                                    933 ;--------------------------------------------------------
-                                    934 ; indirectly addressable internal ram data
-                                    935 ;--------------------------------------------------------
-                                    936 	.area ISEG    (DATA)
-                                    937 ;--------------------------------------------------------
-                                    938 ; absolute internal ram data
+                                    933 	.area ISEG    (DATA)
+                                    934 ;--------------------------------------------------------
+                                    935 ; absolute internal ram data
+                                    936 ;--------------------------------------------------------
+                                    937 	.area IABS    (ABS,DATA)
+                                    938 	.area IABS    (ABS,DATA)
                                     939 ;--------------------------------------------------------
-                                    940 	.area IABS    (ABS,DATA)
-                                    941 	.area IABS    (ABS,DATA)
-                                    942 ;--------------------------------------------------------
-                                    943 ; bit data
-                                    944 ;--------------------------------------------------------
-                                    945 	.area BSEG    (BIT)
-                                    946 ;--------------------------------------------------------
-                                    947 ; paged external ram data
-                                    948 ;--------------------------------------------------------
-                                    949 	.area PSEG    (PAG,XDATA)
-                                    950 ;--------------------------------------------------------
-                                    951 ; external ram data
-                                    952 ;--------------------------------------------------------
-                                    953 	.area XSEG    (XDATA)
-                           00DF02   954 G$MDMCTRL0H$0$0 == 0xdf02
-                           00DF02   955 _MDMCTRL0H	=	0xdf02
-                           00DF00   956 G$SYNC1$0$0 == 0xdf00
-                           00DF00   957 _SYNC1	=	0xdf00
-                           00DF01   958 G$SYNC0$0$0 == 0xdf01
-                           00DF01   959 _SYNC0	=	0xdf01
-                           00DF02   960 G$PKTLEN$0$0 == 0xdf02
-                           00DF02   961 _PKTLEN	=	0xdf02
-                           00DF03   962 G$PKTCTRL1$0$0 == 0xdf03
-                           00DF03   963 _PKTCTRL1	=	0xdf03
-                           00DF04   964 G$PKTCTRL0$0$0 == 0xdf04
-                           00DF04   965 _PKTCTRL0	=	0xdf04
-                           00DF05   966 G$ADDR$0$0 == 0xdf05
-                           00DF05   967 _ADDR	=	0xdf05
-                           00DF06   968 G$CHANNR$0$0 == 0xdf06
-                           00DF06   969 _CHANNR	=	0xdf06
-                           00DF07   970 G$FSCTRL1$0$0 == 0xdf07
-                           00DF07   971 _FSCTRL1	=	0xdf07
-                           00DF08   972 G$FSCTRL0$0$0 == 0xdf08
-                           00DF08   973 _FSCTRL0	=	0xdf08
-                           00DF09   974 G$FREQ2$0$0 == 0xdf09
-                           00DF09   975 _FREQ2	=	0xdf09
-                           00DF0A   976 G$FREQ1$0$0 == 0xdf0a
-                           00DF0A   977 _FREQ1	=	0xdf0a
-                           00DF0B   978 G$FREQ0$0$0 == 0xdf0b
-                           00DF0B   979 _FREQ0	=	0xdf0b
-                           00DF0C   980 G$MDMCFG4$0$0 == 0xdf0c
-                           00DF0C   981 _MDMCFG4	=	0xdf0c
-                           00DF0D   982 G$MDMCFG3$0$0 == 0xdf0d
-                           00DF0D   983 _MDMCFG3	=	0xdf0d
-                           00DF0E   984 G$MDMCFG2$0$0 == 0xdf0e
-                           00DF0E   985 _MDMCFG2	=	0xdf0e
-                           00DF0F   986 G$MDMCFG1$0$0 == 0xdf0f
-                           00DF0F   987 _MDMCFG1	=	0xdf0f
-                           00DF10   988 G$MDMCFG0$0$0 == 0xdf10
-                           00DF10   989 _MDMCFG0	=	0xdf10
-                           00DF11   990 G$DEVIATN$0$0 == 0xdf11
-                           00DF11   991 _DEVIATN	=	0xdf11
-                           00DF12   992 G$MCSM2$0$0 == 0xdf12
-                           00DF12   993 _MCSM2	=	0xdf12
-                           00DF13   994 G$MCSM1$0$0 == 0xdf13
-                           00DF13   995 _MCSM1	=	0xdf13
-                           00DF14   996 G$MCSM0$0$0 == 0xdf14
-                           00DF14   997 _MCSM0	=	0xdf14
-                           00DF15   998 G$FOCCFG$0$0 == 0xdf15
-                           00DF15   999 _FOCCFG	=	0xdf15
-                           00DF16  1000 G$BSCFG$0$0 == 0xdf16
-                           00DF16  1001 _BSCFG	=	0xdf16
-                           00DF17  1002 G$AGCCTRL2$0$0 == 0xdf17
-                           00DF17  1003 _AGCCTRL2	=	0xdf17
-                           00DF18  1004 G$AGCCTRL1$0$0 == 0xdf18
-                           00DF18  1005 _AGCCTRL1	=	0xdf18
-                           00DF19  1006 G$AGCCTRL0$0$0 == 0xdf19
-                           00DF19  1007 _AGCCTRL0	=	0xdf19
-                           00DF1A  1008 G$FREND1$0$0 == 0xdf1a
-                           00DF1A  1009 _FREND1	=	0xdf1a
-                           00DF1B  1010 G$FREND0$0$0 == 0xdf1b
-                           00DF1B  1011 _FREND0	=	0xdf1b
-                           00DF1C  1012 G$FSCAL3$0$0 == 0xdf1c
-                           00DF1C  1013 _FSCAL3	=	0xdf1c
-                           00DF1D  1014 G$FSCAL2$0$0 == 0xdf1d
-                           00DF1D  1015 _FSCAL2	=	0xdf1d
-                           00DF1E  1016 G$FSCAL1$0$0 == 0xdf1e
-                           00DF1E  1017 _FSCAL1	=	0xdf1e
-                           00DF1F  1018 G$FSCAL0$0$0 == 0xdf1f
-                           00DF1F  1019 _FSCAL0	=	0xdf1f
-                           00DF20  1020 G$_XREGDF20$0$0 == 0xdf20
-                           00DF20  1021 __XREGDF20	=	0xdf20
-                           00DF21  1022 G$_XREGDF21$0$0 == 0xdf21
-                           00DF21  1023 __XREGDF21	=	0xdf21
-                           00DF22  1024 G$_XREGDF22$0$0 == 0xdf22
-                           00DF22  1025 __XREGDF22	=	0xdf22
-                           00DF23  1026 G$TEST2$0$0 == 0xdf23
-                           00DF23  1027 _TEST2	=	0xdf23
-                           00DF24  1028 G$TEST1$0$0 == 0xdf24
-                           00DF24  1029 _TEST1	=	0xdf24
-                           00DF25  1030 G$TEST0$0$0 == 0xdf25
-                           00DF25  1031 _TEST0	=	0xdf25
-                           00DF26  1032 G$_XREGDF26$0$0 == 0xdf26
-                           00DF26  1033 __XREGDF26	=	0xdf26
-                           00DF27  1034 G$PA_TABLE7$0$0 == 0xdf27
-                           00DF27  1035 _PA_TABLE7	=	0xdf27
-                           00DF28  1036 G$PA_TABLE6$0$0 == 0xdf28
-                           00DF28  1037 _PA_TABLE6	=	0xdf28
-                           00DF29  1038 G$PA_TABLE5$0$0 == 0xdf29
-                           00DF29  1039 _PA_TABLE5	=	0xdf29
-                           00DF2A  1040 G$PA_TABLE4$0$0 == 0xdf2a
-                           00DF2A  1041 _PA_TABLE4	=	0xdf2a
-                           00DF2B  1042 G$PA_TABLE3$0$0 == 0xdf2b
-                           00DF2B  1043 _PA_TABLE3	=	0xdf2b
-                           00DF2C  1044 G$PA_TABLE2$0$0 == 0xdf2c
-                           00DF2C  1045 _PA_TABLE2	=	0xdf2c
-                           00DF2D  1046 G$PA_TABLE1$0$0 == 0xdf2d
-                           00DF2D  1047 _PA_TABLE1	=	0xdf2d
-                           00DF2E  1048 G$PA_TABLE0$0$0 == 0xdf2e
-                           00DF2E  1049 _PA_TABLE0	=	0xdf2e
-                           00DF2F  1050 G$IOCFG2$0$0 == 0xdf2f
-                           00DF2F  1051 _IOCFG2	=	0xdf2f
-                           00DF30  1052 G$IOCFG1$0$0 == 0xdf30
-                           00DF30  1053 _IOCFG1	=	0xdf30
-                           00DF31  1054 G$IOCFG0$0$0 == 0xdf31
-                           00DF31  1055 _IOCFG0	=	0xdf31
-                           00DF32  1056 G$_XREGDF32$0$0 == 0xdf32
-                           00DF32  1057 __XREGDF32	=	0xdf32
-                           00DF33  1058 G$_XREGDF33$0$0 == 0xdf33
-                           00DF33  1059 __XREGDF33	=	0xdf33
-                           00DF34  1060 G$_XREGDF34$0$0 == 0xdf34
-                           00DF34  1061 __XREGDF34	=	0xdf34
-                           00DF35  1062 G$_XREGDF35$0$0 == 0xdf35
-                           00DF35  1063 __XREGDF35	=	0xdf35
-                           00DF36  1064 G$PARTNUM$0$0 == 0xdf36
-                           00DF36  1065 _PARTNUM	=	0xdf36
-                           00DF37  1066 G$VERSION$0$0 == 0xdf37
-                           00DF37  1067 _VERSION	=	0xdf37
-                           00DF38  1068 G$FREQEST$0$0 == 0xdf38
-                           00DF38  1069 _FREQEST	=	0xdf38
-                           00DF39  1070 G$LQI$0$0 == 0xdf39
-                           00DF39  1071 _LQI	=	0xdf39
-                           00DF3A  1072 G$RSSI$0$0 == 0xdf3a
-                           00DF3A  1073 _RSSI	=	0xdf3a
-                           00DF3B  1074 G$MARCSTATE$0$0 == 0xdf3b
-                           00DF3B  1075 _MARCSTATE	=	0xdf3b
-                           00DF3C  1076 G$PKTSTATUS$0$0 == 0xdf3c
-                           00DF3C  1077 _PKTSTATUS	=	0xdf3c
-                           00DF3D  1078 G$VCO_VC_DAC$0$0 == 0xdf3d
-                           00DF3D  1079 _VCO_VC_DAC	=	0xdf3d
-                           00DF40  1080 G$I2SCFG0$0$0 == 0xdf40
-                           00DF40  1081 _I2SCFG0	=	0xdf40
-                           00DF41  1082 G$I2SCFG1$0$0 == 0xdf41
-                           00DF41  1083 _I2SCFG1	=	0xdf41
-                           00DF42  1084 G$I2SDATL$0$0 == 0xdf42
-                           00DF42  1085 _I2SDATL	=	0xdf42
-                           00DF43  1086 G$I2SDATH$0$0 == 0xdf43
-                           00DF43  1087 _I2SDATH	=	0xdf43
-                           00DF44  1088 G$I2SWCNT$0$0 == 0xdf44
-                           00DF44  1089 _I2SWCNT	=	0xdf44
-                           00DF45  1090 G$I2SSTAT$0$0 == 0xdf45
-                           00DF45  1091 _I2SSTAT	=	0xdf45
-                           00DF46  1092 G$I2SCLKF0$0$0 == 0xdf46
-                           00DF46  1093 _I2SCLKF0	=	0xdf46
-                           00DF47  1094 G$I2SCLKF1$0$0 == 0xdf47
-                           00DF47  1095 _I2SCLKF1	=	0xdf47
-                           00DF48  1096 G$I2SCLKF2$0$0 == 0xdf48
-                           00DF48  1097 _I2SCLKF2	=	0xdf48
-                           00DF80  1098 G$_NA_P0$0$0 == 0xdf80
-                           00DF80  1099 __NA_P0	=	0xdf80
-                           00DF81  1100 G$_NA_SP$0$0 == 0xdf81
-                           00DF81  1101 __NA_SP	=	0xdf81
-                           00DF82  1102 G$_NA_DPL0$0$0 == 0xdf82
-                           00DF82  1103 __NA_DPL0	=	0xdf82
-                           00DF83  1104 G$_NA_DPH0$0$0 == 0xdf83
-                           00DF83  1105 __NA_DPH0	=	0xdf83
-                           00DF84  1106 G$_NA_DPL1$0$0 == 0xdf84
-                           00DF84  1107 __NA_DPL1	=	0xdf84
-                           00DF85  1108 G$_NA_DPH1$0$0 == 0xdf85
-                           00DF85  1109 __NA_DPH1	=	0xdf85
-                           00DF86  1110 G$X_U0CSR$0$0 == 0xdf86
-                           00DF86  1111 _X_U0CSR	=	0xdf86
-                           00DF87  1112 G$_NA_PCON$0$0 == 0xdf87
-                           00DF87  1113 __NA_PCON	=	0xdf87
-                           00DF88  1114 G$_NA_TCON$0$0 == 0xdf88
-                           00DF88  1115 __NA_TCON	=	0xdf88
-                           00DF89  1116 G$X_P0IFG$0$0 == 0xdf89
-                           00DF89  1117 _X_P0IFG	=	0xdf89
-                           00DF8A  1118 G$X_P1IFG$0$0 == 0xdf8a
-                           00DF8A  1119 _X_P1IFG	=	0xdf8a
-                           00DF8B  1120 G$X_P2IFG$0$0 == 0xdf8b
-                           00DF8B  1121 _X_P2IFG	=	0xdf8b
-                           00DF8C  1122 G$X_PICTL$0$0 == 0xdf8c
-                           00DF8C  1123 _X_PICTL	=	0xdf8c
-                           00DF8D  1124 G$X_P1IEN$0$0 == 0xdf8d
-                           00DF8D  1125 _X_P1IEN	=	0xdf8d
-                           00DF8E  1126 G$_X_SFR8E$0$0 == 0xdf8e
-                           00DF8E  1127 __X_SFR8E	=	0xdf8e
-                           00DF8F  1128 G$X_P0INP$0$0 == 0xdf8f
-                           00DF8F  1129 _X_P0INP	=	0xdf8f
-                           00DF90  1130 G$_NA_P1$0$0 == 0xdf90
-                           00DF90  1131 __NA_P1	=	0xdf90
-                           00DF91  1132 G$X_RFIM$0$0 == 0xdf91
-                           00DF91  1133 _X_RFIM	=	0xdf91
-                           00DF92  1134 G$_NA_DPS$0$0 == 0xdf92
-                           00DF92  1135 __NA_DPS	=	0xdf92
-                           00DF93  1136 G$X_MPAGE$0$0 == 0xdf93
-                           00DF93  1137 _X_MPAGE	=	0xdf93
-                           00DF94  1138 G$_X_SFR94$0$0 == 0xdf94
-                           00DF94  1139 __X_SFR94	=	0xdf94
-                           00DF95  1140 G$_X_SFR95$0$0 == 0xdf95
-                           00DF95  1141 __X_SFR95	=	0xdf95
-                           00DF96  1142 G$_X_SFR96$0$0 == 0xdf96
-                           00DF96  1143 __X_SFR96	=	0xdf96
-                           00DF97  1144 G$_X_SFR97$0$0 == 0xdf97
-                           00DF97  1145 __X_SFR97	=	0xdf97
-                           00DF98  1146 G$_NA_S0CON$0$0 == 0xdf98
-                           00DF98  1147 __NA_S0CON	=	0xdf98
-                           00DF99  1148 G$_X_SFR99$0$0 == 0xdf99
-                           00DF99  1149 __X_SFR99	=	0xdf99
-                           00DF9A  1150 G$_NA_IEN2$0$0 == 0xdf9a
-                           00DF9A  1151 __NA_IEN2	=	0xdf9a
-                           00DF9B  1152 G$_NA_S1CON$0$0 == 0xdf9b
-                           00DF9B  1153 __NA_S1CON	=	0xdf9b
-                           00DF9C  1154 G$X_T2CT$0$0 == 0xdf9c
-                           00DF9C  1155 _X_T2CT	=	0xdf9c
-                           00DF9D  1156 G$X_T2PR$0$0 == 0xdf9d
-                           00DF9D  1157 _X_T2PR	=	0xdf9d
-                           00DF9E  1158 G$X_T2CTL$0$0 == 0xdf9e
-                           00DF9E  1159 _X_T2CTL	=	0xdf9e
-                           00DF9F  1160 G$_X_SFR9F$0$0 == 0xdf9f
-                           00DF9F  1161 __X_SFR9F	=	0xdf9f
-                           00DFA0  1162 G$_NA_P2$0$0 == 0xdfa0
-                           00DFA0  1163 __NA_P2	=	0xdfa0
-                           00DFA1  1164 G$X_WORIRQ$0$0 == 0xdfa1
-                           00DFA1  1165 _X_WORIRQ	=	0xdfa1
-                           00DFA2  1166 G$X_WORCTRL$0$0 == 0xdfa2
-                           00DFA2  1167 _X_WORCTRL	=	0xdfa2
-                           00DFA3  1168 G$X_WOREVT0$0$0 == 0xdfa3
-                           00DFA3  1169 _X_WOREVT0	=	0xdfa3
-                           00DFA4  1170 G$X_WOREVT1$0$0 == 0xdfa4
-                           00DFA4  1171 _X_WOREVT1	=	0xdfa4
-                           00DFA5  1172 G$X_WORTIME0$0$0 == 0xdfa5
-                           00DFA5  1173 _X_WORTIME0	=	0xdfa5
-                           00DFA6  1174 G$X_WORTIME1$0$0 == 0xdfa6
-                           00DFA6  1175 _X_WORTIME1	=	0xdfa6
-                           00DFA7  1176 G$_X_SFRA7$0$0 == 0xdfa7
-                           00DFA7  1177 __X_SFRA7	=	0xdfa7
-                           00DFA8  1178 G$_NA_IEN0$0$0 == 0xdfa8
-                           00DFA8  1179 __NA_IEN0	=	0xdfa8
-                           00DFA9  1180 G$_NA_IP0$0$0 == 0xdfa9
-                           00DFA9  1181 __NA_IP0	=	0xdfa9
-                           00DFAA  1182 G$_X_SFRAA$0$0 == 0xdfaa
-                           00DFAA  1183 __X_SFRAA	=	0xdfaa
-                           00DFAB  1184 G$X_FWT$0$0 == 0xdfab
-                           00DFAB  1185 _X_FWT	=	0xdfab
-                           00DFAC  1186 G$X_FADDRL$0$0 == 0xdfac
-                           00DFAC  1187 _X_FADDRL	=	0xdfac
-                           00DFAD  1188 G$X_FADDRH$0$0 == 0xdfad
-                           00DFAD  1189 _X_FADDRH	=	0xdfad
-                           00DFAE  1190 G$X_FCTL$0$0 == 0xdfae
-                           00DFAE  1191 _X_FCTL	=	0xdfae
-                           00DFAF  1192 G$X_FWDATA$0$0 == 0xdfaf
-                           00DFAF  1193 _X_FWDATA	=	0xdfaf
-                           00DFB0  1194 G$_X_SFRB0$0$0 == 0xdfb0
-                           00DFB0  1195 __X_SFRB0	=	0xdfb0
-                           00DFB1  1196 G$X_ENCDI$0$0 == 0xdfb1
-                           00DFB1  1197 _X_ENCDI	=	0xdfb1
-                           00DFB2  1198 G$X_ENCDO$0$0 == 0xdfb2
-                           00DFB2  1199 _X_ENCDO	=	0xdfb2
-                           00DFB3  1200 G$X_ENCCS$0$0 == 0xdfb3
-                           00DFB3  1201 _X_ENCCS	=	0xdfb3
-                           00DFB4  1202 G$X_ADCCON1$0$0 == 0xdfb4
-                           00DFB4  1203 _X_ADCCON1	=	0xdfb4
-                           00DFB5  1204 G$X_ADCCON2$0$0 == 0xdfb5
-                           00DFB5  1205 _X_ADCCON2	=	0xdfb5
-                           00DFB6  1206 G$X_ADCCON3$0$0 == 0xdfb6
-                           00DFB6  1207 _X_ADCCON3	=	0xdfb6
-                           00DFB7  1208 G$_X_SFRB7$0$0 == 0xdfb7
-                           00DFB7  1209 __X_SFRB7	=	0xdfb7
-                           00DFB8  1210 G$_NA_IEN1$0$0 == 0xdfb8
-                           00DFB8  1211 __NA_IEN1	=	0xdfb8
-                           00DFB9  1212 G$_NA_IP1$0$0 == 0xdfb9
-                           00DFB9  1213 __NA_IP1	=	0xdfb9
-                           00DFBA  1214 G$X_ADCL$0$0 == 0xdfba
-                           00DFBA  1215 _X_ADCL	=	0xdfba
-                           00DFBB  1216 G$X_ADCH$0$0 == 0xdfbb
-                           00DFBB  1217 _X_ADCH	=	0xdfbb
-                           00DFBC  1218 G$X_RNDL$0$0 == 0xdfbc
-                           00DFBC  1219 _X_RNDL	=	0xdfbc
-                           00DFBD  1220 G$X_RNDH$0$0 == 0xdfbd
-                           00DFBD  1221 _X_RNDH	=	0xdfbd
-                           00DFBE  1222 G$X_SLEEP$0$0 == 0xdfbe
-                           00DFBE  1223 _X_SLEEP	=	0xdfbe
-                           00DFBF  1224 G$_X_SFRBF$0$0 == 0xdfbf
-                           00DFBF  1225 __X_SFRBF	=	0xdfbf
-                           00DFC0  1226 G$_NA_IRCON$0$0 == 0xdfc0
-                           00DFC0  1227 __NA_IRCON	=	0xdfc0
-                           00DFC1  1228 G$X_U0DBUF$0$0 == 0xdfc1
-                           00DFC1  1229 _X_U0DBUF	=	0xdfc1
-                           00DFC2  1230 G$X_U0BAUD$0$0 == 0xdfc2
-                           00DFC2  1231 _X_U0BAUD	=	0xdfc2
-                           00DFC3  1232 G$_X_SFRC3$0$0 == 0xdfc3
-                           00DFC3  1233 __X_SFRC3	=	0xdfc3
-                           00DFC4  1234 G$X_U0UCR$0$0 == 0xdfc4
-                           00DFC4  1235 _X_U0UCR	=	0xdfc4
-                           00DFC5  1236 G$X_U0GCR$0$0 == 0xdfc5
-                           00DFC5  1237 _X_U0GCR	=	0xdfc5
-                           00DFC6  1238 G$X_CLKCON$0$0 == 0xdfc6
-                           00DFC6  1239 _X_CLKCON	=	0xdfc6
-                           00DFC7  1240 G$X_MEMCTR$0$0 == 0xdfc7
-                           00DFC7  1241 _X_MEMCTR	=	0xdfc7
-                           00DFC8  1242 G$_X_SFRC8$0$0 == 0xdfc8
-                           00DFC8  1243 __X_SFRC8	=	0xdfc8
-                           00DFC9  1244 G$X_WDCTL$0$0 == 0xdfc9
-                           00DFC9  1245 _X_WDCTL	=	0xdfc9
-                           00DFCA  1246 G$X_T3CNT$0$0 == 0xdfca
-                           00DFCA  1247 _X_T3CNT	=	0xdfca
-                           00DFCB  1248 G$X_T3CTL$0$0 == 0xdfcb
-                           00DFCB  1249 _X_T3CTL	=	0xdfcb
-                           00DFCC  1250 G$X_T3CCTL0$0$0 == 0xdfcc
-                           00DFCC  1251 _X_T3CCTL0	=	0xdfcc
-                           00DFCD  1252 G$X_T3CC0$0$0 == 0xdfcd
-                           00DFCD  1253 _X_T3CC0	=	0xdfcd
-                           00DFCE  1254 G$X_T3CCTL1$0$0 == 0xdfce
-                           00DFCE  1255 _X_T3CCTL1	=	0xdfce
-                           00DFCF  1256 G$X_T3CC1$0$0 == 0xdfcf
-                           00DFCF  1257 _X_T3CC1	=	0xdfcf
-                           00DFD0  1258 G$_NA_PSW$0$0 == 0xdfd0
-                           00DFD0  1259 __NA_PSW	=	0xdfd0
-                           00DFD1  1260 G$X_DMAIRQ$0$0 == 0xdfd1
-                           00DFD1  1261 _X_DMAIRQ	=	0xdfd1
-                           00DFD2  1262 G$X_DMA1CFGL$0$0 == 0xdfd2
-                           00DFD2  1263 _X_DMA1CFGL	=	0xdfd2
-                           00DFD3  1264 G$X_DMA1CFGH$0$0 == 0xdfd3
-                           00DFD3  1265 _X_DMA1CFGH	=	0xdfd3
-                           00DFD4  1266 G$X_DMA0CFGL$0$0 == 0xdfd4
-                           00DFD4  1267 _X_DMA0CFGL	=	0xdfd4
-                           00DFD5  1268 G$X_DMA0CFGH$0$0 == 0xdfd5
-                           00DFD5  1269 _X_DMA0CFGH	=	0xdfd5
-                           00DFD6  1270 G$X_DMAARM$0$0 == 0xdfd6
-                           00DFD6  1271 _X_DMAARM	=	0xdfd6
-                           00DFD7  1272 G$X_DMAREQ$0$0 == 0xdfd7
-                           00DFD7  1273 _X_DMAREQ	=	0xdfd7
-                           00DFD8  1274 G$X_TIMIF$0$0 == 0xdfd8
-                           00DFD8  1275 _X_TIMIF	=	0xdfd8
-                           00DFD9  1276 G$X_RFD$0$0 == 0xdfd9
-                           00DFD9  1277 _X_RFD	=	0xdfd9
-                           00DFDA  1278 G$X_T1CC0L$0$0 == 0xdfda
-                           00DFDA  1279 _X_T1CC0L	=	0xdfda
-                           00DFDB  1280 G$X_T1CC0H$0$0 == 0xdfdb
-                           00DFDB  1281 _X_T1CC0H	=	0xdfdb
-                           00DFDC  1282 G$X_T1CC1L$0$0 == 0xdfdc
-                           00DFDC  1283 _X_T1CC1L	=	0xdfdc
-                           00DFDD  1284 G$X_T1CC1H$0$0 == 0xdfdd
-                           00DFDD  1285 _X_T1CC1H	=	0xdfdd
-                           00DFDE  1286 G$X_T1CC2L$0$0 == 0xdfde
-                           00DFDE  1287 _X_T1CC2L	=	0xdfde
-                           00DFDF  1288 G$X_T1CC2H$0$0 == 0xdfdf
-                           00DFDF  1289 _X_T1CC2H	=	0xdfdf
-                           00DFE0  1290 G$_NA_ACC$0$0 == 0xdfe0
-                           00DFE0  1291 __NA_ACC	=	0xdfe0
-                           00DFE1  1292 G$X_RFST$0$0 == 0xdfe1
-                           00DFE1  1293 _X_RFST	=	0xdfe1
-                           00DFE2  1294 G$X_T1CNTL$0$0 == 0xdfe2
-                           00DFE2  1295 _X_T1CNTL	=	0xdfe2
-                           00DFE3  1296 G$X_T1CNTH$0$0 == 0xdfe3
-                           00DFE3  1297 _X_T1CNTH	=	0xdfe3
-                           00DFE4  1298 G$X_T1CTL$0$0 == 0xdfe4
-                           00DFE4  1299 _X_T1CTL	=	0xdfe4
-                           00DFE5  1300 G$X_T1CCTL0$0$0 == 0xdfe5
-                           00DFE5  1301 _X_T1CCTL0	=	0xdfe5
-                           00DFE6  1302 G$X_T1CCTL1$0$0 == 0xdfe6
-                           00DFE6  1303 _X_T1CCTL1	=	0xdfe6
-                           00DFE7  1304 G$X_T1CCTL2$0$0 == 0xdfe7
-                           00DFE7  1305 _X_T1CCTL2	=	0xdfe7
-                           00DFE8  1306 G$_NA_IRCON2$0$0 == 0xdfe8
-                           00DFE8  1307 __NA_IRCON2	=	0xdfe8
-                           00DFE9  1308 G$X_RFIF$0$0 == 0xdfe9
-                           00DFE9  1309 _X_RFIF	=	0xdfe9
-                           00DFEA  1310 G$X_T4CNT$0$0 == 0xdfea
-                           00DFEA  1311 _X_T4CNT	=	0xdfea
-                           00DFEB  1312 G$X_T4CTL$0$0 == 0xdfeb
-                           00DFEB  1313 _X_T4CTL	=	0xdfeb
-                           00DFEC  1314 G$X_T4CCTL0$0$0 == 0xdfec
-                           00DFEC  1315 _X_T4CCTL0	=	0xdfec
-                           00DFED  1316 G$X_T4CC0$0$0 == 0xdfed
-                           00DFED  1317 _X_T4CC0	=	0xdfed
-                           00DFEE  1318 G$X_T4CCTL1$0$0 == 0xdfee
-                           00DFEE  1319 _X_T4CCTL1	=	0xdfee
-                           00DFEF  1320 G$X_T4CC1$0$0 == 0xdfef
-                           00DFEF  1321 _X_T4CC1	=	0xdfef
-                           00DFF0  1322 G$_NA_B$0$0 == 0xdff0
-                           00DFF0  1323 __NA_B	=	0xdff0
-                           00DFF1  1324 G$X_PERCFG$0$0 == 0xdff1
-                           00DFF1  1325 _X_PERCFG	=	0xdff1
-                           00DFF2  1326 G$X_ADCCFG$0$0 == 0xdff2
-                           00DFF2  1327 _X_ADCCFG	=	0xdff2
-                           00DFF3  1328 G$X_P0SEL$0$0 == 0xdff3
-                           00DFF3  1329 _X_P0SEL	=	0xdff3
-                           00DFF4  1330 G$X_P1SEL$0$0 == 0xdff4
-                           00DFF4  1331 _X_P1SEL	=	0xdff4
-                           00DFF5  1332 G$X_P2SEL$0$0 == 0xdff5
-                           00DFF5  1333 _X_P2SEL	=	0xdff5
-                           00DFF6  1334 G$X_P1INP$0$0 == 0xdff6
-                           00DFF6  1335 _X_P1INP	=	0xdff6
-                           00DFF7  1336 G$X_P2INP$0$0 == 0xdff7
-                           00DFF7  1337 _X_P2INP	=	0xdff7
-                           00DFF8  1338 G$X_U1CSR$0$0 == 0xdff8
-                           00DFF8  1339 _X_U1CSR	=	0xdff8
-                           00DFF9  1340 G$X_U1DBUF$0$0 == 0xdff9
-                           00DFF9  1341 _X_U1DBUF	=	0xdff9
-                           00DFFA  1342 G$X_U1BAUD$0$0 == 0xdffa
-                           00DFFA  1343 _X_U1BAUD	=	0xdffa
-                           00DFFB  1344 G$X_U1UCR$0$0 == 0xdffb
-                           00DFFB  1345 _X_U1UCR	=	0xdffb
-                           00DFFC  1346 G$X_U1GCR$0$0 == 0xdffc
-                           00DFFC  1347 _X_U1GCR	=	0xdffc
-                           00DFFD  1348 G$X_P0DIR$0$0 == 0xdffd
-                           00DFFD  1349 _X_P0DIR	=	0xdffd
-                           00DFFE  1350 G$X_P1DIR$0$0 == 0xdffe
-                           00DFFE  1351 _X_P1DIR	=	0xdffe
-                           00DFFF  1352 G$X_P2DIR$0$0 == 0xdfff
-                           00DFFF  1353 _X_P2DIR	=	0xdfff
-                                   1354 ;--------------------------------------------------------
-                                   1355 ; absolute external ram data
-                                   1356 ;--------------------------------------------------------
-                                   1357 	.area XABS    (ABS,XDATA)
-                                   1358 ;--------------------------------------------------------
-                                   1359 ; external initialized ram data
+                                    940 ; bit data
+                                    941 ;--------------------------------------------------------
+                                    942 	.area BSEG    (BIT)
+                                    943 ;--------------------------------------------------------
+                                    944 ; paged external ram data
+                                    945 ;--------------------------------------------------------
+                                    946 	.area PSEG    (PAG,XDATA)
+                                    947 ;--------------------------------------------------------
+                                    948 ; external ram data
+                                    949 ;--------------------------------------------------------
+                                    950 	.area XSEG    (XDATA)
+                           00DF02   951 G$MDMCTRL0H$0$0 == 0xdf02
+                           00DF02   952 _MDMCTRL0H	=	0xdf02
+                           00DF00   953 G$SYNC1$0$0 == 0xdf00
+                           00DF00   954 _SYNC1	=	0xdf00
+                           00DF01   955 G$SYNC0$0$0 == 0xdf01
+                           00DF01   956 _SYNC0	=	0xdf01
+                           00DF02   957 G$PKTLEN$0$0 == 0xdf02
+                           00DF02   958 _PKTLEN	=	0xdf02
+                           00DF03   959 G$PKTCTRL1$0$0 == 0xdf03
+                           00DF03   960 _PKTCTRL1	=	0xdf03
+                           00DF04   961 G$PKTCTRL0$0$0 == 0xdf04
+                           00DF04   962 _PKTCTRL0	=	0xdf04
+                           00DF05   963 G$ADDR$0$0 == 0xdf05
+                           00DF05   964 _ADDR	=	0xdf05
+                           00DF06   965 G$CHANNR$0$0 == 0xdf06
+                           00DF06   966 _CHANNR	=	0xdf06
+                           00DF07   967 G$FSCTRL1$0$0 == 0xdf07
+                           00DF07   968 _FSCTRL1	=	0xdf07
+                           00DF08   969 G$FSCTRL0$0$0 == 0xdf08
+                           00DF08   970 _FSCTRL0	=	0xdf08
+                           00DF09   971 G$FREQ2$0$0 == 0xdf09
+                           00DF09   972 _FREQ2	=	0xdf09
+                           00DF0A   973 G$FREQ1$0$0 == 0xdf0a
+                           00DF0A   974 _FREQ1	=	0xdf0a
+                           00DF0B   975 G$FREQ0$0$0 == 0xdf0b
+                           00DF0B   976 _FREQ0	=	0xdf0b
+                           00DF0C   977 G$MDMCFG4$0$0 == 0xdf0c
+                           00DF0C   978 _MDMCFG4	=	0xdf0c
+                           00DF0D   979 G$MDMCFG3$0$0 == 0xdf0d
+                           00DF0D   980 _MDMCFG3	=	0xdf0d
+                           00DF0E   981 G$MDMCFG2$0$0 == 0xdf0e
+                           00DF0E   982 _MDMCFG2	=	0xdf0e
+                           00DF0F   983 G$MDMCFG1$0$0 == 0xdf0f
+                           00DF0F   984 _MDMCFG1	=	0xdf0f
+                           00DF10   985 G$MDMCFG0$0$0 == 0xdf10
+                           00DF10   986 _MDMCFG0	=	0xdf10
+                           00DF11   987 G$DEVIATN$0$0 == 0xdf11
+                           00DF11   988 _DEVIATN	=	0xdf11
+                           00DF12   989 G$MCSM2$0$0 == 0xdf12
+                           00DF12   990 _MCSM2	=	0xdf12
+                           00DF13   991 G$MCSM1$0$0 == 0xdf13
+                           00DF13   992 _MCSM1	=	0xdf13
+                           00DF14   993 G$MCSM0$0$0 == 0xdf14
+                           00DF14   994 _MCSM0	=	0xdf14
+                           00DF15   995 G$FOCCFG$0$0 == 0xdf15
+                           00DF15   996 _FOCCFG	=	0xdf15
+                           00DF16   997 G$BSCFG$0$0 == 0xdf16
+                           00DF16   998 _BSCFG	=	0xdf16
+                           00DF17   999 G$AGCCTRL2$0$0 == 0xdf17
+                           00DF17  1000 _AGCCTRL2	=	0xdf17
+                           00DF18  1001 G$AGCCTRL1$0$0 == 0xdf18
+                           00DF18  1002 _AGCCTRL1	=	0xdf18
+                           00DF19  1003 G$AGCCTRL0$0$0 == 0xdf19
+                           00DF19  1004 _AGCCTRL0	=	0xdf19
+                           00DF1A  1005 G$FREND1$0$0 == 0xdf1a
+                           00DF1A  1006 _FREND1	=	0xdf1a
+                           00DF1B  1007 G$FREND0$0$0 == 0xdf1b
+                           00DF1B  1008 _FREND0	=	0xdf1b
+                           00DF1C  1009 G$FSCAL3$0$0 == 0xdf1c
+                           00DF1C  1010 _FSCAL3	=	0xdf1c
+                           00DF1D  1011 G$FSCAL2$0$0 == 0xdf1d
+                           00DF1D  1012 _FSCAL2	=	0xdf1d
+                           00DF1E  1013 G$FSCAL1$0$0 == 0xdf1e
+                           00DF1E  1014 _FSCAL1	=	0xdf1e
+                           00DF1F  1015 G$FSCAL0$0$0 == 0xdf1f
+                           00DF1F  1016 _FSCAL0	=	0xdf1f
+                           00DF20  1017 G$_XREGDF20$0$0 == 0xdf20
+                           00DF20  1018 __XREGDF20	=	0xdf20
+                           00DF21  1019 G$_XREGDF21$0$0 == 0xdf21
+                           00DF21  1020 __XREGDF21	=	0xdf21
+                           00DF22  1021 G$_XREGDF22$0$0 == 0xdf22
+                           00DF22  1022 __XREGDF22	=	0xdf22
+                           00DF23  1023 G$TEST2$0$0 == 0xdf23
+                           00DF23  1024 _TEST2	=	0xdf23
+                           00DF24  1025 G$TEST1$0$0 == 0xdf24
+                           00DF24  1026 _TEST1	=	0xdf24
+                           00DF25  1027 G$TEST0$0$0 == 0xdf25
+                           00DF25  1028 _TEST0	=	0xdf25
+                           00DF26  1029 G$_XREGDF26$0$0 == 0xdf26
+                           00DF26  1030 __XREGDF26	=	0xdf26
+                           00DF27  1031 G$PA_TABLE7$0$0 == 0xdf27
+                           00DF27  1032 _PA_TABLE7	=	0xdf27
+                           00DF28  1033 G$PA_TABLE6$0$0 == 0xdf28
+                           00DF28  1034 _PA_TABLE6	=	0xdf28
+                           00DF29  1035 G$PA_TABLE5$0$0 == 0xdf29
+                           00DF29  1036 _PA_TABLE5	=	0xdf29
+                           00DF2A  1037 G$PA_TABLE4$0$0 == 0xdf2a
+                           00DF2A  1038 _PA_TABLE4	=	0xdf2a
+                           00DF2B  1039 G$PA_TABLE3$0$0 == 0xdf2b
+                           00DF2B  1040 _PA_TABLE3	=	0xdf2b
+                           00DF2C  1041 G$PA_TABLE2$0$0 == 0xdf2c
+                           00DF2C  1042 _PA_TABLE2	=	0xdf2c
+                           00DF2D  1043 G$PA_TABLE1$0$0 == 0xdf2d
+                           00DF2D  1044 _PA_TABLE1	=	0xdf2d
+                           00DF2E  1045 G$PA_TABLE0$0$0 == 0xdf2e
+                           00DF2E  1046 _PA_TABLE0	=	0xdf2e
+                           00DF2F  1047 G$IOCFG2$0$0 == 0xdf2f
+                           00DF2F  1048 _IOCFG2	=	0xdf2f
+                           00DF30  1049 G$IOCFG1$0$0 == 0xdf30
+                           00DF30  1050 _IOCFG1	=	0xdf30
+                           00DF31  1051 G$IOCFG0$0$0 == 0xdf31
+                           00DF31  1052 _IOCFG0	=	0xdf31
+                           00DF32  1053 G$_XREGDF32$0$0 == 0xdf32
+                           00DF32  1054 __XREGDF32	=	0xdf32
+                           00DF33  1055 G$_XREGDF33$0$0 == 0xdf33
+                           00DF33  1056 __XREGDF33	=	0xdf33
+                           00DF34  1057 G$_XREGDF34$0$0 == 0xdf34
+                           00DF34  1058 __XREGDF34	=	0xdf34
+                           00DF35  1059 G$_XREGDF35$0$0 == 0xdf35
+                           00DF35  1060 __XREGDF35	=	0xdf35
+                           00DF36  1061 G$PARTNUM$0$0 == 0xdf36
+                           00DF36  1062 _PARTNUM	=	0xdf36
+                           00DF37  1063 G$VERSION$0$0 == 0xdf37
+                           00DF37  1064 _VERSION	=	0xdf37
+                           00DF38  1065 G$FREQEST$0$0 == 0xdf38
+                           00DF38  1066 _FREQEST	=	0xdf38
+                           00DF39  1067 G$LQI$0$0 == 0xdf39
+                           00DF39  1068 _LQI	=	0xdf39
+                           00DF3A  1069 G$RSSI$0$0 == 0xdf3a
+                           00DF3A  1070 _RSSI	=	0xdf3a
+                           00DF3B  1071 G$MARCSTATE$0$0 == 0xdf3b
+                           00DF3B  1072 _MARCSTATE	=	0xdf3b
+                           00DF3C  1073 G$PKTSTATUS$0$0 == 0xdf3c
+                           00DF3C  1074 _PKTSTATUS	=	0xdf3c
+                           00DF3D  1075 G$VCO_VC_DAC$0$0 == 0xdf3d
+                           00DF3D  1076 _VCO_VC_DAC	=	0xdf3d
+                           00DF40  1077 G$I2SCFG0$0$0 == 0xdf40
+                           00DF40  1078 _I2SCFG0	=	0xdf40
+                           00DF41  1079 G$I2SCFG1$0$0 == 0xdf41
+                           00DF41  1080 _I2SCFG1	=	0xdf41
+                           00DF42  1081 G$I2SDATL$0$0 == 0xdf42
+                           00DF42  1082 _I2SDATL	=	0xdf42
+                           00DF43  1083 G$I2SDATH$0$0 == 0xdf43
+                           00DF43  1084 _I2SDATH	=	0xdf43
+                           00DF44  1085 G$I2SWCNT$0$0 == 0xdf44
+                           00DF44  1086 _I2SWCNT	=	0xdf44
+                           00DF45  1087 G$I2SSTAT$0$0 == 0xdf45
+                           00DF45  1088 _I2SSTAT	=	0xdf45
+                           00DF46  1089 G$I2SCLKF0$0$0 == 0xdf46
+                           00DF46  1090 _I2SCLKF0	=	0xdf46
+                           00DF47  1091 G$I2SCLKF1$0$0 == 0xdf47
+                           00DF47  1092 _I2SCLKF1	=	0xdf47
+                           00DF48  1093 G$I2SCLKF2$0$0 == 0xdf48
+                           00DF48  1094 _I2SCLKF2	=	0xdf48
+                           00DF80  1095 G$_NA_P0$0$0 == 0xdf80
+                           00DF80  1096 __NA_P0	=	0xdf80
+                           00DF81  1097 G$_NA_SP$0$0 == 0xdf81
+                           00DF81  1098 __NA_SP	=	0xdf81
+                           00DF82  1099 G$_NA_DPL0$0$0 == 0xdf82
+                           00DF82  1100 __NA_DPL0	=	0xdf82
+                           00DF83  1101 G$_NA_DPH0$0$0 == 0xdf83
+                           00DF83  1102 __NA_DPH0	=	0xdf83
+                           00DF84  1103 G$_NA_DPL1$0$0 == 0xdf84
+                           00DF84  1104 __NA_DPL1	=	0xdf84
+                           00DF85  1105 G$_NA_DPH1$0$0 == 0xdf85
+                           00DF85  1106 __NA_DPH1	=	0xdf85
+                           00DF86  1107 G$X_U0CSR$0$0 == 0xdf86
+                           00DF86  1108 _X_U0CSR	=	0xdf86
+                           00DF87  1109 G$_NA_PCON$0$0 == 0xdf87
+                           00DF87  1110 __NA_PCON	=	0xdf87
+                           00DF88  1111 G$_NA_TCON$0$0 == 0xdf88
+                           00DF88  1112 __NA_TCON	=	0xdf88
+                           00DF89  1113 G$X_P0IFG$0$0 == 0xdf89
+                           00DF89  1114 _X_P0IFG	=	0xdf89
+                           00DF8A  1115 G$X_P1IFG$0$0 == 0xdf8a
+                           00DF8A  1116 _X_P1IFG	=	0xdf8a
+                           00DF8B  1117 G$X_P2IFG$0$0 == 0xdf8b
+                           00DF8B  1118 _X_P2IFG	=	0xdf8b
+                           00DF8C  1119 G$X_PICTL$0$0 == 0xdf8c
+                           00DF8C  1120 _X_PICTL	=	0xdf8c
+                           00DF8D  1121 G$X_P1IEN$0$0 == 0xdf8d
+                           00DF8D  1122 _X_P1IEN	=	0xdf8d
+                           00DF8E  1123 G$_X_SFR8E$0$0 == 0xdf8e
+                           00DF8E  1124 __X_SFR8E	=	0xdf8e
+                           00DF8F  1125 G$X_P0INP$0$0 == 0xdf8f
+                           00DF8F  1126 _X_P0INP	=	0xdf8f
+                           00DF90  1127 G$_NA_P1$0$0 == 0xdf90
+                           00DF90  1128 __NA_P1	=	0xdf90
+                           00DF91  1129 G$X_RFIM$0$0 == 0xdf91
+                           00DF91  1130 _X_RFIM	=	0xdf91
+                           00DF92  1131 G$_NA_DPS$0$0 == 0xdf92
+                           00DF92  1132 __NA_DPS	=	0xdf92
+                           00DF93  1133 G$X_MPAGE$0$0 == 0xdf93
+                           00DF93  1134 _X_MPAGE	=	0xdf93
+                           00DF94  1135 G$_X_SFR94$0$0 == 0xdf94
+                           00DF94  1136 __X_SFR94	=	0xdf94
+                           00DF95  1137 G$_X_SFR95$0$0 == 0xdf95
+                           00DF95  1138 __X_SFR95	=	0xdf95
+                           00DF96  1139 G$_X_SFR96$0$0 == 0xdf96
+                           00DF96  1140 __X_SFR96	=	0xdf96
+                           00DF97  1141 G$_X_SFR97$0$0 == 0xdf97
+                           00DF97  1142 __X_SFR97	=	0xdf97
+                           00DF98  1143 G$_NA_S0CON$0$0 == 0xdf98
+                           00DF98  1144 __NA_S0CON	=	0xdf98
+                           00DF99  1145 G$_X_SFR99$0$0 == 0xdf99
+                           00DF99  1146 __X_SFR99	=	0xdf99
+                           00DF9A  1147 G$_NA_IEN2$0$0 == 0xdf9a
+                           00DF9A  1148 __NA_IEN2	=	0xdf9a
+                           00DF9B  1149 G$_NA_S1CON$0$0 == 0xdf9b
+                           00DF9B  1150 __NA_S1CON	=	0xdf9b
+                           00DF9C  1151 G$X_T2CT$0$0 == 0xdf9c
+                           00DF9C  1152 _X_T2CT	=	0xdf9c
+                           00DF9D  1153 G$X_T2PR$0$0 == 0xdf9d
+                           00DF9D  1154 _X_T2PR	=	0xdf9d
+                           00DF9E  1155 G$X_T2CTL$0$0 == 0xdf9e
+                           00DF9E  1156 _X_T2CTL	=	0xdf9e
+                           00DF9F  1157 G$_X_SFR9F$0$0 == 0xdf9f
+                           00DF9F  1158 __X_SFR9F	=	0xdf9f
+                           00DFA0  1159 G$_NA_P2$0$0 == 0xdfa0
+                           00DFA0  1160 __NA_P2	=	0xdfa0
+                           00DFA1  1161 G$X_WORIRQ$0$0 == 0xdfa1
+                           00DFA1  1162 _X_WORIRQ	=	0xdfa1
+                           00DFA2  1163 G$X_WORCTRL$0$0 == 0xdfa2
+                           00DFA2  1164 _X_WORCTRL	=	0xdfa2
+                           00DFA3  1165 G$X_WOREVT0$0$0 == 0xdfa3
+                           00DFA3  1166 _X_WOREVT0	=	0xdfa3
+                           00DFA4  1167 G$X_WOREVT1$0$0 == 0xdfa4
+                           00DFA4  1168 _X_WOREVT1	=	0xdfa4
+                           00DFA5  1169 G$X_WORTIME0$0$0 == 0xdfa5
+                           00DFA5  1170 _X_WORTIME0	=	0xdfa5
+                           00DFA6  1171 G$X_WORTIME1$0$0 == 0xdfa6
+                           00DFA6  1172 _X_WORTIME1	=	0xdfa6
+                           00DFA7  1173 G$_X_SFRA7$0$0 == 0xdfa7
+                           00DFA7  1174 __X_SFRA7	=	0xdfa7
+                           00DFA8  1175 G$_NA_IEN0$0$0 == 0xdfa8
+                           00DFA8  1176 __NA_IEN0	=	0xdfa8
+                           00DFA9  1177 G$_NA_IP0$0$0 == 0xdfa9
+                           00DFA9  1178 __NA_IP0	=	0xdfa9
+                           00DFAA  1179 G$_X_SFRAA$0$0 == 0xdfaa
+                           00DFAA  1180 __X_SFRAA	=	0xdfaa
+                           00DFAB  1181 G$X_FWT$0$0 == 0xdfab
+                           00DFAB  1182 _X_FWT	=	0xdfab
+                           00DFAC  1183 G$X_FADDRL$0$0 == 0xdfac
+                           00DFAC  1184 _X_FADDRL	=	0xdfac
+                           00DFAD  1185 G$X_FADDRH$0$0 == 0xdfad
+                           00DFAD  1186 _X_FADDRH	=	0xdfad
+                           00DFAE  1187 G$X_FCTL$0$0 == 0xdfae
+                           00DFAE  1188 _X_FCTL	=	0xdfae
+                           00DFAF  1189 G$X_FWDATA$0$0 == 0xdfaf
+                           00DFAF  1190 _X_FWDATA	=	0xdfaf
+                           00DFB0  1191 G$_X_SFRB0$0$0 == 0xdfb0
+                           00DFB0  1192 __X_SFRB0	=	0xdfb0
+                           00DFB1  1193 G$X_ENCDI$0$0 == 0xdfb1
+                           00DFB1  1194 _X_ENCDI	=	0xdfb1
+                           00DFB2  1195 G$X_ENCDO$0$0 == 0xdfb2
+                           00DFB2  1196 _X_ENCDO	=	0xdfb2
+                           00DFB3  1197 G$X_ENCCS$0$0 == 0xdfb3
+                           00DFB3  1198 _X_ENCCS	=	0xdfb3
+                           00DFB4  1199 G$X_ADCCON1$0$0 == 0xdfb4
+                           00DFB4  1200 _X_ADCCON1	=	0xdfb4
+                           00DFB5  1201 G$X_ADCCON2$0$0 == 0xdfb5
+                           00DFB5  1202 _X_ADCCON2	=	0xdfb5
+                           00DFB6  1203 G$X_ADCCON3$0$0 == 0xdfb6
+                           00DFB6  1204 _X_ADCCON3	=	0xdfb6
+                           00DFB7  1205 G$_X_SFRB7$0$0 == 0xdfb7
+                           00DFB7  1206 __X_SFRB7	=	0xdfb7
+                           00DFB8  1207 G$_NA_IEN1$0$0 == 0xdfb8
+                           00DFB8  1208 __NA_IEN1	=	0xdfb8
+                           00DFB9  1209 G$_NA_IP1$0$0 == 0xdfb9
+                           00DFB9  1210 __NA_IP1	=	0xdfb9
+                           00DFBA  1211 G$X_ADCL$0$0 == 0xdfba
+                           00DFBA  1212 _X_ADCL	=	0xdfba
+                           00DFBB  1213 G$X_ADCH$0$0 == 0xdfbb
+                           00DFBB  1214 _X_ADCH	=	0xdfbb
+                           00DFBC  1215 G$X_RNDL$0$0 == 0xdfbc
+                           00DFBC  1216 _X_RNDL	=	0xdfbc
+                           00DFBD  1217 G$X_RNDH$0$0 == 0xdfbd
+                           00DFBD  1218 _X_RNDH	=	0xdfbd
+                           00DFBE  1219 G$X_SLEEP$0$0 == 0xdfbe
+                           00DFBE  1220 _X_SLEEP	=	0xdfbe
+                           00DFBF  1221 G$_X_SFRBF$0$0 == 0xdfbf
+                           00DFBF  1222 __X_SFRBF	=	0xdfbf
+                           00DFC0  1223 G$_NA_IRCON$0$0 == 0xdfc0
+                           00DFC0  1224 __NA_IRCON	=	0xdfc0
+                           00DFC1  1225 G$X_U0DBUF$0$0 == 0xdfc1
+                           00DFC1  1226 _X_U0DBUF	=	0xdfc1
+                           00DFC2  1227 G$X_U0BAUD$0$0 == 0xdfc2
+                           00DFC2  1228 _X_U0BAUD	=	0xdfc2
+                           00DFC3  1229 G$_X_SFRC3$0$0 == 0xdfc3
+                           00DFC3  1230 __X_SFRC3	=	0xdfc3
+                           00DFC4  1231 G$X_U0UCR$0$0 == 0xdfc4
+                           00DFC4  1232 _X_U0UCR	=	0xdfc4
+                           00DFC5  1233 G$X_U0GCR$0$0 == 0xdfc5
+                           00DFC5  1234 _X_U0GCR	=	0xdfc5
+                           00DFC6  1235 G$X_CLKCON$0$0 == 0xdfc6
+                           00DFC6  1236 _X_CLKCON	=	0xdfc6
+                           00DFC7  1237 G$X_MEMCTR$0$0 == 0xdfc7
+                           00DFC7  1238 _X_MEMCTR	=	0xdfc7
+                           00DFC8  1239 G$_X_SFRC8$0$0 == 0xdfc8
+                           00DFC8  1240 __X_SFRC8	=	0xdfc8
+                           00DFC9  1241 G$X_WDCTL$0$0 == 0xdfc9
+                           00DFC9  1242 _X_WDCTL	=	0xdfc9
+                           00DFCA  1243 G$X_T3CNT$0$0 == 0xdfca
+                           00DFCA  1244 _X_T3CNT	=	0xdfca
+                           00DFCB  1245 G$X_T3CTL$0$0 == 0xdfcb
+                           00DFCB  1246 _X_T3CTL	=	0xdfcb
+                           00DFCC  1247 G$X_T3CCTL0$0$0 == 0xdfcc
+                           00DFCC  1248 _X_T3CCTL0	=	0xdfcc
+                           00DFCD  1249 G$X_T3CC0$0$0 == 0xdfcd
+                           00DFCD  1250 _X_T3CC0	=	0xdfcd
+                           00DFCE  1251 G$X_T3CCTL1$0$0 == 0xdfce
+                           00DFCE  1252 _X_T3CCTL1	=	0xdfce
+                           00DFCF  1253 G$X_T3CC1$0$0 == 0xdfcf
+                           00DFCF  1254 _X_T3CC1	=	0xdfcf
+                           00DFD0  1255 G$_NA_PSW$0$0 == 0xdfd0
+                           00DFD0  1256 __NA_PSW	=	0xdfd0
+                           00DFD1  1257 G$X_DMAIRQ$0$0 == 0xdfd1
+                           00DFD1  1258 _X_DMAIRQ	=	0xdfd1
+                           00DFD2  1259 G$X_DMA1CFGL$0$0 == 0xdfd2
+                           00DFD2  1260 _X_DMA1CFGL	=	0xdfd2
+                           00DFD3  1261 G$X_DMA1CFGH$0$0 == 0xdfd3
+                           00DFD3  1262 _X_DMA1CFGH	=	0xdfd3
+                           00DFD4  1263 G$X_DMA0CFGL$0$0 == 0xdfd4
+                           00DFD4  1264 _X_DMA0CFGL	=	0xdfd4
+                           00DFD5  1265 G$X_DMA0CFGH$0$0 == 0xdfd5
+                           00DFD5  1266 _X_DMA0CFGH	=	0xdfd5
+                           00DFD6  1267 G$X_DMAARM$0$0 == 0xdfd6
+                           00DFD6  1268 _X_DMAARM	=	0xdfd6
+                           00DFD7  1269 G$X_DMAREQ$0$0 == 0xdfd7
+                           00DFD7  1270 _X_DMAREQ	=	0xdfd7
+                           00DFD8  1271 G$X_TIMIF$0$0 == 0xdfd8
+                           00DFD8  1272 _X_TIMIF	=	0xdfd8
+                           00DFD9  1273 G$X_RFD$0$0 == 0xdfd9
+                           00DFD9  1274 _X_RFD	=	0xdfd9
+                           00DFDA  1275 G$X_T1CC0L$0$0 == 0xdfda
+                           00DFDA  1276 _X_T1CC0L	=	0xdfda
+                           00DFDB  1277 G$X_T1CC0H$0$0 == 0xdfdb
+                           00DFDB  1278 _X_T1CC0H	=	0xdfdb
+                           00DFDC  1279 G$X_T1CC1L$0$0 == 0xdfdc
+                           00DFDC  1280 _X_T1CC1L	=	0xdfdc
+                           00DFDD  1281 G$X_T1CC1H$0$0 == 0xdfdd
+                           00DFDD  1282 _X_T1CC1H	=	0xdfdd
+                           00DFDE  1283 G$X_T1CC2L$0$0 == 0xdfde
+                           00DFDE  1284 _X_T1CC2L	=	0xdfde
+                           00DFDF  1285 G$X_T1CC2H$0$0 == 0xdfdf
+                           00DFDF  1286 _X_T1CC2H	=	0xdfdf
+                           00DFE0  1287 G$_NA_ACC$0$0 == 0xdfe0
+                           00DFE0  1288 __NA_ACC	=	0xdfe0
+                           00DFE1  1289 G$X_RFST$0$0 == 0xdfe1
+                           00DFE1  1290 _X_RFST	=	0xdfe1
+                           00DFE2  1291 G$X_T1CNTL$0$0 == 0xdfe2
+                           00DFE2  1292 _X_T1CNTL	=	0xdfe2
+                           00DFE3  1293 G$X_T1CNTH$0$0 == 0xdfe3
+                           00DFE3  1294 _X_T1CNTH	=	0xdfe3
+                           00DFE4  1295 G$X_T1CTL$0$0 == 0xdfe4
+                           00DFE4  1296 _X_T1CTL	=	0xdfe4
+                           00DFE5  1297 G$X_T1CCTL0$0$0 == 0xdfe5
+                           00DFE5  1298 _X_T1CCTL0	=	0xdfe5
+                           00DFE6  1299 G$X_T1CCTL1$0$0 == 0xdfe6
+                           00DFE6  1300 _X_T1CCTL1	=	0xdfe6
+                           00DFE7  1301 G$X_T1CCTL2$0$0 == 0xdfe7
+                           00DFE7  1302 _X_T1CCTL2	=	0xdfe7
+                           00DFE8  1303 G$_NA_IRCON2$0$0 == 0xdfe8
+                           00DFE8  1304 __NA_IRCON2	=	0xdfe8
+                           00DFE9  1305 G$X_RFIF$0$0 == 0xdfe9
+                           00DFE9  1306 _X_RFIF	=	0xdfe9
+                           00DFEA  1307 G$X_T4CNT$0$0 == 0xdfea
+                           00DFEA  1308 _X_T4CNT	=	0xdfea
+                           00DFEB  1309 G$X_T4CTL$0$0 == 0xdfeb
+                           00DFEB  1310 _X_T4CTL	=	0xdfeb
+                           00DFEC  1311 G$X_T4CCTL0$0$0 == 0xdfec
+                           00DFEC  1312 _X_T4CCTL0	=	0xdfec
+                           00DFED  1313 G$X_T4CC0$0$0 == 0xdfed
+                           00DFED  1314 _X_T4CC0	=	0xdfed
+                           00DFEE  1315 G$X_T4CCTL1$0$0 == 0xdfee
+                           00DFEE  1316 _X_T4CCTL1	=	0xdfee
+                           00DFEF  1317 G$X_T4CC1$0$0 == 0xdfef
+                           00DFEF  1318 _X_T4CC1	=	0xdfef
+                           00DFF0  1319 G$_NA_B$0$0 == 0xdff0
+                           00DFF0  1320 __NA_B	=	0xdff0
+                           00DFF1  1321 G$X_PERCFG$0$0 == 0xdff1
+                           00DFF1  1322 _X_PERCFG	=	0xdff1
+                           00DFF2  1323 G$X_ADCCFG$0$0 == 0xdff2
+                           00DFF2  1324 _X_ADCCFG	=	0xdff2
+                           00DFF3  1325 G$X_P0SEL$0$0 == 0xdff3
+                           00DFF3  1326 _X_P0SEL	=	0xdff3
+                           00DFF4  1327 G$X_P1SEL$0$0 == 0xdff4
+                           00DFF4  1328 _X_P1SEL	=	0xdff4
+                           00DFF5  1329 G$X_P2SEL$0$0 == 0xdff5
+                           00DFF5  1330 _X_P2SEL	=	0xdff5
+                           00DFF6  1331 G$X_P1INP$0$0 == 0xdff6
+                           00DFF6  1332 _X_P1INP	=	0xdff6
+                           00DFF7  1333 G$X_P2INP$0$0 == 0xdff7
+                           00DFF7  1334 _X_P2INP	=	0xdff7
+                           00DFF8  1335 G$X_U1CSR$0$0 == 0xdff8
+                           00DFF8  1336 _X_U1CSR	=	0xdff8
+                           00DFF9  1337 G$X_U1DBUF$0$0 == 0xdff9
+                           00DFF9  1338 _X_U1DBUF	=	0xdff9
+                           00DFFA  1339 G$X_U1BAUD$0$0 == 0xdffa
+                           00DFFA  1340 _X_U1BAUD	=	0xdffa
+                           00DFFB  1341 G$X_U1UCR$0$0 == 0xdffb
+                           00DFFB  1342 _X_U1UCR	=	0xdffb
+                           00DFFC  1343 G$X_U1GCR$0$0 == 0xdffc
+                           00DFFC  1344 _X_U1GCR	=	0xdffc
+                           00DFFD  1345 G$X_P0DIR$0$0 == 0xdffd
+                           00DFFD  1346 _X_P0DIR	=	0xdffd
+                           00DFFE  1347 G$X_P1DIR$0$0 == 0xdffe
+                           00DFFE  1348 _X_P1DIR	=	0xdffe
+                           00DFFF  1349 G$X_P2DIR$0$0 == 0xdfff
+                           00DFFF  1350 _X_P2DIR	=	0xdfff
+                           000000  1351 Linterrupts.PORT1_ISR$j$1$25==.
+      000000                       1352 _PORT1_ISR_j_1_25:
+      000000                       1353 	.ds 2
+                           000002  1354 Linterrupts.PORT1_ISR$modeChange$1$25==.
+      000002                       1355 _PORT1_ISR_modeChange_1_25:
+      000002                       1356 	.ds 2
+                           000004  1357 Linterrupts.PORT1_ISR$txString$1$25==.
+      000004                       1358 _PORT1_ISR_txString_1_25:
+      000004                       1359 	.ds 2
                                    1360 ;--------------------------------------------------------
-                                   1361 	.area XISEG   (XDATA)
-                                   1362 	.area HOME    (CODE)
-                                   1363 	.area GSINIT0 (CODE)
-                                   1364 	.area GSINIT1 (CODE)
-                                   1365 	.area GSINIT2 (CODE)
-                                   1366 	.area GSINIT3 (CODE)
-                                   1367 	.area GSINIT4 (CODE)
-                                   1368 	.area GSINIT5 (CODE)
-                                   1369 	.area GSINIT  (CODE)
-                                   1370 	.area GSFINAL (CODE)
-                                   1371 	.area CSEG    (CODE)
-                                   1372 ;--------------------------------------------------------
-                                   1373 ; global & static initialisations
-                                   1374 ;--------------------------------------------------------
-                                   1375 	.area HOME    (CODE)
-                                   1376 	.area GSINIT  (CODE)
-                                   1377 	.area GSFINAL (CODE)
-                                   1378 	.area GSINIT  (CODE)
-                                   1379 ;--------------------------------------------------------
-                                   1380 ; Home
-                                   1381 ;--------------------------------------------------------
-                                   1382 	.area HOME    (CODE)
-                                   1383 	.area HOME    (CODE)
-                                   1384 ;--------------------------------------------------------
-                                   1385 ; code
-                                   1386 ;--------------------------------------------------------
-                                   1387 	.area CSEG    (CODE)
-                                   1388 ;------------------------------------------------------------
-                                   1389 ;Allocation info for local variables in function 'PORT1_ISR'
-                                   1390 ;------------------------------------------------------------
-                                   1391 ;i                         Allocated to registers r2 r3 
-                                   1392 ;j                         Allocated to registers r4 r5 
-                                   1393 ;modeChange                Allocated to registers r6 r7 
-                                   1394 ;txString                  Allocated with name '_PORT1_ISR_txString_1_27'
-                                   1395 ;------------------------------------------------------------
-                           000000  1396 	G$PORT1_ISR$0$0 ==.
-                           000000  1397 	C$interrupts.c$14$0$0 ==.
-                                   1398 ;	interrupts.c:14: void PORT1_ISR( void ) __interrupt( P1INT_VECTOR ) {
-                                   1399 ;	-----------------------------------------
-                                   1400 ;	 function PORT1_ISR
-                                   1401 ;	-----------------------------------------
-      000000                       1402 _PORT1_ISR:
-                           000007  1403 	ar7 = 0x07
-                           000006  1404 	ar6 = 0x06
-                           000005  1405 	ar5 = 0x05
-                           000004  1406 	ar4 = 0x04
-                           000003  1407 	ar3 = 0x03
-                           000002  1408 	ar2 = 0x02
-                           000001  1409 	ar1 = 0x01
-                           000000  1410 	ar0 = 0x00
-      000000 C0*00            [24] 1411 	push	bits
-      000002 C0 E0            [24] 1412 	push	acc
-      000004 C0 F0            [24] 1413 	push	b
-      000006 C0 82            [24] 1414 	push	dpl
-      000008 C0 83            [24] 1415 	push	dph
-      00000A C0 07            [24] 1416 	push	(0+7)
-      00000C C0 06            [24] 1417 	push	(0+6)
-      00000E C0 05            [24] 1418 	push	(0+5)
-      000010 C0 04            [24] 1419 	push	(0+4)
-      000012 C0 03            [24] 1420 	push	(0+3)
-      000014 C0 02            [24] 1421 	push	(0+2)
-      000016 C0 01            [24] 1422 	push	(0+1)
-      000018 C0 00            [24] 1423 	push	(0+0)
-      00001A C0 D0            [24] 1424 	push	psw
-      00001C 75 D0 00         [24] 1425 	mov	psw,#0x00
-                           00001F  1426 	C$interrupts.c$21$1$27 ==.
-                                   1427 ;	interrupts.c:21: P1IFG = 0;
-      00001F 75 8A 00         [24] 1428 	mov	_P1IFG,#0x00
-                           000022  1429 	C$interrupts.c$22$1$27 ==.
-                                   1430 ;	interrupts.c:22: IRCON2 &= 0xF7;
-      000022 53 E8 F7         [24] 1431 	anl	_IRCON2,#0xF7
-                           000025  1432 	C$interrupts.c$24$1$27 ==.
-                                   1433 ;	interrupts.c:24: modeChange = 1;
-      000025 7E 01            [12] 1434 	mov	r6,#0x01
-      000027 7F 00            [12] 1435 	mov	r7,#0x00
-                           000029  1436 	C$interrupts.c$25$1$27 ==.
-                                   1437 ;	interrupts.c:25: for( j = 0; j < 0x20; j++ ) {
-      000029 7C 00            [12] 1438 	mov	r4,#0x00
-      00002B 7D 00            [12] 1439 	mov	r5,#0x00
-                           00002D  1440 	C$interrupts.c$26$1$27 ==.
-                                   1441 ;	interrupts.c:26: for( i = 0; i < 0xFFFF; i++ ) Nop( );
-      00002D                       1442 00117$:
-      00002D 7A FF            [12] 1443 	mov	r2,#0xFF
-      00002F 7B FF            [12] 1444 	mov	r3,#0xFF
-      000031                       1445 00112$:
-      000031 00               [12] 1446 	nop 
-      000032 1A               [12] 1447 	dec	r2
-      000033 BA FF 01         [24] 1448 	cjne	r2,#0xFF,00139$
-      000036 1B               [12] 1449 	dec	r3
-      000037                       1450 00139$:
-      000037 EA               [12] 1451 	mov	a,r2
-      000038 4B               [12] 1452 	orl	a,r3
-      000039 70 F6            [24] 1453 	jnz	00112$
-                           00003B  1454 	C$interrupts.c$27$2$28 ==.
-                                   1455 ;	interrupts.c:27: if( P1_2 == 1 ) {
-      00003B 30 92 08         [24] 1456 	jnb	_P1_2,00114$
-                           00003E  1457 	C$interrupts.c$28$3$29 ==.
-                                   1458 ;	interrupts.c:28: modeChange = 0;
-      00003E 7E 00            [12] 1459 	mov	r6,#0x00
-      000040 7F 00            [12] 1460 	mov	r7,#0x00
-                           000042  1461 	C$interrupts.c$29$3$29 ==.
-                                   1462 ;	interrupts.c:29: j = 0x20;
-      000042 7C 20            [12] 1463 	mov	r4,#0x20
-      000044 7D 00            [12] 1464 	mov	r5,#0x00
-      000046                       1465 00114$:
-                           000046  1466 	C$interrupts.c$25$1$27 ==.
-                                   1467 ;	interrupts.c:25: for( j = 0; j < 0x20; j++ ) {
-      000046 0C               [12] 1468 	inc	r4
-      000047 BC 00 01         [24] 1469 	cjne	r4,#0x00,00142$
-      00004A 0D               [12] 1470 	inc	r5
-      00004B                       1471 00142$:
-      00004B C3               [12] 1472 	clr	c
-      00004C EC               [12] 1473 	mov	a,r4
-      00004D 94 20            [12] 1474 	subb	a,#0x20
-      00004F ED               [12] 1475 	mov	a,r5
-      000050 64 80            [12] 1476 	xrl	a,#0x80
-      000052 94 80            [12] 1477 	subb	a,#0x80
-      000054 40 D7            [24] 1478 	jc	00117$
-                           000056  1479 	C$interrupts.c$33$1$27 ==.
-                                   1480 ;	interrupts.c:33: if( modeChange == 1 ) {
-      000056 BE 01 31         [24] 1481 	cjne	r6,#0x01,00109$
-      000059 BF 00 2E         [24] 1482 	cjne	r7,#0x00,00109$
-                           00005C  1483 	C$interrupts.c$34$2$30 ==.
-                                   1484 ;	interrupts.c:34: if( txFilterEnabled == 1 ) {
-      00005C 90r00r00         [24] 1485 	mov	dptr,#_txFilterEnabled
-      00005F E0               [24] 1486 	movx	a,@dptr
-      000060 FF               [12] 1487 	mov	r7,a
-      000061 BF 01 0C         [24] 1488 	cjne	r7,#0x01,00106$
-                           000064  1489 	C$interrupts.c$35$3$31 ==.
-                                   1490 ;	interrupts.c:35: txFilterEnabled = 0;
-      000064 90r00r00         [24] 1491 	mov	dptr,#_txFilterEnabled
-      000067 E4               [12] 1492 	clr	a
-      000068 F0               [24] 1493 	movx	@dptr,a
-                           000069  1494 	C$interrupts.c$36$3$31 ==.
-                                   1495 ;	interrupts.c:36: P1_1 = 1;
-      000069 D2 91            [12] 1496 	setb	_P1_1
-                           00006B  1497 	C$interrupts.c$37$3$31 ==.
-                                   1498 ;	interrupts.c:37: txString[0] = 0x13;
-      00006B 75*00 13         [24] 1499 	mov	_PORT1_ISR_txString_1_27,#0x13
-      00006E 80 0B            [24] 1500 	sjmp	00107$
-      000070                       1501 00106$:
-                           000070  1502 	C$interrupts.c$39$3$32 ==.
-                                   1503 ;	interrupts.c:39: txFilterEnabled = 1;
-      000070 90r00r00         [24] 1504 	mov	dptr,#_txFilterEnabled
-      000073 74 01            [12] 1505 	mov	a,#0x01
-      000075 F0               [24] 1506 	movx	@dptr,a
-                           000076  1507 	C$interrupts.c$40$3$32 ==.
-                                   1508 ;	interrupts.c:40: P1_1 = 0;
-      000076 C2 91            [12] 1509 	clr	_P1_1
-                           000078  1510 	C$interrupts.c$41$3$32 ==.
-                                   1511 ;	interrupts.c:41: txString[0] = 0x03;
-      000078 75*00 03         [24] 1512 	mov	_PORT1_ISR_txString_1_27,#0x03
-      00007B                       1513 00107$:
-                           00007B  1514 	C$interrupts.c$43$2$30 ==.
-                                   1515 ;	interrupts.c:43: halUartWrite( (uint8_t const *)txString, 1 );
-      00007B 75*00 01         [24] 1516 	mov	_halUartWrite_PARM_2,#0x01
-      00007E 75*01 00         [24] 1517 	mov	(_halUartWrite_PARM_2 + 1),#0x00
-      000081 90r00r00         [24] 1518 	mov	dptr,#_PORT1_ISR_txString_1_27
-      000084 75 F0 40         [24] 1519 	mov	b,#0x40
-      000087 12r00r00         [24] 1520 	lcall	_halUartWrite
-      00008A                       1521 00109$:
-                           00008A  1522 	C$interrupts.c$47$1$27 ==.
-                                   1523 ;	interrupts.c:47: P1IFG = 0;
-      00008A 75 8A 00         [24] 1524 	mov	_P1IFG,#0x00
-                           00008D  1525 	C$interrupts.c$48$1$27 ==.
-                                   1526 ;	interrupts.c:48: IRCON2 &= ~0x04;
-      00008D AF E8            [24] 1527 	mov	r7,_IRCON2
-      00008F 74 FB            [12] 1528 	mov	a,#0xFB
-      000091 5F               [12] 1529 	anl	a,r7
-      000092 F5 E8            [12] 1530 	mov	_IRCON2,a
-      000094 D0 D0            [24] 1531 	pop	psw
-      000096 D0 00            [24] 1532 	pop	(0+0)
-      000098 D0 01            [24] 1533 	pop	(0+1)
-      00009A D0 02            [24] 1534 	pop	(0+2)
-      00009C D0 03            [24] 1535 	pop	(0+3)
-      00009E D0 04            [24] 1536 	pop	(0+4)
-      0000A0 D0 05            [24] 1537 	pop	(0+5)
-      0000A2 D0 06            [24] 1538 	pop	(0+6)
-      0000A4 D0 07            [24] 1539 	pop	(0+7)
-      0000A6 D0 83            [24] 1540 	pop	dph
-      0000A8 D0 82            [24] 1541 	pop	dpl
-      0000AA D0 F0            [24] 1542 	pop	b
-      0000AC D0 E0            [24] 1543 	pop	acc
-      0000AE D0*00            [24] 1544 	pop	bits
-                           0000B0  1545 	C$interrupts.c$49$1$27 ==.
-                           0000B0  1546 	XG$PORT1_ISR$0$0 ==.
-      0000B0 32               [24] 1547 	reti
-                                   1548 ;------------------------------------------------------------
-                                   1549 ;Allocation info for local variables in function 'enablePushButtonInt'
-                                   1550 ;------------------------------------------------------------
-                           0000B1  1551 	G$enablePushButtonInt$0$0 ==.
-                           0000B1  1552 	C$interrupts.c$51$1$27 ==.
-                                   1553 ;	interrupts.c:51: void enablePushButtonInt( void ) {
-                                   1554 ;	-----------------------------------------
-                                   1555 ;	 function enablePushButtonInt
-                                   1556 ;	-----------------------------------------
-      0000B1                       1557 _enablePushButtonInt:
-                           0000B1  1558 	C$interrupts.c$53$1$34 ==.
-                                   1559 ;	interrupts.c:53: P1_0 = 0;
-      0000B1 C2 90            [12] 1560 	clr	_P1_0
-                           0000B3  1561 	C$interrupts.c$54$1$34 ==.
-                                   1562 ;	interrupts.c:54: txFilterEnabled = 1;
-      0000B3 90r00r00         [24] 1563 	mov	dptr,#_txFilterEnabled
-      0000B6 74 01            [12] 1564 	mov	a,#0x01
-      0000B8 F0               [24] 1565 	movx	@dptr,a
-                           0000B9  1566 	C$interrupts.c$57$1$34 ==.
-                                   1567 ;	interrupts.c:57: P1IFG = 0;
-      0000B9 75 8A 00         [24] 1568 	mov	_P1IFG,#0x00
-                           0000BC  1569 	C$interrupts.c$58$1$34 ==.
-                                   1570 ;	interrupts.c:58: IRCON2 &= 0xF7;
-      0000BC 53 E8 F7         [24] 1571 	anl	_IRCON2,#0xF7
-                           0000BF  1572 	C$interrupts.c$61$1$34 ==.
-                                   1573 ;	interrupts.c:61: PICTL |= 0x02;
-      0000BF 43 8C 02         [24] 1574 	orl	_PICTL,#0x02
-                           0000C2  1575 	C$interrupts.c$64$1$34 ==.
-                                   1576 ;	interrupts.c:64: P1IEN = 0x04;
-      0000C2 75 8D 04         [24] 1577 	mov	_P1IEN,#0x04
-                           0000C5  1578 	C$interrupts.c$65$1$34 ==.
-                                   1579 ;	interrupts.c:65: EA = 1; IEN2 |= IEN2_P1IE;
-      0000C5 D2 AF            [12] 1580 	setb	_EA
-      0000C7 43 9A 10         [24] 1581 	orl	_IEN2,#0x10
-                           0000CA  1582 	C$interrupts.c$66$1$34 ==.
-                           0000CA  1583 	XG$enablePushButtonInt$0$0 ==.
-      0000CA 22               [24] 1584 	ret
-                                   1585 ;------------------------------------------------------------
-                                   1586 ;Allocation info for local variables in function 'TIMER1_ISR'
-                                   1587 ;------------------------------------------------------------
-                           0000CB  1588 	G$TIMER1_ISR$0$0 ==.
-                           0000CB  1589 	C$interrupts.c$68$1$34 ==.
-                                   1590 ;	interrupts.c:68: void TIMER1_ISR( void ) __interrupt( T1_VECTOR ) {
-                                   1591 ;	-----------------------------------------
-                                   1592 ;	 function TIMER1_ISR
-                                   1593 ;	-----------------------------------------
-      0000CB                       1594 _TIMER1_ISR:
-      0000CB C0 E0            [24] 1595 	push	acc
-      0000CD C0 82            [24] 1596 	push	dpl
-      0000CF C0 83            [24] 1597 	push	dph
-      0000D1 C0 07            [24] 1598 	push	ar7
-      0000D3 C0 D0            [24] 1599 	push	psw
-      0000D5 75 D0 00         [24] 1600 	mov	psw,#0x00
-                           0000D8  1601 	C$interrupts.c$70$1$36 ==.
-                                   1602 ;	interrupts.c:70: T1CTL &= 0xFC;
-      0000D8 53 E4 FC         [24] 1603 	anl	_T1CTL,#0xFC
-                           0000DB  1604 	C$interrupts.c$73$1$36 ==.
-                                   1605 ;	interrupts.c:73: P1IFG = 0;
-      0000DB 75 8A 00         [24] 1606 	mov	_P1IFG,#0x00
-                           0000DE  1607 	C$interrupts.c$74$1$36 ==.
-                                   1608 ;	interrupts.c:74: IRCON &= ~0x02;
-      0000DE AF C0            [24] 1609 	mov	r7,_IRCON
-      0000E0 74 FD            [12] 1610 	mov	a,#0xFD
-      0000E2 5F               [12] 1611 	anl	a,r7
-      0000E3 F5 C0            [12] 1612 	mov	_IRCON,a
-                           0000E5  1613 	C$interrupts.c$77$1$36 ==.
-                                   1614 ;	interrupts.c:77: uartRxIndex = 0;
-      0000E5 90r00r00         [24] 1615 	mov	dptr,#_uartRxIndex
-      0000E8 E4               [12] 1616 	clr	a
-      0000E9 F0               [24] 1617 	movx	@dptr,a
-      0000EA A3               [24] 1618 	inc	dptr
-      0000EB F0               [24] 1619 	movx	@dptr,a
-      0000EC D0 D0            [24] 1620 	pop	psw
-      0000EE D0 07            [24] 1621 	pop	ar7
-      0000F0 D0 83            [24] 1622 	pop	dph
-      0000F2 D0 82            [24] 1623 	pop	dpl
-      0000F4 D0 E0            [24] 1624 	pop	acc
-                           0000F6  1625 	C$interrupts.c$81$1$36 ==.
-                           0000F6  1626 	XG$TIMER1_ISR$0$0 ==.
-      0000F6 32               [24] 1627 	reti
-                                   1628 ;	eliminated unneeded push/pop b
-                                   1629 ;------------------------------------------------------------
-                                   1630 ;Allocation info for local variables in function 'stopTimerInt'
-                                   1631 ;------------------------------------------------------------
-                           0000F7  1632 	G$stopTimerInt$0$0 ==.
-                           0000F7  1633 	C$interrupts.c$83$1$36 ==.
-                                   1634 ;	interrupts.c:83: void stopTimerInt( void ) {
-                                   1635 ;	-----------------------------------------
-                                   1636 ;	 function stopTimerInt
-                                   1637 ;	-----------------------------------------
-      0000F7                       1638 _stopTimerInt:
-                           0000F7  1639 	C$interrupts.c$85$1$38 ==.
-                                   1640 ;	interrupts.c:85: T1CTL &= 0xFC;
-      0000F7 53 E4 FC         [24] 1641 	anl	_T1CTL,#0xFC
-                           0000FA  1642 	C$interrupts.c$88$1$38 ==.
-                                   1643 ;	interrupts.c:88: T1CNTL = 0x00;
-      0000FA 75 E2 00         [24] 1644 	mov	_T1CNTL,#0x00
-                           0000FD  1645 	C$interrupts.c$91$1$38 ==.
-                                   1646 ;	interrupts.c:91: IEN1 &= ~0x02;
-      0000FD AF B8            [24] 1647 	mov	r7,_IEN1
-      0000FF 74 FD            [12] 1648 	mov	a,#0xFD
-      000101 5F               [12] 1649 	anl	a,r7
-      000102 F5 B8            [12] 1650 	mov	_IEN1,a
-                           000104  1651 	C$interrupts.c$92$1$38 ==.
-                           000104  1652 	XG$stopTimerInt$0$0 ==.
-      000104 22               [24] 1653 	ret
-                                   1654 ;------------------------------------------------------------
-                                   1655 ;Allocation info for local variables in function 'resetTimerCounter'
-                                   1656 ;------------------------------------------------------------
-                           000105  1657 	G$resetTimerCounter$0$0 ==.
-                           000105  1658 	C$interrupts.c$94$1$38 ==.
-                                   1659 ;	interrupts.c:94: void resetTimerCounter( void ) {
-                                   1660 ;	-----------------------------------------
-                                   1661 ;	 function resetTimerCounter
-                                   1662 ;	-----------------------------------------
-      000105                       1663 _resetTimerCounter:
-                           000105  1664 	C$interrupts.c$95$1$40 ==.
-                                   1665 ;	interrupts.c:95: T1CNTL = 0x00;
-      000105 75 E2 00         [24] 1666 	mov	_T1CNTL,#0x00
-                           000108  1667 	C$interrupts.c$96$1$40 ==.
-                           000108  1668 	XG$resetTimerCounter$0$0 ==.
-      000108 22               [24] 1669 	ret
-                                   1670 ;------------------------------------------------------------
-                                   1671 ;Allocation info for local variables in function 'enableTimerInt'
+                                   1361 ; absolute external ram data
+                                   1362 ;--------------------------------------------------------
+                                   1363 	.area XABS    (ABS,XDATA)
+                                   1364 ;--------------------------------------------------------
+                                   1365 ; external initialized ram data
+                                   1366 ;--------------------------------------------------------
+                                   1367 	.area XISEG   (XDATA)
+                                   1368 	.area HOME    (CODE)
+                                   1369 	.area GSINIT0 (CODE)
+                                   1370 	.area GSINIT1 (CODE)
+                                   1371 	.area GSINIT2 (CODE)
+                                   1372 	.area GSINIT3 (CODE)
+                                   1373 	.area GSINIT4 (CODE)
+                                   1374 	.area GSINIT5 (CODE)
+                                   1375 	.area GSINIT  (CODE)
+                                   1376 	.area GSFINAL (CODE)
+                                   1377 	.area CSEG    (CODE)
+                                   1378 ;--------------------------------------------------------
+                                   1379 ; global & static initialisations
+                                   1380 ;--------------------------------------------------------
+                                   1381 	.area HOME    (CODE)
+                                   1382 	.area GSINIT  (CODE)
+                                   1383 	.area GSFINAL (CODE)
+                                   1384 	.area GSINIT  (CODE)
+                                   1385 ;--------------------------------------------------------
+                                   1386 ; Home
+                                   1387 ;--------------------------------------------------------
+                                   1388 	.area HOME    (CODE)
+                                   1389 	.area HOME    (CODE)
+                                   1390 ;--------------------------------------------------------
+                                   1391 ; code
+                                   1392 ;--------------------------------------------------------
+                                   1393 	.area CSEG    (CODE)
+                                   1394 ;------------------------------------------------------------
+                                   1395 ;Allocation info for local variables in function 'PORT1_ISR'
+                                   1396 ;------------------------------------------------------------
+                                   1397 ;i                         Allocated with name '_PORT1_ISR_i_1_25'
+                                   1398 ;j                         Allocated with name '_PORT1_ISR_j_1_25'
+                                   1399 ;modeChange                Allocated with name '_PORT1_ISR_modeChange_1_25'
+                                   1400 ;txString                  Allocated with name '_PORT1_ISR_txString_1_25'
+                                   1401 ;------------------------------------------------------------
+                           000000  1402 	G$PORT1_ISR$0$0 ==.
+                           000000  1403 	C$interrupts.c$13$0$0 ==.
+                                   1404 ;	interrupts.c:13: void PORT1_ISR( void ) __interrupt( P1INT_VECTOR ) {
+                                   1405 ;	-----------------------------------------
+                                   1406 ;	 function PORT1_ISR
+                                   1407 ;	-----------------------------------------
+      000000                       1408 _PORT1_ISR:
+                           000007  1409 	ar7 = 0x07
+                           000006  1410 	ar6 = 0x06
+                           000005  1411 	ar5 = 0x05
+                           000004  1412 	ar4 = 0x04
+                           000003  1413 	ar3 = 0x03
+                           000002  1414 	ar2 = 0x02
+                           000001  1415 	ar1 = 0x01
+                           000000  1416 	ar0 = 0x00
+      000000 C0*00            [24] 1417 	push	bits
+      000002 C0 E0            [24] 1418 	push	acc
+      000004 C0 F0            [24] 1419 	push	b
+      000006 C0 82            [24] 1420 	push	dpl
+      000008 C0 83            [24] 1421 	push	dph
+      00000A C0 07            [24] 1422 	push	(0+7)
+      00000C C0 06            [24] 1423 	push	(0+6)
+      00000E C0 05            [24] 1424 	push	(0+5)
+      000010 C0 04            [24] 1425 	push	(0+4)
+      000012 C0 03            [24] 1426 	push	(0+3)
+      000014 C0 02            [24] 1427 	push	(0+2)
+      000016 C0 01            [24] 1428 	push	(0+1)
+      000018 C0 00            [24] 1429 	push	(0+0)
+      00001A C0 D0            [24] 1430 	push	psw
+      00001C 75 D0 00         [24] 1431 	mov	psw,#0x00
+                           00001F  1432 	C$interrupts.c$20$1$25 ==.
+                                   1433 ;	interrupts.c:20: P1IFG = 0;
+      00001F 75 8A 00         [24] 1434 	mov	_P1IFG,#0x00
+                           000022  1435 	C$interrupts.c$21$1$25 ==.
+                                   1436 ;	interrupts.c:21: IRCON2 &= 0xF7;
+      000022 53 E8 F7         [24] 1437 	anl	_IRCON2,#0xF7
+                           000025  1438 	C$interrupts.c$23$1$25 ==.
+                                   1439 ;	interrupts.c:23: modeChange = 1;
+      000025 90r00r02         [24] 1440 	mov	dptr,#_PORT1_ISR_modeChange_1_25
+      000028 74 01            [12] 1441 	mov	a,#0x01
+      00002A F0               [24] 1442 	movx	@dptr,a
+      00002B E4               [12] 1443 	clr	a
+      00002C A3               [24] 1444 	inc	dptr
+      00002D F0               [24] 1445 	movx	@dptr,a
+                           00002E  1446 	C$interrupts.c$24$1$25 ==.
+                                   1447 ;	interrupts.c:24: for( j = 0; j < 0x20; j++ ) {
+      00002E 90r00r00         [24] 1448 	mov	dptr,#_PORT1_ISR_j_1_25
+      000031 F0               [24] 1449 	movx	@dptr,a
+      000032 A3               [24] 1450 	inc	dptr
+      000033 F0               [24] 1451 	movx	@dptr,a
+                           000034  1452 	C$interrupts.c$25$1$25 ==.
+                                   1453 ;	interrupts.c:25: for( i = 0; i < 0xFFFF; i++ ) Nop( );
+      000034                       1454 00117$:
+      000034 7E FF            [12] 1455 	mov	r6,#0xFF
+      000036 7F FF            [12] 1456 	mov	r7,#0xFF
+      000038                       1457 00112$:
+      000038 00               [12] 1458 	nop 
+      000039 1E               [12] 1459 	dec	r6
+      00003A BE FF 01         [24] 1460 	cjne	r6,#0xFF,00139$
+      00003D 1F               [12] 1461 	dec	r7
+      00003E                       1462 00139$:
+      00003E EE               [12] 1463 	mov	a,r6
+      00003F 4F               [12] 1464 	orl	a,r7
+      000040 70 F6            [24] 1465 	jnz	00112$
+                           000042  1466 	C$interrupts.c$26$2$26 ==.
+                                   1467 ;	interrupts.c:26: if( P1_2 == 1 ) {
+      000042 30 92 10         [24] 1468 	jnb	_P1_2,00114$
+                           000045  1469 	C$interrupts.c$27$3$27 ==.
+                                   1470 ;	interrupts.c:27: modeChange = 0;
+      000045 90r00r02         [24] 1471 	mov	dptr,#_PORT1_ISR_modeChange_1_25
+      000048 E4               [12] 1472 	clr	a
+      000049 F0               [24] 1473 	movx	@dptr,a
+      00004A A3               [24] 1474 	inc	dptr
+      00004B F0               [24] 1475 	movx	@dptr,a
+                           00004C  1476 	C$interrupts.c$28$3$27 ==.
+                                   1477 ;	interrupts.c:28: j = 0x20;
+      00004C 90r00r00         [24] 1478 	mov	dptr,#_PORT1_ISR_j_1_25
+      00004F 74 20            [12] 1479 	mov	a,#0x20
+      000051 F0               [24] 1480 	movx	@dptr,a
+      000052 E4               [12] 1481 	clr	a
+      000053 A3               [24] 1482 	inc	dptr
+      000054 F0               [24] 1483 	movx	@dptr,a
+      000055                       1484 00114$:
+                           000055  1485 	C$interrupts.c$24$1$25 ==.
+                                   1486 ;	interrupts.c:24: for( j = 0; j < 0x20; j++ ) {
+      000055 90r00r00         [24] 1487 	mov	dptr,#_PORT1_ISR_j_1_25
+      000058 E0               [24] 1488 	movx	a,@dptr
+      000059 24 01            [12] 1489 	add	a,#0x01
+      00005B F0               [24] 1490 	movx	@dptr,a
+      00005C A3               [24] 1491 	inc	dptr
+      00005D E0               [24] 1492 	movx	a,@dptr
+      00005E 34 00            [12] 1493 	addc	a,#0x00
+      000060 F0               [24] 1494 	movx	@dptr,a
+      000061 90r00r00         [24] 1495 	mov	dptr,#_PORT1_ISR_j_1_25
+      000064 E0               [24] 1496 	movx	a,@dptr
+      000065 FE               [12] 1497 	mov	r6,a
+      000066 A3               [24] 1498 	inc	dptr
+      000067 E0               [24] 1499 	movx	a,@dptr
+      000068 FF               [12] 1500 	mov	r7,a
+      000069 C3               [12] 1501 	clr	c
+      00006A EE               [12] 1502 	mov	a,r6
+      00006B 94 20            [12] 1503 	subb	a,#0x20
+      00006D EF               [12] 1504 	mov	a,r7
+      00006E 64 80            [12] 1505 	xrl	a,#0x80
+      000070 94 80            [12] 1506 	subb	a,#0x80
+      000072 40 C0            [24] 1507 	jc	00117$
+                           000074  1508 	C$interrupts.c$32$1$25 ==.
+                                   1509 ;	interrupts.c:32: if( modeChange == 1 ) {
+      000074 90r00r02         [24] 1510 	mov	dptr,#_PORT1_ISR_modeChange_1_25
+      000077 E0               [24] 1511 	movx	a,@dptr
+      000078 FE               [12] 1512 	mov	r6,a
+      000079 A3               [24] 1513 	inc	dptr
+      00007A E0               [24] 1514 	movx	a,@dptr
+      00007B FF               [12] 1515 	mov	r7,a
+      00007C BE 01 3A         [24] 1516 	cjne	r6,#0x01,00109$
+      00007F BF 00 37         [24] 1517 	cjne	r7,#0x00,00109$
+                           000082  1518 	C$interrupts.c$33$2$28 ==.
+                                   1519 ;	interrupts.c:33: if( txFilterEnabled == 1 ) {
+      000082 90r00r00         [24] 1520 	mov	dptr,#_txFilterEnabled
+      000085 E0               [24] 1521 	movx	a,@dptr
+      000086 FF               [12] 1522 	mov	r7,a
+      000087 BF 01 0F         [24] 1523 	cjne	r7,#0x01,00106$
+                           00008A  1524 	C$interrupts.c$34$3$29 ==.
+                                   1525 ;	interrupts.c:34: txFilterEnabled = 0;
+      00008A 90r00r00         [24] 1526 	mov	dptr,#_txFilterEnabled
+      00008D E4               [12] 1527 	clr	a
+      00008E F0               [24] 1528 	movx	@dptr,a
+                           00008F  1529 	C$interrupts.c$35$3$29 ==.
+                                   1530 ;	interrupts.c:35: P1_1 = 1;
+      00008F D2 91            [12] 1531 	setb	_P1_1
+                           000091  1532 	C$interrupts.c$36$3$29 ==.
+                                   1533 ;	interrupts.c:36: txString[0] = 0x13;
+      000091 90r00r04         [24] 1534 	mov	dptr,#_PORT1_ISR_txString_1_25
+      000094 74 13            [12] 1535 	mov	a,#0x13
+      000096 F0               [24] 1536 	movx	@dptr,a
+      000097 80 0E            [24] 1537 	sjmp	00107$
+      000099                       1538 00106$:
+                           000099  1539 	C$interrupts.c$38$3$30 ==.
+                                   1540 ;	interrupts.c:38: txFilterEnabled = 1;
+      000099 90r00r00         [24] 1541 	mov	dptr,#_txFilterEnabled
+      00009C 74 01            [12] 1542 	mov	a,#0x01
+      00009E F0               [24] 1543 	movx	@dptr,a
+                           00009F  1544 	C$interrupts.c$39$3$30 ==.
+                                   1545 ;	interrupts.c:39: P1_1 = 0;
+      00009F C2 91            [12] 1546 	clr	_P1_1
+                           0000A1  1547 	C$interrupts.c$40$3$30 ==.
+                                   1548 ;	interrupts.c:40: txString[0] = 0x03;
+      0000A1 90r00r04         [24] 1549 	mov	dptr,#_PORT1_ISR_txString_1_25
+      0000A4 74 03            [12] 1550 	mov	a,#0x03
+      0000A6 F0               [24] 1551 	movx	@dptr,a
+      0000A7                       1552 00107$:
+                           0000A7  1553 	C$interrupts.c$42$2$28 ==.
+                                   1554 ;	interrupts.c:42: halUartWrite( (uint8_t const *)txString, 1 );
+      0000A7 90r00r00         [24] 1555 	mov	dptr,#_halUartWrite_PARM_2
+      0000AA 74 01            [12] 1556 	mov	a,#0x01
+      0000AC F0               [24] 1557 	movx	@dptr,a
+      0000AD E4               [12] 1558 	clr	a
+      0000AE A3               [24] 1559 	inc	dptr
+      0000AF F0               [24] 1560 	movx	@dptr,a
+      0000B0 90r00r04         [24] 1561 	mov	dptr,#_PORT1_ISR_txString_1_25
+      0000B3 75 F0 00         [24] 1562 	mov	b,#0x00
+      0000B6 12r00r00         [24] 1563 	lcall	_halUartWrite
+      0000B9                       1564 00109$:
+                           0000B9  1565 	C$interrupts.c$46$1$25 ==.
+                                   1566 ;	interrupts.c:46: P1IFG = 0;
+      0000B9 75 8A 00         [24] 1567 	mov	_P1IFG,#0x00
+                           0000BC  1568 	C$interrupts.c$47$1$25 ==.
+                                   1569 ;	interrupts.c:47: IRCON2 &= ~0x04;
+      0000BC AF E8            [24] 1570 	mov	r7,_IRCON2
+      0000BE 74 FB            [12] 1571 	mov	a,#0xFB
+      0000C0 5F               [12] 1572 	anl	a,r7
+      0000C1 F5 E8            [12] 1573 	mov	_IRCON2,a
+      0000C3 D0 D0            [24] 1574 	pop	psw
+      0000C5 D0 00            [24] 1575 	pop	(0+0)
+      0000C7 D0 01            [24] 1576 	pop	(0+1)
+      0000C9 D0 02            [24] 1577 	pop	(0+2)
+      0000CB D0 03            [24] 1578 	pop	(0+3)
+      0000CD D0 04            [24] 1579 	pop	(0+4)
+      0000CF D0 05            [24] 1580 	pop	(0+5)
+      0000D1 D0 06            [24] 1581 	pop	(0+6)
+      0000D3 D0 07            [24] 1582 	pop	(0+7)
+      0000D5 D0 83            [24] 1583 	pop	dph
+      0000D7 D0 82            [24] 1584 	pop	dpl
+      0000D9 D0 F0            [24] 1585 	pop	b
+      0000DB D0 E0            [24] 1586 	pop	acc
+      0000DD D0*00            [24] 1587 	pop	bits
+                           0000DF  1588 	C$interrupts.c$48$1$25 ==.
+                           0000DF  1589 	XG$PORT1_ISR$0$0 ==.
+      0000DF 32               [24] 1590 	reti
+                                   1591 ;------------------------------------------------------------
+                                   1592 ;Allocation info for local variables in function 'enablePushButtonInt'
+                                   1593 ;------------------------------------------------------------
+                           0000E0  1594 	G$enablePushButtonInt$0$0 ==.
+                           0000E0  1595 	C$interrupts.c$50$1$25 ==.
+                                   1596 ;	interrupts.c:50: void enablePushButtonInt( void ) {
+                                   1597 ;	-----------------------------------------
+                                   1598 ;	 function enablePushButtonInt
+                                   1599 ;	-----------------------------------------
+      0000E0                       1600 _enablePushButtonInt:
+                           0000E0  1601 	C$interrupts.c$52$1$32 ==.
+                                   1602 ;	interrupts.c:52: P1_0 = 0;
+      0000E0 C2 90            [12] 1603 	clr	_P1_0
+                           0000E2  1604 	C$interrupts.c$53$1$32 ==.
+                                   1605 ;	interrupts.c:53: txFilterEnabled = 1;
+      0000E2 90r00r00         [24] 1606 	mov	dptr,#_txFilterEnabled
+      0000E5 74 01            [12] 1607 	mov	a,#0x01
+      0000E7 F0               [24] 1608 	movx	@dptr,a
+                           0000E8  1609 	C$interrupts.c$56$1$32 ==.
+                                   1610 ;	interrupts.c:56: P1IFG = 0;
+      0000E8 75 8A 00         [24] 1611 	mov	_P1IFG,#0x00
+                           0000EB  1612 	C$interrupts.c$57$1$32 ==.
+                                   1613 ;	interrupts.c:57: IRCON2 &= 0xF7;
+      0000EB 53 E8 F7         [24] 1614 	anl	_IRCON2,#0xF7
+                           0000EE  1615 	C$interrupts.c$60$1$32 ==.
+                                   1616 ;	interrupts.c:60: PICTL |= 0x02;
+      0000EE 43 8C 02         [24] 1617 	orl	_PICTL,#0x02
+                           0000F1  1618 	C$interrupts.c$63$1$32 ==.
+                                   1619 ;	interrupts.c:63: P1IEN = 0x04;
+      0000F1 75 8D 04         [24] 1620 	mov	_P1IEN,#0x04
+                           0000F4  1621 	C$interrupts.c$64$1$32 ==.
+                                   1622 ;	interrupts.c:64: EA = 1; IEN2 |= IEN2_P1IE;
+      0000F4 D2 AF            [12] 1623 	setb	_EA
+      0000F6 43 9A 10         [24] 1624 	orl	_IEN2,#0x10
+                           0000F9  1625 	C$interrupts.c$65$1$32 ==.
+                           0000F9  1626 	XG$enablePushButtonInt$0$0 ==.
+      0000F9 22               [24] 1627 	ret
+                                   1628 ;------------------------------------------------------------
+                                   1629 ;Allocation info for local variables in function 'TIMER1_ISR'
+                                   1630 ;------------------------------------------------------------
+                           0000FA  1631 	G$TIMER1_ISR$0$0 ==.
+                           0000FA  1632 	C$interrupts.c$67$1$32 ==.
+                                   1633 ;	interrupts.c:67: void TIMER1_ISR( void ) __interrupt( T1_VECTOR ) {
+                                   1634 ;	-----------------------------------------
+                                   1635 ;	 function TIMER1_ISR
+                                   1636 ;	-----------------------------------------
+      0000FA                       1637 _TIMER1_ISR:
+      0000FA C0 E0            [24] 1638 	push	acc
+      0000FC C0 82            [24] 1639 	push	dpl
+      0000FE C0 83            [24] 1640 	push	dph
+      000100 C0 07            [24] 1641 	push	ar7
+      000102 C0 D0            [24] 1642 	push	psw
+      000104 75 D0 00         [24] 1643 	mov	psw,#0x00
+                           000107  1644 	C$interrupts.c$69$1$34 ==.
+                                   1645 ;	interrupts.c:69: T1CTL &= 0xFC;
+      000107 53 E4 FC         [24] 1646 	anl	_T1CTL,#0xFC
+                           00010A  1647 	C$interrupts.c$72$1$34 ==.
+                                   1648 ;	interrupts.c:72: P1IFG = 0;
+      00010A 75 8A 00         [24] 1649 	mov	_P1IFG,#0x00
+                           00010D  1650 	C$interrupts.c$73$1$34 ==.
+                                   1651 ;	interrupts.c:73: IRCON &= ~0x02;
+      00010D AF C0            [24] 1652 	mov	r7,_IRCON
+      00010F 74 FD            [12] 1653 	mov	a,#0xFD
+      000111 5F               [12] 1654 	anl	a,r7
+      000112 F5 C0            [12] 1655 	mov	_IRCON,a
+                           000114  1656 	C$interrupts.c$76$1$34 ==.
+                                   1657 ;	interrupts.c:76: uartRxIndex = 0;
+      000114 90r00r00         [24] 1658 	mov	dptr,#_uartRxIndex
+      000117 E4               [12] 1659 	clr	a
+      000118 F0               [24] 1660 	movx	@dptr,a
+      000119 A3               [24] 1661 	inc	dptr
+      00011A F0               [24] 1662 	movx	@dptr,a
+      00011B D0 D0            [24] 1663 	pop	psw
+      00011D D0 07            [24] 1664 	pop	ar7
+      00011F D0 83            [24] 1665 	pop	dph
+      000121 D0 82            [24] 1666 	pop	dpl
+      000123 D0 E0            [24] 1667 	pop	acc
+                           000125  1668 	C$interrupts.c$80$1$34 ==.
+                           000125  1669 	XG$TIMER1_ISR$0$0 ==.
+      000125 32               [24] 1670 	reti
+                                   1671 ;	eliminated unneeded push/pop b
                                    1672 ;------------------------------------------------------------
-                           000109  1673 	G$enableTimerInt$0$0 ==.
-                           000109  1674 	C$interrupts.c$98$1$40 ==.
-                                   1675 ;	interrupts.c:98: void enableTimerInt( void ) {
-                                   1676 ;	-----------------------------------------
-                                   1677 ;	 function enableTimerInt
+                                   1673 ;Allocation info for local variables in function 'stopTimerInt'
+                                   1674 ;------------------------------------------------------------
+                           000126  1675 	G$stopTimerInt$0$0 ==.
+                           000126  1676 	C$interrupts.c$82$1$34 ==.
+                                   1677 ;	interrupts.c:82: void stopTimerInt( void ) {
                                    1678 ;	-----------------------------------------
-      000109                       1679 _enableTimerInt:
-                           000109  1680 	C$interrupts.c$100$1$42 ==.
-                                   1681 ;	interrupts.c:100: T1CTL &= 0xFC;
-      000109 53 E4 FC         [24] 1682 	anl	_T1CTL,#0xFC
-                           00010C  1683 	C$interrupts.c$103$1$42 ==.
-                                   1684 ;	interrupts.c:103: T1CC0H = 0x7F;
-      00010C 75 DB 7F         [24] 1685 	mov	_T1CC0H,#0x7F
-                           00010F  1686 	C$interrupts.c$104$1$42 ==.
-                                   1687 ;	interrupts.c:104: T1CC0L = 0xFF;
-      00010F 75 DA FF         [24] 1688 	mov	_T1CC0L,#0xFF
-                           000112  1689 	C$interrupts.c$107$1$42 ==.
-                                   1690 ;	interrupts.c:107: T1CNTL = 0x00;
-      000112 75 E2 00         [24] 1691 	mov	_T1CNTL,#0x00
-                           000115  1692 	C$interrupts.c$110$1$42 ==.
-                                   1693 ;	interrupts.c:110: T1CCTL0 = 0x44;
-      000115 75 E5 44         [24] 1694 	mov	_T1CCTL0,#0x44
-                           000118  1695 	C$interrupts.c$113$1$42 ==.
-                                   1696 ;	interrupts.c:113: IRCON &= ~0x02;
-      000118 AF C0            [24] 1697 	mov	r7,_IRCON
-      00011A 74 FD            [12] 1698 	mov	a,#0xFD
-      00011C 5F               [12] 1699 	anl	a,r7
-      00011D F5 C0            [12] 1700 	mov	_IRCON,a
-                           00011F  1701 	C$interrupts.c$116$1$42 ==.
-                                   1702 ;	interrupts.c:116: EA = 1; IEN1 |= 0x02;
-      00011F D2 AF            [12] 1703 	setb	_EA
-      000121 43 B8 02         [24] 1704 	orl	_IEN1,#0x02
-                           000124  1705 	C$interrupts.c$117$1$42 ==.
-                           000124  1706 	XG$enableTimerInt$0$0 ==.
-      000124 22               [24] 1707 	ret
-                                   1708 	.area CSEG    (CODE)
-                                   1709 	.area CONST   (CODE)
-                                   1710 	.area XINIT   (CODE)
-                                   1711 	.area CABS    (ABS,CODE)
+                                   1679 ;	 function stopTimerInt
+                                   1680 ;	-----------------------------------------
+      000126                       1681 _stopTimerInt:
+                           000126  1682 	C$interrupts.c$84$1$36 ==.
+                                   1683 ;	interrupts.c:84: T1CTL &= 0xFC;
+      000126 53 E4 FC         [24] 1684 	anl	_T1CTL,#0xFC
+                           000129  1685 	C$interrupts.c$87$1$36 ==.
+                                   1686 ;	interrupts.c:87: T1CNTL = 0x00;
+      000129 75 E2 00         [24] 1687 	mov	_T1CNTL,#0x00
+                           00012C  1688 	C$interrupts.c$90$1$36 ==.
+                                   1689 ;	interrupts.c:90: IEN1 &= ~0x02;
+      00012C AF B8            [24] 1690 	mov	r7,_IEN1
+      00012E 74 FD            [12] 1691 	mov	a,#0xFD
+      000130 5F               [12] 1692 	anl	a,r7
+      000131 F5 B8            [12] 1693 	mov	_IEN1,a
+                           000133  1694 	C$interrupts.c$91$1$36 ==.
+                           000133  1695 	XG$stopTimerInt$0$0 ==.
+      000133 22               [24] 1696 	ret
+                                   1697 ;------------------------------------------------------------
+                                   1698 ;Allocation info for local variables in function 'resetTimerCounter'
+                                   1699 ;------------------------------------------------------------
+                           000134  1700 	G$resetTimerCounter$0$0 ==.
+                           000134  1701 	C$interrupts.c$93$1$36 ==.
+                                   1702 ;	interrupts.c:93: void resetTimerCounter( void ) {
+                                   1703 ;	-----------------------------------------
+                                   1704 ;	 function resetTimerCounter
+                                   1705 ;	-----------------------------------------
+      000134                       1706 _resetTimerCounter:
+                           000134  1707 	C$interrupts.c$94$1$38 ==.
+                                   1708 ;	interrupts.c:94: T1CNTL = 0x00;
+      000134 75 E2 00         [24] 1709 	mov	_T1CNTL,#0x00
+                           000137  1710 	C$interrupts.c$95$1$38 ==.
+                           000137  1711 	XG$resetTimerCounter$0$0 ==.
+      000137 22               [24] 1712 	ret
+                                   1713 ;------------------------------------------------------------
+                                   1714 ;Allocation info for local variables in function 'enableTimerInt'
+                                   1715 ;------------------------------------------------------------
+                           000138  1716 	G$enableTimerInt$0$0 ==.
+                           000138  1717 	C$interrupts.c$97$1$38 ==.
+                                   1718 ;	interrupts.c:97: void enableTimerInt( void ) {
+                                   1719 ;	-----------------------------------------
+                                   1720 ;	 function enableTimerInt
+                                   1721 ;	-----------------------------------------
+      000138                       1722 _enableTimerInt:
+                           000138  1723 	C$interrupts.c$99$1$40 ==.
+                                   1724 ;	interrupts.c:99: T1CTL &= 0xFC;
+      000138 53 E4 FC         [24] 1725 	anl	_T1CTL,#0xFC
+                           00013B  1726 	C$interrupts.c$102$1$40 ==.
+                                   1727 ;	interrupts.c:102: T1CC0H = 0x7F;
+      00013B 75 DB 7F         [24] 1728 	mov	_T1CC0H,#0x7F
+                           00013E  1729 	C$interrupts.c$103$1$40 ==.
+                                   1730 ;	interrupts.c:103: T1CC0L = 0xFF;
+      00013E 75 DA FF         [24] 1731 	mov	_T1CC0L,#0xFF
+                           000141  1732 	C$interrupts.c$106$1$40 ==.
+                                   1733 ;	interrupts.c:106: T1CNTL = 0x00;
+      000141 75 E2 00         [24] 1734 	mov	_T1CNTL,#0x00
+                           000144  1735 	C$interrupts.c$109$1$40 ==.
+                                   1736 ;	interrupts.c:109: T1CCTL0 = 0x44;
+      000144 75 E5 44         [24] 1737 	mov	_T1CCTL0,#0x44
+                           000147  1738 	C$interrupts.c$112$1$40 ==.
+                                   1739 ;	interrupts.c:112: IRCON &= ~0x02;
+      000147 AF C0            [24] 1740 	mov	r7,_IRCON
+      000149 74 FD            [12] 1741 	mov	a,#0xFD
+      00014B 5F               [12] 1742 	anl	a,r7
+      00014C F5 C0            [12] 1743 	mov	_IRCON,a
+                           00014E  1744 	C$interrupts.c$115$1$40 ==.
+                                   1745 ;	interrupts.c:115: EA = 1; IEN1 |= 0x02;
+      00014E D2 AF            [12] 1746 	setb	_EA
+      000150 43 B8 02         [24] 1747 	orl	_IEN1,#0x02
+                           000153  1748 	C$interrupts.c$116$1$40 ==.
+                           000153  1749 	XG$enableTimerInt$0$0 ==.
+      000153 22               [24] 1750 	ret
+                                   1751 	.area CSEG    (CODE)
+                                   1752 	.area CONST   (CODE)
+                                   1753 	.area XINIT   (CODE)
+                                   1754 	.area CABS    (ABS,CODE)

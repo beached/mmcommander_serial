@@ -5,8 +5,7 @@
 #include "crc_4b6b.h"
 #include "constants.h"
 #include "globals.h"
-#include "usb/class_cdc/usb_uart.h"
-#include "usb/others/hal_uart.h"
+#include "hal_uart.h"
 #include "txFilter.h"
 #include "configuration.h"
 #include "interrupts.h"
@@ -15,10 +14,10 @@
 // Globals
 static char   __xdata rfMessage[512];
 static unsigned int __xdata rfLength;
-//static int    __xdata txCalcCRC;
-//static int    __xdata txCalcCRC16;
-//static char   __xdata txLength;
-//static int    __xdata txTimes;
+static int    __xdata txCalcCRC;
+static int    __xdata txCalcCRC16;
+static char   __xdata txLength;
+static int    __xdata txTimes;
 static char   __xdata lastData;
 
 void sendMedtronicMessage( char *message, unsigned int length, int times ) {
@@ -60,8 +59,9 @@ char receiveMedtronicMessage( char *message, unsigned int *length ) {
 	lastData = 0xFF;
 	for( i = 0; i < 500 && lastData != 0x00; i++ ) {
 		while( !RFTXRXIF ) {
-			usbUartProcess( );
-			usbReceiveData( );
+			// TODO Add generic rx/tx uart code
+			//usbUartProcess( );
+			//usbReceiveData( );
 		}
 		rfMessage[i] = RFD;
 		lastData = rfMessage[i];
@@ -113,7 +113,8 @@ void usbReceiveData( void ) {
 		if( nBytes - i > 48 ) readBytes = 48;
 		else readBytes = nBytes - i;
 		halUartRead( (uint8_t *)&tempData[i], readBytes );
-		usbUartProcess( );
+		// TODO
+		//usbUartProcess( );
 	}
 
 	for( i = 0; i < nBytes; i++ ) {

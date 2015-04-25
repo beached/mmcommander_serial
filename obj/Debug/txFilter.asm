@@ -1,16 +1,16 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ANSI-C Compiler
 ; Version 3.4.0 #8981 (Apr  5 2014) (MINGW64)
-; This file was generated Fri Apr 24 20:08:11 2015
+; This file was generated Sat Apr 25 00:05:14 2015
 ;--------------------------------------------------------
 	.module txFilter
-	.optsdcc -mmcs51 --model-small
+	.optsdcc -mmcs51 --model-large
 	
 ;--------------------------------------------------------
 ; Public variables in this module
 ;--------------------------------------------------------
-	.globl _txFilter_PARM_2
 	.globl _txFilter
+	.globl _txFilter_PARM_2
 	.globl _txFilterEnabled
 ;--------------------------------------------------------
 ; special function registers
@@ -34,10 +34,6 @@
 ;--------------------------------------------------------
 ; overlayable items in internal ram 
 ;--------------------------------------------------------
-	.area	OSEG    (OVR,DATA)
-LtxFilter.txFilter$length$1$1==.
-_txFilter_PARM_2:
-	.ds 2
 ;--------------------------------------------------------
 ; indirectly addressable internal ram data
 ;--------------------------------------------------------
@@ -62,6 +58,9 @@ _txFilter_PARM_2:
 G$txFilterEnabled$0$0==.
 _txFilterEnabled::
 	.ds 1
+LtxFilter.txFilter$length$1$1==.
+_txFilter_PARM_2:
+	.ds 2
 ;--------------------------------------------------------
 ; absolute external ram data
 ;--------------------------------------------------------
@@ -100,7 +99,7 @@ _txFilterEnabled::
 ;Allocation info for local variables in function 'txFilter'
 ;------------------------------------------------------------
 ;length                    Allocated with name '_txFilter_PARM_2'
-;message                   Allocated to registers 
+;message                   Allocated with name '_txFilter_message_1_1'
 ;------------------------------------------------------------
 	G$txFilter$0$0 ==.
 	C$txFilter.c$5$0$0 ==.

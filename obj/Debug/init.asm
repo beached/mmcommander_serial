@@ -1,10 +1,10 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ANSI-C Compiler
 ; Version 3.4.0 #8981 (Apr  5 2014) (MINGW64)
-; This file was generated Fri Apr 24 20:01:27 2015
+; This file was generated Sat Apr 25 00:05:13 2015
 ;--------------------------------------------------------
 	.module init
-	.optsdcc -mmcs51 --model-small
+	.optsdcc -mmcs51 --model-large
 	
 ;--------------------------------------------------------
 ; Public variables in this module
@@ -910,7 +910,6 @@ _MODE	=	0x00ff
 ;--------------------------------------------------------
 ; overlayable items in internal ram 
 ;--------------------------------------------------------
-	.area	OSEG    (OVR,DATA)
 ;--------------------------------------------------------
 ; indirectly addressable internal ram data
 ;--------------------------------------------------------
@@ -1632,7 +1631,7 @@ _configureMedtronicRFMode:
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'initGlobals'
 ;------------------------------------------------------------
-;i                         Allocated to registers r6 r7 
+;i                         Allocated with name '_initGlobals_i_1_16'
 ;------------------------------------------------------------
 	G$initGlobals$0$0 ==.
 	C$init.c$80$1$14 ==.

@@ -1,10 +1,10 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ANSI-C Compiler
 ; Version 3.4.0 #8981 (Apr  5 2014) (MINGW64)
-; This file was generated Fri Apr 24 23:12:43 2015
+; This file was generated Sat Apr 25 00:05:12 2015
 ;--------------------------------------------------------
 	.module hal_board
-	.optsdcc -mmcs51 --model-small
+	.optsdcc -mmcs51 --model-large
 	
 ;--------------------------------------------------------
 ; Public variables in this module

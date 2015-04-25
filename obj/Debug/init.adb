@@ -209,10 +209,7 @@ S:G$uartTxLength$0$0({2}SI:S),F,0,0
 S:G$uartTxIndex$0$0({2}SI:S),F,0,0
 S:G$uartRxIndex$0$0({2}SI:S),F,0,0
 S:G$txFilterEnabled$0$0({1}SC:S),F,0,0
-S:G$txCalcCRC$0$0({2}SI:S),F,0,0
-S:G$txCalcCRC16$0$0({2}SI:S),F,0,0
-S:G$txLength$0$0({1}SC:S),F,0,0
-S:G$txTimes$0$0({2}SI:S),F,0,0
+S:Linit.initGlobals$i$1$16({2}SI:S),F,0,0
 S:G$P0$0$0({1}SC:U),I,0,0
 S:G$SP$0$0({1}SC:U),I,0,0
 S:G$DPL0$0$0({1}SC:U),I,0,0

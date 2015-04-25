@@ -1,10 +1,10 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ANSI-C Compiler
 ; Version 3.4.0 #8981 (Apr  5 2014) (MINGW64)
-; This file was generated Fri Apr 24 23:28:03 2015
+; This file was generated Sat Apr 25 00:05:12 2015
 ;--------------------------------------------------------
 	.module hal_mcu
-	.optsdcc -mmcs51 --model-small
+	.optsdcc -mmcs51 --model-large
 	
 ;--------------------------------------------------------
 ; Public variables in this module
@@ -912,9 +912,6 @@ _MODE	=	0x00ff
 ;--------------------------------------------------------
 ; overlayable items in internal ram 
 ;--------------------------------------------------------
-	.area	OSEG    (OVR,DATA)
-	.area	OSEG    (OVR,DATA)
-	.area	OSEG    (OVR,DATA)
 ;--------------------------------------------------------
 ; indirectly addressable internal ram data
 ;--------------------------------------------------------
@@ -1336,6 +1333,12 @@ G$X_P1DIR$0$0 == 0xdffe
 _X_P1DIR	=	0xdffe
 G$X_P2DIR$0$0 == 0xdfff
 _X_P2DIR	=	0xdfff
+Lhal_mcu.halMcuWaitUs$usec$1$12==.
+_halMcuWaitUs_usec_1_12:
+	.ds 2
+Lhal_mcu.halMcuWaitMs$msec$1$15==.
+_halMcuWaitMs_msec_1_15:
+	.ds 2
 ;--------------------------------------------------------
 ; absolute external ram data
 ;--------------------------------------------------------
@@ -1398,7 +1401,7 @@ _halMcuInit:
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'halMcuWaitUs'
 ;------------------------------------------------------------
-;usec                      Allocated to registers r6 r7 
+;usec                      Allocated with name '_halMcuWaitUs_usec_1_12'
 ;------------------------------------------------------------
 	G$halMcuWaitUs$0$0 ==.
 	C$hal_mcu.c$46$1$11 ==.
@@ -1407,19 +1410,41 @@ _halMcuInit:
 ;	 function halMcuWaitUs
 ;	-----------------------------------------
 _halMcuWaitUs:
-	mov	r6,dpl
+	mov	r7,dph
+	mov	a,dpl
+	mov	dptr,#_halMcuWaitUs_usec_1_12
+	movx	@dptr,a
+	mov	a,r7
+	inc	dptr
+	movx	@dptr,a
 	C$hal_mcu.c$47$1$13 ==.
 ;	hal_mcu.c:47: usec >>= 1;          // Divide by 2 to achieve better resolution
-	mov	a,dph
+	mov	dptr,#_halMcuWaitUs_usec_1_12
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
 	clr	c
 	rrc	a
 	xch	a,r6
 	rrc	a
 	xch	a,r6
 	mov	r7,a
+	mov	dptr,#_halMcuWaitUs_usec_1_12
+	mov	a,r6
+	movx	@dptr,a
+	mov	a,r7
+	inc	dptr
+	movx	@dptr,a
 	C$hal_mcu.c$49$1$13 ==.
 ;	hal_mcu.c:49: while( usec > 1 ) {   // compare: ~13 cycles
 00101$:
+	mov	dptr,#_halMcuWaitUs_usec_1_12
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
 	clr	c
 	mov	a,#0x01
 	subb	a,r6
@@ -1458,10 +1483,20 @@ _halMcuWaitUs:
 	nop 
 	C$hal_mcu.c$61$2$14 ==.
 ;	hal_mcu.c:61: usec--;        // decr: ~7 cycles
-	dec	r6
-	cjne	r6,#0xFF,00113$
-	dec	r7
-00113$:
+	mov	dptr,#_halMcuWaitUs_usec_1_12
+	movx	a,@dptr
+	add	a,#0xFF
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	addc	a,#0xFF
+	mov	r7,a
+	mov	dptr,#_halMcuWaitUs_usec_1_12
+	mov	a,r6
+	movx	@dptr,a
+	mov	a,r7
+	inc	dptr
+	movx	@dptr,a
 	sjmp	00101$
 00104$:
 	C$hal_mcu.c$63$1$13 ==.
@@ -1470,7 +1505,7 @@ _halMcuWaitUs:
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'halMcuWaitMs'
 ;------------------------------------------------------------
-;msec                      Allocated to registers r6 r7 
+;msec                      Allocated with name '_halMcuWaitMs_msec_1_15'
 ;------------------------------------------------------------
 	G$halMcuWaitMs$0$0 ==.
 	C$hal_mcu.c$84$1$13 ==.
@@ -1479,28 +1514,41 @@ _halMcuWaitUs:
 ;	 function halMcuWaitMs
 ;	-----------------------------------------
 _halMcuWaitMs:
-	mov	r6,dpl
 	mov	r7,dph
+	mov	a,dpl
+	mov	dptr,#_halMcuWaitMs_msec_1_15
+	movx	@dptr,a
+	mov	a,r7
+	inc	dptr
+	movx	@dptr,a
 	C$hal_mcu.c$85$1$16 ==.
 ;	hal_mcu.c:85: while( msec-- ) {
 00101$:
-	mov	ar4,r6
-	mov	ar5,r7
-	dec	r6
-	cjne	r6,#0xFF,00112$
-	dec	r7
-00112$:
+	mov	dptr,#_halMcuWaitMs_msec_1_15
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
+	mov	a,r6
+	add	a,#0xFF
+	mov	r4,a
+	mov	a,r7
+	addc	a,#0xFF
+	mov	r5,a
+	mov	dptr,#_halMcuWaitMs_msec_1_15
 	mov	a,r4
-	orl	a,r5
+	movx	@dptr,a
+	mov	a,r5
+	inc	dptr
+	movx	@dptr,a
+	mov	a,r6
+	orl	a,r7
 	jz	00104$
 	C$hal_mcu.c$86$2$17 ==.
 ;	hal_mcu.c:86: halMcuWaitUs( 1000 );
 	mov	dptr,#0x03E8
-	push	ar7
-	push	ar6
 	lcall	_halMcuWaitUs
-	pop	ar6
-	pop	ar7
 	sjmp	00101$
 00104$:
 	C$hal_mcu.c$88$1$16 ==.
@@ -1509,7 +1557,7 @@ _halMcuWaitMs:
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'halMcuSetLowPowerMode'
 ;------------------------------------------------------------
-;mode                      Allocated to registers 
+;mode                      Allocated with name '_halMcuSetLowPowerMode_mode_1_18'
 ;------------------------------------------------------------
 	G$halMcuSetLowPowerMode$0$0 ==.
 	C$hal_mcu.c$104$1$16 ==.
@@ -1518,43 +1566,43 @@ _halMcuWaitMs:
 ;	 function halMcuSetLowPowerMode
 ;	-----------------------------------------
 _halMcuSetLowPowerMode:
-	C$hal_mcu.c$107$1$16 ==.
-;	hal_mcu.c:107: }
-	C$hal_mcu.c$107$1$16 ==.
+	C$hal_mcu.c$105$1$19 ==.
+;	hal_mcu.c:105: mode;
+	C$hal_mcu.c$108$1$19 ==.
 	XG$halMcuSetLowPowerMode$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'halMcuReset'
 ;------------------------------------------------------------
-;WDT_INTERVAL_MSEC_2       Allocated to registers 
+;WDT_INTERVAL_MSEC_2       Allocated with name '_halMcuReset_WDT_INTERVAL_MSEC_2_1_21'
 ;------------------------------------------------------------
 	G$halMcuReset$0$0 ==.
-	C$hal_mcu.c$123$1$16 ==.
-;	hal_mcu.c:123: void halMcuReset( void ) {
+	C$hal_mcu.c$124$1$19 ==.
+;	hal_mcu.c:124: void halMcuReset( void ) {
 ;	-----------------------------------------
 ;	 function halMcuReset
 ;	-----------------------------------------
 _halMcuReset:
-	C$hal_mcu.c$126$1$21 ==.
-;	hal_mcu.c:126: WDCTL = ((WDCTL & 0xFC) | (WDT_INTERVAL_MSEC_2 & 0x03));
+	C$hal_mcu.c$127$1$21 ==.
+;	hal_mcu.c:127: WDCTL = ((WDCTL & 0xFC) | (WDT_INTERVAL_MSEC_2 & 0x03));
 	mov	a,#0xFC
 	anl	a,_WDCTL
 	orl	a,#0x03
 	mov	_WDCTL,a
-	C$hal_mcu.c$128$1$21 ==.
-;	hal_mcu.c:128: WDCTL &= ~0x04;     // Select watchdog mode
+	C$hal_mcu.c$129$1$21 ==.
+;	hal_mcu.c:129: WDCTL &= ~0x04;     // Select watchdog mode
 	mov	r7,_WDCTL
 	mov	a,#0xFB
 	anl	a,r7
 	mov	_WDCTL,a
-	C$hal_mcu.c$129$1$21 ==.
-;	hal_mcu.c:129: WDCTL |= 0x08;      // Enable timer
-	orl	_WDCTL,#0x08
 	C$hal_mcu.c$130$1$21 ==.
-;	hal_mcu.c:130: while( 1 );           // Halt here until reset
+;	hal_mcu.c:130: WDCTL |= 0x08;      // Enable timer
+	orl	_WDCTL,#0x08
+	C$hal_mcu.c$131$1$21 ==.
+;	hal_mcu.c:131: while( 1 );           // Halt here until reset
 00102$:
 	sjmp	00102$
-	C$hal_mcu.c$131$1$21 ==.
+	C$hal_mcu.c$132$1$21 ==.
 	XG$halMcuReset$0$0 ==.
 	ret
 	.area CSEG    (CODE)

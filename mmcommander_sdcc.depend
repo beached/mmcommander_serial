@@ -148,13 +148,13 @@
 
 1429919617 c:\devel\github\mmcommander_serial\constants.h
 
-1429921722 c:\devel\github\mmcommander_serial\globals.h
+1429937884 c:\devel\github\mmcommander_serial\globals.h
 	"hal_types.h"
 	"constants.h"
 
 1429919616 c:\devel\github\mmcommander_serial\configuration.h
 
-1429923024 source:c:\devel\github\mmcommander_serial\interrupts.c
+1429937642 source:c:\devel\github\mmcommander_serial\interrupts.c
 	"interrupts.h"
 	"common.h"
 	"globals.h"
@@ -163,8 +163,7 @@
 	"crc_4b6b.h"
 	"interrupts.h"
 	"medtronicRF.h"
-	"usb/class_cdc/usb_uart.h"
-	"usb/others/hal_uart.h"
+	"hal_uart.h"
 	"txFilter.h"
 
 1429919624 c:\devel\github\mmcommander_serial\interrupts.h
@@ -179,7 +178,7 @@
 
 1429919627 c:\devel\github\mmcommander_serial\txfilter.h
 
-1429923278 source:c:\devel\github\mmcommander_serial\medtronicrf.c
+1429938058 source:c:\devel\github\mmcommander_serial\medtronicrf.c
 	"common.h"
 	"ioCCxx10_bitdef.h"
 	"cc1110.h"
@@ -187,22 +186,20 @@
 	"crc_4b6b.h"
 	"constants.h"
 	"globals.h"
-	"usb/class_cdc/usb_uart.h"
-	"usb/others/hal_uart.h"
+	"hal_uart.h"
 	"txFilter.h"
 	"configuration.h"
 	"interrupts.h"
 	<stdint.h>
 
-1429923394 source:c:\devel\github\mmcommander_serial\mmcommander.c
+1429937990 source:c:\devel\github\mmcommander_serial\mmcommander.c
 	"crc_4b6b.h"
 	"init.h"
 	"constants.h"
 	"interrupts.h"
 	"medtronicRF.h"
-	"usb/others/hal_board.h"
-	"usb/others/hal_uart.h"
-	"usb/class_cdc/usb_uart.h"
+	"hal_board.h"
+	"hal_uart.h"
 	"configuration.h"
 
 1429923835 c:\devel\github\mmcommander_serial\usb\others\hal_board.h
@@ -295,4 +292,28 @@
 1429935661 c:\devel\github\mmcommander_serial\hal_int.h
 	"hal_types.h"
 	<stdint.h>
+
+1429923024 source:c:\devel\github\mmcommander_serial\util_buffer.c
+	"util_buffer.h"
+	"hal_board.h"
+	"hal_int.h"
+	"hal_assert.h"
+
+1429935163 c:\devel\github\mmcommander_serial\util_buffer.h
+	"hal_types.h"
+
+1429919641 c:\devel\github\mmcommander_serial\hal_assert.h
+	"hal_defs.h"
+
+1429936310 source:c:\devel\github\mmcommander_serial\hal_mcu.c
+	"hal_types.h"
+	"hal_mcu.h"
+	"common.h"
+	"clock.h"
+
+1429935074 c:\devel\github\mmcommander_serial\hal_uart.h
+	"hal_types.h"
+
+1429938196 source:c:\devel\github\mmcommander_serial\hal_uart.c
+	"hal_uart.h"
 

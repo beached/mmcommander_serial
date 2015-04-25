@@ -1,23 +1,23 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ANSI-C Compiler
 ; Version 3.4.0 #8981 (Apr  5 2014) (MINGW64)
-; This file was generated Fri Apr 24 18:54:33 2015
+; This file was generated Sat Apr 25 00:05:12 2015
 ;--------------------------------------------------------
 	.module crc_4b6b
-	.optsdcc -mmcs51 --model-small
+	.optsdcc -mmcs51 --model-large
 	
 ;--------------------------------------------------------
 ; Public variables in this module
 ;--------------------------------------------------------
-	.globl _decode4b6bsymbol_PARM_2
-	.globl _crc16_PARM_2
-	.globl _crc8_PARM_2
 	.globl _decode4b6b_PARM_4
 	.globl _decode4b6b_PARM_3
 	.globl _decode4b6b_PARM_2
 	.globl _encode4b6b_PARM_4
 	.globl _encode4b6b_PARM_3
 	.globl _encode4b6b_PARM_2
+	.globl _decode4b6bsymbol_PARM_2
+	.globl _crc16_PARM_2
+	.globl _crc8_PARM_2
 	.globl _crc8
 	.globl _crc16Init
 	.globl _crc16
@@ -45,93 +45,56 @@
 ; internal ram data
 ;--------------------------------------------------------
 	.area DSEG    (DATA)
-Lcrc_4b6b.encode4b6b$bytesIn$1$43==.
-_encode4b6b_PARM_2:
-	.ds 2
-Lcrc_4b6b.encode4b6b$messageOut$1$43==.
-_encode4b6b_PARM_3:
-	.ds 3
-Lcrc_4b6b.encode4b6b$bytesOut$1$43==.
-_encode4b6b_PARM_4:
-	.ds 3
-Lcrc_4b6b.encode4b6b$messageIn$1$43==.
-_encode4b6b_messageIn_1_43:
-	.ds 3
-Lcrc_4b6b.encode4b6b$i$1$44==.
-_encode4b6b_i_1_44:
-	.ds 2
-Lcrc_4b6b.encode4b6b$j$1$44==.
-_encode4b6b_j_1_44:
-	.ds 2
-Lcrc_4b6b.encode4b6b$intBuffer$1$44==.
-_encode4b6b_intBuffer_1_44:
-	.ds 2
-Lcrc_4b6b.encode4b6b$intBitsAvailable$1$44==.
-_encode4b6b_intBitsAvailable_1_44:
-	.ds 2
-Lcrc_4b6b.encode4b6b$symbol$1$44==.
-_encode4b6b_symbol_1_44:
-	.ds 1
 Lcrc_4b6b.encode4b6b$sloc0$1$0==.
 _encode4b6b_sloc0_1_0:
-	.ds 2
-Lcrc_4b6b.decode4b6b$bytesIn$1$50==.
-_decode4b6b_PARM_2:
-	.ds 2
-Lcrc_4b6b.decode4b6b$messageOut$1$50==.
-_decode4b6b_PARM_3:
 	.ds 3
-Lcrc_4b6b.decode4b6b$bytesOut$1$50==.
-_decode4b6b_PARM_4:
+Lcrc_4b6b.encode4b6b$sloc1$1$0==.
+_encode4b6b_sloc1_1_0:
 	.ds 3
-Lcrc_4b6b.decode4b6b$messageIn$1$50==.
-_decode4b6b_messageIn_1_50:
+Lcrc_4b6b.encode4b6b$sloc2$1$0==.
+_encode4b6b_sloc2_1_0:
+	.ds 2
+Lcrc_4b6b.encode4b6b$sloc3$1$0==.
+_encode4b6b_sloc3_1_0:
+	.ds 2
+Lcrc_4b6b.encode4b6b$sloc4$1$0==.
+_encode4b6b_sloc4_1_0:
 	.ds 3
-Lcrc_4b6b.decode4b6b$i$1$51==.
-_decode4b6b_i_1_51:
+Lcrc_4b6b.encode4b6b$sloc5$1$0==.
+_encode4b6b_sloc5_1_0:
 	.ds 2
-Lcrc_4b6b.decode4b6b$intBuffer$1$51==.
-_decode4b6b_intBuffer_1_51:
+Lcrc_4b6b.encode4b6b$sloc6$1$0==.
+_encode4b6b_sloc6_1_0:
+	.ds 1
+Lcrc_4b6b.decode4b6b$sloc0$1$0==.
+_decode4b6b_sloc0_1_0:
 	.ds 2
-Lcrc_4b6b.decode4b6b$intBitsAvailable$1$51==.
-_decode4b6b_intBitsAvailable_1_51:
+Lcrc_4b6b.decode4b6b$sloc1$1$0==.
+_decode4b6b_sloc1_1_0:
+	.ds 3
+Lcrc_4b6b.decode4b6b$sloc2$1$0==.
+_decode4b6b_sloc2_1_0:
 	.ds 2
-Lcrc_4b6b.decode4b6b$symbol$1$51==.
-_decode4b6b_symbol_1_51:
+Lcrc_4b6b.decode4b6b$sloc3$1$0==.
+_decode4b6b_sloc3_1_0:
 	.ds 1
-Lcrc_4b6b.decode4b6b$nibbleFlag$1$51==.
-_decode4b6b_nibbleFlag_1_51:
-	.ds 1
-Lcrc_4b6b.decode4b6b$outBytes$1$51==.
-_decode4b6b_outBytes_1_51:
-	.ds 1
+Lcrc_4b6b.decode4b6b$sloc4$1$0==.
+_decode4b6b_sloc4_1_0:
+	.ds 2
 ;--------------------------------------------------------
 ; overlayable items in internal ram 
 ;--------------------------------------------------------
 	.area	OSEG    (OVR,DATA)
-Lcrc_4b6b.crc8$nBytes$1$9==.
-_crc8_PARM_2:
+Lcrc_4b6b.crc8$sloc0$1$0==.
+_crc8_sloc0_1_0:
+	.ds 1
+	.area	OSEG    (OVR,DATA)
+Lcrc_4b6b.crc16$sloc0$1$0==.
+_crc16_sloc0_1_0:
 	.ds 2
-Lcrc_4b6b.crc8$message$1$9==.
-_crc8_message_1_9:
+Lcrc_4b6b.crc16$sloc1$1$0==.
+_crc16_sloc1_1_0:
 	.ds 3
-	.area	OSEG    (OVR,DATA)
-Lcrc_4b6b.crc16Init$j$1$14==.
-_crc16Init_j_1_14:
-	.ds 2
-	.area	OSEG    (OVR,DATA)
-Lcrc_4b6b.crc16$nBytes$1$17==.
-_crc16_PARM_2:
-	.ds 2
-Lcrc_4b6b.crc16$message$1$17==.
-_crc16_message_1_17:
-	.ds 3
-	.area	OSEG    (OVR,DATA)
-	.area	OSEG    (OVR,DATA)
-Lcrc_4b6b.decode4b6bsymbol$outSymbol$1$23==.
-_decode4b6bsymbol_PARM_2:
-	.ds 3
-	.area	OSEG    (OVR,DATA)
 ;--------------------------------------------------------
 ; indirectly addressable internal ram data
 ;--------------------------------------------------------
@@ -156,6 +119,93 @@ _decode4b6bsymbol_PARM_2:
 Fcrc_4b6b$crc16Tab$0$0==.
 _crc16Tab:
 	.ds 512
+Lcrc_4b6b.crc8$nBytes$1$9==.
+_crc8_PARM_2:
+	.ds 2
+Lcrc_4b6b.crc8$message$1$9==.
+_crc8_message_1_9:
+	.ds 3
+Lcrc_4b6b.crc8$remainder$1$10==.
+_crc8_remainder_1_10:
+	.ds 1
+Lcrc_4b6b.crc16Init$crc$1$14==.
+_crc16Init_crc_1_14:
+	.ds 2
+Lcrc_4b6b.crc16Init$c$1$14==.
+_crc16Init_c_1_14:
+	.ds 2
+Lcrc_4b6b.crc16$nBytes$1$17==.
+_crc16_PARM_2:
+	.ds 2
+Lcrc_4b6b.crc16$message$1$17==.
+_crc16_message_1_17:
+	.ds 3
+Lcrc_4b6b.crc16$crc$1$18==.
+_crc16_crc_1_18:
+	.ds 2
+Lcrc_4b6b.get4b6bsymbol$inSymbol$1$20==.
+_get4b6bsymbol_inSymbol_1_20:
+	.ds 1
+Lcrc_4b6b.decode4b6bsymbol$outSymbol$1$23==.
+_decode4b6bsymbol_PARM_2:
+	.ds 3
+Lcrc_4b6b.decode4b6bsymbol$inSymbol$1$23==.
+_decode4b6bsymbol_inSymbol_1_23:
+	.ds 1
+Lcrc_4b6b.encode4b6b$bytesIn$1$43==.
+_encode4b6b_PARM_2:
+	.ds 2
+Lcrc_4b6b.encode4b6b$messageOut$1$43==.
+_encode4b6b_PARM_3:
+	.ds 3
+Lcrc_4b6b.encode4b6b$bytesOut$1$43==.
+_encode4b6b_PARM_4:
+	.ds 3
+Lcrc_4b6b.encode4b6b$messageIn$1$43==.
+_encode4b6b_messageIn_1_43:
+	.ds 3
+Lcrc_4b6b.encode4b6b$intBuffer$1$44==.
+_encode4b6b_intBuffer_1_44:
+	.ds 2
+Lcrc_4b6b.encode4b6b$intBitsAvailable$1$44==.
+_encode4b6b_intBitsAvailable_1_44:
+	.ds 2
+Lcrc_4b6b.encode4b6b$symbol$1$44==.
+_encode4b6b_symbol_1_44:
+	.ds 1
+Lcrc_4b6b.decode4b6b$bytesIn$1$50==.
+_decode4b6b_PARM_2:
+	.ds 2
+Lcrc_4b6b.decode4b6b$messageOut$1$50==.
+_decode4b6b_PARM_3:
+	.ds 3
+Lcrc_4b6b.decode4b6b$bytesOut$1$50==.
+_decode4b6b_PARM_4:
+	.ds 3
+Lcrc_4b6b.decode4b6b$messageIn$1$50==.
+_decode4b6b_messageIn_1_50:
+	.ds 3
+Lcrc_4b6b.decode4b6b$intBuffer$1$51==.
+_decode4b6b_intBuffer_1_51:
+	.ds 2
+Lcrc_4b6b.decode4b6b$intBitsAvailable$1$51==.
+_decode4b6b_intBitsAvailable_1_51:
+	.ds 2
+Lcrc_4b6b.decode4b6b$symbol$1$51==.
+_decode4b6b_symbol_1_51:
+	.ds 1
+Lcrc_4b6b.decode4b6b$recByte$1$51==.
+_decode4b6b_recByte_1_51:
+	.ds 1
+Lcrc_4b6b.decode4b6b$nibbleFlag$1$51==.
+_decode4b6b_nibbleFlag_1_51:
+	.ds 1
+Lcrc_4b6b.decode4b6b$outBytes$1$51==.
+_decode4b6b_outBytes_1_51:
+	.ds 1
+Lcrc_4b6b.sleep$time$1$55==.
+_sleep_time_1_55:
+	.ds 2
 ;--------------------------------------------------------
 ; absolute external ram data
 ;--------------------------------------------------------
@@ -195,9 +245,10 @@ _crc16Tab:
 ;------------------------------------------------------------
 ;nBytes                    Allocated with name '_crc8_PARM_2'
 ;message                   Allocated with name '_crc8_message_1_9'
-;remainder                 Allocated to registers r4 
-;byte                      Allocated to registers r2 r3 
-;bit                       Allocated to registers r7 
+;remainder                 Allocated with name '_crc8_remainder_1_10'
+;byte                      Allocated with name '_crc8_byte_1_10'
+;bit                       Allocated with name '_crc8_bit_1_10'
+;sloc0                     Allocated with name '_crc8_sloc0_1_0'
 ;------------------------------------------------------------
 	G$crc8$0$0 ==.
 	C$crc_4b6b.c$6$0$0 ==.
@@ -214,91 +265,140 @@ _crc8:
 	ar2 = 0x02
 	ar1 = 0x01
 	ar0 = 0x00
-	mov	_crc8_message_1_9,dpl
-	mov	(_crc8_message_1_9 + 1),dph
-	mov	(_crc8_message_1_9 + 2),b
+	mov	r7,b
+	mov	r6,dph
+	mov	a,dpl
+	mov	dptr,#_crc8_message_1_9
+	movx	@dptr,a
+	mov	a,r6
+	inc	dptr
+	movx	@dptr,a
+	mov	a,r7
+	inc	dptr
+	movx	@dptr,a
 	C$crc_4b6b.c$7$1$0 ==.
 ;	crc_4b6b.c:7: char remainder = 0;
-	mov	r4,#0x00
-	C$crc_4b6b.c$11$1$10 ==.
+	mov	dptr,#_crc8_remainder_1_10
+	clr	a
+	movx	@dptr,a
+	C$crc_4b6b.c$11$2$11 ==.
 ;	crc_4b6b.c:11: for( byte = 0; byte < nBytes; ++byte ) {
+	mov	dptr,#_crc8_message_1_9
+	movx	a,@dptr
+	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
+	mov	dptr,#_crc8_PARM_2
+	movx	a,@dptr
+	mov	r3,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r4,a
+	mov	r1,#0x00
 	mov	r2,#0x00
-	mov	r3,#0x00
 00109$:
 	clr	c
+	mov	a,r1
+	subb	a,r3
 	mov	a,r2
-	subb	a,_crc8_PARM_2
-	mov	a,r3
-	subb	a,(_crc8_PARM_2 + 1)
+	subb	a,r4
 	jnc	00105$
-	C$crc_4b6b.c$12$2$11 ==.
+	C$crc_4b6b.c$12$1$10 ==.
 ;	crc_4b6b.c:12: remainder ^= message[byte];
-	mov	a,r2
-	add	a,_crc8_message_1_9
+	push	ar3
+	push	ar4
+	mov	a,r1
+	add	a,r5
 	mov	r0,a
-	mov	a,r3
-	addc	a,(_crc8_message_1_9 + 1)
-	mov	r1,a
-	mov	r7,(_crc8_message_1_9 + 2)
+	mov	a,r2
+	addc	a,r6
+	mov	r3,a
+	mov	ar4,r7
 	mov	dpl,r0
-	mov	dph,r1
-	mov	b,r7
+	mov	dph,r3
+	mov	b,r4
 	lcall	__gptrget
 	mov	r0,a
-	xrl	ar4,a
+	mov	dptr,#_crc8_remainder_1_10
+	movx	a,@dptr
+	mov	r4,a
+	mov	a,r0
+	xrl	a,r4
+	movx	@dptr,a
 	C$crc_4b6b.c$13$1$10 ==.
 ;	crc_4b6b.c:13: for( bit = 8; bit > 0; --bit ) {
-	mov	r7,#0x08
+	mov	_crc8_sloc0_1_0,#0x08
+	C$crc_4b6b.c$21$1$10 ==.
+;	crc_4b6b.c:21: return(remainder);
+	pop	ar4
+	pop	ar3
+	C$crc_4b6b.c$13$2$11 ==.
+;	crc_4b6b.c:13: for( bit = 8; bit > 0; --bit ) {
 00106$:
 	C$crc_4b6b.c$14$3$12 ==.
 ;	crc_4b6b.c:14: if( remainder & 0x80 )
-	mov	a,r4
+	mov	dptr,#_crc8_remainder_1_10
+	movx	a,@dptr
+	mov	r0,a
 	jnb	acc.7,00102$
-	C$crc_4b6b.c$15$3$12 ==.
+	C$crc_4b6b.c$15$1$10 ==.
 ;	crc_4b6b.c:15: remainder = (remainder << 1) ^ 0x9B;
-	mov	a,r4
-	add	a,r4
-	mov	r6,a
-	mov	a,#0x9B
-	xrl	a,r6
+	push	ar3
+	push	ar4
+	mov	a,r0
+	add	a,r0
 	mov	r4,a
+	mov	dptr,#_crc8_remainder_1_10
+	mov	a,#0x9B
+	xrl	a,r4
+	movx	@dptr,a
+	pop	ar4
+	pop	ar3
 	sjmp	00107$
 00102$:
 	C$crc_4b6b.c$17$3$12 ==.
 ;	crc_4b6b.c:17: remainder = (remainder << 1);
-	mov	a,r4
-	add	a,r4
-	mov	r4,a
+	mov	a,r0
+	add	a,r0
+	mov	r0,a
+	mov	dptr,#_crc8_remainder_1_10
+	movx	@dptr,a
 00107$:
 	C$crc_4b6b.c$13$2$11 ==.
 ;	crc_4b6b.c:13: for( bit = 8; bit > 0; --bit ) {
-	dec	r7
+	dec	_crc8_sloc0_1_0
 	clr	c
 	mov	a,#(0x00 ^ 0x80)
-	mov	b,r7
+	mov	b,_crc8_sloc0_1_0
 	xrl	b,#0x80
 	subb	a,b
 	jc	00106$
 	C$crc_4b6b.c$11$1$10 ==.
 ;	crc_4b6b.c:11: for( byte = 0; byte < nBytes; ++byte ) {
+	inc	r1
+	cjne	r1,#0x00,00109$
 	inc	r2
-	cjne	r2,#0x00,00109$
-	inc	r3
 	sjmp	00109$
 00105$:
 	C$crc_4b6b.c$21$1$10 ==.
 ;	crc_4b6b.c:21: return(remainder);
-	mov	dpl,r4
+	mov	dptr,#_crc8_remainder_1_10
+	movx	a,@dptr
 	C$crc_4b6b.c$22$1$10 ==.
 	XG$crc8$0$0 ==.
+	mov	dpl,a
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'crc16Init'
 ;------------------------------------------------------------
-;i                         Allocated to registers r6 r7 
+;i                         Allocated with name '_crc16Init_i_1_14'
 ;j                         Allocated with name '_crc16Init_j_1_14'
-;crc                       Allocated to registers r4 r5 
-;c                         Allocated to registers r2 r3 
+;crc                       Allocated with name '_crc16Init_crc_1_14'
+;c                         Allocated with name '_crc16Init_c_1_14'
 ;------------------------------------------------------------
 	G$crc16Init$0$0 ==.
 	C$crc_4b6b.c$24$1$10 ==.
@@ -314,90 +414,134 @@ _crc16Init:
 00108$:
 	C$crc_4b6b.c$31$2$15 ==.
 ;	crc_4b6b.c:31: crc = 0;
-	mov	r4,#0x00
-	mov	r5,#0x00
+	mov	dptr,#_crc16Init_crc_1_14
+	clr	a
+	movx	@dptr,a
+	inc	dptr
+	movx	@dptr,a
 	C$crc_4b6b.c$32$2$15 ==.
 ;	crc_4b6b.c:32: c = ((unsigned short)i) << 8;
-	mov	ar3,r6
+	mov	ar5,r6
+	mov	r4,#0x00
+	mov	dptr,#_crc16Init_c_1_14
+	mov	a,r4
+	movx	@dptr,a
+	mov	a,r5
+	inc	dptr
+	movx	@dptr,a
 	C$crc_4b6b.c$33$1$14 ==.
 ;	crc_4b6b.c:33: for( j = 0; j < 8; j++ ) {
-	clr	a
-	mov	r2,a
-	mov	_crc16Init_j_1_14,a
-	mov	(_crc16Init_j_1_14 + 1),a
+	mov	r4,#0x00
+	mov	r5,#0x00
 00106$:
 	C$crc_4b6b.c$34$3$16 ==.
 ;	crc_4b6b.c:34: if( (crc^c) & 0x8000 ) crc = (crc << 1) ^ 0x1021;
-	mov	a,r2
-	xrl	a,r4
+	mov	dptr,#_crc16Init_c_1_14
+	movx	a,@dptr
+	mov	r2,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r3,a
+	mov	dptr,#_crc16Init_crc_1_14
+	movx	a,@dptr
 	mov	r0,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r1,a
+	mov	a,r0
+	xrl	ar2,a
+	mov	a,r1
+	xrl	ar3,a
 	mov	a,r3
-	xrl	a,r5
-	mov	r1,a
 	jnb	acc.7,00102$
-	mov	ar0,r4
-	mov	a,r5
-	xch	a,r0
+	mov	ar2,r0
+	mov	a,r1
+	xch	a,r2
 	add	a,acc
-	xch	a,r0
+	xch	a,r2
 	rlc	a
-	mov	r1,a
+	mov	r3,a
+	mov	dptr,#_crc16Init_crc_1_14
 	mov	a,#0x21
-	xrl	a,r0
-	mov	r4,a
+	xrl	a,r2
+	movx	@dptr,a
 	mov	a,#0x10
-	xrl	a,r1
-	mov	r5,a
+	xrl	a,r3
+	inc	dptr
+	movx	@dptr,a
 	sjmp	00103$
 00102$:
 	C$crc_4b6b.c$35$3$16 ==.
 ;	crc_4b6b.c:35: else                    crc = crc << 1;
+	mov	a,r1
+	xch	a,r0
+	add	a,acc
+	xch	a,r0
+	rlc	a
+	mov	r1,a
+	mov	dptr,#_crc16Init_crc_1_14
+	mov	a,r0
+	movx	@dptr,a
+	mov	a,r1
+	inc	dptr
+	movx	@dptr,a
+00103$:
+	C$crc_4b6b.c$36$3$16 ==.
+;	crc_4b6b.c:36: c = c << 1;
+	mov	dptr,#_crc16Init_c_1_14
+	movx	a,@dptr
+	mov	r2,a
+	inc	dptr
+	movx	a,@dptr
+	xch	a,r2
+	add	a,acc
+	xch	a,r2
+	rlc	a
+	mov	r3,a
+	mov	dptr,#_crc16Init_c_1_14
+	mov	a,r2
+	movx	@dptr,a
+	mov	a,r3
+	inc	dptr
+	movx	@dptr,a
+	C$crc_4b6b.c$33$2$15 ==.
+;	crc_4b6b.c:33: for( j = 0; j < 8; j++ ) {
+	inc	r4
+	cjne	r4,#0x00,00127$
+	inc	r5
+00127$:
+	clr	c
+	mov	a,r4
+	subb	a,#0x08
 	mov	a,r5
+	subb	a,#0x00
+	jc	00106$
+	C$crc_4b6b.c$38$2$15 ==.
+;	crc_4b6b.c:38: crc16Tab[i] = crc;
+	mov	ar4,r6
+	mov	a,r7
 	xch	a,r4
 	add	a,acc
 	xch	a,r4
 	rlc	a
 	mov	r5,a
-00103$:
-	C$crc_4b6b.c$36$3$16 ==.
-;	crc_4b6b.c:36: c = c << 1;
-	mov	a,r3
-	xch	a,r2
-	add	a,acc
-	xch	a,r2
-	rlc	a
-	mov	r3,a
-	C$crc_4b6b.c$33$2$15 ==.
-;	crc_4b6b.c:33: for( j = 0; j < 8; j++ ) {
-	inc	_crc16Init_j_1_14
-	clr	a
-	cjne	a,_crc16Init_j_1_14,00127$
-	inc	(_crc16Init_j_1_14 + 1)
-00127$:
-	clr	c
-	mov	a,_crc16Init_j_1_14
-	subb	a,#0x08
-	mov	a,(_crc16Init_j_1_14 + 1)
-	subb	a,#0x00
-	jc	00106$
-	C$crc_4b6b.c$38$2$15 ==.
-;	crc_4b6b.c:38: crc16Tab[i] = crc;
-	mov	ar2,r6
-	mov	a,r7
-	xch	a,r2
-	add	a,acc
-	xch	a,r2
-	rlc	a
-	mov	r3,a
-	mov	a,r2
-	add	a,#_crc16Tab
-	mov	dpl,a
-	mov	a,r3
-	addc	a,#(_crc16Tab >> 8)
-	mov	dph,a
 	mov	a,r4
-	movx	@dptr,a
+	add	a,#_crc16Tab
+	mov	r4,a
 	mov	a,r5
+	addc	a,#(_crc16Tab >> 8)
+	mov	r5,a
+	mov	dptr,#_crc16Init_crc_1_14
+	movx	a,@dptr
+	mov	r2,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r3,a
+	mov	dpl,r4
+	mov	dph,r5
+	mov	a,r2
+	movx	@dptr,a
+	mov	a,r3
 	inc	dptr
 	movx	@dptr,a
 	C$crc_4b6b.c$30$1$14 ==.
@@ -408,7 +552,9 @@ _crc16Init:
 00129$:
 	mov	a,#0x100 - 0x01
 	add	a,r7
-	jnc	00108$
+	jc	00130$
+	ljmp	00108$
+00130$:
 	C$crc_4b6b.c$40$1$14 ==.
 	XG$crc16Init$0$0 ==.
 	ret
@@ -417,10 +563,12 @@ _crc16Init:
 ;------------------------------------------------------------
 ;nBytes                    Allocated with name '_crc16_PARM_2'
 ;message                   Allocated with name '_crc16_message_1_17'
-;i                         Allocated to registers r1 r2 
-;crc                       Allocated to registers r3 r4 
-;short_c                   Allocated to registers r0 r7 
-;tmp                       Allocated to registers r0 r7 
+;i                         Allocated with name '_crc16_i_1_18'
+;crc                       Allocated with name '_crc16_crc_1_18'
+;short_c                   Allocated with name '_crc16_short_c_1_18'
+;tmp                       Allocated with name '_crc16_tmp_1_18'
+;sloc0                     Allocated with name '_crc16_sloc0_1_0'
+;sloc1                     Allocated with name '_crc16_sloc1_1_0'
 ;------------------------------------------------------------
 	G$crc16$0$0 ==.
 	C$crc_4b6b.c$42$1$14 ==.
@@ -429,53 +577,87 @@ _crc16Init:
 ;	 function crc16
 ;	-----------------------------------------
 _crc16:
-	mov	_crc16_message_1_17,dpl
-	mov	(_crc16_message_1_17 + 1),dph
-	mov	(_crc16_message_1_17 + 2),b
+	mov	r7,b
+	mov	r6,dph
+	mov	a,dpl
+	mov	dptr,#_crc16_message_1_17
+	movx	@dptr,a
+	mov	a,r6
+	inc	dptr
+	movx	@dptr,a
+	mov	a,r7
+	inc	dptr
+	movx	@dptr,a
 	C$crc_4b6b.c$48$1$18 ==.
 ;	crc_4b6b.c:48: crc = 0xffff;
-	mov	r3,#0xFF
-	mov	r4,#0xFF
+	mov	dptr,#_crc16_crc_1_18
+	mov	a,#0xFF
+	movx	@dptr,a
+	inc	dptr
+	movx	@dptr,a
 	C$crc_4b6b.c$49$2$19 ==.
 ;	crc_4b6b.c:49: for( i = 0; i < nBytes; i++ ) {
+	mov	dptr,#_crc16_message_1_17
+	movx	a,@dptr
+	mov	_crc16_sloc1_1_0,a
+	inc	dptr
+	movx	a,@dptr
+	mov	(_crc16_sloc1_1_0 + 1),a
+	inc	dptr
+	movx	a,@dptr
+	mov	(_crc16_sloc1_1_0 + 2),a
+	mov	dptr,#_crc16_PARM_2
+	movx	a,@dptr
+	mov	r3,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r4,a
 	mov	r1,#0x00
 	mov	r2,#0x00
 00103$:
 	clr	c
 	mov	a,r1
-	subb	a,_crc16_PARM_2
+	subb	a,r3
 	mov	a,r2
-	subb	a,(_crc16_PARM_2 + 1)
+	subb	a,r4
 	jnc	00101$
-	C$crc_4b6b.c$50$2$19 ==.
+	C$crc_4b6b.c$50$1$18 ==.
 ;	crc_4b6b.c:50: short_c = 0x00ff & (unsigned short)message[i];
+	push	ar3
+	push	ar4
 	mov	a,r1
-	add	a,_crc16_message_1_17
+	add	a,_crc16_sloc1_1_0
 	mov	r0,a
 	mov	a,r2
-	addc	a,(_crc16_message_1_17 + 1)
-	mov	r6,a
-	mov	r7,(_crc16_message_1_17 + 2)
+	addc	a,(_crc16_sloc1_1_0 + 1)
+	mov	r3,a
+	mov	r4,(_crc16_sloc1_1_0 + 2)
 	mov	dpl,r0
-	mov	dph,r6
-	mov	b,r7
+	mov	dph,r3
+	mov	b,r4
 	lcall	__gptrget
 	mov	r0,a
 	rlc	a
 	subb	a,acc
-	mov	r7,#0x00
+	mov	_crc16_sloc0_1_0,r0
+	mov	(_crc16_sloc0_1_0 + 1),#0x00
 	C$crc_4b6b.c$51$2$19 ==.
 ;	crc_4b6b.c:51: tmp = (crc >> 8) ^ short_c;
-	mov	ar5,r4
-	mov	r6,#0x00
-	mov	a,r5
+	mov	dptr,#_crc16_crc_1_18
+	movx	a,@dptr
+	mov	r3,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r0,a
+	mov	r7,#0x00
+	mov	a,_crc16_sloc0_1_0
 	xrl	ar0,a
-	mov	a,r6
+	mov	a,(_crc16_sloc0_1_0 + 1)
 	xrl	ar7,a
 	C$crc_4b6b.c$52$2$19 ==.
 ;	crc_4b6b.c:52: crc = (crc << 8) ^ crc16Tab[tmp];
-	mov	ar6,r3
-	mov	r5,#0x00
+	mov	ar4,r3
+	mov	r3,#0x00
 	mov	a,r7
 	xch	a,r0
 	add	a,acc
@@ -489,34 +671,44 @@ _crc16:
 	addc	a,#(_crc16Tab >> 8)
 	mov	dph,a
 	movx	a,@dptr
-	mov	r0,a
+	mov	r6,a
 	inc	dptr
 	movx	a,@dptr
 	mov	r7,a
-	mov	a,r0
-	xrl	a,r5
-	mov	r3,a
+	mov	dptr,#_crc16_crc_1_18
+	mov	a,r6
+	xrl	a,r3
+	movx	@dptr,a
 	mov	a,r7
-	xrl	a,r6
-	mov	r4,a
+	xrl	a,r4
+	inc	dptr
+	movx	@dptr,a
 	C$crc_4b6b.c$49$1$18 ==.
 ;	crc_4b6b.c:49: for( i = 0; i < nBytes; i++ ) {
 	inc	r1
-	cjne	r1,#0x00,00103$
+	cjne	r1,#0x00,00115$
 	inc	r2
+00115$:
+	pop	ar4
+	pop	ar3
 	sjmp	00103$
 00101$:
 	C$crc_4b6b.c$55$1$18 ==.
 ;	crc_4b6b.c:55: return(crc);
-	mov	dpl,r3
-	mov	dph,r4
+	mov	dptr,#_crc16_crc_1_18
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
 	C$crc_4b6b.c$56$1$18 ==.
 	XG$crc16$0$0 ==.
+	mov	dpl,r6
+	mov	dph,a
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'get4b6bsymbol'
 ;------------------------------------------------------------
-;inSymbol                  Allocated to registers r7 
+;inSymbol                  Allocated with name '_get4b6bsymbol_inSymbol_1_20'
 ;------------------------------------------------------------
 	G$get4b6bsymbol$0$0 ==.
 	C$crc_4b6b.c$58$1$18 ==.
@@ -525,9 +717,12 @@ _crc16:
 ;	 function get4b6bsymbol
 ;	-----------------------------------------
 _get4b6bsymbol:
+	mov	a,dpl
+	mov	dptr,#_get4b6bsymbol_inSymbol_1_20
+	movx	@dptr,a
 	C$crc_4b6b.c$59$1$21 ==.
 ;	crc_4b6b.c:59: switch( inSymbol ) {
-	mov	a,dpl
+	movx	a,@dptr
 	mov	r7,a
 	jnb	acc.7,00127$
 	ljmp	00117$
@@ -678,7 +873,7 @@ _get4b6bsymbol:
 ;Allocation info for local variables in function 'decode4b6bsymbol'
 ;------------------------------------------------------------
 ;outSymbol                 Allocated with name '_decode4b6bsymbol_PARM_2'
-;inSymbol                  Allocated to registers r7 
+;inSymbol                  Allocated with name '_decode4b6bsymbol_inSymbol_1_23'
 ;------------------------------------------------------------
 	G$decode4b6bsymbol$0$0 ==.
 	C$crc_4b6b.c$80$1$21 ==.
@@ -687,9 +882,13 @@ _get4b6bsymbol:
 ;	 function decode4b6bsymbol
 ;	-----------------------------------------
 _decode4b6bsymbol:
-	mov	r7,dpl
+	mov	a,dpl
+	mov	dptr,#_decode4b6bsymbol_inSymbol_1_23
+	movx	@dptr,a
 	C$crc_4b6b.c$81$1$24 ==.
 ;	crc_4b6b.c:81: switch( inSymbol ) {
+	movx	a,@dptr
+	mov	r7,a
 	cjne	r7,#0x0B,00169$
 	ljmp	00112$
 00169$:
@@ -715,7 +914,7 @@ _decode4b6bsymbol:
 	ljmp	00116$
 00176$:
 	cjne	r7,#0x23,00177$
-	sjmp	00104$
+	ljmp	00104$
 00177$:
 	cjne	r7,#0x25,00178$
 	ljmp	00106$
@@ -742,9 +941,15 @@ _decode4b6bsymbol:
 	C$crc_4b6b.c$82$2$25 ==.
 ;	crc_4b6b.c:82: case 0x15: {*outSymbol = 0x00; return(0); }
 00101$:
-	mov	r5,_decode4b6bsymbol_PARM_2
-	mov	r6,(_decode4b6bsymbol_PARM_2 + 1)
-	mov	r7,(_decode4b6bsymbol_PARM_2 + 2)
+	mov	dptr,#_decode4b6bsymbol_PARM_2
+	movx	a,@dptr
+	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
 	mov	dpl,r5
 	mov	dph,r6
 	mov	b,r7
@@ -755,9 +960,15 @@ _decode4b6bsymbol:
 	C$crc_4b6b.c$83$2$25 ==.
 ;	crc_4b6b.c:83: case 0x31: {*outSymbol = 0x01; return(0); }
 00102$:
-	mov	r5,_decode4b6bsymbol_PARM_2
-	mov	r6,(_decode4b6bsymbol_PARM_2 + 1)
-	mov	r7,(_decode4b6bsymbol_PARM_2 + 2)
+	mov	dptr,#_decode4b6bsymbol_PARM_2
+	movx	a,@dptr
+	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
 	mov	dpl,r5
 	mov	dph,r6
 	mov	b,r7
@@ -768,9 +979,15 @@ _decode4b6bsymbol:
 	C$crc_4b6b.c$84$2$25 ==.
 ;	crc_4b6b.c:84: case 0x32: {*outSymbol = 0x02; return(0); }
 00103$:
-	mov	r5,_decode4b6bsymbol_PARM_2
-	mov	r6,(_decode4b6bsymbol_PARM_2 + 1)
-	mov	r7,(_decode4b6bsymbol_PARM_2 + 2)
+	mov	dptr,#_decode4b6bsymbol_PARM_2
+	movx	a,@dptr
+	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
 	mov	dpl,r5
 	mov	dph,r6
 	mov	b,r7
@@ -781,9 +998,15 @@ _decode4b6bsymbol:
 	C$crc_4b6b.c$85$2$25 ==.
 ;	crc_4b6b.c:85: case 0x23: {*outSymbol = 0x03; return(0); }
 00104$:
-	mov	r5,_decode4b6bsymbol_PARM_2
-	mov	r6,(_decode4b6bsymbol_PARM_2 + 1)
-	mov	r7,(_decode4b6bsymbol_PARM_2 + 2)
+	mov	dptr,#_decode4b6bsymbol_PARM_2
+	movx	a,@dptr
+	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
 	mov	dpl,r5
 	mov	dph,r6
 	mov	b,r7
@@ -794,9 +1017,15 @@ _decode4b6bsymbol:
 	C$crc_4b6b.c$86$2$25 ==.
 ;	crc_4b6b.c:86: case 0x34: {*outSymbol = 0x04; return(0); }
 00105$:
-	mov	r5,_decode4b6bsymbol_PARM_2
-	mov	r6,(_decode4b6bsymbol_PARM_2 + 1)
-	mov	r7,(_decode4b6bsymbol_PARM_2 + 2)
+	mov	dptr,#_decode4b6bsymbol_PARM_2
+	movx	a,@dptr
+	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
 	mov	dpl,r5
 	mov	dph,r6
 	mov	b,r7
@@ -807,9 +1036,15 @@ _decode4b6bsymbol:
 	C$crc_4b6b.c$87$2$25 ==.
 ;	crc_4b6b.c:87: case 0x25: {*outSymbol = 0x05; return(0); }
 00106$:
-	mov	r5,_decode4b6bsymbol_PARM_2
-	mov	r6,(_decode4b6bsymbol_PARM_2 + 1)
-	mov	r7,(_decode4b6bsymbol_PARM_2 + 2)
+	mov	dptr,#_decode4b6bsymbol_PARM_2
+	movx	a,@dptr
+	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
 	mov	dpl,r5
 	mov	dph,r6
 	mov	b,r7
@@ -820,9 +1055,15 @@ _decode4b6bsymbol:
 	C$crc_4b6b.c$88$2$25 ==.
 ;	crc_4b6b.c:88: case 0x26: {*outSymbol = 0x06; return(0); }
 00107$:
-	mov	r5,_decode4b6bsymbol_PARM_2
-	mov	r6,(_decode4b6bsymbol_PARM_2 + 1)
-	mov	r7,(_decode4b6bsymbol_PARM_2 + 2)
+	mov	dptr,#_decode4b6bsymbol_PARM_2
+	movx	a,@dptr
+	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
 	mov	dpl,r5
 	mov	dph,r6
 	mov	b,r7
@@ -833,9 +1074,15 @@ _decode4b6bsymbol:
 	C$crc_4b6b.c$89$2$25 ==.
 ;	crc_4b6b.c:89: case 0x16: {*outSymbol = 0x07; return(0); }
 00108$:
-	mov	r5,_decode4b6bsymbol_PARM_2
-	mov	r6,(_decode4b6bsymbol_PARM_2 + 1)
-	mov	r7,(_decode4b6bsymbol_PARM_2 + 2)
+	mov	dptr,#_decode4b6bsymbol_PARM_2
+	movx	a,@dptr
+	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
 	mov	dpl,r5
 	mov	dph,r6
 	mov	b,r7
@@ -846,9 +1093,15 @@ _decode4b6bsymbol:
 	C$crc_4b6b.c$90$2$25 ==.
 ;	crc_4b6b.c:90: case 0x1A: {*outSymbol = 0x08; return(0); }
 00109$:
-	mov	r5,_decode4b6bsymbol_PARM_2
-	mov	r6,(_decode4b6bsymbol_PARM_2 + 1)
-	mov	r7,(_decode4b6bsymbol_PARM_2 + 2)
+	mov	dptr,#_decode4b6bsymbol_PARM_2
+	movx	a,@dptr
+	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
 	mov	dpl,r5
 	mov	dph,r6
 	mov	b,r7
@@ -859,9 +1112,15 @@ _decode4b6bsymbol:
 	C$crc_4b6b.c$91$2$25 ==.
 ;	crc_4b6b.c:91: case 0x19: {*outSymbol = 0x09; return(0); }
 00110$:
-	mov	r5,_decode4b6bsymbol_PARM_2
-	mov	r6,(_decode4b6bsymbol_PARM_2 + 1)
-	mov	r7,(_decode4b6bsymbol_PARM_2 + 2)
+	mov	dptr,#_decode4b6bsymbol_PARM_2
+	movx	a,@dptr
+	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
 	mov	dpl,r5
 	mov	dph,r6
 	mov	b,r7
@@ -872,9 +1131,15 @@ _decode4b6bsymbol:
 	C$crc_4b6b.c$92$2$25 ==.
 ;	crc_4b6b.c:92: case 0x2A: {*outSymbol = 0x0A; return(0); }
 00111$:
-	mov	r5,_decode4b6bsymbol_PARM_2
-	mov	r6,(_decode4b6bsymbol_PARM_2 + 1)
-	mov	r7,(_decode4b6bsymbol_PARM_2 + 2)
+	mov	dptr,#_decode4b6bsymbol_PARM_2
+	movx	a,@dptr
+	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
 	mov	dpl,r5
 	mov	dph,r6
 	mov	b,r7
@@ -885,22 +1150,34 @@ _decode4b6bsymbol:
 	C$crc_4b6b.c$93$2$25 ==.
 ;	crc_4b6b.c:93: case 0x0B: {*outSymbol = 0x0B; return(0); }
 00112$:
-	mov	r5,_decode4b6bsymbol_PARM_2
-	mov	r6,(_decode4b6bsymbol_PARM_2 + 1)
-	mov	r7,(_decode4b6bsymbol_PARM_2 + 2)
+	mov	dptr,#_decode4b6bsymbol_PARM_2
+	movx	a,@dptr
+	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
 	mov	dpl,r5
 	mov	dph,r6
 	mov	b,r7
 	mov	a,#0x0B
 	lcall	__gptrput
 	mov	dpl,#0x00
+	ljmp	00119$
 	C$crc_4b6b.c$94$2$25 ==.
 ;	crc_4b6b.c:94: case 0x2C: {*outSymbol = 0x0C; return(0); }
-	sjmp	00119$
 00113$:
-	mov	r5,_decode4b6bsymbol_PARM_2
-	mov	r6,(_decode4b6bsymbol_PARM_2 + 1)
-	mov	r7,(_decode4b6bsymbol_PARM_2 + 2)
+	mov	dptr,#_decode4b6bsymbol_PARM_2
+	movx	a,@dptr
+	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
 	mov	dpl,r5
 	mov	dph,r6
 	mov	b,r7
@@ -911,9 +1188,15 @@ _decode4b6bsymbol:
 ;	crc_4b6b.c:95: case 0x0D: {*outSymbol = 0x0D; return(0); }
 	sjmp	00119$
 00114$:
-	mov	r5,_decode4b6bsymbol_PARM_2
-	mov	r6,(_decode4b6bsymbol_PARM_2 + 1)
-	mov	r7,(_decode4b6bsymbol_PARM_2 + 2)
+	mov	dptr,#_decode4b6bsymbol_PARM_2
+	movx	a,@dptr
+	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
 	mov	dpl,r5
 	mov	dph,r6
 	mov	b,r7
@@ -924,9 +1207,15 @@ _decode4b6bsymbol:
 ;	crc_4b6b.c:96: case 0x0E: {*outSymbol = 0x0E; return(0); }
 	sjmp	00119$
 00115$:
-	mov	r5,_decode4b6bsymbol_PARM_2
-	mov	r6,(_decode4b6bsymbol_PARM_2 + 1)
-	mov	r7,(_decode4b6bsymbol_PARM_2 + 2)
+	mov	dptr,#_decode4b6bsymbol_PARM_2
+	movx	a,@dptr
+	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
 	mov	dpl,r5
 	mov	dph,r6
 	mov	b,r7
@@ -937,9 +1226,15 @@ _decode4b6bsymbol:
 ;	crc_4b6b.c:97: case 0x1C: {*outSymbol = 0x0F; return(0); }
 	sjmp	00119$
 00116$:
-	mov	r5,_decode4b6bsymbol_PARM_2
-	mov	r6,(_decode4b6bsymbol_PARM_2 + 1)
-	mov	r7,(_decode4b6bsymbol_PARM_2 + 2)
+	mov	dptr,#_decode4b6bsymbol_PARM_2
+	movx	a,@dptr
+	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
 	mov	dpl,r5
 	mov	dph,r6
 	mov	b,r7
@@ -950,9 +1245,15 @@ _decode4b6bsymbol:
 ;	crc_4b6b.c:98: default:   {*outSymbol = 0x00; return(1); }
 	sjmp	00119$
 00117$:
-	mov	r5,_decode4b6bsymbol_PARM_2
-	mov	r6,(_decode4b6bsymbol_PARM_2 + 1)
-	mov	r7,(_decode4b6bsymbol_PARM_2 + 2)
+	mov	dptr,#_decode4b6bsymbol_PARM_2
+	movx	a,@dptr
+	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
 	mov	dpl,r5
 	mov	dph,r6
 	mov	b,r7
@@ -968,6 +1269,13 @@ _decode4b6bsymbol:
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'encode4b6b'
 ;------------------------------------------------------------
+;sloc0                     Allocated with name '_encode4b6b_sloc0_1_0'
+;sloc1                     Allocated with name '_encode4b6b_sloc1_1_0'
+;sloc2                     Allocated with name '_encode4b6b_sloc2_1_0'
+;sloc3                     Allocated with name '_encode4b6b_sloc3_1_0'
+;sloc4                     Allocated with name '_encode4b6b_sloc4_1_0'
+;sloc5                     Allocated with name '_encode4b6b_sloc5_1_0'
+;sloc6                     Allocated with name '_encode4b6b_sloc6_1_0'
 ;bytesIn                   Allocated with name '_encode4b6b_PARM_2'
 ;messageOut                Allocated with name '_encode4b6b_PARM_3'
 ;bytesOut                  Allocated with name '_encode4b6b_PARM_4'
@@ -975,10 +1283,9 @@ _decode4b6bsymbol:
 ;i                         Allocated with name '_encode4b6b_i_1_44'
 ;j                         Allocated with name '_encode4b6b_j_1_44'
 ;intBuffer                 Allocated with name '_encode4b6b_intBuffer_1_44'
-;mask                      Allocated to registers r6 r7 
+;mask                      Allocated with name '_encode4b6b_mask_1_44'
 ;intBitsAvailable          Allocated with name '_encode4b6b_intBitsAvailable_1_44'
 ;symbol                    Allocated with name '_encode4b6b_symbol_1_44'
-;sloc0                     Allocated with name '_encode4b6b_sloc0_1_0'
 ;------------------------------------------------------------
 	G$encode4b6b$0$0 ==.
 	C$crc_4b6b.c$102$1$24 ==.
@@ -987,84 +1294,128 @@ _decode4b6bsymbol:
 ;	 function encode4b6b
 ;	-----------------------------------------
 _encode4b6b:
-	mov	_encode4b6b_messageIn_1_43,dpl
-	mov	(_encode4b6b_messageIn_1_43 + 1),dph
-	mov	(_encode4b6b_messageIn_1_43 + 2),b
+	mov	r7,b
+	mov	r6,dph
+	mov	a,dpl
+	mov	dptr,#_encode4b6b_messageIn_1_43
+	movx	@dptr,a
+	mov	a,r6
+	inc	dptr
+	movx	@dptr,a
+	mov	a,r7
+	inc	dptr
+	movx	@dptr,a
 	C$crc_4b6b.c$110$1$44 ==.
 ;	crc_4b6b.c:110: *bytesOut = 0;
-	mov	r2,_encode4b6b_PARM_4
-	mov	r3,(_encode4b6b_PARM_4 + 1)
-	mov	r4,(_encode4b6b_PARM_4 + 2)
-	mov	dpl,r2
-	mov	dph,r3
-	mov	b,r4
+	mov	dptr,#_encode4b6b_PARM_4
+	movx	a,@dptr
+	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
+	mov	dpl,r5
+	mov	dph,r6
+	mov	b,r7
 	clr	a
 	lcall	__gptrput
 	inc	dptr
 	lcall	__gptrput
 	C$crc_4b6b.c$111$1$44 ==.
 ;	crc_4b6b.c:111: intBitsAvailable = 0;
-	mov	_encode4b6b_intBitsAvailable_1_44,a
-	mov	(_encode4b6b_intBitsAvailable_1_44 + 1),a
+	mov	dptr,#_encode4b6b_intBitsAvailable_1_44
+	movx	@dptr,a
+	inc	dptr
+	movx	@dptr,a
 	C$crc_4b6b.c$112$1$44 ==.
 ;	crc_4b6b.c:112: intBuffer = 0;
-	mov	_encode4b6b_intBuffer_1_44,a
-	mov	(_encode4b6b_intBuffer_1_44 + 1),a
-	C$crc_4b6b.c$114$1$44 ==.
+	mov	dptr,#_encode4b6b_intBuffer_1_44
+	movx	@dptr,a
+	inc	dptr
+	movx	@dptr,a
+	C$crc_4b6b.c$114$3$47 ==.
 ;	crc_4b6b.c:114: for( i = 0; i < bytesIn * 2; i++ ) {
-	mov	_encode4b6b_sloc0_1_0,_encode4b6b_PARM_2
-	mov	a,(_encode4b6b_PARM_2 + 1)
-	xch	a,_encode4b6b_sloc0_1_0
+	mov	dptr,#_encode4b6b_messageIn_1_43
+	movx	a,@dptr
+	mov	_encode4b6b_sloc4_1_0,a
+	inc	dptr
+	movx	a,@dptr
+	mov	(_encode4b6b_sloc4_1_0 + 1),a
+	inc	dptr
+	movx	a,@dptr
+	mov	(_encode4b6b_sloc4_1_0 + 2),a
+	mov	_encode4b6b_sloc0_1_0,_encode4b6b_sloc4_1_0
+	mov	(_encode4b6b_sloc0_1_0 + 1),(_encode4b6b_sloc4_1_0 + 1)
+	mov	(_encode4b6b_sloc0_1_0 + 2),(_encode4b6b_sloc4_1_0 + 2)
+	mov	dptr,#_encode4b6b_PARM_3
+	movx	a,@dptr
+	mov	_encode4b6b_sloc1_1_0,a
+	inc	dptr
+	movx	a,@dptr
+	mov	(_encode4b6b_sloc1_1_0 + 1),a
+	inc	dptr
+	movx	a,@dptr
+	mov	(_encode4b6b_sloc1_1_0 + 2),a
+	mov	dptr,#_encode4b6b_PARM_2
+	movx	a,@dptr
+	mov	r0,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r1,a
+	mov	_encode4b6b_sloc5_1_0,r0
+	xch	a,_encode4b6b_sloc5_1_0
 	add	a,acc
-	xch	a,_encode4b6b_sloc0_1_0
+	xch	a,_encode4b6b_sloc5_1_0
 	rlc	a
-	mov	(_encode4b6b_sloc0_1_0 + 1),a
+	mov	(_encode4b6b_sloc5_1_0 + 1),a
 	clr	a
-	mov	_encode4b6b_i_1_44,a
-	mov	(_encode4b6b_i_1_44 + 1),a
+	mov	_encode4b6b_sloc2_1_0,a
+	mov	(_encode4b6b_sloc2_1_0 + 1),a
 00110$:
 	clr	c
-	mov	a,_encode4b6b_i_1_44
-	subb	a,_encode4b6b_sloc0_1_0
-	mov	a,(_encode4b6b_i_1_44 + 1)
-	subb	a,(_encode4b6b_sloc0_1_0 + 1)
+	mov	a,_encode4b6b_sloc2_1_0
+	subb	a,_encode4b6b_sloc5_1_0
+	mov	a,(_encode4b6b_sloc2_1_0 + 1)
+	subb	a,(_encode4b6b_sloc5_1_0 + 1)
 	jc	00130$
 	ljmp	00106$
 00130$:
-	C$crc_4b6b.c$115$2$45 ==.
+	C$crc_4b6b.c$115$1$44 ==.
 ;	crc_4b6b.c:115: j = i >> 1;
-	mov	_encode4b6b_j_1_44,_encode4b6b_i_1_44
-	mov	a,(_encode4b6b_i_1_44 + 1)
+	mov	_encode4b6b_sloc3_1_0,_encode4b6b_sloc2_1_0
+	mov	a,(_encode4b6b_sloc2_1_0 + 1)
 	clr	c
 	rrc	a
-	xch	a,_encode4b6b_j_1_44
+	xch	a,_encode4b6b_sloc3_1_0
 	rrc	a
-	xch	a,_encode4b6b_j_1_44
+	xch	a,_encode4b6b_sloc3_1_0
 	C$crc_4b6b.c$116$2$45 ==.
 ;	crc_4b6b.c:116: if( j * 2 == i ) {
-	mov	(_encode4b6b_j_1_44 + 1),a
-	mov	r1,_encode4b6b_j_1_44
-	xch	a,r1
+	mov	(_encode4b6b_sloc3_1_0 + 1),a
+	mov	r0,_encode4b6b_sloc3_1_0
+	xch	a,r0
 	add	a,acc
-	xch	a,r1
+	xch	a,r0
 	rlc	a
-	mov	r5,a
-	mov	a,r1
-	cjne	a,_encode4b6b_i_1_44,00102$
-	mov	a,r5
-	cjne	a,(_encode4b6b_i_1_44 + 1),00102$
-	C$crc_4b6b.c$117$3$46 ==.
-;	crc_4b6b.c:117: symbol = (messageIn[j] >> 4) & 0x0F;
-	mov	a,_encode4b6b_j_1_44
-	add	a,_encode4b6b_messageIn_1_43
-	mov	r0,a
-	mov	a,(_encode4b6b_j_1_44 + 1)
-	addc	a,(_encode4b6b_messageIn_1_43 + 1)
 	mov	r1,a
-	mov	r5,(_encode4b6b_messageIn_1_43 + 2)
+	mov	a,r0
+	cjne	a,_encode4b6b_sloc2_1_0,00102$
+	mov	a,r1
+	cjne	a,(_encode4b6b_sloc2_1_0 + 1),00102$
+	C$crc_4b6b.c$117$1$44 ==.
+;	crc_4b6b.c:117: symbol = (messageIn[j] >> 4) & 0x0F;
+	mov	a,_encode4b6b_sloc3_1_0
+	add	a,_encode4b6b_sloc0_1_0
+	mov	r0,a
+	mov	a,(_encode4b6b_sloc3_1_0 + 1)
+	addc	a,(_encode4b6b_sloc0_1_0 + 1)
+	mov	r1,a
+	mov	r4,(_encode4b6b_sloc0_1_0 + 2)
 	mov	dpl,r0
 	mov	dph,r1
-	mov	b,r5
+	mov	b,r4
 	lcall	__gptrget
 	mov	r0,a
 	swap	a
@@ -1073,86 +1424,120 @@ _encode4b6b:
 	orl	a,#0xF0
 00133$:
 	mov	r0,a
+	mov	dptr,#_encode4b6b_symbol_1_44
 	mov	a,#0x0F
 	anl	a,r0
-	mov	_encode4b6b_symbol_1_44,a
+	movx	@dptr,a
 	sjmp	00103$
 00102$:
 	C$crc_4b6b.c$119$3$47 ==.
 ;	crc_4b6b.c:119: symbol = messageIn[j] & 0x0F;
-	mov	a,_encode4b6b_j_1_44
-	add	a,_encode4b6b_messageIn_1_43
-	mov	r0,a
-	mov	a,(_encode4b6b_j_1_44 + 1)
-	addc	a,(_encode4b6b_messageIn_1_43 + 1)
-	mov	r1,a
-	mov	r7,(_encode4b6b_messageIn_1_43 + 2)
-	mov	dpl,r0
-	mov	dph,r1
-	mov	b,r7
+	mov	a,_encode4b6b_sloc3_1_0
+	add	a,_encode4b6b_sloc4_1_0
+	mov	r2,a
+	mov	a,(_encode4b6b_sloc3_1_0 + 1)
+	addc	a,(_encode4b6b_sloc4_1_0 + 1)
+	mov	r3,a
+	mov	r4,(_encode4b6b_sloc4_1_0 + 2)
+	mov	dpl,r2
+	mov	dph,r3
+	mov	b,r4
 	lcall	__gptrget
-	mov	r0,a
+	mov	r2,a
+	mov	dptr,#_encode4b6b_symbol_1_44
 	mov	a,#0x0F
-	anl	a,r0
-	mov	_encode4b6b_symbol_1_44,a
+	anl	a,r2
+	movx	@dptr,a
 00103$:
-	C$crc_4b6b.c$121$2$45 ==.
+	C$crc_4b6b.c$121$1$44 ==.
 ;	crc_4b6b.c:121: symbol = get4b6bsymbol( symbol );
-	mov	dpl,_encode4b6b_symbol_1_44
-	push	ar4
-	push	ar3
-	push	ar2
+	mov	dptr,#_encode4b6b_symbol_1_44
+	movx	a,@dptr
+	mov	dpl,a
+	push	ar7
+	push	ar6
+	push	ar5
 	lcall	_get4b6bsymbol
-	mov	_encode4b6b_symbol_1_44,dpl
-	pop	ar2
-	pop	ar3
-	pop	ar4
+	mov	r4,dpl
+	pop	ar5
+	pop	ar6
+	pop	ar7
 	C$crc_4b6b.c$122$2$45 ==.
 ;	crc_4b6b.c:122: intBuffer = (intBuffer << 6) & 0xFFC0;
-	mov	r6,_encode4b6b_intBuffer_1_44
-	mov	a,(_encode4b6b_intBuffer_1_44 + 1)
+	mov	dptr,#_encode4b6b_intBuffer_1_44
+	movx	a,@dptr
+	mov	r2,a
+	inc	dptr
+	movx	a,@dptr
 	anl	a,#0x03
 	mov	c,acc.0
-	xch	a,r6
+	xch	a,r2
 	rrc	a
-	xch	a,r6
+	xch	a,r2
 	rrc	a
 	mov	c,acc.0
-	xch	a,r6
+	xch	a,r2
 	rrc	a
-	xch	a,r6
+	xch	a,r2
 	rrc	a
-	xch	a,r6
-	mov	r7,a
+	xch	a,r2
+	mov	r3,a
+	mov	dptr,#_encode4b6b_intBuffer_1_44
 	mov	a,#0xC0
-	anl	a,r6
-	mov	_encode4b6b_intBuffer_1_44,a
-	mov	(_encode4b6b_intBuffer_1_44 + 1),r7
+	anl	a,r2
+	movx	@dptr,a
+	mov	a,r3
+	inc	dptr
+	movx	@dptr,a
 	C$crc_4b6b.c$123$2$45 ==.
 ;	crc_4b6b.c:123: intBuffer = intBuffer | symbol;
-	mov	a,_encode4b6b_symbol_1_44
-	mov	r6,a
+	mov	dptr,#_encode4b6b_intBuffer_1_44
+	movx	a,@dptr
+	mov	r2,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r3,a
+	mov	a,r4
+	mov	r1,a
 	rlc	a
 	subb	a,acc
-	mov	r7,a
-	mov	a,r6
-	orl	_encode4b6b_intBuffer_1_44,a
-	mov	a,r7
-	orl	(_encode4b6b_intBuffer_1_44 + 1),a
+	mov	r4,a
+	mov	dptr,#_encode4b6b_intBuffer_1_44
+	mov	a,r1
+	orl	a,r2
+	movx	@dptr,a
+	mov	a,r4
+	orl	a,r3
+	inc	dptr
+	movx	@dptr,a
 	C$crc_4b6b.c$124$2$45 ==.
 ;	crc_4b6b.c:124: intBitsAvailable += 6;
+	mov	dptr,#_encode4b6b_intBitsAvailable_1_44
+	movx	a,@dptr
+	mov	r3,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r4,a
+	mov	dptr,#_encode4b6b_intBitsAvailable_1_44
 	mov	a,#0x06
-	add	a,_encode4b6b_intBitsAvailable_1_44
-	mov	_encode4b6b_intBitsAvailable_1_44,a
+	add	a,r3
+	movx	@dptr,a
 	clr	a
-	addc	a,(_encode4b6b_intBitsAvailable_1_44 + 1)
-	mov	(_encode4b6b_intBitsAvailable_1_44 + 1),a
+	addc	a,r4
+	inc	dptr
+	movx	@dptr,a
 	C$crc_4b6b.c$125$2$45 ==.
 ;	crc_4b6b.c:125: if( intBitsAvailable >= 8 ) {
+	mov	dptr,#_encode4b6b_intBitsAvailable_1_44
+	movx	a,@dptr
+	mov	_encode4b6b_sloc3_1_0,a
+	inc	dptr
+	movx	a,@dptr
+	mov	(_encode4b6b_sloc3_1_0 + 1),a
 	clr	c
-	mov	a,_encode4b6b_intBitsAvailable_1_44
+	mov	a,_encode4b6b_sloc3_1_0
 	subb	a,#0x08
-	mov	a,(_encode4b6b_intBitsAvailable_1_44 + 1)
+	mov	a,(_encode4b6b_sloc3_1_0 + 1)
 	xrl	a,#0x80
 	subb	a,#0x80
 	jnc	00134$
@@ -1160,218 +1545,268 @@ _encode4b6b:
 00134$:
 	C$crc_4b6b.c$126$3$48 ==.
 ;	crc_4b6b.c:126: symbol = intBuffer >> (intBitsAvailable - 8);
-	mov	a,_encode4b6b_intBitsAvailable_1_44
+	mov	a,_encode4b6b_sloc3_1_0
 	add	a,#0xF8
-	mov	r6,a
-	mov	a,(_encode4b6b_intBitsAvailable_1_44 + 1)
+	mov	r3,a
+	mov	a,(_encode4b6b_sloc3_1_0 + 1)
 	addc	a,#0xFF
-	mov	r7,a
-	mov	b,r6
+	mov	r4,a
+	mov	dptr,#_encode4b6b_intBuffer_1_44
+	movx	a,@dptr
+	mov	_encode4b6b_sloc3_1_0,a
+	inc	dptr
+	movx	a,@dptr
+	mov	(_encode4b6b_sloc3_1_0 + 1),a
+	mov	b,r3
 	inc	b
-	mov	r0,_encode4b6b_intBuffer_1_44
-	mov	a,(_encode4b6b_intBuffer_1_44 + 1)
-	mov	r1,a
+	mov	r0,_encode4b6b_sloc3_1_0
+	mov	a,(_encode4b6b_sloc3_1_0 + 1)
+	mov	r2,a
 	rlc	a
 	mov	ov,c
 	sjmp	00136$
 00135$:
 	mov	c,ov
-	mov	a,r1
+	mov	a,r2
 	rrc	a
-	mov	r1,a
+	mov	r2,a
 	mov	a,r0
 	rrc	a
 	mov	r0,a
 00136$:
 	djnz	b,00135$
-	mov	_encode4b6b_symbol_1_44,r0
+	mov	_encode4b6b_sloc6_1_0,r0
 	C$crc_4b6b.c$127$3$48 ==.
 ;	crc_4b6b.c:127: messageOut[*bytesOut] = symbol;
-	mov	dpl,r2
-	mov	dph,r3
-	mov	b,r4
+	mov	dpl,r5
+	mov	dph,r6
+	mov	b,r7
 	lcall	__gptrget
-	mov	r0,a
+	mov	r1,a
 	inc	dptr
 	lcall	__gptrget
-	mov	r1,a
-	mov	a,r0
-	add	a,_encode4b6b_PARM_3
-	mov	r0,a
+	mov	r2,a
 	mov	a,r1
-	addc	a,(_encode4b6b_PARM_3 + 1)
+	add	a,_encode4b6b_sloc1_1_0
 	mov	r1,a
-	mov	r5,(_encode4b6b_PARM_3 + 2)
-	mov	dpl,r0
-	mov	dph,r1
-	mov	b,r5
-	mov	a,_encode4b6b_symbol_1_44
+	mov	a,r2
+	addc	a,(_encode4b6b_sloc1_1_0 + 1)
+	mov	r0,a
+	mov	r2,(_encode4b6b_sloc1_1_0 + 2)
+	mov	dpl,r1
+	mov	dph,r0
+	mov	b,r2
+	mov	a,_encode4b6b_sloc6_1_0
 	lcall	__gptrput
 	C$crc_4b6b.c$128$3$48 ==.
 ;	crc_4b6b.c:128: (*bytesOut)++;
-	mov	dpl,r2
-	mov	dph,r3
-	mov	b,r4
+	mov	dpl,r5
+	mov	dph,r6
+	mov	b,r7
 	lcall	__gptrget
 	mov	r1,a
 	inc	dptr
 	lcall	__gptrget
-	mov	r5,a
+	mov	r2,a
 	inc	r1
 	cjne	r1,#0x00,00137$
-	inc	r5
+	inc	r2
 00137$:
-	mov	dpl,r2
-	mov	dph,r3
-	mov	b,r4
+	mov	dpl,r5
+	mov	dph,r6
+	mov	b,r7
 	mov	a,r1
 	lcall	__gptrput
 	inc	dptr
-	mov	a,r5
+	mov	a,r2
 	lcall	__gptrput
 	C$crc_4b6b.c$129$3$48 ==.
 ;	crc_4b6b.c:129: intBitsAvailable -= 8;
-	mov	_encode4b6b_intBitsAvailable_1_44,r6
-	mov	(_encode4b6b_intBitsAvailable_1_44 + 1),r7
+	mov	dptr,#_encode4b6b_intBitsAvailable_1_44
+	mov	a,r3
+	movx	@dptr,a
+	mov	a,r4
+	inc	dptr
+	movx	@dptr,a
 	C$crc_4b6b.c$130$3$48 ==.
 ;	crc_4b6b.c:130: mask = (1 << intBitsAvailable) - 1;
-	mov	b,_encode4b6b_intBitsAvailable_1_44
+	mov	dptr,#_encode4b6b_intBitsAvailable_1_44
+	movx	a,@dptr
+	mov	r3,a
+	inc	dptr
+	movx	a,@dptr
+	mov	b,r3
 	inc	b
-	mov	r6,#0x01
-	mov	r7,#0x00
+	mov	r3,#0x01
+	mov	r4,#0x00
 	sjmp	00139$
 00138$:
-	mov	a,r6
-	add	a,r6
-	mov	r6,a
-	mov	a,r7
+	mov	a,r3
+	add	a,r3
+	mov	r3,a
+	mov	a,r4
 	rlc	a
-	mov	r7,a
+	mov	r4,a
 00139$:
 	djnz	b,00138$
-	dec	r6
-	cjne	r6,#0xFF,00140$
-	dec	r7
+	dec	r3
+	cjne	r3,#0xFF,00140$
+	dec	r4
 00140$:
 	C$crc_4b6b.c$131$3$48 ==.
 ;	crc_4b6b.c:131: intBuffer = intBuffer & mask;
-	mov	a,r6
-	anl	_encode4b6b_intBuffer_1_44,a
-	mov	a,r7
-	anl	(_encode4b6b_intBuffer_1_44 + 1),a
+	mov	dptr,#_encode4b6b_intBuffer_1_44
+	mov	a,r3
+	anl	a,_encode4b6b_sloc3_1_0
+	movx	@dptr,a
+	mov	a,r4
+	anl	a,(_encode4b6b_sloc3_1_0 + 1)
+	inc	dptr
+	movx	@dptr,a
 00111$:
 	C$crc_4b6b.c$114$1$44 ==.
 ;	crc_4b6b.c:114: for( i = 0; i < bytesIn * 2; i++ ) {
-	inc	_encode4b6b_i_1_44
+	inc	_encode4b6b_sloc2_1_0
 	clr	a
-	cjne	a,_encode4b6b_i_1_44,00141$
-	inc	(_encode4b6b_i_1_44 + 1)
+	cjne	a,_encode4b6b_sloc2_1_0,00141$
+	inc	(_encode4b6b_sloc2_1_0 + 1)
 00141$:
 	ljmp	00110$
 00106$:
 	C$crc_4b6b.c$135$1$44 ==.
 ;	crc_4b6b.c:135: if( intBitsAvailable != 0 ) {
-	mov	a,_encode4b6b_intBitsAvailable_1_44
-	orl	a,(_encode4b6b_intBitsAvailable_1_44 + 1)
+	mov	dptr,#_encode4b6b_intBitsAvailable_1_44
+	movx	a,@dptr
+	mov	r3,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r4,a
+	orl	a,r3
 	jnz	00142$
 	ljmp	00112$
 00142$:
 	C$crc_4b6b.c$136$2$49 ==.
 ;	crc_4b6b.c:136: mask = (1 << intBitsAvailable) - 1;
-	mov	b,_encode4b6b_intBitsAvailable_1_44
+	mov	b,r3
 	inc	b
 	mov	r1,#0x01
-	mov	r5,#0x00
+	mov	r2,#0x00
 	sjmp	00144$
 00143$:
 	mov	a,r1
 	add	a,r1
 	mov	r1,a
-	mov	a,r5
+	mov	a,r2
 	rlc	a
-	mov	r5,a
+	mov	r2,a
 00144$:
 	djnz	b,00143$
 	mov	a,r1
 	add	a,#0xFF
-	mov	r6,a
-	mov	a,r5
+	mov	_encode4b6b_sloc5_1_0,a
+	mov	a,r2
 	addc	a,#0xFF
-	mov	r7,a
+	mov	(_encode4b6b_sloc5_1_0 + 1),a
 	C$crc_4b6b.c$137$2$49 ==.
 ;	crc_4b6b.c:137: intBuffer = intBuffer & mask;
-	mov	a,r6
-	anl	_encode4b6b_intBuffer_1_44,a
-	mov	a,r7
-	anl	(_encode4b6b_intBuffer_1_44 + 1),a
+	mov	dptr,#_encode4b6b_intBuffer_1_44
+	movx	a,@dptr
+	mov	r0,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r2,a
+	mov	dptr,#_encode4b6b_intBuffer_1_44
+	mov	a,_encode4b6b_sloc5_1_0
+	anl	a,r0
+	movx	@dptr,a
+	mov	a,(_encode4b6b_sloc5_1_0 + 1)
+	anl	a,r2
+	inc	dptr
+	movx	@dptr,a
 	C$crc_4b6b.c$138$2$49 ==.
 ;	crc_4b6b.c:138: intBuffer = intBuffer << (8 - intBitsAvailable);
 	mov	a,#0x08
 	clr	c
-	subb	a,_encode4b6b_intBitsAvailable_1_44
-	mov	r6,a
+	subb	a,r3
+	mov	r3,a
 	clr	a
-	subb	a,(_encode4b6b_intBitsAvailable_1_44 + 1)
-	mov	r7,a
-	mov	b,r6
+	subb	a,r4
+	mov	dptr,#_encode4b6b_intBuffer_1_44
+	movx	a,@dptr
+	mov	r1,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r2,a
+	mov	b,r3
 	inc	b
+	mov	r3,ar1
+	mov	r4,ar2
 	sjmp	00146$
 00145$:
-	mov	a,_encode4b6b_intBuffer_1_44
-	add	a,_encode4b6b_intBuffer_1_44
-	mov	_encode4b6b_intBuffer_1_44,a
-	mov	a,(_encode4b6b_intBuffer_1_44 + 1)
+	mov	a,r3
+	add	a,r3
+	mov	r3,a
+	mov	a,r4
 	rlc	a
-	mov	(_encode4b6b_intBuffer_1_44 + 1),a
+	mov	r4,a
 00146$:
 	djnz	b,00145$
+	mov	dptr,#_encode4b6b_intBuffer_1_44
+	mov	a,r3
+	movx	@dptr,a
+	mov	a,r4
+	inc	dptr
+	movx	@dptr,a
 	C$crc_4b6b.c$139$2$49 ==.
 ;	crc_4b6b.c:139: symbol = intBuffer & 0x00FF;
-	mov	r6,_encode4b6b_intBuffer_1_44
-	mov	_encode4b6b_symbol_1_44,r6
+	mov	dptr,#_encode4b6b_intBuffer_1_44
+	movx	a,@dptr
+	mov	r3,a
+	inc	dptr
+	movx	a,@dptr
 	C$crc_4b6b.c$140$2$49 ==.
 ;	crc_4b6b.c:140: messageOut[*bytesOut] = symbol;
-	mov	dpl,r2
-	mov	dph,r3
-	mov	b,r4
+	mov	dpl,r5
+	mov	dph,r6
+	mov	b,r7
 	lcall	__gptrget
-	mov	r6,a
+	mov	r2,a
 	inc	dptr
 	lcall	__gptrget
-	mov	r7,a
-	mov	a,r6
-	add	a,_encode4b6b_PARM_3
-	mov	r6,a
-	mov	a,r7
-	addc	a,(_encode4b6b_PARM_3 + 1)
-	mov	r7,a
-	mov	r5,(_encode4b6b_PARM_3 + 2)
-	mov	dpl,r6
-	mov	dph,r7
-	mov	b,r5
-	mov	a,_encode4b6b_symbol_1_44
+	mov	r4,a
+	mov	a,r2
+	add	a,_encode4b6b_sloc1_1_0
+	mov	r2,a
+	mov	a,r4
+	addc	a,(_encode4b6b_sloc1_1_0 + 1)
+	mov	r1,a
+	mov	r4,(_encode4b6b_sloc1_1_0 + 2)
+	mov	dpl,r2
+	mov	dph,r1
+	mov	b,r4
+	mov	a,r3
 	lcall	__gptrput
 	C$crc_4b6b.c$141$2$49 ==.
 ;	crc_4b6b.c:141: (*bytesOut)++;
-	mov	dpl,r2
-	mov	dph,r3
-	mov	b,r4
+	mov	dpl,r5
+	mov	dph,r6
+	mov	b,r7
 	lcall	__gptrget
-	mov	r6,a
+	mov	r3,a
 	inc	dptr
 	lcall	__gptrget
-	mov	r7,a
-	inc	r6
-	cjne	r6,#0x00,00147$
-	inc	r7
+	mov	r4,a
+	inc	r3
+	cjne	r3,#0x00,00147$
+	inc	r4
 00147$:
-	mov	dpl,r2
-	mov	dph,r3
-	mov	b,r4
-	mov	a,r6
+	mov	dpl,r5
+	mov	dph,r6
+	mov	b,r7
+	mov	a,r3
 	lcall	__gptrput
 	inc	dptr
-	mov	a,r7
+	mov	a,r4
 	lcall	__gptrput
 00112$:
 	C$crc_4b6b.c$143$1$44 ==.
@@ -1380,6 +1815,11 @@ _encode4b6b:
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'decode4b6b'
 ;------------------------------------------------------------
+;sloc0                     Allocated with name '_decode4b6b_sloc0_1_0'
+;sloc1                     Allocated with name '_decode4b6b_sloc1_1_0'
+;sloc2                     Allocated with name '_decode4b6b_sloc2_1_0'
+;sloc3                     Allocated with name '_decode4b6b_sloc3_1_0'
+;sloc4                     Allocated with name '_decode4b6b_sloc4_1_0'
 ;bytesIn                   Allocated with name '_decode4b6b_PARM_2'
 ;messageOut                Allocated with name '_decode4b6b_PARM_3'
 ;bytesOut                  Allocated with name '_decode4b6b_PARM_4'
@@ -1388,7 +1828,7 @@ _encode4b6b:
 ;intBuffer                 Allocated with name '_decode4b6b_intBuffer_1_51'
 ;intBitsAvailable          Allocated with name '_decode4b6b_intBitsAvailable_1_51'
 ;symbol                    Allocated with name '_decode4b6b_symbol_1_51'
-;recByte                   Allocated to registers r2 
+;recByte                   Allocated with name '_decode4b6b_recByte_1_51'
 ;nibbleFlag                Allocated with name '_decode4b6b_nibbleFlag_1_51'
 ;outBytes                  Allocated with name '_decode4b6b_outBytes_1_51'
 ;------------------------------------------------------------
@@ -1399,103 +1839,193 @@ _encode4b6b:
 ;	 function decode4b6b
 ;	-----------------------------------------
 _decode4b6b:
-	mov	_decode4b6b_messageIn_1_50,dpl
-	mov	(_decode4b6b_messageIn_1_50 + 1),dph
-	mov	(_decode4b6b_messageIn_1_50 + 2),b
+	mov	r7,b
+	mov	r6,dph
+	mov	a,dpl
+	mov	dptr,#_decode4b6b_messageIn_1_50
+	movx	@dptr,a
+	mov	a,r6
+	inc	dptr
+	movx	@dptr,a
+	mov	a,r7
+	inc	dptr
+	movx	@dptr,a
 	C$crc_4b6b.c$147$1$44 ==.
 ;	crc_4b6b.c:147: int intBuffer = 0;
+	mov	dptr,#_decode4b6b_intBuffer_1_51
 	clr	a
-	mov	_decode4b6b_intBuffer_1_51,a
-	mov	(_decode4b6b_intBuffer_1_51 + 1),a
+	movx	@dptr,a
+	inc	dptr
+	movx	@dptr,a
 	C$crc_4b6b.c$149$1$44 ==.
 ;	crc_4b6b.c:149: char symbol = 0;
-;	1-genFromRTrack replaced	mov	_decode4b6b_symbol_1_51,#0x00
-	mov	_decode4b6b_symbol_1_51,a
+	mov	dptr,#_decode4b6b_symbol_1_51
+	movx	@dptr,a
 	C$crc_4b6b.c$150$1$44 ==.
 ;	crc_4b6b.c:150: char recByte = 0;
-	mov	r2,#0x00
+	mov	dptr,#_decode4b6b_recByte_1_51
+	movx	@dptr,a
 	C$crc_4b6b.c$154$1$51 ==.
 ;	crc_4b6b.c:154: intBitsAvailable = 0;
-	mov	_decode4b6b_intBitsAvailable_1_51,a
-	mov	(_decode4b6b_intBitsAvailable_1_51 + 1),a
+	mov	dptr,#_decode4b6b_intBitsAvailable_1_51
+	movx	@dptr,a
+	inc	dptr
+	movx	@dptr,a
 	C$crc_4b6b.c$155$1$51 ==.
 ;	crc_4b6b.c:155: nibbleFlag = 0;
-;	1-genFromRTrack replaced	mov	_decode4b6b_nibbleFlag_1_51,#0x00
-	mov	_decode4b6b_nibbleFlag_1_51,a
+	mov	dptr,#_decode4b6b_nibbleFlag_1_51
+	movx	@dptr,a
 	C$crc_4b6b.c$156$1$51 ==.
 ;	crc_4b6b.c:156: outBytes = 0;
-;	1-genFromRTrack replaced	mov	_decode4b6b_outBytes_1_51,#0x00
-	mov	_decode4b6b_outBytes_1_51,a
-	C$crc_4b6b.c$157$1$51 ==.
+	mov	dptr,#_decode4b6b_outBytes_1_51
+	movx	@dptr,a
+	C$crc_4b6b.c$157$2$52 ==.
 ;	crc_4b6b.c:157: for( i = 0; i < bytesIn; i++ ) {
-	mov	_decode4b6b_i_1_51,a
-	mov	(_decode4b6b_i_1_51 + 1),a
+	mov	dptr,#_decode4b6b_messageIn_1_50
+	movx	a,@dptr
+	mov	_decode4b6b_sloc1_1_0,a
+	inc	dptr
+	movx	a,@dptr
+	mov	(_decode4b6b_sloc1_1_0 + 1),a
+	inc	dptr
+	movx	a,@dptr
+	mov	(_decode4b6b_sloc1_1_0 + 2),a
+	mov	dptr,#_decode4b6b_PARM_3
+	movx	a,@dptr
+	mov	r2,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r3,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r4,a
+	mov	dptr,#_decode4b6b_PARM_2
+	movx	a,@dptr
+	mov	r0,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r1,a
+	clr	a
+	mov	_decode4b6b_sloc0_1_0,a
+	mov	(_decode4b6b_sloc0_1_0 + 1),a
 00108$:
 	clr	c
-	mov	a,_decode4b6b_i_1_51
-	subb	a,_decode4b6b_PARM_2
-	mov	a,(_decode4b6b_i_1_51 + 1)
-	subb	a,(_decode4b6b_PARM_2 + 1)
+	mov	a,_decode4b6b_sloc0_1_0
+	subb	a,r0
+	mov	a,(_decode4b6b_sloc0_1_0 + 1)
+	subb	a,r1
 	jc	00129$
 	ljmp	00106$
 00129$:
-	C$crc_4b6b.c$158$2$52 ==.
+	C$crc_4b6b.c$158$1$51 ==.
 ;	crc_4b6b.c:158: intBuffer = intBuffer << 8;
-	mov	(_decode4b6b_intBuffer_1_51 + 1),_decode4b6b_intBuffer_1_51
-	mov	_decode4b6b_intBuffer_1_51,#0x00
+	push	ar0
+	push	ar1
+	mov	dptr,#_decode4b6b_intBuffer_1_51
+	movx	a,@dptr
+	mov	r0,a
+	inc	dptr
+	movx	a,@dptr
+	mov	ar1,r0
+	mov	r0,#0x00
+	mov	dptr,#_decode4b6b_intBuffer_1_51
+	mov	a,r0
+	movx	@dptr,a
+	mov	a,r1
+	inc	dptr
+	movx	@dptr,a
 	C$crc_4b6b.c$159$2$52 ==.
 ;	crc_4b6b.c:159: intBuffer |= messageIn[i];
-	mov	a,_decode4b6b_i_1_51
-	add	a,_decode4b6b_messageIn_1_50
+	mov	a,_decode4b6b_sloc0_1_0
+	add	a,_decode4b6b_sloc1_1_0
 	mov	r0,a
-	mov	a,(_decode4b6b_i_1_51 + 1)
-	addc	a,(_decode4b6b_messageIn_1_50 + 1)
+	mov	a,(_decode4b6b_sloc0_1_0 + 1)
+	addc	a,(_decode4b6b_sloc1_1_0 + 1)
 	mov	r1,a
-	mov	r6,(_decode4b6b_messageIn_1_50 + 2)
+	mov	r7,(_decode4b6b_sloc1_1_0 + 2)
 	mov	dpl,r0
 	mov	dph,r1
-	mov	b,r6
+	mov	b,r7
 	lcall	__gptrget
 	mov	r0,a
+	mov	dptr,#_decode4b6b_intBuffer_1_51
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
+	mov	a,r0
 	rlc	a
 	subb	a,acc
-	mov	r6,a
+	mov	r5,a
+	mov	dptr,#_decode4b6b_intBuffer_1_51
 	mov	a,r0
-	orl	_decode4b6b_intBuffer_1_51,a
-	mov	a,r6
-	orl	(_decode4b6b_intBuffer_1_51 + 1),a
+	orl	a,r6
+	movx	@dptr,a
+	mov	a,r5
+	orl	a,r7
+	inc	dptr
+	movx	@dptr,a
 	C$crc_4b6b.c$160$2$52 ==.
 ;	crc_4b6b.c:160: intBitsAvailable += 8;
+	mov	dptr,#_decode4b6b_intBitsAvailable_1_51
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
+	mov	dptr,#_decode4b6b_intBitsAvailable_1_51
 	mov	a,#0x08
-	add	a,_decode4b6b_intBitsAvailable_1_51
-	mov	_decode4b6b_intBitsAvailable_1_51,a
+	add	a,r6
+	movx	@dptr,a
 	clr	a
-	addc	a,(_decode4b6b_intBitsAvailable_1_51 + 1)
-	mov	(_decode4b6b_intBitsAvailable_1_51 + 1),a
-	C$crc_4b6b.c$162$1$51 ==.
+	addc	a,r7
+	inc	dptr
+	movx	@dptr,a
+	C$crc_4b6b.c$162$3$53 ==.
 ;	crc_4b6b.c:162: while( intBitsAvailable >= 6 ) {
-	mov	r6,_decode4b6b_outBytes_1_51
-	mov	r1,_decode4b6b_intBitsAvailable_1_51
-	mov	r5,(_decode4b6b_intBitsAvailable_1_51 + 1)
+	mov	dptr,#_decode4b6b_intBuffer_1_51
+	movx	a,@dptr
+	mov	_decode4b6b_sloc2_1_0,a
+	inc	dptr
+	movx	a,@dptr
+	mov	(_decode4b6b_sloc2_1_0 + 1),a
+	mov	dptr,#_decode4b6b_outBytes_1_51
+	movx	a,@dptr
+	mov	_decode4b6b_sloc3_1_0,a
+	mov	dptr,#_decode4b6b_intBitsAvailable_1_51
+	movx	a,@dptr
+	mov	_decode4b6b_sloc4_1_0,a
+	inc	dptr
+	movx	a,@dptr
+	mov	(_decode4b6b_sloc4_1_0 + 1),a
+	C$crc_4b6b.c$178$1$51 ==.
+;	crc_4b6b.c:178: *bytesOut = outBytes;
+	pop	ar1
+	pop	ar0
+	C$crc_4b6b.c$162$2$52 ==.
+;	crc_4b6b.c:162: while( intBitsAvailable >= 6 ) {
 00103$:
 	clr	c
-	mov	a,r1
+	mov	a,_decode4b6b_sloc4_1_0
 	subb	a,#0x06
-	mov	a,r5
+	mov	a,(_decode4b6b_sloc4_1_0 + 1)
 	xrl	a,#0x80
 	subb	a,#0x80
-	jc	00117$
+	jnc	00130$
+	ljmp	00117$
+00130$:
 	C$crc_4b6b.c$163$3$53 ==.
 ;	crc_4b6b.c:163: symbol = intBuffer >> (intBitsAvailable - 6);
-	mov	a,r1
+	mov	a,_decode4b6b_sloc4_1_0
 	add	a,#0xFA
-	mov	r0,a
-	mov	a,r5
+	mov	r6,a
+	mov	a,(_decode4b6b_sloc4_1_0 + 1)
 	addc	a,#0xFF
-	mov	b,r0
+	mov	b,r6
 	inc	b
-	mov	r0,_decode4b6b_intBuffer_1_51
-	mov	a,(_decode4b6b_intBuffer_1_51 + 1)
+	mov	r6,_decode4b6b_sloc2_1_0
+	mov	a,(_decode4b6b_sloc2_1_0 + 1)
 	mov	r7,a
 	rlc	a
 	mov	ov,c
@@ -1505,109 +2035,159 @@ _decode4b6b:
 	mov	a,r7
 	rrc	a
 	mov	r7,a
-	mov	a,r0
+	mov	a,r6
 	rrc	a
-	mov	r0,a
+	mov	r6,a
 00132$:
 	djnz	b,00131$
-	mov	_decode4b6b_symbol_1_51,r0
+	mov	dptr,#_decode4b6b_symbol_1_51
+	mov	a,r6
+	movx	@dptr,a
 	C$crc_4b6b.c$164$3$53 ==.
 ;	crc_4b6b.c:164: symbol &= 0x3F;
-	mov	a,#0x3F
-	anl	a,r0
-	mov	_decode4b6b_symbol_1_51,a
+	anl	ar6,#0x3F
+	mov	dptr,#_decode4b6b_symbol_1_51
+	mov	a,r6
+	movx	@dptr,a
 	C$crc_4b6b.c$165$3$53 ==.
 ;	crc_4b6b.c:165: decode4b6bsymbol( symbol, &symbol );
-	mov	_decode4b6bsymbol_PARM_2,#_decode4b6b_symbol_1_51
-	mov	(_decode4b6bsymbol_PARM_2 + 1),#0x00
-	mov	(_decode4b6bsymbol_PARM_2 + 2),#0x40
-	mov	dpl,_decode4b6b_symbol_1_51
-	push	ar6
-	push	ar5
+	mov	dptr,#_decode4b6bsymbol_PARM_2
+	mov	a,#_decode4b6b_symbol_1_51
+	movx	@dptr,a
+	mov	a,#(_decode4b6b_symbol_1_51 >> 8)
+	inc	dptr
+	movx	@dptr,a
+	clr	a
+	inc	dptr
+	movx	@dptr,a
+	mov	dpl,r6
+	push	ar4
+	push	ar3
 	push	ar2
 	push	ar1
+	push	ar0
 	lcall	_decode4b6bsymbol
+	pop	ar0
 	pop	ar1
 	pop	ar2
-	pop	ar5
-	pop	ar6
+	pop	ar3
+	pop	ar4
 	C$crc_4b6b.c$166$3$53 ==.
 ;	crc_4b6b.c:166: recByte = recByte << 4;
-	mov	a,r2
+	mov	dptr,#_decode4b6b_recByte_1_51
+	movx	a,@dptr
 	swap	a
 	anl	a,#0xF0
-	mov	r2,a
+	movx	@dptr,a
 	C$crc_4b6b.c$167$3$53 ==.
 ;	crc_4b6b.c:167: recByte &= 0xF0;
-	anl	ar2,#0xF0
+	movx	a,@dptr
+	mov	r7,a
+	mov	a,#0xF0
+	anl	a,r7
+	movx	@dptr,a
 	C$crc_4b6b.c$168$3$53 ==.
 ;	crc_4b6b.c:168: recByte |= symbol;
-	mov	a,_decode4b6b_symbol_1_51
-	orl	ar2,a
+	mov	dptr,#_decode4b6b_symbol_1_51
+	movx	a,@dptr
+	mov	r7,a
+	mov	dptr,#_decode4b6b_recByte_1_51
+	movx	a,@dptr
+	mov	r6,a
+	orl	a,r7
+	movx	@dptr,a
 	C$crc_4b6b.c$169$3$53 ==.
 ;	crc_4b6b.c:169: nibbleFlag ^= 1;
-	xrl	_decode4b6b_nibbleFlag_1_51,#0x01
+	mov	dptr,#_decode4b6b_nibbleFlag_1_51
+	movx	a,@dptr
+	mov	r7,a
+	mov	a,#0x01
+	xrl	a,r7
+	movx	@dptr,a
 	C$crc_4b6b.c$170$3$53 ==.
 ;	crc_4b6b.c:170: if( nibbleFlag == 0 ) {
-	mov	a,_decode4b6b_nibbleFlag_1_51
+	movx	a,@dptr
+	mov	r7,a
 	jnz	00102$
-	C$crc_4b6b.c$171$4$54 ==.
+	C$crc_4b6b.c$171$1$51 ==.
 ;	crc_4b6b.c:171: messageOut[outBytes] = recByte;
-	mov	a,r6
-	add	a,_decode4b6b_PARM_3
-	mov	r0,a
+	push	ar0
+	push	ar1
+	mov	a,_decode4b6b_sloc3_1_0
+	add	a,r2
+	mov	r5,a
 	clr	a
-	addc	a,(_decode4b6b_PARM_3 + 1)
-	mov	r4,a
-	mov	r7,(_decode4b6b_PARM_3 + 2)
-	mov	dpl,r0
-	mov	dph,r4
+	addc	a,r3
+	mov	r6,a
+	mov	ar7,r4
+	mov	dptr,#_decode4b6b_recByte_1_51
+	movx	a,@dptr
+	mov	dpl,r5
+	mov	dph,r6
 	mov	b,r7
-	mov	a,r2
 	lcall	__gptrput
 	C$crc_4b6b.c$172$4$54 ==.
 ;	crc_4b6b.c:172: outBytes++;
-	inc	r6
+	inc	_decode4b6b_sloc3_1_0
+	C$crc_4b6b.c$178$1$51 ==.
+;	crc_4b6b.c:178: *bytesOut = outBytes;
+	pop	ar1
+	pop	ar0
+	C$crc_4b6b.c$172$3$53 ==.
+;	crc_4b6b.c:172: outBytes++;
 00102$:
 	C$crc_4b6b.c$174$3$53 ==.
 ;	crc_4b6b.c:174: intBitsAvailable -= 6;
-	mov	a,r1
+	mov	a,_decode4b6b_sloc4_1_0
 	add	a,#0xFA
-	mov	r1,a
-	mov	a,r5
+	mov	_decode4b6b_sloc4_1_0,a
+	mov	a,(_decode4b6b_sloc4_1_0 + 1)
 	addc	a,#0xFF
-	mov	r5,a
+	mov	(_decode4b6b_sloc4_1_0 + 1),a
 	ljmp	00103$
 00117$:
-	mov	_decode4b6b_outBytes_1_51,r6
-	mov	_decode4b6b_intBitsAvailable_1_51,r1
-	mov	(_decode4b6b_intBitsAvailable_1_51 + 1),r5
+	mov	dptr,#_decode4b6b_outBytes_1_51
+	mov	a,_decode4b6b_sloc3_1_0
+	movx	@dptr,a
+	mov	dptr,#_decode4b6b_intBitsAvailable_1_51
+	mov	a,_decode4b6b_sloc4_1_0
+	movx	@dptr,a
+	mov	a,(_decode4b6b_sloc4_1_0 + 1)
+	inc	dptr
+	movx	@dptr,a
 	C$crc_4b6b.c$157$1$51 ==.
 ;	crc_4b6b.c:157: for( i = 0; i < bytesIn; i++ ) {
-	inc	_decode4b6b_i_1_51
+	inc	_decode4b6b_sloc0_1_0
 	clr	a
-	cjne	a,_decode4b6b_i_1_51,00134$
-	inc	(_decode4b6b_i_1_51 + 1)
+	cjne	a,_decode4b6b_sloc0_1_0,00134$
+	inc	(_decode4b6b_sloc0_1_0 + 1)
 00134$:
 	ljmp	00108$
 00106$:
 	C$crc_4b6b.c$178$1$51 ==.
 ;	crc_4b6b.c:178: *bytesOut = outBytes;
-	mov	r5,_decode4b6b_PARM_4
-	mov	r6,(_decode4b6b_PARM_4 + 1)
-	mov	r7,(_decode4b6b_PARM_4 + 2)
-	mov	a,_decode4b6b_outBytes_1_51
-	mov	r3,a
+	mov	dptr,#_decode4b6b_PARM_4
+	movx	a,@dptr
+	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
+	mov	dptr,#_decode4b6b_outBytes_1_51
+	movx	a,@dptr
+	mov	r4,a
 	rlc	a
 	subb	a,acc
-	mov	r4,a
+	mov	r3,a
 	mov	dpl,r5
 	mov	dph,r6
 	mov	b,r7
-	mov	a,r3
+	mov	a,r4
 	lcall	__gptrput
 	inc	dptr
-	mov	a,r4
+	mov	a,r3
 	lcall	__gptrput
 	C$crc_4b6b.c$179$1$51 ==.
 	XG$decode4b6b$0$0 ==.
@@ -1615,9 +2195,9 @@ _decode4b6b:
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'sleep'
 ;------------------------------------------------------------
-;time                      Allocated to registers r6 r7 
-;i                         Allocated to registers r2 r3 
-;j                         Allocated to registers r4 r5 
+;time                      Allocated with name '_sleep_time_1_55'
+;i                         Allocated with name '_sleep_i_1_56'
+;j                         Allocated with name '_sleep_j_1_56'
 ;------------------------------------------------------------
 	G$sleep$0$0 ==.
 	C$crc_4b6b.c$181$1$51 ==.
@@ -1626,10 +2206,20 @@ _decode4b6b:
 ;	 function sleep
 ;	-----------------------------------------
 _sleep:
-	mov	r6,dpl
+	mov	r7,dph
+	mov	a,dpl
+	mov	dptr,#_sleep_time_1_55
+	movx	@dptr,a
+	mov	a,r7
+	inc	dptr
+	movx	@dptr,a
 	C$crc_4b6b.c$184$1$56 ==.
 ;	crc_4b6b.c:184: for( j = 0; j < time * 4; j++ ) for( i = 0; i < 0xFFFF; i++ ) Nop( );
-	mov	a,dph
+	mov	dptr,#_sleep_time_1_55
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
 	xch	a,r6
 	add	a,acc
 	xch	a,r6

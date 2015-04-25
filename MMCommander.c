@@ -17,9 +17,8 @@
 #include "constants.h"
 #include "interrupts.h"
 #include "medtronicRF.h"
-#include "usb/others/hal_board.h"
-#include "usb/others/hal_uart.h"
-#include "usb/class_cdc/usb_uart.h"
+#include "hal_board.h"
+#include "hal_uart.h"
 #include "configuration.h"
 
 /******************************************************************************
@@ -74,8 +73,9 @@ int main( void ) {
 			if( repeatedMessage == 1 ) {
 				repPacket[0] = 0x04;
 				halUartWrite( (uint8_t const *)repPacket, 1 );
-				usbUartProcess( );
-				usbReceiveData( );
+				// TODO
+				//usbUartProcess( );
+				//usbReceiveData( );
 			} else {
 				if( dataErr == 0 ) {
 					uartTxBuffer[0] = 0x02;
@@ -88,8 +88,9 @@ int main( void ) {
 				for( i = 0; i < uartTxLength; i = i + 48 ) {
 					if( uartTxLength - i > 48 ) {
 						halUartWrite( (uint8_t const *)&uartTxBuffer[i], 48 );
-						usbUartProcess( );
-						usbReceiveData( );
+						// TODO
+						//usbUartProcess( );
+						//usbReceiveData( );
 					} else {
 						halUartWrite( (uint8_t const *)&uartTxBuffer[i], uartTxLength - i );
 					}

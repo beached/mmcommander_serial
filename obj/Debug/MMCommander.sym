@@ -8,244 +8,308 @@ Symbol Table
     .__.CPU.                                                    =  000000 L
     .__.H$L.                                                    =  000001 L
     A                                                           =  0000E0 L
-  E A$MMCommander$1407                                             000000 GR
- 16 A$MMCommander$1422                                             000000 GR
-  E A$MMCommander$1429                                             000003 GR
- 17 A$MMCommander$1463                                             000000 GR
- 17 A$MMCommander$1464                                             000001 GR
- 17 A$MMCommander$1465                                             000003 GR
- 17 A$MMCommander$1468                                             000005 GR
- 17 A$MMCommander$1471                                             000008 GR
- 17 A$MMCommander$1474                                             00000B GR
- 17 A$MMCommander$1477                                             00000E GR
- 17 A$MMCommander$1480                                             000011 GR
- 17 A$MMCommander$1483                                             000014 GR
- 17 A$MMCommander$1486                                             000017 GR
- 17 A$MMCommander$1487                                             00001A GR
- 17 A$MMCommander$1488                                             00001D GR
- 17 A$MMCommander$1494                                             000020 GR
- 17 A$MMCommander$1495                                             000023 GR
- 17 A$MMCommander$1496                                             000026 GR
- 17 A$MMCommander$1497                                             000029 GR
- 17 A$MMCommander$1498                                             00002C GR
+  E A$MMCommander$1402                                             000000 GR
+ 16 A$MMCommander$1417                                             000000 GR
+  E A$MMCommander$1424                                             000003 GR
+ 17 A$MMCommander$1457                                             000000 GR
+ 17 A$MMCommander$1458                                             000003 GR
+ 17 A$MMCommander$1459                                             000004 GR
+ 17 A$MMCommander$1460                                             000005 GR
+ 17 A$MMCommander$1461                                             000006 GR
+ 17 A$MMCommander$1464                                             000007 GR
+ 17 A$MMCommander$1467                                             00000A GR
+ 17 A$MMCommander$1470                                             00000D GR
+ 17 A$MMCommander$1473                                             000010 GR
+ 17 A$MMCommander$1476                                             000013 GR
+ 17 A$MMCommander$1479                                             000016 GR
+ 17 A$MMCommander$1482                                             000019 GR
+ 17 A$MMCommander$1483                                             00001C GR
+ 17 A$MMCommander$1484                                             00001D GR
+ 17 A$MMCommander$1485                                             00001E GR
+ 17 A$MMCommander$1486                                             000021 GR
+ 17 A$MMCommander$1492                                             000024 GR
+ 17 A$MMCommander$1493                                             000027 GR
+ 17 A$MMCommander$1494                                             000029 GR
+ 17 A$MMCommander$1495                                             00002A GR
+ 17 A$MMCommander$1496                                             00002C GR
+ 17 A$MMCommander$1497                                             00002D GR
+ 17 A$MMCommander$1498                                             00002E GR
  17 A$MMCommander$1499                                             00002F GR
- 17 A$MMCommander$1500                                             000032 GR
- 17 A$MMCommander$1503                                             000034 GR
- 17 A$MMCommander$1504                                             000036 GR
- 17 A$MMCommander$1505                                             000038 GR
- 17 A$MMCommander$1508                                             00003A GR
- 17 A$MMCommander$1511                                             00003C GR
- 17 A$MMCommander$1512                                             00003F GR
- 17 A$MMCommander$1513                                             000040 GR
- 17 A$MMCommander$1514                                             000041 GR
- 17 A$MMCommander$1515                                             000043 GR
- 17 A$MMCommander$1516                                             000044 GR
- 17 A$MMCommander$1517                                             000045 GR
- 17 A$MMCommander$1520                                             000048 GR
- 17 A$MMCommander$1521                                             00004B GR
+ 17 A$MMCommander$1500                                             000030 GR
+ 17 A$MMCommander$1501                                             000031 GR
+ 17 A$MMCommander$1502                                             000034 GR
+ 17 A$MMCommander$1503                                             000037 GR
+ 17 A$MMCommander$1504                                             00003A GR
+ 17 A$MMCommander$1507                                             00003C GR
+ 17 A$MMCommander$1508                                             00003F GR
+ 17 A$MMCommander$1509                                             000040 GR
+ 17 A$MMCommander$1510                                             000041 GR
+ 17 A$MMCommander$1511                                             000042 GR
+ 17 A$MMCommander$1512                                             000043 GR
+ 17 A$MMCommander$1513                                             000044 GR
+ 17 A$MMCommander$1514                                             000045 GR
+ 17 A$MMCommander$1517                                             000047 GR
+ 17 A$MMCommander$1518                                             00004A GR
+ 17 A$MMCommander$1519                                             00004B GR
  17 A$MMCommander$1522                                             00004C GR
- 17 A$MMCommander$1523                                             00004D GR
- 17 A$MMCommander$1524                                             00004E GR
- 17 A$MMCommander$1525                                             00004F GR
- 17 A$MMCommander$1526                                             000050 GR
- 17 A$MMCommander$1527                                             000051 GR
- 17 A$MMCommander$1528                                             000053 GR
- 17 A$MMCommander$1529                                             000054 GR
- 17 A$MMCommander$1530                                             000055 GR
- 17 A$MMCommander$1531                                             000057 GR
- 17 A$MMCommander$1532                                             000058 GR
- 17 A$MMCommander$1533                                             000059 GR
- 17 A$MMCommander$1534                                             00005C GR
- 17 A$MMCommander$1535                                             00005D GR
- 17 A$MMCommander$1538                                             000060 GR
+ 17 A$MMCommander$1523                                             00004F GR
+ 17 A$MMCommander$1524                                             000050 GR
+ 17 A$MMCommander$1525                                             000051 GR
+ 17 A$MMCommander$1526                                             000053 GR
+ 17 A$MMCommander$1527                                             000054 GR
+ 17 A$MMCommander$1528                                             000055 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 2.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 17 A$MMCommander$1541                                             000062 GR
- 17 A$MMCommander$1543                                             000064 GR
- 17 A$MMCommander$1544                                             000065 GR
- 17 A$MMCommander$1545                                             000066 GR
- 17 A$MMCommander$1546                                             000067 GR
- 17 A$MMCommander$1547                                             000069 GR
- 17 A$MMCommander$1548                                             00006A GR
- 17 A$MMCommander$1549                                             00006B GR
- 17 A$MMCommander$1550                                             00006C GR
- 17 A$MMCommander$1551                                             00006E GR
- 17 A$MMCommander$1552                                             00006F GR
- 17 A$MMCommander$1553                                             000071 GR
- 17 A$MMCommander$1556                                             000073 GR
- 17 A$MMCommander$1557                                             000074 GR
- 17 A$MMCommander$1558                                             000076 GR
- 17 A$MMCommander$1559                                             000077 GR
- 17 A$MMCommander$1560                                             000079 GR
- 17 A$MMCommander$1561                                             00007B GR
- 17 A$MMCommander$1562                                             00007C GR
- 17 A$MMCommander$1563                                             00007E GR
- 17 A$MMCommander$1564                                             000080 GR
- 17 A$MMCommander$1565                                             000081 GR
- 17 A$MMCommander$1566                                             000083 GR
- 17 A$MMCommander$1567                                             000085 GR
- 17 A$MMCommander$1568                                             000086 GR
- 17 A$MMCommander$1569                                             000087 GR
- 17 A$MMCommander$1570                                             000088 GR
- 17 A$MMCommander$1571                                             00008B GR
+ 17 A$MMCommander$1531                                             000058 GR
+ 17 A$MMCommander$1532                                             00005B GR
+ 17 A$MMCommander$1533                                             00005C GR
+ 17 A$MMCommander$1534                                             00005D GR
+ 17 A$MMCommander$1535                                             00005E GR
+ 17 A$MMCommander$1536                                             00005F GR
+ 17 A$MMCommander$1537                                             000060 GR
+ 17 A$MMCommander$1538                                             000061 GR
+ 17 A$MMCommander$1539                                             000063 GR
+ 17 A$MMCommander$1540                                             000064 GR
+ 17 A$MMCommander$1541                                             000065 GR
+ 17 A$MMCommander$1542                                             000067 GR
+ 17 A$MMCommander$1543                                             000068 GR
+ 17 A$MMCommander$1544                                             000069 GR
+ 17 A$MMCommander$1545                                             00006C GR
+ 17 A$MMCommander$1546                                             00006D GR
+ 17 A$MMCommander$1549                                             000070 GR
+ 17 A$MMCommander$1550                                             000073 GR
+ 17 A$MMCommander$1551                                             000075 GR
+ 17 A$MMCommander$1554                                             000076 GR
+ 17 A$MMCommander$1556                                             000078 GR
+ 17 A$MMCommander$1557                                             00007B GR
+ 17 A$MMCommander$1558                                             00007C GR
+ 17 A$MMCommander$1559                                             00007D GR
+ 17 A$MMCommander$1560                                             00007E GR
+ 17 A$MMCommander$1561                                             00007F GR
+ 17 A$MMCommander$1562                                             000080 GR
+ 17 A$MMCommander$1563                                             000081 GR
+ 17 A$MMCommander$1564                                             000082 GR
+ 17 A$MMCommander$1565                                             000083 GR
+ 17 A$MMCommander$1566                                             000085 GR
+ 17 A$MMCommander$1567                                             000086 GR
+ 17 A$MMCommander$1568                                             000087 GR
+ 17 A$MMCommander$1569                                             000088 GR
+ 17 A$MMCommander$1570                                             000089 GR
+ 17 A$MMCommander$1571                                             00008A GR
+ 17 A$MMCommander$1572                                             00008B GR
  17 A$MMCommander$1575                                             00008D GR
- 17 A$MMCommander$1578                                             00008F GR
- 17 A$MMCommander$1582                                             000091 GR
- 17 A$MMCommander$1583                                             000092 GR
- 17 A$MMCommander$1587                                             000094 GR
- 17 A$MMCommander$1590                                             000097 GR
- 17 A$MMCommander$1593                                             00009A GR
- 17 A$MMCommander$1594                                             00009D GR
- 17 A$MMCommander$1595                                             0000A0 GR
- 17 A$MMCommander$1596                                             0000A3 GR
- 17 A$MMCommander$1597                                             0000A6 GR
- 17 A$MMCommander$1600                                             0000A9 GR
- 17 A$MMCommander$1603                                             0000AC GR
- 17 A$MMCommander$1604                                             0000AF GR
- 17 A$MMCommander$1608                                             0000B2 GR
- 17 A$MMCommander$1609                                             0000B3 GR
- 17 A$MMCommander$1612                                             0000B5 GR
- 17 A$MMCommander$1613                                             0000B8 GR
- 17 A$MMCommander$1614                                             0000BA GR
- 17 A$MMCommander$1615                                             0000BB GR
- 17 A$MMCommander$1619                                             0000BD GR
- 17 A$MMCommander$1620                                             0000C0 GR
- 17 A$MMCommander$1621                                             0000C2 GR
- 17 A$MMCommander$1625                                             0000C3 GR
- 17 A$MMCommander$1626                                             0000C5 GR
- 17 A$MMCommander$1627                                             0000C8 GR
- 17 A$MMCommander$1628                                             0000C9 GR
+ 17 A$MMCommander$1576                                             00008E GR
+ 17 A$MMCommander$1577                                             000090 GR
+ 17 A$MMCommander$1578                                             000092 GR
+ 17 A$MMCommander$1579                                             000093 GR
+ 17 A$MMCommander$1580                                             000095 GR
+ 17 A$MMCommander$1581                                             000097 GR
+ 17 A$MMCommander$1582                                             000098 GR
+ 17 A$MMCommander$1583                                             000099 GR
+ 17 A$MMCommander$1584                                             00009B GR
+ 17 A$MMCommander$1585                                             00009C GR
+ 17 A$MMCommander$1586                                             00009E GR
+ 17 A$MMCommander$1587                                             0000A0 GR
+ 17 A$MMCommander$1588                                             0000A1 GR
+ 17 A$MMCommander$1589                                             0000A3 GR
+ 17 A$MMCommander$1590                                             0000A5 GR
+ 17 A$MMCommander$1591                                             0000A6 GR
+ 17 A$MMCommander$1592                                             0000A7 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 3.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 17 A$MMCommander$1631                                             0000CA GR
- 17 A$MMCommander$1633                                             0000CC GR
- 17 A$MMCommander$1634                                             0000CD GR
- 17 A$MMCommander$1635                                             0000CE GR
- 17 A$MMCommander$1636                                             0000CF GR
- 17 A$MMCommander$1637                                             0000D1 GR
- 17 A$MMCommander$1638                                             0000D2 GR
- 17 A$MMCommander$1639                                             0000D3 GR
- 17 A$MMCommander$1640                                             0000D4 GR
- 17 A$MMCommander$1641                                             0000D6 GR
- 17 A$MMCommander$1642                                             0000D7 GR
- 17 A$MMCommander$1643                                             0000D9 GR
- 17 A$MMCommander$1644                                             0000DB GR
- 17 A$MMCommander$1645                                             0000DD GR
- 17 A$MMCommander$1646                                             0000DE GR
- 17 A$MMCommander$1647                                             0000E0 GR
- 17 A$MMCommander$1648                                             0000E2 GR
- 17 A$MMCommander$1649                                             0000E3 GR
- 17 A$MMCommander$1650                                             0000E5 GR
- 17 A$MMCommander$1651                                             0000E7 GR
- 17 A$MMCommander$1652                                             0000E8 GR
- 17 A$MMCommander$1653                                             0000EA GR
- 17 A$MMCommander$1654                                             0000EB GR
- 17 A$MMCommander$1655                                             0000EC GR
- 17 A$MMCommander$1656                                             0000ED GR
- 17 A$MMCommander$1657                                             0000EE GR
- 17 A$MMCommander$1658                                             0000EF GR
- 17 A$MMCommander$1662                                             0000F1 GR
- 17 A$MMCommander$1663                                             0000F4 GR
- 17 A$MMCommander$1664                                             0000F6 GR
- 17 A$MMCommander$1665                                             0000F8 GR
- 17 A$MMCommander$1666                                             0000F9 GR
- 17 A$MMCommander$1667                                             0000FA GR
- 17 A$MMCommander$1668                                             0000FC GR
- 17 A$MMCommander$1669                                             0000FD GR
- 17 A$MMCommander$1672                                             0000FE GR
- 17 A$MMCommander$1674                                             000101 GR
- 17 A$MMCommander$1675                                             000104 GR
- 17 A$MMCommander$1676                                             000105 GR
- 17 A$MMCommander$1677                                             000106 GR
- 17 A$MMCommander$1678                                             000107 GR
- 17 A$MMCommander$1679                                             000108 GR
- 17 A$MMCommander$1680                                             000109 GR
- 17 A$MMCommander$1681                                             00010B GR
- 17 A$MMCommander$1682                                             00010D GR
- 17 A$MMCommander$1683                                             00010E GR
- 17 A$MMCommander$1684                                             000110 GR
- 17 A$MMCommander$1685                                             000112 GR
- 17 A$MMCommander$1686                                             000113 GR
- 17 A$MMCommander$1687                                             000115 GR
- 17 A$MMCommander$1688                                             000116 GR
- 17 A$MMCommander$1689                                             000118 GR
- 17 A$MMCommander$1690                                             00011A GR
- 17 A$MMCommander$1691                                             00011C GR
- 17 A$MMCommander$1692                                             00011F GR
+ 17 A$MMCommander$1593                                             0000A8 GR
+ 17 A$MMCommander$1594                                             0000AB GR
+ 17 A$MMCommander$1598                                             0000AD GR
+ 17 A$MMCommander$1599                                             0000B0 GR
+ 17 A$MMCommander$1600                                             0000B1 GR
+ 17 A$MMCommander$1603                                             0000B2 GR
+ 17 A$MMCommander$1607                                             0000B4 GR
+ 17 A$MMCommander$1608                                             0000B5 GR
+ 17 A$MMCommander$1612                                             0000B7 GR
+ 17 A$MMCommander$1613                                             0000BA GR
+ 17 A$MMCommander$1614                                             0000BB GR
+ 17 A$MMCommander$1615                                             0000BC GR
+ 17 A$MMCommander$1618                                             0000BF GR
+ 17 A$MMCommander$1619                                             0000C2 GR
+ 17 A$MMCommander$1620                                             0000C4 GR
+ 17 A$MMCommander$1623                                             0000C5 GR
+ 17 A$MMCommander$1624                                             0000C8 GR
+ 17 A$MMCommander$1625                                             0000CA GR
+ 17 A$MMCommander$1626                                             0000CB GR
+ 17 A$MMCommander$1627                                             0000CC GR
+ 17 A$MMCommander$1628                                             0000CD GR
+ 17 A$MMCommander$1629                                             0000CE GR
+ 17 A$MMCommander$1630                                             0000D1 GR
+ 17 A$MMCommander$1631                                             0000D4 GR
+ 17 A$MMCommander$1632                                             0000D7 GR
+ 17 A$MMCommander$1636                                             0000DA GR
+ 17 A$MMCommander$1637                                             0000DB GR
+ 17 A$MMCommander$1640                                             0000DD GR
+ 17 A$MMCommander$1641                                             0000E0 GR
+ 17 A$MMCommander$1642                                             0000E2 GR
+ 17 A$MMCommander$1643                                             0000E3 GR
+ 17 A$MMCommander$1647                                             0000E5 GR
+ 17 A$MMCommander$1648                                             0000E8 GR
+ 17 A$MMCommander$1649                                             0000EA GR
+ 17 A$MMCommander$1653                                             0000EB GR
+ 17 A$MMCommander$1654                                             0000EE GR
+ 17 A$MMCommander$1655                                             0000EF GR
+ 17 A$MMCommander$1656                                             0000F0 GR
+ 17 A$MMCommander$1657                                             0000F1 GR
+ 17 A$MMCommander$1658                                             0000F2 GR
+ 17 A$MMCommander$1659                                             0000F5 GR
+ 17 A$MMCommander$1660                                             0000F6 GR
+ 17 A$MMCommander$1663                                             0000F7 GR
+ 17 A$MMCommander$1665                                             0000F9 GR
+ 17 A$MMCommander$1666                                             0000FC GR
+ 17 A$MMCommander$1667                                             0000FD GR
+ 17 A$MMCommander$1668                                             0000FE GR
+ 17 A$MMCommander$1669                                             0000FF GR
+ 17 A$MMCommander$1670                                             000100 GR
+ 17 A$MMCommander$1671                                             000101 GR
+ 17 A$MMCommander$1672                                             000102 GR
+ 17 A$MMCommander$1673                                             000103 GR
+ 17 A$MMCommander$1674                                             000104 GR
+ 17 A$MMCommander$1675                                             000106 GR
+ 17 A$MMCommander$1676                                             000107 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 4.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 17 A$MMCommander$1693                                             000121 GR
- 17 A$MMCommander$1694                                             000123 GR
+ 17 A$MMCommander$1677                                             000108 GR
+ 17 A$MMCommander$1678                                             000109 GR
+ 17 A$MMCommander$1679                                             00010A GR
+ 17 A$MMCommander$1680                                             00010B GR
+ 17 A$MMCommander$1681                                             00010C GR
+ 17 A$MMCommander$1682                                             00010E GR
+ 17 A$MMCommander$1683                                             000110 GR
+ 17 A$MMCommander$1684                                             000111 GR
+ 17 A$MMCommander$1685                                             000113 GR
+ 17 A$MMCommander$1686                                             000114 GR
+ 17 A$MMCommander$1687                                             000115 GR
+ 17 A$MMCommander$1688                                             000117 GR
+ 17 A$MMCommander$1689                                             000118 GR
+ 17 A$MMCommander$1690                                             000119 GR
+ 17 A$MMCommander$1691                                             00011B GR
+ 17 A$MMCommander$1692                                             00011D GR
+ 17 A$MMCommander$1693                                             00011E GR
+ 17 A$MMCommander$1694                                             000120 GR
+ 17 A$MMCommander$1695                                             000122 GR
+ 17 A$MMCommander$1696                                             000123 GR
+ 17 A$MMCommander$1697                                             000124 GR
  17 A$MMCommander$1698                                             000126 GR
- 17 A$MMCommander$1699                                             000127 GR
- 17 A$MMCommander$1700                                             000128 GR
+ 17 A$MMCommander$1699                                             000128 GR
+ 17 A$MMCommander$1700                                             000129 GR
  17 A$MMCommander$1701                                             00012A GR
- 17 A$MMCommander$1702                                             00012B GR
- 17 A$MMCommander$1703                                             00012C GR
- 17 A$MMCommander$1704                                             00012E GR
- 17 A$MMCommander$1705                                             00012F GR
- 17 A$MMCommander$1706                                             000130 GR
- 17 A$MMCommander$1707                                             000132 GR
- 17 A$MMCommander$1708                                             000133 GR
- 17 A$MMCommander$1709                                             000135 GR
- 17 A$MMCommander$1710                                             000137 GR
- 17 A$MMCommander$1711                                             00013A GR
- 17 A$MMCommander$1712                                             00013C GR
- 17 A$MMCommander$1715                                             00013E GR
- 17 A$MMCommander$1716                                             000140 GR
- 17 A$MMCommander$1717                                             000142 GR
- 17 A$MMCommander$1718                                             000143 GR
- 17 A$MMCommander$1719                                             000144 GR
- 17 A$MMCommander$1720                                             000146 GR
- 17 A$MMCommander$1721                                             000147 GR
- 17 A$MMCommander$1722                                             000149 GR
- 17 A$MMCommander$1723                                             00014B GR
- 17 A$MMCommander$1724                                             00014E GR
- 17 A$MMCommander$1725                                             000151 GR
- 17 A$MMCommander$1726                                             000154 GR
- 17 A$MMCommander$1727                                             000157 GR
- 17 A$MMCommander$1728                                             00015A GR
- 17 A$MMCommander$1729                                             00015D GR
- 17 A$MMCommander$1732                                             000160 GR
- 17 A$MMCommander$1735                                             000163 GR
- 17 A$MMCommander$1736                                             000166 GR
- 17 A$MMCommander$1740                                             000168 GR
- 17 A$MMCommander$1741                                             00016A GR
- 17 A$MMCommander$1742                                             00016C GR
- 17 A$MMCommander$1743                                             00016D GR
- 17 A$MMCommander$1744                                             00016E GR
- 17 A$MMCommander$1745                                             000170 GR
- 17 A$MMCommander$1746                                             000171 GR
- 17 A$MMCommander$1747                                             000173 GR
- 17 A$MMCommander$1748                                             000174 GR
- 17 A$MMCommander$1749                                             000175 GR
- 17 A$MMCommander$1750                                             000177 GR
- 17 A$MMCommander$1751                                             000179 GR
- 17 A$MMCommander$1752                                             00017A GR
- 17 A$MMCommander$1753                                             00017C GR
- 17 A$MMCommander$1754                                             00017E GR
- 17 A$MMCommander$1755                                             000180 GR
- 17 A$MMCommander$1756                                             000182 GR
- 17 A$MMCommander$1757                                             000184 GR
- 17 A$MMCommander$1761                                             000187 GR
- 17 A$MMCommander$1762                                             000189 GR
+ 17 A$MMCommander$1705                                             00012C GR
+ 17 A$MMCommander$1706                                             00012F GR
+ 17 A$MMCommander$1707                                             000131 GR
+ 17 A$MMCommander$1708                                             000132 GR
+ 17 A$MMCommander$1709                                             000133 GR
+ 17 A$MMCommander$1710                                             000134 GR
+ 17 A$MMCommander$1711                                             000135 GR
+ 17 A$MMCommander$1712                                             000136 GR
+ 17 A$MMCommander$1715                                             000137 GR
+ 17 A$MMCommander$1717                                             000139 GR
+ 17 A$MMCommander$1718                                             00013C GR
+ 17 A$MMCommander$1719                                             00013D GR
+ 17 A$MMCommander$1720                                             00013E GR
+ 17 A$MMCommander$1721                                             00013F GR
+ 17 A$MMCommander$1722                                             000140 GR
+ 17 A$MMCommander$1723                                             000141 GR
+ 17 A$MMCommander$1724                                             000142 GR
+ 17 A$MMCommander$1725                                             000143 GR
+ 17 A$MMCommander$1726                                             000144 GR
+ 17 A$MMCommander$1727                                             000146 GR
+ 17 A$MMCommander$1728                                             000147 GR
+ 17 A$MMCommander$1729                                             000148 GR
+ 17 A$MMCommander$1730                                             000149 GR
+ 17 A$MMCommander$1731                                             00014A GR
+ 17 A$MMCommander$1732                                             00014B GR
+ 17 A$MMCommander$1733                                             00014D GR
+ 17 A$MMCommander$1734                                             00014F GR
+ 17 A$MMCommander$1735                                             000152 GR
+ 17 A$MMCommander$1736                                             000154 GR
+ 17 A$MMCommander$1737                                             000156 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 5.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 17 A$MMCommander$1763                                             00018B GR
- 17 A$MMCommander$1764                                             00018D GR
- 17 A$MMCommander$1767                                             000190 GR
+ 17 A$MMCommander$1741                                             000159 GR
+ 17 A$MMCommander$1742                                             00015A GR
+ 17 A$MMCommander$1743                                             00015B GR
+ 17 A$MMCommander$1744                                             00015C GR
+ 17 A$MMCommander$1745                                             00015D GR
+ 17 A$MMCommander$1746                                             00015E GR
+ 17 A$MMCommander$1747                                             00015F GR
+ 17 A$MMCommander$1748                                             000160 GR
+ 17 A$MMCommander$1749                                             000161 GR
+ 17 A$MMCommander$1750                                             000163 GR
+ 17 A$MMCommander$1751                                             000164 GR
+ 17 A$MMCommander$1752                                             000166 GR
+ 17 A$MMCommander$1753                                             000168 GR
+ 17 A$MMCommander$1754                                             00016B GR
+ 17 A$MMCommander$1755                                             00016D GR
+ 17 A$MMCommander$1758                                             00016F GR
+ 17 A$MMCommander$1759                                             000170 GR
+ 17 A$MMCommander$1760                                             000172 GR
+ 17 A$MMCommander$1761                                             000173 GR
+ 17 A$MMCommander$1762                                             000174 GR
+ 17 A$MMCommander$1763                                             000176 GR
+ 17 A$MMCommander$1764                                             000177 GR
+ 17 A$MMCommander$1765                                             000179 GR
+ 17 A$MMCommander$1766                                             00017C GR
+ 17 A$MMCommander$1767                                             00017E GR
+ 17 A$MMCommander$1768                                             00017F GR
+ 17 A$MMCommander$1769                                             000180 GR
+ 17 A$MMCommander$1770                                             000181 GR
+ 17 A$MMCommander$1771                                             000182 GR
+ 17 A$MMCommander$1772                                             000184 GR
+ 17 A$MMCommander$1773                                             000186 GR
+ 17 A$MMCommander$1774                                             000188 GR
+ 17 A$MMCommander$1775                                             00018A GR
+ 17 A$MMCommander$1776                                             00018D GR
+ 17 A$MMCommander$1777                                             00018F GR
+ 17 A$MMCommander$1781                                             000191 GR
+ 17 A$MMCommander$1782                                             000192 GR
+ 17 A$MMCommander$1783                                             000194 GR
+ 17 A$MMCommander$1784                                             000195 GR
+ 17 A$MMCommander$1785                                             000196 GR
+ 17 A$MMCommander$1786                                             000198 GR
+ 17 A$MMCommander$1787                                             000199 GR
+ 17 A$MMCommander$1788                                             00019B GR
+ 17 A$MMCommander$1789                                             00019E GR
+ 17 A$MMCommander$1790                                             00019F GR
+ 17 A$MMCommander$1791                                             0001A0 GR
+ 17 A$MMCommander$1792                                             0001A1 GR
+ 17 A$MMCommander$1793                                             0001A2 GR
+ 17 A$MMCommander$1794                                             0001A3 GR
+ 17 A$MMCommander$1795                                             0001A4 GR
+ 17 A$MMCommander$1796                                             0001A5 GR
+ 17 A$MMCommander$1797                                             0001A6 GR
+ 17 A$MMCommander$1798                                             0001A8 GR
+ 17 A$MMCommander$1799                                             0001AA GR
+ 17 A$MMCommander$1800                                             0001AC GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 6.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 A$MMCommander$1801                                             0001AE GR
+ 17 A$MMCommander$1802                                             0001B1 GR
+ 17 A$MMCommander$1806                                             0001B3 GR
+ 17 A$MMCommander$1807                                             0001B5 GR
+ 17 A$MMCommander$1808                                             0001B6 GR
+ 17 A$MMCommander$1809                                             0001B7 GR
+ 17 A$MMCommander$1812                                             0001BA GR
     A.0                                                         =  0000E0 L
     A.1                                                         =  0000E1 L
     A.2                                                         =  0000E2 L
@@ -273,51 +337,47 @@ Symbol Table
     B.5                                                         =  0000F5 L
     B.6                                                         =  0000F6 L
     B.7                                                         =  0000F7 L
- 17 C$MMCommander.c$100$1$34                                    =  000190 GR
- 17 C$MMCommander.c$39$0$0                                      =  000000 GR
- 17 C$MMCommander.c$43$1$0                                      =  000000 GR
- 17 C$MMCommander.c$48$1$34                                     =  000005 GR
- 17 C$MMCommander.c$49$1$34                                     =  000008 GR
- 17 C$MMCommander.c$50$1$34                                     =  00000B GR
- 17 C$MMCommander.c$51$1$34                                     =  00000E GR
- 17 C$MMCommander.c$52$1$34                                     =  000011 GR
- 17 C$MMCommander.c$53$1$34                                     =  000014 GR
- 17 C$MMCommander.c$54$1$34                                     =  000017 GR
- 17 C$MMCommander.c$57$1$34                                     =  000020 GR
- 17 C$MMCommander.c$58$2$35                                     =  000020 GR
- 17 C$MMCommander.c$59$2$35                                     =  000034 GR
- 17 C$MMCommander.c$60$3$36                                     =  00003A GR
- 17 C$MMCommander.c$62$3$36                                     =  00003C GR
- 17 C$MMCommander.c$63$3$36                                     =  000048 GR
- 17 C$MMCommander.c$65$4$37                                     =  000060 GR
- 17 C$MMCommander.c$66$1$34                                     =  000062 GR
- 17 C$MMCommander.c$66$4$37                                     =  000091 GR
- 17 C$MMCommander.c$67$5$38                                     =  000073 GR
- 17 C$MMCommander.c$68$6$39                                     =  00008D GR
- 17 C$MMCommander.c$69$6$39                                     =  00008F GR
- 17 C$MMCommander.c$74$3$36                                     =  000094 GR
- 17 C$MMCommander.c$75$4$40                                     =  000097 GR
- 17 C$MMCommander.c$76$4$40                                     =  00009A GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 6.
+ 17 C$MMCommander.c$101$1$32                                    =  0001BA GR
+ 17 C$MMCommander.c$38$0$0                                      =  000000 GR
+ 17 C$MMCommander.c$42$1$0                                      =  000000 GR
+ 17 C$MMCommander.c$47$1$32                                     =  000007 GR
+ 17 C$MMCommander.c$48$1$32                                     =  00000A GR
+ 17 C$MMCommander.c$49$1$32                                     =  00000D GR
+ 17 C$MMCommander.c$50$1$32                                     =  000010 GR
+ 17 C$MMCommander.c$51$1$32                                     =  000013 GR
+ 17 C$MMCommander.c$52$1$32                                     =  000016 GR
+ 17 C$MMCommander.c$53$1$32                                     =  000019 GR
+ 17 C$MMCommander.c$56$1$32                                     =  000024 GR
+ 17 C$MMCommander.c$57$2$33                                     =  000024 GR
+ 17 C$MMCommander.c$58$2$33                                     =  00003C GR
+ 17 C$MMCommander.c$59$3$34                                     =  000047 GR
+ 17 C$MMCommander.c$61$3$34                                     =  00004C GR
+ 17 C$MMCommander.c$62$3$34                                     =  000058 GR
+ 17 C$MMCommander.c$64$4$35                                     =  000070 GR
+ 17 C$MMCommander.c$65$1$32                                     =  000076 GR
+ 17 C$MMCommander.c$65$4$35                                     =  0000B4 GR
+ 17 C$MMCommander.c$66$5$36                                     =  00008D GR
+ 17 C$MMCommander.c$67$6$37                                     =  0000AD GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 7.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 17 C$MMCommander.c$77$4$40                                     =  0000A9 GR
- 17 C$MMCommander.c$78$4$40                                     =  0000AC GR
- 17 C$MMCommander.c$80$4$41                                     =  0000B2 GR
- 17 C$MMCommander.c$81$5$42                                     =  0000B5 GR
- 17 C$MMCommander.c$83$5$43                                     =  0000BD GR
- 17 C$MMCommander.c$85$4$41                                     =  0000C3 GR
- 17 C$MMCommander.c$86$1$34                                     =  0000CA GR
- 17 C$MMCommander.c$87$4$41                                     =  0000F1 GR
- 17 C$MMCommander.c$88$1$34                                     =  0000FE GR
- 17 C$MMCommander.c$88$4$41                                     =  000187 GR
- 17 C$MMCommander.c$89$5$44                                     =  000126 GR
- 17 C$MMCommander.c$90$6$45                                     =  00013E GR
- 17 C$MMCommander.c$91$6$45                                     =  000160 GR
- 17 C$MMCommander.c$92$6$45                                     =  000163 GR
- 17 C$MMCommander.c$94$6$46                                     =  000168 GR
+ 17 C$MMCommander.c$68$6$37                                     =  0000B2 GR
+ 17 C$MMCommander.c$73$3$34                                     =  0000B7 GR
+ 17 C$MMCommander.c$74$4$38                                     =  0000BF GR
+ 17 C$MMCommander.c$75$4$38                                     =  0000C5 GR
+ 17 C$MMCommander.c$80$4$39                                     =  0000DA GR
+ 17 C$MMCommander.c$81$5$40                                     =  0000DD GR
+ 17 C$MMCommander.c$83$5$41                                     =  0000E5 GR
+ 17 C$MMCommander.c$85$4$39                                     =  0000EB GR
+ 17 C$MMCommander.c$86$1$32                                     =  0000F7 GR
+ 17 C$MMCommander.c$87$4$39                                     =  00012C GR
+ 17 C$MMCommander.c$88$1$32                                     =  000137 GR
+ 17 C$MMCommander.c$88$4$39                                     =  0001B3 GR
+ 17 C$MMCommander.c$89$5$42                                     =  000159 GR
+ 17 C$MMCommander.c$90$6$43                                     =  00016F GR
+ 17 C$MMCommander.c$95$6$44                                     =  000191 GR
     CPRL2                                                       =  0000C8 L
     CT2                                                         =  0000C9 L
     CY                                                          =  0000D7 L
@@ -358,7 +418,7 @@ Symbol Table
     G$AGCCTRL2$0$0                                              =  00DF17 G
     G$B$0$0                                                     =  0000F0 G
     G$BSCFG$0$0                                                 =  00DF16 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 7.
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 8.
 Hexadecimal [24-Bits]
 
 Symbol Table
@@ -418,7 +478,7 @@ Symbol Table
     G$FSCTRL1$0$0                                               =  00DF07 G
     G$FWDATA$0$0                                                =  0000AF G
     G$FWT$0$0                                                   =  0000AB G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 8.
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 9.
 Hexadecimal [24-Bits]
 
 Symbol Table
@@ -478,7 +538,7 @@ Symbol Table
     G$P0_7$0$0                                                  =  000087 G
     G$P1$0$0                                                    =  000090 G
     G$P1DIR$0$0                                                 =  0000FE G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 9.
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 10.
 Hexadecimal [24-Bits]
 
 Symbol Table
@@ -538,7 +598,7 @@ Symbol Table
     G$RNDL$0$0                                                  =  0000BC G
     G$RS0$0$0                                                   =  0000D3 G
     G$RS1$0$0                                                   =  0000D4 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 10.
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 11.
 Hexadecimal [24-Bits]
 
 Symbol Table
@@ -598,7 +658,7 @@ Symbol Table
     G$TCON$0$0                                                  =  000088 G
     G$TEST0$0$0                                                 =  00DF25 G
     G$TEST1$0$0                                                 =  00DF24 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 11.
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 12.
 Hexadecimal [24-Bits]
 
 Symbol Table
@@ -658,7 +718,7 @@ Symbol Table
     G$X_MPAGE$0$0                                               =  00DF93 G
     G$X_P0DIR$0$0                                               =  00DFFD G
     G$X_P0IFG$0$0                                               =  00DF89 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 12.
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 13.
 Hexadecimal [24-Bits]
 
 Symbol Table
@@ -718,7 +778,7 @@ Symbol Table
     G$X_U0UCR$0$0                                               =  00DFC4 G
     G$X_U1BAUD$0$0                                              =  00DFFA G
     G$X_U1CSR$0$0                                               =  00DFF8 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 13.
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 14.
 Hexadecimal [24-Bits]
 
 Symbol Table
@@ -778,7 +838,7 @@ Symbol Table
     G$_XREGDF32$0$0                                             =  00DF32 G
     G$_XREGDF33$0$0                                             =  00DF33 G
     G$_XREGDF34$0$0                                             =  00DF34 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 14.
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 15.
 Hexadecimal [24-Bits]
 
 Symbol Table
@@ -825,11 +885,10 @@ Symbol Table
     IP.5                                                        =  0000BD L
     IT0                                                         =  000088 L
     IT1                                                         =  00008A L
-  5 LMMCommander.main$dataLength$1$34                           =  000103 GR
-  5 LMMCommander.main$dataPacket$1$34                           =  000000 GR
-  5 LMMCommander.main$i$1$34                                    =  000105 GR
-  5 LMMCommander.main$repPacket$1$34                            =  000100 GR
-  5 LMMCommander.main$sloc0$1$0                                 =  000106 GR
+  B LMMCommander.main$dataLength$1$32                           =  000209 GR
+  B LMMCommander.main$dataPacket$1$32                           =  000106 GR
+  B LMMCommander.main$repPacket$1$32                            =  000206 GR
+  B LMMCommander.main$repeatedMessage$1$32                      =  00020B GR
     OV                                                          =  0000D2 L
     P                                                           =  0000D0 L
     P0                                                          =  000080 L
@@ -838,12 +897,12 @@ Symbol Table
     P0.2                                                        =  000082 L
     P0.3                                                        =  000083 L
     P0.4                                                        =  000084 L
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 15.
+    P0.5                                                        =  000085 L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 16.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-    P0.5                                                        =  000085 L
     P0.6                                                        =  000086 L
     P0.7                                                        =  000087 L
     P1                                                          =  000090 L
@@ -898,12 +957,12 @@ Symbol Table
     RS0                                                         =  0000D3 L
     RS1                                                         =  0000D4 L
     RXD                                                         =  0000B0 L
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 16.
+    SBUF                                                        =  000099 L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 17.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-    SBUF                                                        =  000099 L
     SCON                                                        =  000098 L
     SCON.0                                                      =  000098 L
     SCON.1                                                      =  000099 L
@@ -952,18 +1011,18 @@ Symbol Table
     TR1                                                         =  00008E L
     TR2                                                         =  0000CA L
     TXD                                                         =  0000B1 L
- 17 XG$main$0$0                                                 =  000190 GR
+ 17 XG$main$0$0                                                 =  0001BA GR
     _AC                                                         =  0000D6 G
     _ACC                                                        =  0000E0 G
     _ACC_0                                                      =  0000E0 G
     _ACC_1                                                      =  0000E1 G
     _ACC_2                                                      =  0000E2 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 17.
+    _ACC_3                                                      =  0000E3 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 18.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-    _ACC_3                                                      =  0000E3 G
     _ACC_4                                                      =  0000E4 G
     _ACC_5                                                      =  0000E5 G
     _ACC_6                                                      =  0000E6 G
@@ -1018,12 +1077,12 @@ Symbol Table
     _ENCIF_1                                                    =  000099 G
     _ERR                                                        =  0000FB G
     _F0                                                         =  0000D5 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 18.
+    _F1                                                         =  0000D1 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 19.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-    _F1                                                         =  0000D1 G
     _FADDRH                                                     =  0000AD G
     _FADDRL                                                     =  0000AC G
     _FCTL                                                       =  0000AE G
@@ -1078,12 +1137,12 @@ Symbol Table
     _MEMCTR                                                     =  0000C7 G
     _MODE                                                       =  0000FF G
     _MPAGE                                                      =  000093 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 19.
+    _OV                                                         =  0000D2 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 20.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-    _OV                                                         =  0000D2 G
     _OVFIM                                                      =  0000DE G
     _P                                                          =  0000D0 G
     _P0                                                         =  000080 G
@@ -1138,12 +1197,12 @@ Symbol Table
     _PA_TABLE4                                                  =  00DF2A G
     _PA_TABLE5                                                  =  00DF29 G
     _PA_TABLE6                                                  =  00DF28 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 20.
+    _PA_TABLE7                                                  =  00DF27 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 21.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-    _PA_TABLE7                                                  =  00DF27 G
     _PCON                                                       =  000087 G
     _PERCFG                                                     =  0000F1 G
     _PICTL                                                      =  00008C G
@@ -1198,12 +1257,12 @@ Symbol Table
     _T3CCTL0                                                    =  0000CC G
     _T3CCTL1                                                    =  0000CE G
     _T3CH0IF                                                    =  0000D9 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 21.
+    _T3CH1IF                                                    =  0000DA G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 22.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-    _T3CH1IF                                                    =  0000DA G
     _T3CNT                                                      =  0000CA G
     _T3CTL                                                      =  0000CB G
     _T3IE                                                       =  0000BB G
@@ -1258,12 +1317,12 @@ Symbol Table
     _X_ADCCON3                                                  =  00DFB6 G
     _X_ADCH                                                     =  00DFBB G
     _X_ADCL                                                     =  00DFBA G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 22.
+    _X_CLKCON                                                   =  00DFC6 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 23.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-    _X_CLKCON                                                   =  00DFC6 G
     _X_DMA0CFGH                                                 =  00DFD5 G
     _X_DMA0CFGL                                                 =  00DFD4 G
     _X_DMA1CFGH                                                 =  00DFD3 G
@@ -1318,12 +1377,12 @@ Symbol Table
     _X_T2CT                                                     =  00DF9C G
     _X_T2CTL                                                    =  00DF9E G
     _X_T2PR                                                     =  00DF9D G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 23.
+    _X_T3CC0                                                    =  00DFCD G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 24.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-    _X_T3CC0                                                    =  00DFCD G
     _X_T3CC1                                                    =  00DFCF G
     _X_T3CCTL0                                                  =  00DFCC G
     _X_T3CCTL1                                                  =  00DFCE G
@@ -1378,12 +1437,12 @@ Symbol Table
     __NA_TCON                                                   =  00DF88 G
     __SFR8E                                                     =  00008E G
     __SFR94                                                     =  000094 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 24.
+    __SFR95                                                     =  000095 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 25.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-    __SFR95                                                     =  000095 G
     __SFR96                                                     =  000096 G
     __SFR97                                                     =  000097 G
     __SFR99                                                     =  000099 G
@@ -1436,16 +1495,15 @@ Symbol Table
     _halUartWrite_PARM_2                                           ****** GX
     _initGlobals                                                   ****** GX
  17 _main                                                          000000 GR
-  5 _main_dataLength_1_34                                          000103 R
-  5 _main_dataPacket_1_34                                          000000 R
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 25.
+  B _main_dataLength_1_32                                          000209 R
+  B _main_dataPacket_1_32                                          000106 R
+  B _main_repPacket_1_32                                           000206 R
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 26.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-  5 _main_i_1_34                                                   000105 R
-  5 _main_repPacket_1_34                                           000100 R
-  5 _main_sloc0_1_0                                                000106 R
+  B _main_repeatedMessage_1_32                                     00020B R
     _receiveMedtronicMessage                                       ****** GX
     _receiveMedtronicMessage_PARM_2                                ****** GX
   B _uartRxBuffer                                                  000000 GR
@@ -1453,8 +1511,6 @@ Symbol Table
   B _uartTxBuffer                                                  000080 GR
   B _uartTxIndex                                                   000102 GR
   B _uartTxLength                                                  000100 GR
-    _usbReceiveData                                                ****** GX
-    _usbUartProcess                                                ****** GX
     a                                                           =  0000E0 L
     a.0                                                         =  0000E0 L
     a.1                                                         =  0000E1 L
@@ -1498,15 +1554,15 @@ Symbol Table
     dpl                                                         =  000082 L
     ea                                                          =  0000AF L
     es                                                          =  0000AC L
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 26.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     et0                                                         =  0000A9 L
     et1                                                         =  0000AB L
     et2                                                         =  0000AD L
     ex0                                                         =  0000A8 L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 27.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     ex1                                                         =  0000AA L
     exen2                                                       =  0000CB L
     exf2                                                        =  0000CE L
@@ -1558,15 +1614,15 @@ Symbol Table
     p2.2                                                        =  0000A2 L
     p2.3                                                        =  0000A3 L
     p2.4                                                        =  0000A4 L
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 27.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     p2.5                                                        =  0000A5 L
     p2.6                                                        =  0000A6 L
     p2.7                                                        =  0000A7 L
     p3                                                          =  0000B0 L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 28.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     p3.0                                                        =  0000B0 L
     p3.1                                                        =  0000B1 L
     p3.2                                                        =  0000B2 L
@@ -1618,15 +1674,15 @@ Symbol Table
     t2con.0                                                     =  0000C8 L
     t2con.1                                                     =  0000C9 L
     t2con.2                                                     =  0000CA L
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 28.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     t2con.3                                                     =  0000CB L
     t2con.4                                                     =  0000CC L
     t2con.5                                                     =  0000CD L
     t2con.6                                                     =  0000CE L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 29.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     t2con.7                                                     =  0000CF L
     tb8                                                         =  00009B L
     tclk                                                        =  0000CC L
@@ -1656,7 +1712,7 @@ Symbol Table
     txd                                                         =  0000B1 L
 
 
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 29.
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 30.
 Hexadecimal [24-Bits]
 
 Area Table
@@ -1666,13 +1722,13 @@ Area Table
    2 RSEG0                                      size      0   flags    8
    3 RSEG1                                      size      0   flags    8
    4 REG_BANK_0                                 size      8   flags    4
-   5 DSEG                                       size    109   flags    0
+   5 DSEG                                       size      0   flags    0
    6 SSEG                                       size      1   flags    0
    7 ISEG                                       size      0   flags    0
    8 IABS                                       size      0   flags    8
    9 BSEG                                       size      0   flags   80
    A PSEG                                       size      0   flags   50
-   B XSEG                                       size    106   flags   40
+   B XSEG                                       size    20C   flags   40
    C XABS                                       size      0   flags   48
    D XISEG                                      size      0   flags   40
    E HOME                                       size      6   flags   20
@@ -1684,7 +1740,7 @@ Area Table
   14 GSINIT5                                    size      0   flags   20
   15 GSINIT                                     size      0   flags   20
   16 GSFINAL                                    size      3   flags   20
-  17 CSEG                                       size    191   flags   20
+  17 CSEG                                       size    1BB   flags   20
   18 CONST                                      size      0   flags   20
   19 XINIT                                      size      0   flags   20
   1A CABS                                       size      0   flags   28

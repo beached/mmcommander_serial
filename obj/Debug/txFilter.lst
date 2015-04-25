@@ -1,16 +1,16 @@
                                       1 ;--------------------------------------------------------
                                       2 ; File Created by SDCC : free open source ANSI-C Compiler
                                       3 ; Version 3.4.0 #8981 (Apr  5 2014) (MINGW64)
-                                      4 ; This file was generated Fri Apr 24 20:08:11 2015
+                                      4 ; This file was generated Sat Apr 25 00:05:14 2015
                                       5 ;--------------------------------------------------------
                                       6 	.module txFilter
-                                      7 	.optsdcc -mmcs51 --model-small
+                                      7 	.optsdcc -mmcs51 --model-large
                                       8 	
                                       9 ;--------------------------------------------------------
                                      10 ; Public variables in this module
                                      11 ;--------------------------------------------------------
-                                     12 	.globl _txFilter_PARM_2
-                                     13 	.globl _txFilter
+                                     12 	.globl _txFilter
+                                     13 	.globl _txFilter_PARM_2
                                      14 	.globl _txFilterEnabled
                                      15 ;--------------------------------------------------------
                                      16 ; special function registers
@@ -34,98 +34,97 @@
                                      34 ;--------------------------------------------------------
                                      35 ; overlayable items in internal ram 
                                      36 ;--------------------------------------------------------
-                                     37 	.area	OSEG    (OVR,DATA)
-                           000000    38 LtxFilter.txFilter$length$1$1==.
-      000000                         39 _txFilter_PARM_2:
-      000000                         40 	.ds 2
+                                     37 ;--------------------------------------------------------
+                                     38 ; indirectly addressable internal ram data
+                                     39 ;--------------------------------------------------------
+                                     40 	.area ISEG    (DATA)
                                      41 ;--------------------------------------------------------
-                                     42 ; indirectly addressable internal ram data
+                                     42 ; absolute internal ram data
                                      43 ;--------------------------------------------------------
-                                     44 	.area ISEG    (DATA)
-                                     45 ;--------------------------------------------------------
-                                     46 ; absolute internal ram data
-                                     47 ;--------------------------------------------------------
-                                     48 	.area IABS    (ABS,DATA)
-                                     49 	.area IABS    (ABS,DATA)
+                                     44 	.area IABS    (ABS,DATA)
+                                     45 	.area IABS    (ABS,DATA)
+                                     46 ;--------------------------------------------------------
+                                     47 ; bit data
+                                     48 ;--------------------------------------------------------
+                                     49 	.area BSEG    (BIT)
                                      50 ;--------------------------------------------------------
-                                     51 ; bit data
+                                     51 ; paged external ram data
                                      52 ;--------------------------------------------------------
-                                     53 	.area BSEG    (BIT)
+                                     53 	.area PSEG    (PAG,XDATA)
                                      54 ;--------------------------------------------------------
-                                     55 ; paged external ram data
+                                     55 ; external ram data
                                      56 ;--------------------------------------------------------
-                                     57 	.area PSEG    (PAG,XDATA)
-                                     58 ;--------------------------------------------------------
-                                     59 ; external ram data
-                                     60 ;--------------------------------------------------------
-                                     61 	.area XSEG    (XDATA)
-                           000000    62 G$txFilterEnabled$0$0==.
-      000000                         63 _txFilterEnabled::
-      000000                         64 	.ds 1
-                                     65 ;--------------------------------------------------------
-                                     66 ; absolute external ram data
-                                     67 ;--------------------------------------------------------
-                                     68 	.area XABS    (ABS,XDATA)
-                                     69 ;--------------------------------------------------------
-                                     70 ; external initialized ram data
-                                     71 ;--------------------------------------------------------
-                                     72 	.area XISEG   (XDATA)
-                                     73 	.area HOME    (CODE)
-                                     74 	.area GSINIT0 (CODE)
-                                     75 	.area GSINIT1 (CODE)
-                                     76 	.area GSINIT2 (CODE)
-                                     77 	.area GSINIT3 (CODE)
-                                     78 	.area GSINIT4 (CODE)
-                                     79 	.area GSINIT5 (CODE)
-                                     80 	.area GSINIT  (CODE)
-                                     81 	.area GSFINAL (CODE)
-                                     82 	.area CSEG    (CODE)
-                                     83 ;--------------------------------------------------------
-                                     84 ; global & static initialisations
-                                     85 ;--------------------------------------------------------
-                                     86 	.area HOME    (CODE)
-                                     87 	.area GSINIT  (CODE)
-                                     88 	.area GSFINAL (CODE)
-                                     89 	.area GSINIT  (CODE)
-                                     90 ;--------------------------------------------------------
-                                     91 ; Home
-                                     92 ;--------------------------------------------------------
+                                     57 	.area XSEG    (XDATA)
+                           000000    58 G$txFilterEnabled$0$0==.
+      000000                         59 _txFilterEnabled::
+      000000                         60 	.ds 1
+                           000001    61 LtxFilter.txFilter$length$1$1==.
+      000001                         62 _txFilter_PARM_2:
+      000001                         63 	.ds 2
+                                     64 ;--------------------------------------------------------
+                                     65 ; absolute external ram data
+                                     66 ;--------------------------------------------------------
+                                     67 	.area XABS    (ABS,XDATA)
+                                     68 ;--------------------------------------------------------
+                                     69 ; external initialized ram data
+                                     70 ;--------------------------------------------------------
+                                     71 	.area XISEG   (XDATA)
+                                     72 	.area HOME    (CODE)
+                                     73 	.area GSINIT0 (CODE)
+                                     74 	.area GSINIT1 (CODE)
+                                     75 	.area GSINIT2 (CODE)
+                                     76 	.area GSINIT3 (CODE)
+                                     77 	.area GSINIT4 (CODE)
+                                     78 	.area GSINIT5 (CODE)
+                                     79 	.area GSINIT  (CODE)
+                                     80 	.area GSFINAL (CODE)
+                                     81 	.area CSEG    (CODE)
+                                     82 ;--------------------------------------------------------
+                                     83 ; global & static initialisations
+                                     84 ;--------------------------------------------------------
+                                     85 	.area HOME    (CODE)
+                                     86 	.area GSINIT  (CODE)
+                                     87 	.area GSFINAL (CODE)
+                                     88 	.area GSINIT  (CODE)
+                                     89 ;--------------------------------------------------------
+                                     90 ; Home
+                                     91 ;--------------------------------------------------------
+                                     92 	.area HOME    (CODE)
                                      93 	.area HOME    (CODE)
-                                     94 	.area HOME    (CODE)
-                                     95 ;--------------------------------------------------------
-                                     96 ; code
-                                     97 ;--------------------------------------------------------
-                                     98 	.area CSEG    (CODE)
-                                     99 ;------------------------------------------------------------
-                                    100 ;Allocation info for local variables in function 'txFilter'
-                                    101 ;------------------------------------------------------------
-                                    102 ;length                    Allocated with name '_txFilter_PARM_2'
-                                    103 ;message                   Allocated to registers 
-                                    104 ;------------------------------------------------------------
-                           000000   105 	G$txFilter$0$0 ==.
-                           000000   106 	C$txFilter.c$5$0$0 ==.
-                                    107 ;	txFilter.c:5: char txFilter( char *message, int length ) {
-                                    108 ;	-----------------------------------------
-                                    109 ;	 function txFilter
-                                    110 ;	-----------------------------------------
-      000000                        111 _txFilter:
-                           000007   112 	ar7 = 0x07
-                           000006   113 	ar6 = 0x06
-                           000005   114 	ar5 = 0x05
-                           000004   115 	ar4 = 0x04
-                           000003   116 	ar3 = 0x03
-                           000002   117 	ar2 = 0x02
-                           000001   118 	ar1 = 0x01
-                           000000   119 	ar0 = 0x00
-                           000000   120 	C$txFilter.c$6$1$2 ==.
-                                    121 ;	txFilter.c:6: if( _TX_ENABLE_ == 0 ) return (1);
-      000000 75 82 01         [24]  122 	mov	dpl,#0x01
-                           000003   123 	C$txFilter.c$40$1$2 ==.
-                                    124 ;	txFilter.c:40: return (0);
-                           000003   125 	C$txFilter.c$41$1$2 ==.
-                           000003   126 	XG$txFilter$0$0 ==.
-      000003 22               [24]  127 	ret
-                                    128 	.area CSEG    (CODE)
-                                    129 	.area CONST   (CODE)
-                                    130 	.area XINIT   (CODE)
-                                    131 	.area CABS    (ABS,CODE)
+                                     94 ;--------------------------------------------------------
+                                     95 ; code
+                                     96 ;--------------------------------------------------------
+                                     97 	.area CSEG    (CODE)
+                                     98 ;------------------------------------------------------------
+                                     99 ;Allocation info for local variables in function 'txFilter'
+                                    100 ;------------------------------------------------------------
+                                    101 ;length                    Allocated with name '_txFilter_PARM_2'
+                                    102 ;message                   Allocated with name '_txFilter_message_1_1'
+                                    103 ;------------------------------------------------------------
+                           000000   104 	G$txFilter$0$0 ==.
+                           000000   105 	C$txFilter.c$5$0$0 ==.
+                                    106 ;	txFilter.c:5: char txFilter( char *message, int length ) {
+                                    107 ;	-----------------------------------------
+                                    108 ;	 function txFilter
+                                    109 ;	-----------------------------------------
+      000000                        110 _txFilter:
+                           000007   111 	ar7 = 0x07
+                           000006   112 	ar6 = 0x06
+                           000005   113 	ar5 = 0x05
+                           000004   114 	ar4 = 0x04
+                           000003   115 	ar3 = 0x03
+                           000002   116 	ar2 = 0x02
+                           000001   117 	ar1 = 0x01
+                           000000   118 	ar0 = 0x00
+                           000000   119 	C$txFilter.c$6$1$2 ==.
+                                    120 ;	txFilter.c:6: if( _TX_ENABLE_ == 0 ) return (1);
+      000000 75 82 01         [24]  121 	mov	dpl,#0x01
+                           000003   122 	C$txFilter.c$40$1$2 ==.
+                                    123 ;	txFilter.c:40: return (0);
+                           000003   124 	C$txFilter.c$41$1$2 ==.
+                           000003   125 	XG$txFilter$0$0 ==.
+      000003 22               [24]  126 	ret
+                                    127 	.area CSEG    (CODE)
+                                    128 	.area CONST   (CODE)
+                                    129 	.area XINIT   (CODE)
+                                    130 	.area CABS    (ABS,CODE)

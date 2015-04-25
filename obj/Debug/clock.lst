@@ -1,10 +1,10 @@
                                       1 ;--------------------------------------------------------
                                       2 ; File Created by SDCC : free open source ANSI-C Compiler
                                       3 ; Version 3.4.0 #8981 (Apr  5 2014) (MINGW64)
-                                      4 ; This file was generated Fri Apr 24 23:11:53 2015
+                                      4 ; This file was generated Sat Apr 25 00:05:12 2015
                                       5 ;--------------------------------------------------------
                                       6 	.module clock
-                                      7 	.optsdcc -mmcs51 --model-small
+                                      7 	.optsdcc -mmcs51 --model-large
                                       8 	
                                       9 ;--------------------------------------------------------
                                      10 ; Public variables in this module
@@ -1329,145 +1329,152 @@
                            00DFFE  1329 _X_P1DIR	=	0xdffe
                            00DFFF  1330 G$X_P2DIR$0$0 == 0xdfff
                            00DFFF  1331 _X_P2DIR	=	0xdfff
-                                   1332 ;--------------------------------------------------------
-                                   1333 ; absolute external ram data
-                                   1334 ;--------------------------------------------------------
-                                   1335 	.area XABS    (ABS,XDATA)
-                                   1336 ;--------------------------------------------------------
-                                   1337 ; external initialized ram data
-                                   1338 ;--------------------------------------------------------
-                                   1339 	.area XISEG   (XDATA)
-                                   1340 	.area HOME    (CODE)
-                                   1341 	.area GSINIT0 (CODE)
-                                   1342 	.area GSINIT1 (CODE)
-                                   1343 	.area GSINIT2 (CODE)
-                                   1344 	.area GSINIT3 (CODE)
-                                   1345 	.area GSINIT4 (CODE)
-                                   1346 	.area GSINIT5 (CODE)
-                                   1347 	.area GSINIT  (CODE)
-                                   1348 	.area GSFINAL (CODE)
-                                   1349 	.area CSEG    (CODE)
-                                   1350 ;--------------------------------------------------------
-                                   1351 ; global & static initialisations
-                                   1352 ;--------------------------------------------------------
-                                   1353 	.area HOME    (CODE)
-                                   1354 	.area GSINIT  (CODE)
-                                   1355 	.area GSFINAL (CODE)
-                                   1356 	.area GSINIT  (CODE)
-                                   1357 ;--------------------------------------------------------
-                                   1358 ; Home
-                                   1359 ;--------------------------------------------------------
-                                   1360 	.area HOME    (CODE)
-                                   1361 	.area HOME    (CODE)
+                           000000  1332 Lclock.clockSetMainSrc$source$1$4==.
+      000000                       1333 _clockSetMainSrc_source_1_4:
+      000000                       1334 	.ds 1
+                                   1335 ;--------------------------------------------------------
+                                   1336 ; absolute external ram data
+                                   1337 ;--------------------------------------------------------
+                                   1338 	.area XABS    (ABS,XDATA)
+                                   1339 ;--------------------------------------------------------
+                                   1340 ; external initialized ram data
+                                   1341 ;--------------------------------------------------------
+                                   1342 	.area XISEG   (XDATA)
+                                   1343 	.area HOME    (CODE)
+                                   1344 	.area GSINIT0 (CODE)
+                                   1345 	.area GSINIT1 (CODE)
+                                   1346 	.area GSINIT2 (CODE)
+                                   1347 	.area GSINIT3 (CODE)
+                                   1348 	.area GSINIT4 (CODE)
+                                   1349 	.area GSINIT5 (CODE)
+                                   1350 	.area GSINIT  (CODE)
+                                   1351 	.area GSFINAL (CODE)
+                                   1352 	.area CSEG    (CODE)
+                                   1353 ;--------------------------------------------------------
+                                   1354 ; global & static initialisations
+                                   1355 ;--------------------------------------------------------
+                                   1356 	.area HOME    (CODE)
+                                   1357 	.area GSINIT  (CODE)
+                                   1358 	.area GSFINAL (CODE)
+                                   1359 	.area GSINIT  (CODE)
+                                   1360 ;--------------------------------------------------------
+                                   1361 ; Home
                                    1362 ;--------------------------------------------------------
-                                   1363 ; code
-                                   1364 ;--------------------------------------------------------
-                                   1365 	.area CSEG    (CODE)
-                                   1366 ;------------------------------------------------------------
-                                   1367 ;Allocation info for local variables in function 'clockSetMainSrc'
-                                   1368 ;------------------------------------------------------------
-                                   1369 ;source                    Allocated to registers r7 
-                                   1370 ;osc32k_bm                 Allocated to registers r6 
+                                   1363 	.area HOME    (CODE)
+                                   1364 	.area HOME    (CODE)
+                                   1365 ;--------------------------------------------------------
+                                   1366 ; code
+                                   1367 ;--------------------------------------------------------
+                                   1368 	.area CSEG    (CODE)
+                                   1369 ;------------------------------------------------------------
+                                   1370 ;Allocation info for local variables in function 'clockSetMainSrc'
                                    1371 ;------------------------------------------------------------
-                           000000  1372 	G$clockSetMainSrc$0$0 ==.
-                           000000  1373 	C$clock.c$34$0$0 ==.
-                                   1374 ;	clock.c:34: void clockSetMainSrc( uint8_t source ) {
-                                   1375 ;	-----------------------------------------
-                                   1376 ;	 function clockSetMainSrc
-                                   1377 ;	-----------------------------------------
-      000000                       1378 _clockSetMainSrc:
-                           000007  1379 	ar7 = 0x07
-                           000006  1380 	ar6 = 0x06
-                           000005  1381 	ar5 = 0x05
-                           000004  1382 	ar4 = 0x04
-                           000003  1383 	ar3 = 0x03
-                           000002  1384 	ar2 = 0x02
-                           000001  1385 	ar1 = 0x01
-                           000000  1386 	ar0 = 0x00
-      000000 AF 82            [24] 1387 	mov	r7,dpl
-                           000002  1388 	C$clock.c$35$1$5 ==.
-                                   1389 ;	clock.c:35: register uint8_t osc32k_bm = CLKCON & CLKCON_OSC32K_BM;
-      000002 74 80            [12] 1390 	mov	a,#0x80
-      000004 55 C6            [12] 1391 	anl	a,_CLKCON
-      000006 FE               [12] 1392 	mov	r6,a
-                           000007  1393 	C$clock.c$40$1$5 ==.
-                                   1394 ;	clock.c:40: if( source == CLOCK_SRC_HFRC ) {
-      000007 BF 01 21         [24] 1395 	cjne	r7,#0x01,00116$
-                           00000A  1396 	C$clock.c$41$2$6 ==.
-                                   1397 ;	clock.c:41: SLEEP &= ~SLEEP_OSC_PD_BM;          // power up both oscillators
-      00000A AD BE            [24] 1398 	mov	r5,_SLEEP
-      00000C 74 FB            [12] 1399 	mov	a,#0xFB
-      00000E 5D               [12] 1400 	anl	a,r5
-      00000F F5 BE            [12] 1401 	mov	_SLEEP,a
-                           000011  1402 	C$clock.c$42$2$6 ==.
-                                   1403 ;	clock.c:42: CLKCON |= CLKCON_OSC_BM;            // change system clock source to HS RCOSC
-      000011 43 C6 40         [24] 1404 	orl	_CLKCON,#0x40
-                           000014  1405 	C$clock.c$43$2$6 ==.
-                                   1406 ;	clock.c:43: while( !(CLKCON & CLKCON_OSC_BM) );  // wait until CLKCON.OSC = 1
-      000014                       1407 00101$:
-      000014 E5 C6            [12] 1408 	mov	a,_CLKCON
-      000016 30 E6 FB         [24] 1409 	jnb	acc.6,00101$
-                           000019  1410 	C$clock.c$46$2$6 ==.
-                                   1411 ;	clock.c:46: CLKCON = (osc32k_bm | CLKCON_OSC_BM | TICKSPD_DIV_2 | CLKSPD_DIV_2);
-      000019 74 49            [12] 1412 	mov	a,#0x49
-      00001B 4E               [12] 1413 	orl	a,r6
-      00001C F5 C6            [12] 1414 	mov	_CLKCON,a
-                           00001E  1415 	C$clock.c$47$2$6 ==.
-                                   1416 ;	clock.c:47: while( CLKCON != (osc32k_bm | CLKCON_OSC_BM | TICKSPD_DIV_2 | CLKSPD_DIV_2) );
-      00001E 74 49            [12] 1417 	mov	a,#0x49
-      000020 4E               [12] 1418 	orl	a,r6
-      000021 FD               [12] 1419 	mov	r5,a
-      000022                       1420 00104$:
-      000022 ED               [12] 1421 	mov	a,r5
-      000023 B5 C6 FC         [24] 1422 	cjne	a,_CLKCON,00104$
-                           000026  1423 	C$clock.c$49$2$6 ==.
-                                   1424 ;	clock.c:49: SLEEP |= SLEEP_OSC_PD_BM;           // power down the unused oscillator
-      000026 43 BE 04         [24] 1425 	orl	_SLEEP,#0x04
-      000029 80 2B            [24] 1426 	sjmp	00118$
-      00002B                       1427 00116$:
-                           00002B  1428 	C$clock.c$50$1$5 ==.
-                                   1429 ;	clock.c:50: } else if( source == CLOCK_SRC_XOSC ) {
-      00002B EF               [12] 1430 	mov	a,r7
-      00002C 70 28            [24] 1431 	jnz	00118$
-                           00002E  1432 	C$clock.c$51$2$7 ==.
-                                   1433 ;	clock.c:51: SLEEP &= ~SLEEP_OSC_PD_BM;          // power up both oscillators
-      00002E AF BE            [24] 1434 	mov	r7,_SLEEP
-      000030 74 FB            [12] 1435 	mov	a,#0xFB
-      000032 5F               [12] 1436 	anl	a,r7
-      000033 F5 BE            [12] 1437 	mov	_SLEEP,a
-                           000035  1438 	C$clock.c$52$2$7 ==.
-                                   1439 ;	clock.c:52: CLKCON &= ~CLKCON_OSC_BM;           // change system clock source to HS XOSC
-      000035 AF C6            [24] 1440 	mov	r7,_CLKCON
-      000037 74 BF            [12] 1441 	mov	a,#0xBF
-      000039 5F               [12] 1442 	anl	a,r7
-      00003A F5 C6            [12] 1443 	mov	_CLKCON,a
-                           00003C  1444 	C$clock.c$53$2$7 ==.
-                                   1445 ;	clock.c:53: while( CLKCON & CLKCON_OSC_BM );     // wait until CLKCON.OSC = 0
-      00003C                       1446 00107$:
-      00003C E5 C6            [12] 1447 	mov	a,_CLKCON
-      00003E 20 E6 FB         [24] 1448 	jb	acc.6,00107$
-                           000041  1449 	C$clock.c$56$2$7 ==.
-                                   1450 ;	clock.c:56: CLKCON = (osc32k_bm | TICKSPD_DIV_1 | CLKSPD_DIV_1);
-      000041 8E C6            [24] 1451 	mov	_CLKCON,r6
-                           000043  1452 	C$clock.c$57$2$7 ==.
-                                   1453 ;	clock.c:57: while( CLKCON != (osc32k_bm | TICKSPD_DIV_1 | CLKSPD_DIV_1) );
-      000043                       1454 00110$:
-      000043 8E 05            [24] 1455 	mov	ar5,r6
-      000045 7F 00            [12] 1456 	mov	r7,#0x00
-      000047 AB C6            [24] 1457 	mov	r3,_CLKCON
-      000049 7C 00            [12] 1458 	mov	r4,#0x00
-      00004B EB               [12] 1459 	mov	a,r3
-      00004C B5 05 F4         [24] 1460 	cjne	a,ar5,00110$
-      00004F EC               [12] 1461 	mov	a,r4
-      000050 B5 07 F0         [24] 1462 	cjne	a,ar7,00110$
-                           000053  1463 	C$clock.c$59$2$7 ==.
-                                   1464 ;	clock.c:59: SLEEP |= SLEEP_OSC_PD_BM;        // power down the unused oscillator
-      000053 43 BE 04         [24] 1465 	orl	_SLEEP,#0x04
-      000056                       1466 00118$:
-                           000056  1467 	C$clock.c$61$1$5 ==.
-                           000056  1468 	XG$clockSetMainSrc$0$0 ==.
-      000056 22               [24] 1469 	ret
-                                   1470 	.area CSEG    (CODE)
-                                   1471 	.area CONST   (CODE)
-                                   1472 	.area XINIT   (CODE)
-                                   1473 	.area CABS    (ABS,CODE)
+                                   1372 ;source                    Allocated with name '_clockSetMainSrc_source_1_4'
+                                   1373 ;osc32k_bm                 Allocated to registers r7 
+                                   1374 ;------------------------------------------------------------
+                           000000  1375 	G$clockSetMainSrc$0$0 ==.
+                           000000  1376 	C$clock.c$34$0$0 ==.
+                                   1377 ;	clock.c:34: void clockSetMainSrc( uint8_t source ) {
+                                   1378 ;	-----------------------------------------
+                                   1379 ;	 function clockSetMainSrc
+                                   1380 ;	-----------------------------------------
+      000000                       1381 _clockSetMainSrc:
+                           000007  1382 	ar7 = 0x07
+                           000006  1383 	ar6 = 0x06
+                           000005  1384 	ar5 = 0x05
+                           000004  1385 	ar4 = 0x04
+                           000003  1386 	ar3 = 0x03
+                           000002  1387 	ar2 = 0x02
+                           000001  1388 	ar1 = 0x01
+                           000000  1389 	ar0 = 0x00
+      000000 E5 82            [12] 1390 	mov	a,dpl
+      000002 90r00r00         [24] 1391 	mov	dptr,#_clockSetMainSrc_source_1_4
+      000005 F0               [24] 1392 	movx	@dptr,a
+                           000006  1393 	C$clock.c$35$1$5 ==.
+                                   1394 ;	clock.c:35: register uint8_t osc32k_bm = CLKCON & CLKCON_OSC32K_BM;
+      000006 74 80            [12] 1395 	mov	a,#0x80
+      000008 55 C6            [12] 1396 	anl	a,_CLKCON
+      00000A FF               [12] 1397 	mov	r7,a
+                           00000B  1398 	C$clock.c$40$1$5 ==.
+                                   1399 ;	clock.c:40: if( source == CLOCK_SRC_HFRC ) {
+      00000B E0               [24] 1400 	movx	a,@dptr
+      00000C FE               [12] 1401 	mov	r6,a
+      00000D BE 01 21         [24] 1402 	cjne	r6,#0x01,00116$
+                           000010  1403 	C$clock.c$41$2$6 ==.
+                                   1404 ;	clock.c:41: SLEEP &= ~SLEEP_OSC_PD_BM;          // power up both oscillators
+      000010 AD BE            [24] 1405 	mov	r5,_SLEEP
+      000012 74 FB            [12] 1406 	mov	a,#0xFB
+      000014 5D               [12] 1407 	anl	a,r5
+      000015 F5 BE            [12] 1408 	mov	_SLEEP,a
+                           000017  1409 	C$clock.c$42$2$6 ==.
+                                   1410 ;	clock.c:42: CLKCON |= CLKCON_OSC_BM;            // change system clock source to HS RCOSC
+      000017 43 C6 40         [24] 1411 	orl	_CLKCON,#0x40
+                           00001A  1412 	C$clock.c$43$2$6 ==.
+                                   1413 ;	clock.c:43: while( !(CLKCON & CLKCON_OSC_BM) );  // wait until CLKCON.OSC = 1
+      00001A                       1414 00101$:
+      00001A E5 C6            [12] 1415 	mov	a,_CLKCON
+      00001C 30 E6 FB         [24] 1416 	jnb	acc.6,00101$
+                           00001F  1417 	C$clock.c$46$2$6 ==.
+                                   1418 ;	clock.c:46: CLKCON = (osc32k_bm | CLKCON_OSC_BM | TICKSPD_DIV_2 | CLKSPD_DIV_2);
+      00001F 74 49            [12] 1419 	mov	a,#0x49
+      000021 4F               [12] 1420 	orl	a,r7
+      000022 F5 C6            [12] 1421 	mov	_CLKCON,a
+                           000024  1422 	C$clock.c$47$2$6 ==.
+                                   1423 ;	clock.c:47: while( CLKCON != (osc32k_bm | CLKCON_OSC_BM | TICKSPD_DIV_2 | CLKSPD_DIV_2) );
+      000024 74 49            [12] 1424 	mov	a,#0x49
+      000026 4F               [12] 1425 	orl	a,r7
+      000027 FD               [12] 1426 	mov	r5,a
+      000028                       1427 00104$:
+      000028 ED               [12] 1428 	mov	a,r5
+      000029 B5 C6 FC         [24] 1429 	cjne	a,_CLKCON,00104$
+                           00002C  1430 	C$clock.c$49$2$6 ==.
+                                   1431 ;	clock.c:49: SLEEP |= SLEEP_OSC_PD_BM;           // power down the unused oscillator
+      00002C 43 BE 04         [24] 1432 	orl	_SLEEP,#0x04
+      00002F 80 2B            [24] 1433 	sjmp	00118$
+      000031                       1434 00116$:
+                           000031  1435 	C$clock.c$50$1$5 ==.
+                                   1436 ;	clock.c:50: } else if( source == CLOCK_SRC_XOSC ) {
+      000031 EE               [12] 1437 	mov	a,r6
+      000032 70 28            [24] 1438 	jnz	00118$
+                           000034  1439 	C$clock.c$51$2$7 ==.
+                                   1440 ;	clock.c:51: SLEEP &= ~SLEEP_OSC_PD_BM;          // power up both oscillators
+      000034 AE BE            [24] 1441 	mov	r6,_SLEEP
+      000036 74 FB            [12] 1442 	mov	a,#0xFB
+      000038 5E               [12] 1443 	anl	a,r6
+      000039 F5 BE            [12] 1444 	mov	_SLEEP,a
+                           00003B  1445 	C$clock.c$52$2$7 ==.
+                                   1446 ;	clock.c:52: CLKCON &= ~CLKCON_OSC_BM;           // change system clock source to HS XOSC
+      00003B AE C6            [24] 1447 	mov	r6,_CLKCON
+      00003D 74 BF            [12] 1448 	mov	a,#0xBF
+      00003F 5E               [12] 1449 	anl	a,r6
+      000040 F5 C6            [12] 1450 	mov	_CLKCON,a
+                           000042  1451 	C$clock.c$53$2$7 ==.
+                                   1452 ;	clock.c:53: while( CLKCON & CLKCON_OSC_BM );     // wait until CLKCON.OSC = 0
+      000042                       1453 00107$:
+      000042 E5 C6            [12] 1454 	mov	a,_CLKCON
+      000044 20 E6 FB         [24] 1455 	jb	acc.6,00107$
+                           000047  1456 	C$clock.c$56$2$7 ==.
+                                   1457 ;	clock.c:56: CLKCON = (osc32k_bm | TICKSPD_DIV_1 | CLKSPD_DIV_1);
+      000047 8F C6            [24] 1458 	mov	_CLKCON,r7
+                           000049  1459 	C$clock.c$57$2$7 ==.
+                                   1460 ;	clock.c:57: while( CLKCON != (osc32k_bm | TICKSPD_DIV_1 | CLKSPD_DIV_1) );
+      000049                       1461 00110$:
+      000049 8F 05            [24] 1462 	mov	ar5,r7
+      00004B 7E 00            [12] 1463 	mov	r6,#0x00
+      00004D AB C6            [24] 1464 	mov	r3,_CLKCON
+      00004F 7C 00            [12] 1465 	mov	r4,#0x00
+      000051 EB               [12] 1466 	mov	a,r3
+      000052 B5 05 F4         [24] 1467 	cjne	a,ar5,00110$
+      000055 EC               [12] 1468 	mov	a,r4
+      000056 B5 06 F0         [24] 1469 	cjne	a,ar6,00110$
+                           000059  1470 	C$clock.c$59$2$7 ==.
+                                   1471 ;	clock.c:59: SLEEP |= SLEEP_OSC_PD_BM;        // power down the unused oscillator
+      000059 43 BE 04         [24] 1472 	orl	_SLEEP,#0x04
+      00005C                       1473 00118$:
+                           00005C  1474 	C$clock.c$61$1$5 ==.
+                           00005C  1475 	XG$clockSetMainSrc$0$0 ==.
+      00005C 22               [24] 1476 	ret
+                                   1477 	.area CSEG    (CODE)
+                                   1478 	.area CONST   (CODE)
+                                   1479 	.area XINIT   (CODE)
+                                   1480 	.area CABS    (ABS,CODE)

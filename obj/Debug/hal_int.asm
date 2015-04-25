@@ -1,10 +1,10 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ANSI-C Compiler
 ; Version 3.4.0 #8981 (Apr  5 2014) (MINGW64)
-; This file was generated Fri Apr 24 23:21:01 2015
+; This file was generated Sat Apr 25 00:05:12 2015
 ;--------------------------------------------------------
 	.module hal_int
-	.optsdcc -mmcs51 --model-small
+	.optsdcc -mmcs51 --model-large
 	
 ;--------------------------------------------------------
 ; Public variables in this module
@@ -910,8 +910,6 @@ _MODE	=	0x00ff
 ;--------------------------------------------------------
 ; overlayable items in internal ram 
 ;--------------------------------------------------------
-	.area	OSEG    (OVR,DATA)
-	.area	OSEG    (OVR,DATA)
 ;--------------------------------------------------------
 ; indirectly addressable internal ram data
 ;--------------------------------------------------------
@@ -1333,6 +1331,9 @@ G$X_P1DIR$0$0 == 0xdffe
 _X_P1DIR	=	0xdffe
 G$X_P2DIR$0$0 == 0xdfff
 _X_P2DIR	=	0xdfff
+Lhal_int.halIntUnlock$key$1$18==.
+_halIntUnlock_key_1_18:
+	.ds 2
 ;--------------------------------------------------------
 ; absolute external ram data
 ;--------------------------------------------------------
@@ -1410,7 +1411,7 @@ _halIntOff:
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'halIntLock'
 ;------------------------------------------------------------
-;key                       Allocated to registers r6 r7 
+;key                       Allocated with name '_halIntLock_key_1_16'
 ;------------------------------------------------------------
 	G$halIntLock$0$0 ==.
 	C$hal_int.c$59$1$13 ==.
@@ -1437,7 +1438,7 @@ _halIntLock:
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'halIntUnlock'
 ;------------------------------------------------------------
-;key                       Allocated to registers r6 r7 
+;key                       Allocated with name '_halIntUnlock_key_1_18'
 ;------------------------------------------------------------
 	G$halIntUnlock$0$0 ==.
 	C$hal_int.c$76$1$16 ==.
@@ -1446,12 +1447,21 @@ _halIntLock:
 ;	 function halIntUnlock
 ;	-----------------------------------------
 _halIntUnlock:
-	mov	r6,dpl
 	mov	r7,dph
+	mov	a,dpl
+	mov	dptr,#_halIntUnlock_key_1_18
+	movx	@dptr,a
+	mov	a,r7
+	inc	dptr
+	movx	@dptr,a
 	C$hal_int.c$77$2$20 ==.
 ;	hal_int.c:77: HAL_INT_UNLOCK( key );
-	mov	a,r6
-	orl	a,r7
+	mov	dptr,#_halIntUnlock_key_1_18
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	orl	a,r6
 	add	a,#0xff
 	mov	_EA,c
 	C$hal_int.c$78$1$19 ==.

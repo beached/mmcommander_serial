@@ -6,8 +6,7 @@
 #include "crc_4b6b.h"
 #include "interrupts.h"
 #include "medtronicRF.h"
-#include "usb/class_cdc/usb_uart.h"
-#include "usb/others/hal_uart.h"
+#include "hal_uart.h"
 #include "txFilter.h"
 
 // Globals

@@ -1,10 +1,10 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ANSI-C Compiler
 ; Version 3.4.0 #8981 (Apr  5 2014) (MINGW64)
-; This file was generated Fri Apr 24 23:11:53 2015
+; This file was generated Sat Apr 25 00:05:12 2015
 ;--------------------------------------------------------
 	.module clock
-	.optsdcc -mmcs51 --model-small
+	.optsdcc -mmcs51 --model-large
 	
 ;--------------------------------------------------------
 ; Public variables in this module
@@ -1329,6 +1329,9 @@ G$X_P1DIR$0$0 == 0xdffe
 _X_P1DIR	=	0xdffe
 G$X_P2DIR$0$0 == 0xdfff
 _X_P2DIR	=	0xdfff
+Lclock.clockSetMainSrc$source$1$4==.
+_clockSetMainSrc_source_1_4:
+	.ds 1
 ;--------------------------------------------------------
 ; absolute external ram data
 ;--------------------------------------------------------
@@ -1366,8 +1369,8 @@ _X_P2DIR	=	0xdfff
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'clockSetMainSrc'
 ;------------------------------------------------------------
-;source                    Allocated to registers r7 
-;osc32k_bm                 Allocated to registers r6 
+;source                    Allocated with name '_clockSetMainSrc_source_1_4'
+;osc32k_bm                 Allocated to registers r7 
 ;------------------------------------------------------------
 	G$clockSetMainSrc$0$0 ==.
 	C$clock.c$34$0$0 ==.
@@ -1384,15 +1387,19 @@ _clockSetMainSrc:
 	ar2 = 0x02
 	ar1 = 0x01
 	ar0 = 0x00
-	mov	r7,dpl
+	mov	a,dpl
+	mov	dptr,#_clockSetMainSrc_source_1_4
+	movx	@dptr,a
 	C$clock.c$35$1$5 ==.
 ;	clock.c:35: register uint8_t osc32k_bm = CLKCON & CLKCON_OSC32K_BM;
 	mov	a,#0x80
 	anl	a,_CLKCON
-	mov	r6,a
+	mov	r7,a
 	C$clock.c$40$1$5 ==.
 ;	clock.c:40: if( source == CLOCK_SRC_HFRC ) {
-	cjne	r7,#0x01,00116$
+	movx	a,@dptr
+	mov	r6,a
+	cjne	r6,#0x01,00116$
 	C$clock.c$41$2$6 ==.
 ;	clock.c:41: SLEEP &= ~SLEEP_OSC_PD_BM;          // power up both oscillators
 	mov	r5,_SLEEP
@@ -1410,12 +1417,12 @@ _clockSetMainSrc:
 	C$clock.c$46$2$6 ==.
 ;	clock.c:46: CLKCON = (osc32k_bm | CLKCON_OSC_BM | TICKSPD_DIV_2 | CLKSPD_DIV_2);
 	mov	a,#0x49
-	orl	a,r6
+	orl	a,r7
 	mov	_CLKCON,a
 	C$clock.c$47$2$6 ==.
 ;	clock.c:47: while( CLKCON != (osc32k_bm | CLKCON_OSC_BM | TICKSPD_DIV_2 | CLKSPD_DIV_2) );
 	mov	a,#0x49
-	orl	a,r6
+	orl	a,r7
 	mov	r5,a
 00104$:
 	mov	a,r5
@@ -1427,19 +1434,19 @@ _clockSetMainSrc:
 00116$:
 	C$clock.c$50$1$5 ==.
 ;	clock.c:50: } else if( source == CLOCK_SRC_XOSC ) {
-	mov	a,r7
+	mov	a,r6
 	jnz	00118$
 	C$clock.c$51$2$7 ==.
 ;	clock.c:51: SLEEP &= ~SLEEP_OSC_PD_BM;          // power up both oscillators
-	mov	r7,_SLEEP
+	mov	r6,_SLEEP
 	mov	a,#0xFB
-	anl	a,r7
+	anl	a,r6
 	mov	_SLEEP,a
 	C$clock.c$52$2$7 ==.
 ;	clock.c:52: CLKCON &= ~CLKCON_OSC_BM;           // change system clock source to HS XOSC
-	mov	r7,_CLKCON
+	mov	r6,_CLKCON
 	mov	a,#0xBF
-	anl	a,r7
+	anl	a,r6
 	mov	_CLKCON,a
 	C$clock.c$53$2$7 ==.
 ;	clock.c:53: while( CLKCON & CLKCON_OSC_BM );     // wait until CLKCON.OSC = 0
@@ -1448,18 +1455,18 @@ _clockSetMainSrc:
 	jb	acc.6,00107$
 	C$clock.c$56$2$7 ==.
 ;	clock.c:56: CLKCON = (osc32k_bm | TICKSPD_DIV_1 | CLKSPD_DIV_1);
-	mov	_CLKCON,r6
+	mov	_CLKCON,r7
 	C$clock.c$57$2$7 ==.
 ;	clock.c:57: while( CLKCON != (osc32k_bm | TICKSPD_DIV_1 | CLKSPD_DIV_1) );
 00110$:
-	mov	ar5,r6
-	mov	r7,#0x00
+	mov	ar5,r7
+	mov	r6,#0x00
 	mov	r3,_CLKCON
 	mov	r4,#0x00
 	mov	a,r3
 	cjne	a,ar5,00110$
 	mov	a,r4
-	cjne	a,ar7,00110$
+	cjne	a,ar6,00110$
 	C$clock.c$59$2$7 ==.
 ;	clock.c:59: SLEEP |= SLEEP_OSC_PD_BM;        // power down the unused oscillator
 	orl	_SLEEP,#0x04

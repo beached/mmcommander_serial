@@ -1,10 +1,10 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ANSI-C Compiler
 ; Version 3.4.0 #8981 (Apr  5 2014) (MINGW64)
-; This file was generated Fri Apr 24 23:28:03 2015
+; This file was generated Sat Apr 25 00:05:14 2015
 ;--------------------------------------------------------
 	.module util_buffer
-	.optsdcc -mmcs51 --model-small
+	.optsdcc -mmcs51 --model-large
 	
 ;--------------------------------------------------------
 ; Public variables in this module
@@ -236,6 +236,12 @@
 	.globl _DPL0
 	.globl _SP
 	.globl _P0
+	.globl _bufPeek_PARM_3
+	.globl _bufPeek_PARM_2
+	.globl _bufGet_PARM_3
+	.globl _bufGet_PARM_2
+	.globl _bufPut_PARM_3
+	.globl _bufPut_PARM_2
 	.globl _X_P2DIR
 	.globl _X_P1DIR
 	.globl _X_P0DIR
@@ -436,12 +442,6 @@
 	.globl _SYNC0
 	.globl _SYNC1
 	.globl _MDMCTRL0H
-	.globl _bufPeek_PARM_3
-	.globl _bufPeek_PARM_2
-	.globl _bufGet_PARM_3
-	.globl _bufGet_PARM_2
-	.globl _bufPut_PARM_3
-	.globl _bufPut_PARM_2
 	.globl _bufInit
 	.globl _bufPut
 	.globl _bufGet
@@ -916,64 +916,54 @@ _MODE	=	0x00ff
 ; internal ram data
 ;--------------------------------------------------------
 	.area DSEG    (DATA)
-Lutil_buffer.bufPut$pData$1$17==.
-_bufPut_PARM_2:
-	.ds 3
-Lutil_buffer.bufPut$nBytes$1$17==.
-_bufPut_PARM_3:
-	.ds 1
-Lutil_buffer.bufPut$pBuf$1$17==.
-_bufPut_pBuf_1_17:
-	.ds 3
-Lutil_buffer.bufPut$i$1$18==.
-_bufPut_i_1_18:
-	.ds 1
-Lutil_buffer.bufPut$s$1$18==.
-_bufPut_s_1_18:
-	.ds 2
 Lutil_buffer.bufPut$sloc0$1$0==.
 _bufPut_sloc0_1_0:
-	.ds 3
-Lutil_buffer.bufGet$pData$1$22==.
-_bufGet_PARM_2:
-	.ds 3
-Lutil_buffer.bufGet$nBytes$1$22==.
-_bufGet_PARM_3:
-	.ds 1
-Lutil_buffer.bufGet$pBuf$1$22==.
-_bufGet_pBuf_1_22:
-	.ds 3
-Lutil_buffer.bufGet$i$1$23==.
-_bufGet_i_1_23:
-	.ds 1
-Lutil_buffer.bufGet$s$1$23==.
-_bufGet_s_1_23:
 	.ds 2
+Lutil_buffer.bufPut$sloc1$1$0==.
+_bufPut_sloc1_1_0:
+	.ds 1
+Lutil_buffer.bufPut$sloc2$1$0==.
+_bufPut_sloc2_1_0:
+	.ds 2
+Lutil_buffer.bufPut$sloc3$1$0==.
+_bufPut_sloc3_1_0:
+	.ds 3
+Lutil_buffer.bufPut$sloc4$1$0==.
+_bufPut_sloc4_1_0:
+	.ds 3
+Lutil_buffer.bufPut$sloc5$1$0==.
+_bufPut_sloc5_1_0:
+	.ds 3
 Lutil_buffer.bufGet$sloc0$1$0==.
 _bufGet_sloc0_1_0:
 	.ds 3
-Lutil_buffer.bufPeek$pData$1$25==.
-_bufPeek_PARM_2:
+Lutil_buffer.bufGet$sloc1$1$0==.
+_bufGet_sloc1_1_0:
 	.ds 3
-Lutil_buffer.bufPeek$nBytes$1$25==.
-_bufPeek_PARM_3:
+Lutil_buffer.bufGet$sloc2$1$0==.
+_bufGet_sloc2_1_0:
 	.ds 1
-Lutil_buffer.bufPeek$pBuf$1$25==.
-_bufPeek_pBuf_1_25:
+Lutil_buffer.bufGet$sloc3$1$0==.
+_bufGet_sloc3_1_0:
 	.ds 3
-Lutil_buffer.bufPeek$i$1$26==.
-_bufPeek_i_1_26:
+Lutil_buffer.bufPeek$sloc0$1$0==.
+_bufPeek_sloc0_1_0:
+	.ds 3
+Lutil_buffer.bufPeek$sloc1$1$0==.
+_bufPeek_sloc1_1_0:
 	.ds 1
-Lutil_buffer.bufPeek$j$1$26==.
-_bufPeek_j_1_26:
+Lutil_buffer.bufPeek$sloc2$1$0==.
+_bufPeek_sloc2_1_0:
 	.ds 1
-Lutil_buffer.bufPeek$s$1$26==.
-_bufPeek_s_1_26:
-	.ds 2
+Lutil_buffer.bufPeek$sloc3$1$0==.
+_bufPeek_sloc3_1_0:
+	.ds 3
+Lutil_buffer.bufPeek$sloc4$1$0==.
+_bufPeek_sloc4_1_0:
+	.ds 3
 ;--------------------------------------------------------
 ; overlayable items in internal ram 
 ;--------------------------------------------------------
-	.area	OSEG    (OVR,DATA)
 ;--------------------------------------------------------
 ; indirectly addressable internal ram data
 ;--------------------------------------------------------
@@ -1395,6 +1385,45 @@ G$X_P1DIR$0$0 == 0xdffe
 _X_P1DIR	=	0xdffe
 G$X_P2DIR$0$0 == 0xdfff
 _X_P2DIR	=	0xdfff
+Lutil_buffer.bufInit$pBuf$1$15==.
+_bufInit_pBuf_1_15:
+	.ds 3
+Lutil_buffer.bufPut$pData$1$17==.
+_bufPut_PARM_2:
+	.ds 3
+Lutil_buffer.bufPut$nBytes$1$17==.
+_bufPut_PARM_3:
+	.ds 1
+Lutil_buffer.bufPut$pBuf$1$17==.
+_bufPut_pBuf_1_17:
+	.ds 3
+Lutil_buffer.bufPut$i$1$18==.
+_bufPut_i_1_18:
+	.ds 1
+Lutil_buffer.bufGet$pData$1$22==.
+_bufGet_PARM_2:
+	.ds 3
+Lutil_buffer.bufGet$nBytes$1$22==.
+_bufGet_PARM_3:
+	.ds 1
+Lutil_buffer.bufGet$pBuf$1$22==.
+_bufGet_pBuf_1_22:
+	.ds 3
+Lutil_buffer.bufPeek$pData$1$25==.
+_bufPeek_PARM_2:
+	.ds 3
+Lutil_buffer.bufPeek$nBytes$1$25==.
+_bufPeek_PARM_3:
+	.ds 1
+Lutil_buffer.bufPeek$pBuf$1$25==.
+_bufPeek_pBuf_1_25:
+	.ds 3
+Lutil_buffer.bufPeek$j$1$26==.
+_bufPeek_j_1_26:
+	.ds 1
+Lutil_buffer.bufNumBytes$pBuf$1$28==.
+_bufNumBytes_pBuf_1_28:
+	.ds 3
 ;--------------------------------------------------------
 ; absolute external ram data
 ;--------------------------------------------------------
@@ -1432,8 +1461,8 @@ _X_P2DIR	=	0xdfff
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'bufInit'
 ;------------------------------------------------------------
-;pBuf                      Allocated to registers r5 r6 r7 
-;s                         Allocated to registers r3 r4 
+;pBuf                      Allocated with name '_bufInit_pBuf_1_15'
+;s                         Allocated with name '_bufInit_s_1_16'
 ;------------------------------------------------------------
 	G$bufInit$0$0 ==.
 	C$util_buffer.c$30$0$0 ==.
@@ -1450,29 +1479,40 @@ _bufInit:
 	ar2 = 0x02
 	ar1 = 0x01
 	ar0 = 0x00
-	mov	r5,dpl
-	mov	r6,dph
 	mov	r7,b
+	mov	r6,dph
+	mov	a,dpl
+	mov	dptr,#_bufInit_pBuf_1_15
+	movx	@dptr,a
+	mov	a,r6
+	inc	dptr
+	movx	@dptr,a
+	mov	a,r7
+	inc	dptr
+	movx	@dptr,a
 	C$util_buffer.c$34$1$16 ==.
 ;	util_buffer.c:34: s = halIntLock( );
-	push	ar7
-	push	ar6
-	push	ar5
 	lcall	_halIntLock
-	mov	r3,dpl
-	mov	r4,dph
-	pop	ar5
-	pop	ar6
-	pop	ar7
+	mov	r6,dpl
+	mov	r7,dph
 	C$util_buffer.c$36$1$16 ==.
 ;	util_buffer.c:36: pBuf->nBytes = 0;
+	mov	dptr,#_bufInit_pBuf_1_15
+	movx	a,@dptr
+	mov	r3,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r4,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r5,a
 	mov	a,#0x80
-	add	a,r5
+	add	a,r3
 	mov	r0,a
 	clr	a
-	addc	a,r6
+	addc	a,r4
 	mov	r1,a
-	mov	ar2,r7
+	mov	ar2,r5
 	mov	dpl,r0
 	mov	dph,r1
 	mov	b,r2
@@ -1481,12 +1521,12 @@ _bufInit:
 	C$util_buffer.c$37$1$16 ==.
 ;	util_buffer.c:37: pBuf->iHead = 0;
 	mov	a,#0x81
-	add	a,r5
+	add	a,r3
 	mov	r0,a
 	clr	a
-	addc	a,r6
+	addc	a,r4
 	mov	r1,a
-	mov	ar2,r7
+	mov	ar2,r5
 	mov	dpl,r0
 	mov	dph,r1
 	mov	b,r2
@@ -1495,20 +1535,20 @@ _bufInit:
 	C$util_buffer.c$38$1$16 ==.
 ;	util_buffer.c:38: pBuf->iTail = 0;
 	mov	a,#0x82
-	add	a,r5
-	mov	r5,a
+	add	a,r3
+	mov	r3,a
 	clr	a
-	addc	a,r6
-	mov	r6,a
-	mov	dpl,r5
-	mov	dph,r6
-	mov	b,r7
+	addc	a,r4
+	mov	r4,a
+	mov	dpl,r3
+	mov	dph,r4
+	mov	b,r5
 	clr	a
 	lcall	__gptrput
 	C$util_buffer.c$41$1$16 ==.
 ;	util_buffer.c:41: halIntUnlock( s );
-	mov	dpl,r3
-	mov	dph,r4
+	mov	dpl,r6
+	mov	dph,r7
 	lcall	_halIntUnlock
 	C$util_buffer.c$42$1$16 ==.
 	XG$bufInit$0$0 ==.
@@ -1516,12 +1556,17 @@ _bufInit:
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'bufPut'
 ;------------------------------------------------------------
+;sloc0                     Allocated with name '_bufPut_sloc0_1_0'
+;sloc1                     Allocated with name '_bufPut_sloc1_1_0'
+;sloc2                     Allocated with name '_bufPut_sloc2_1_0'
+;sloc3                     Allocated with name '_bufPut_sloc3_1_0'
+;sloc4                     Allocated with name '_bufPut_sloc4_1_0'
+;sloc5                     Allocated with name '_bufPut_sloc5_1_0'
 ;pData                     Allocated with name '_bufPut_PARM_2'
 ;nBytes                    Allocated with name '_bufPut_PARM_3'
 ;pBuf                      Allocated with name '_bufPut_pBuf_1_17'
 ;i                         Allocated with name '_bufPut_i_1_18'
 ;s                         Allocated with name '_bufPut_s_1_18'
-;sloc0                     Allocated with name '_bufPut_sloc0_1_0'
 ;------------------------------------------------------------
 	G$bufPut$0$0 ==.
 	C$util_buffer.c$56$1$16 ==.
@@ -1530,53 +1575,83 @@ _bufInit:
 ;	 function bufPut
 ;	-----------------------------------------
 _bufPut:
-	mov	_bufPut_pBuf_1_17,dpl
-	mov	(_bufPut_pBuf_1_17 + 1),dph
-	mov	(_bufPut_pBuf_1_17 + 2),b
+	mov	r7,b
+	mov	r6,dph
+	mov	a,dpl
+	mov	dptr,#_bufPut_pBuf_1_17
+	movx	@dptr,a
+	mov	a,r6
+	inc	dptr
+	movx	@dptr,a
+	mov	a,r7
+	inc	dptr
+	movx	@dptr,a
 	C$util_buffer.c$61$1$18 ==.
 ;	util_buffer.c:61: s = halIntLock( );
 	lcall	_halIntLock
-	mov	_bufPut_s_1_18,dpl
-	mov	(_bufPut_s_1_18 + 1),dph
+	mov	_bufPut_sloc0_1_0,dpl
+	mov	(_bufPut_sloc0_1_0 + 1),dph
 	C$util_buffer.c$63$1$18 ==.
 ;	util_buffer.c:63: if( pBuf->nBytes + nBytes < BUF_SIZE ) {
+	mov	dptr,#_bufPut_pBuf_1_17
+	movx	a,@dptr
+	mov	r3,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r4,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r5,a
 	mov	a,#0x80
-	add	a,_bufPut_pBuf_1_17
+	add	a,r3
 	mov	r0,a
 	clr	a
-	addc	a,(_bufPut_pBuf_1_17 + 1)
+	addc	a,r4
 	mov	r1,a
-	mov	r2,(_bufPut_pBuf_1_17 + 2)
+	mov	ar2,r5
 	mov	dpl,r0
 	mov	dph,r1
 	mov	b,r2
 	lcall	__gptrget
-	mov	r4,a
-	mov	r3,#0x00
-	mov	r6,_bufPut_PARM_3
+	mov	r7,a
+	mov	_bufPut_sloc2_1_0,r7
+	mov	(_bufPut_sloc2_1_0 + 1),#0x00
+	mov	dptr,#_bufPut_PARM_3
+	movx	a,@dptr
+	mov	_bufPut_sloc1_1_0,a
+	mov	r6,_bufPut_sloc1_1_0
 	mov	r7,#0x00
 	mov	a,r6
-	add	a,r4
-	mov	r4,a
+	add	a,_bufPut_sloc2_1_0
+	mov	r6,a
 	mov	a,r7
-	addc	a,r3
-	mov	r3,a
+	addc	a,(_bufPut_sloc2_1_0 + 1)
+	mov	r7,a
 	clr	c
-	mov	a,r4
+	mov	a,r6
 	subb	a,#0x80
-	mov	a,r3
+	mov	a,r7
 	xrl	a,#0x80
 	subb	a,#0x80
 	jc	00124$
 	ljmp	00107$
 00124$:
-	C$util_buffer.c$65$1$18 ==.
+	C$util_buffer.c$65$3$20 ==.
 ;	util_buffer.c:65: while( i < nBytes ) {
-	mov	_bufPut_i_1_18,#0x00
+	mov	dptr,#_bufPut_PARM_2
+	movx	a,@dptr
+	mov	_bufPut_sloc3_1_0,a
+	inc	dptr
+	movx	a,@dptr
+	mov	(_bufPut_sloc3_1_0 + 1),a
+	inc	dptr
+	movx	a,@dptr
+	mov	(_bufPut_sloc3_1_0 + 2),a
+	mov	r7,#0x00
 00103$:
 	clr	c
-	mov	a,_bufPut_i_1_18
-	subb	a,_bufPut_PARM_3
+	mov	a,r7
+	subb	a,_bufPut_sloc1_1_0
 	jc	00125$
 	ljmp	00115$
 00125$:
@@ -1586,60 +1661,59 @@ _bufPut:
 	push	ar1
 	push	ar2
 	mov	a,#0x82
-	add	a,_bufPut_pBuf_1_17
-	mov	r4,a
+	add	a,r3
+	mov	_bufPut_sloc4_1_0,a
 	clr	a
-	addc	a,(_bufPut_pBuf_1_17 + 1)
-	mov	r5,a
-	mov	r6,(_bufPut_pBuf_1_17 + 2)
-	mov	dpl,r4
-	mov	dph,r5
+	addc	a,r4
+	mov	(_bufPut_sloc4_1_0 + 1),a
+	mov	(_bufPut_sloc4_1_0 + 2),r5
+	mov	dpl,_bufPut_sloc4_1_0
+	mov	dph,(_bufPut_sloc4_1_0 + 1)
+	mov	b,(_bufPut_sloc4_1_0 + 2)
+	lcall	__gptrget
+	add	a,r3
+	mov	_bufPut_sloc5_1_0,a
+	clr	a
+	addc	a,r4
+	mov	(_bufPut_sloc5_1_0 + 1),a
+	mov	(_bufPut_sloc5_1_0 + 2),r5
+	mov	a,r7
+	add	a,_bufPut_sloc3_1_0
+	mov	r0,a
+	clr	a
+	addc	a,(_bufPut_sloc3_1_0 + 1)
+	mov	r2,a
+	mov	r6,(_bufPut_sloc3_1_0 + 2)
+	mov	dpl,r0
+	mov	dph,r2
 	mov	b,r6
 	lcall	__gptrget
-	mov	r3,a
-	add	a,_bufPut_pBuf_1_17
-	mov	_bufPut_sloc0_1_0,a
-	clr	a
-	addc	a,(_bufPut_pBuf_1_17 + 1)
-	mov	(_bufPut_sloc0_1_0 + 1),a
-	mov	(_bufPut_sloc0_1_0 + 2),(_bufPut_pBuf_1_17 + 2)
-	mov	a,_bufPut_i_1_18
-	add	a,_bufPut_PARM_2
 	mov	r0,a
-	clr	a
-	addc	a,(_bufPut_PARM_2 + 1)
-	mov	r1,a
-	mov	r7,(_bufPut_PARM_2 + 2)
-	mov	dpl,r0
-	mov	dph,r1
-	mov	b,r7
-	lcall	__gptrget
-	mov	r0,a
-	mov	dpl,_bufPut_sloc0_1_0
-	mov	dph,(_bufPut_sloc0_1_0 + 1)
-	mov	b,(_bufPut_sloc0_1_0 + 2)
+	mov	dpl,_bufPut_sloc5_1_0
+	mov	dph,(_bufPut_sloc5_1_0 + 1)
+	mov	b,(_bufPut_sloc5_1_0 + 2)
 	lcall	__gptrput
 	C$util_buffer.c$67$3$20 ==.
 ;	util_buffer.c:67: pBuf->iTail++;
-	mov	dpl,r4
-	mov	dph,r5
-	mov	b,r6
+	mov	dpl,_bufPut_sloc4_1_0
+	mov	dph,(_bufPut_sloc4_1_0 + 1)
+	mov	b,(_bufPut_sloc4_1_0 + 2)
 	lcall	__gptrget
-	mov	r7,a
-	inc	r7
-	mov	dpl,r4
-	mov	dph,r5
-	mov	b,r6
-	mov	a,r7
+	mov	r6,a
+	inc	r6
+	mov	dpl,_bufPut_sloc4_1_0
+	mov	dph,(_bufPut_sloc4_1_0 + 1)
+	mov	b,(_bufPut_sloc4_1_0 + 2)
+	mov	a,r6
 	lcall	__gptrput
 	C$util_buffer.c$68$3$20 ==.
 ;	util_buffer.c:68: if( pBuf->iTail == BUF_SIZE )
-	mov	dpl,r4
-	mov	dph,r5
-	mov	b,r6
+	mov	dpl,_bufPut_sloc4_1_0
+	mov	dph,(_bufPut_sloc4_1_0 + 1)
+	mov	b,(_bufPut_sloc4_1_0 + 2)
 	lcall	__gptrget
-	mov	r7,a
-	cjne	r7,#0x80,00126$
+	mov	r6,a
+	cjne	r6,#0x80,00126$
 	sjmp	00127$
 00126$:
 	pop	ar2
@@ -1652,26 +1726,29 @@ _bufPut:
 	pop	ar0
 	C$util_buffer.c$69$3$20 ==.
 ;	util_buffer.c:69: pBuf->iTail = 0;
-	mov	dpl,r4
-	mov	dph,r5
-	mov	b,r6
+	mov	dpl,_bufPut_sloc4_1_0
+	mov	dph,(_bufPut_sloc4_1_0 + 1)
+	mov	b,(_bufPut_sloc4_1_0 + 2)
 	clr	a
 	lcall	__gptrput
 00102$:
 	C$util_buffer.c$70$3$20 ==.
 ;	util_buffer.c:70: i++;
-	inc	_bufPut_i_1_18
+	inc	r7
 	ljmp	00103$
 00115$:
-	mov	r7,_bufPut_i_1_18
+	mov	dptr,#_bufPut_i_1_18
+	mov	a,r7
+	movx	@dptr,a
 	C$util_buffer.c$72$2$19 ==.
 ;	util_buffer.c:72: pBuf->nBytes += i;
 	mov	dpl,r0
 	mov	dph,r1
 	mov	b,r2
 	lcall	__gptrget
-	add	a,_bufPut_i_1_18
 	mov	r6,a
+	add	a,r7
+	mov	r7,a
 	mov	dpl,r0
 	mov	dph,r1
 	mov	b,r2
@@ -1680,30 +1757,35 @@ _bufPut:
 00107$:
 	C$util_buffer.c$74$2$21 ==.
 ;	util_buffer.c:74: i = 0;
-	mov	r7,#0x00
+	mov	dptr,#_bufPut_i_1_18
+	clr	a
+	movx	@dptr,a
 00108$:
 	C$util_buffer.c$78$1$18 ==.
 ;	util_buffer.c:78: halIntUnlock( s );
-	mov	dpl,_bufPut_s_1_18
-	mov	dph,(_bufPut_s_1_18 + 1)
-	push	ar7
+	mov	dpl,_bufPut_sloc0_1_0
+	mov	dph,(_bufPut_sloc0_1_0 + 1)
 	lcall	_halIntUnlock
-	pop	ar7
 	C$util_buffer.c$80$1$18 ==.
 ;	util_buffer.c:80: return i;
-	mov	dpl,r7
+	mov	dptr,#_bufPut_i_1_18
+	movx	a,@dptr
 	C$util_buffer.c$81$1$18 ==.
 	XG$bufPut$0$0 ==.
+	mov	dpl,a
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'bufGet'
 ;------------------------------------------------------------
+;sloc0                     Allocated with name '_bufGet_sloc0_1_0'
+;sloc1                     Allocated with name '_bufGet_sloc1_1_0'
+;sloc2                     Allocated with name '_bufGet_sloc2_1_0'
+;sloc3                     Allocated with name '_bufGet_sloc3_1_0'
 ;pData                     Allocated with name '_bufGet_PARM_2'
 ;nBytes                    Allocated with name '_bufGet_PARM_3'
 ;pBuf                      Allocated with name '_bufGet_pBuf_1_22'
 ;i                         Allocated with name '_bufGet_i_1_23'
 ;s                         Allocated with name '_bufGet_s_1_23'
-;sloc0                     Allocated with name '_bufGet_sloc0_1_0'
 ;------------------------------------------------------------
 	G$bufGet$0$0 ==.
 	C$util_buffer.c$95$1$18 ==.
@@ -1712,150 +1794,202 @@ _bufPut:
 ;	 function bufGet
 ;	-----------------------------------------
 _bufGet:
-	mov	_bufGet_pBuf_1_22,dpl
-	mov	(_bufGet_pBuf_1_22 + 1),dph
-	mov	(_bufGet_pBuf_1_22 + 2),b
+	mov	r7,b
+	mov	r6,dph
+	mov	a,dpl
+	mov	dptr,#_bufGet_pBuf_1_22
+	movx	@dptr,a
+	mov	a,r6
+	inc	dptr
+	movx	@dptr,a
+	mov	a,r7
+	inc	dptr
+	movx	@dptr,a
 	C$util_buffer.c$100$1$23 ==.
 ;	util_buffer.c:100: s = halIntLock( );
 	lcall	_halIntLock
-	mov	_bufGet_s_1_23,dpl
-	mov	(_bufGet_s_1_23 + 1),dph
-	C$util_buffer.c$103$1$23 ==.
+	mov	r6,dpl
+	mov	r7,dph
+	C$util_buffer.c$103$2$24 ==.
 ;	util_buffer.c:103: while( i < nBytes && i < pBuf->nBytes ) {
-	mov	a,#0x80
-	add	a,_bufGet_pBuf_1_22
-	mov	r0,a
-	clr	a
-	addc	a,(_bufGet_pBuf_1_22 + 1)
-	mov	r1,a
-	mov	r2,(_bufGet_pBuf_1_22 + 2)
-	mov	_bufGet_i_1_23,#0x00
+	mov	dptr,#_bufGet_PARM_2
+	movx	a,@dptr
+	mov	r3,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r4,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r5,a
+	mov	dptr,#_bufGet_PARM_3
+	movx	a,@dptr
+	mov	_bufGet_sloc2_1_0,a
+	mov	r1,#0x00
 00104$:
 	clr	c
-	mov	a,_bufGet_i_1_23
-	subb	a,_bufGet_PARM_3
+	mov	a,r1
+	subb	a,_bufGet_sloc2_1_0
 	jc	00122$
 	ljmp	00106$
 00122$:
+	push	ar6
+	push	ar7
+	mov	dptr,#_bufGet_pBuf_1_22
+	movx	a,@dptr
+	mov	_bufGet_sloc0_1_0,a
+	inc	dptr
+	movx	a,@dptr
+	mov	(_bufGet_sloc0_1_0 + 1),a
+	inc	dptr
+	movx	a,@dptr
+	mov	(_bufGet_sloc0_1_0 + 2),a
+	mov	a,#0x80
+	add	a,_bufGet_sloc0_1_0
+	mov	r0,a
+	clr	a
+	addc	a,(_bufGet_sloc0_1_0 + 1)
+	mov	r6,a
+	mov	r7,(_bufGet_sloc0_1_0 + 2)
 	mov	dpl,r0
-	mov	dph,r1
-	mov	b,r2
+	mov	dph,r6
+	mov	b,r7
 	lcall	__gptrget
-	mov	r3,a
+	mov	r0,a
 	clr	c
-	mov	a,_bufGet_i_1_23
-	subb	a,r3
+	mov	a,r1
+	subb	a,r0
+	pop	ar7
+	pop	ar6
 	jc	00123$
 	ljmp	00106$
 00123$:
 	C$util_buffer.c$104$1$23 ==.
 ;	util_buffer.c:104: pData[i] = pBuf->pData[pBuf->iHead];
-	push	ar0
-	push	ar1
-	push	ar2
-	mov	a,_bufGet_i_1_23
-	add	a,_bufGet_PARM_2
-	mov	r3,a
+	push	ar6
+	push	ar7
+	mov	a,r1
+	add	a,r3
+	mov	_bufGet_sloc3_1_0,a
 	clr	a
-	addc	a,(_bufGet_PARM_2 + 1)
-	mov	r6,a
-	mov	r7,(_bufGet_PARM_2 + 2)
+	addc	a,r4
+	mov	(_bufGet_sloc3_1_0 + 1),a
+	mov	(_bufGet_sloc3_1_0 + 2),r5
 	mov	a,#0x81
-	add	a,_bufGet_pBuf_1_22
-	mov	_bufGet_sloc0_1_0,a
+	add	a,_bufGet_sloc0_1_0
+	mov	_bufGet_sloc1_1_0,a
 	clr	a
-	addc	a,(_bufGet_pBuf_1_22 + 1)
-	mov	(_bufGet_sloc0_1_0 + 1),a
-	mov	(_bufGet_sloc0_1_0 + 2),(_bufGet_pBuf_1_22 + 2)
-	mov	dpl,_bufGet_sloc0_1_0
-	mov	dph,(_bufGet_sloc0_1_0 + 1)
-	mov	b,(_bufGet_sloc0_1_0 + 2)
+	addc	a,(_bufGet_sloc0_1_0 + 1)
+	mov	(_bufGet_sloc1_1_0 + 1),a
+	mov	(_bufGet_sloc1_1_0 + 2),(_bufGet_sloc0_1_0 + 2)
+	mov	dpl,_bufGet_sloc1_1_0
+	mov	dph,(_bufGet_sloc1_1_0 + 1)
+	mov	b,(_bufGet_sloc1_1_0 + 2)
 	lcall	__gptrget
-	add	a,_bufGet_pBuf_1_22
+	add	a,_bufGet_sloc0_1_0
 	mov	r2,a
 	clr	a
-	addc	a,(_bufGet_pBuf_1_22 + 1)
-	mov	r4,a
-	mov	r5,(_bufGet_pBuf_1_22 + 2)
+	addc	a,(_bufGet_sloc0_1_0 + 1)
+	mov	r6,a
+	mov	r7,(_bufGet_sloc0_1_0 + 2)
 	mov	dpl,r2
-	mov	dph,r4
-	mov	b,r5
-	lcall	__gptrget
-	mov	r2,a
-	mov	dpl,r3
 	mov	dph,r6
 	mov	b,r7
+	lcall	__gptrget
+	mov	r2,a
+	mov	dpl,_bufGet_sloc3_1_0
+	mov	dph,(_bufGet_sloc3_1_0 + 1)
+	mov	b,(_bufGet_sloc3_1_0 + 2)
 	lcall	__gptrput
 	C$util_buffer.c$105$2$24 ==.
 ;	util_buffer.c:105: pBuf->iHead++;
-	mov	dpl,_bufGet_sloc0_1_0
-	mov	dph,(_bufGet_sloc0_1_0 + 1)
-	mov	b,(_bufGet_sloc0_1_0 + 2)
+	mov	dpl,_bufGet_sloc1_1_0
+	mov	dph,(_bufGet_sloc1_1_0 + 1)
+	mov	b,(_bufGet_sloc1_1_0 + 2)
 	lcall	__gptrget
 	mov	r7,a
 	inc	r7
-	mov	dpl,_bufGet_sloc0_1_0
-	mov	dph,(_bufGet_sloc0_1_0 + 1)
-	mov	b,(_bufGet_sloc0_1_0 + 2)
+	mov	dpl,_bufGet_sloc1_1_0
+	mov	dph,(_bufGet_sloc1_1_0 + 1)
+	mov	b,(_bufGet_sloc1_1_0 + 2)
 	mov	a,r7
 	lcall	__gptrput
 	C$util_buffer.c$106$2$24 ==.
 ;	util_buffer.c:106: if( pBuf->iHead == BUF_SIZE )
-	mov	dpl,_bufGet_sloc0_1_0
-	mov	dph,(_bufGet_sloc0_1_0 + 1)
-	mov	b,(_bufGet_sloc0_1_0 + 2)
+	mov	dpl,_bufGet_sloc1_1_0
+	mov	dph,(_bufGet_sloc1_1_0 + 1)
+	mov	b,(_bufGet_sloc1_1_0 + 2)
 	lcall	__gptrget
 	mov	r7,a
 	cjne	r7,#0x80,00124$
 	sjmp	00125$
 00124$:
-	pop	ar2
-	pop	ar1
-	pop	ar0
+	pop	ar7
+	pop	ar6
 	sjmp	00102$
 00125$:
-	pop	ar2
-	pop	ar1
-	pop	ar0
+	pop	ar7
+	pop	ar6
 	C$util_buffer.c$107$2$24 ==.
 ;	util_buffer.c:107: pBuf->iHead = 0;
-	mov	dpl,_bufGet_sloc0_1_0
-	mov	dph,(_bufGet_sloc0_1_0 + 1)
-	mov	b,(_bufGet_sloc0_1_0 + 2)
+	mov	dpl,_bufGet_sloc1_1_0
+	mov	dph,(_bufGet_sloc1_1_0 + 1)
+	mov	b,(_bufGet_sloc1_1_0 + 2)
 	clr	a
 	lcall	__gptrput
 00102$:
 	C$util_buffer.c$108$2$24 ==.
 ;	util_buffer.c:108: i++;
-	inc	_bufGet_i_1_23
+	inc	r1
 	ljmp	00104$
 00106$:
 	C$util_buffer.c$110$1$23 ==.
 ;	util_buffer.c:110: pBuf->nBytes -= i;
-	mov	dpl,r0
-	mov	dph,r1
-	mov	b,r2
+	mov	dptr,#_bufGet_pBuf_1_22
+	movx	a,@dptr
+	mov	r3,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r4,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r5,a
+	mov	a,#0x80
+	add	a,r3
+	mov	r3,a
+	clr	a
+	addc	a,r4
+	mov	r4,a
+	mov	dpl,r3
+	mov	dph,r4
+	mov	b,r5
 	lcall	__gptrget
 	clr	c
-	subb	a,_bufGet_i_1_23
-	mov	dpl,r0
-	mov	dph,r1
-	mov	b,r2
+	subb	a,r1
+	mov	dpl,r3
+	mov	dph,r4
+	mov	b,r5
 	lcall	__gptrput
 	C$util_buffer.c$113$1$23 ==.
 ;	util_buffer.c:113: halIntUnlock( s );
-	mov	dpl,_bufGet_s_1_23
-	mov	dph,(_bufGet_s_1_23 + 1)
+	mov	dpl,r6
+	mov	dph,r7
+	push	ar1
 	lcall	_halIntUnlock
+	pop	ar1
 	C$util_buffer.c$114$1$23 ==.
 ;	util_buffer.c:114: return i;
-	mov	dpl,_bufGet_i_1_23
+	mov	dpl,r1
 	C$util_buffer.c$115$1$23 ==.
 	XG$bufGet$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'bufPeek'
 ;------------------------------------------------------------
+;sloc0                     Allocated with name '_bufPeek_sloc0_1_0'
+;sloc1                     Allocated with name '_bufPeek_sloc1_1_0'
+;sloc2                     Allocated with name '_bufPeek_sloc2_1_0'
+;sloc3                     Allocated with name '_bufPeek_sloc3_1_0'
+;sloc4                     Allocated with name '_bufPeek_sloc4_1_0'
 ;pData                     Allocated with name '_bufPeek_PARM_2'
 ;nBytes                    Allocated with name '_bufPeek_PARM_3'
 ;pBuf                      Allocated with name '_bufPeek_pBuf_1_25'
@@ -1870,121 +2004,161 @@ _bufGet:
 ;	 function bufPeek
 ;	-----------------------------------------
 _bufPeek:
-	mov	_bufPeek_pBuf_1_25,dpl
-	mov	(_bufPeek_pBuf_1_25 + 1),dph
-	mov	(_bufPeek_pBuf_1_25 + 2),b
+	mov	r7,b
+	mov	r6,dph
+	mov	a,dpl
+	mov	dptr,#_bufPeek_pBuf_1_25
+	movx	@dptr,a
+	mov	a,r6
+	inc	dptr
+	movx	@dptr,a
+	mov	a,r7
+	inc	dptr
+	movx	@dptr,a
 	C$util_buffer.c$134$1$26 ==.
 ;	util_buffer.c:134: s = halIntLock( );
 	lcall	_halIntLock
-	mov	_bufPeek_s_1_26,dpl
-	mov	(_bufPeek_s_1_26 + 1),dph
+	mov	r6,dpl
+	mov	r7,dph
 	C$util_buffer.c$137$1$26 ==.
 ;	util_buffer.c:137: j = pBuf->iHead;
+	mov	dptr,#_bufPeek_pBuf_1_25
+	movx	a,@dptr
+	mov	r3,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r4,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r5,a
 	mov	a,#0x81
-	add	a,_bufPeek_pBuf_1_25
+	add	a,r3
 	mov	r0,a
 	clr	a
-	addc	a,(_bufPeek_pBuf_1_25 + 1)
+	addc	a,r4
 	mov	r1,a
-	mov	r2,(_bufPeek_pBuf_1_25 + 2)
+	mov	ar2,r5
 	mov	dpl,r0
 	mov	dph,r1
 	mov	b,r2
 	lcall	__gptrget
-	mov	_bufPeek_j_1_26,a
+	mov	r0,a
+	mov	dptr,#_bufPeek_j_1_26
+	movx	@dptr,a
 	C$util_buffer.c$138$1$26 ==.
 ;	util_buffer.c:138: while( i < nBytes && i < pBuf->nBytes ) {
 	mov	a,#0x80
-	add	a,_bufPeek_pBuf_1_25
-	mov	r0,a
+	add	a,r3
+	mov	_bufPeek_sloc3_1_0,a
 	clr	a
-	addc	a,(_bufPeek_pBuf_1_25 + 1)
-	mov	r1,a
-	mov	r4,(_bufPeek_pBuf_1_25 + 2)
-	mov	_bufPeek_i_1_26,#0x00
+	addc	a,r4
+	mov	(_bufPeek_sloc3_1_0 + 1),a
+	mov	(_bufPeek_sloc3_1_0 + 2),r5
+	mov	dptr,#_bufPeek_PARM_2
+	movx	a,@dptr
+	mov	_bufPeek_sloc0_1_0,a
+	inc	dptr
+	movx	a,@dptr
+	mov	(_bufPeek_sloc0_1_0 + 1),a
+	inc	dptr
+	movx	a,@dptr
+	mov	(_bufPeek_sloc0_1_0 + 2),a
+	mov	dptr,#_bufPeek_PARM_3
+	movx	a,@dptr
+	mov	_bufPeek_sloc1_1_0,a
+	mov	_bufPeek_sloc2_1_0,#0x00
 00104$:
 	clr	c
-	mov	a,_bufPeek_i_1_26
-	subb	a,_bufPeek_PARM_3
+	mov	a,_bufPeek_sloc2_1_0
+	subb	a,_bufPeek_sloc1_1_0
 	jnc	00106$
-	mov	dpl,r0
-	mov	dph,r1
-	mov	b,r4
+	push	ar6
+	push	ar7
+	mov	dpl,_bufPeek_sloc3_1_0
+	mov	dph,(_bufPeek_sloc3_1_0 + 1)
+	mov	b,(_bufPeek_sloc3_1_0 + 2)
 	lcall	__gptrget
 	mov	r7,a
 	clr	c
-	mov	a,_bufPeek_i_1_26
+	mov	a,_bufPeek_sloc2_1_0
 	subb	a,r7
+	pop	ar7
+	pop	ar6
 	jnc	00106$
 	C$util_buffer.c$139$1$26 ==.
 ;	util_buffer.c:139: pData[i] = pBuf->pData[j];
-	push	ar0
-	push	ar1
-	push	ar4
-	mov	a,_bufPeek_i_1_26
-	add	a,_bufPeek_PARM_2
-	mov	r5,a
+	push	ar6
+	push	ar7
+	mov	a,_bufPeek_sloc2_1_0
+	add	a,_bufPeek_sloc0_1_0
+	mov	_bufPeek_sloc4_1_0,a
 	clr	a
-	addc	a,(_bufPeek_PARM_2 + 1)
+	addc	a,(_bufPeek_sloc0_1_0 + 1)
+	mov	(_bufPeek_sloc4_1_0 + 1),a
+	mov	(_bufPeek_sloc4_1_0 + 2),(_bufPeek_sloc0_1_0 + 2)
+	mov	dptr,#_bufPeek_j_1_26
+	movx	a,@dptr
+	mov	r1,a
+	add	a,r3
+	mov	r0,a
+	clr	a
+	addc	a,r4
 	mov	r6,a
-	mov	r7,(_bufPeek_PARM_2 + 2)
-	mov	a,_bufPeek_j_1_26
-	add	a,_bufPeek_pBuf_1_25
-	mov	r2,a
-	clr	a
-	addc	a,(_bufPeek_pBuf_1_25 + 1)
-	mov	r3,a
-	mov	r4,(_bufPeek_pBuf_1_25 + 2)
-	mov	dpl,r2
-	mov	dph,r3
-	mov	b,r4
-	lcall	__gptrget
-	mov	r2,a
-	mov	dpl,r5
+	mov	ar7,r5
+	mov	dpl,r0
 	mov	dph,r6
 	mov	b,r7
+	lcall	__gptrget
+	mov	r0,a
+	mov	dpl,_bufPeek_sloc4_1_0
+	mov	dph,(_bufPeek_sloc4_1_0 + 1)
+	mov	b,(_bufPeek_sloc4_1_0 + 2)
 	lcall	__gptrput
 	C$util_buffer.c$140$2$27 ==.
 ;	util_buffer.c:140: j++;
-	inc	_bufPeek_j_1_26
+	mov	dptr,#_bufPeek_j_1_26
+	mov	a,r1
+	inc	a
+	movx	@dptr,a
 	C$util_buffer.c$141$2$27 ==.
 ;	util_buffer.c:141: if( j == BUF_SIZE )
-	mov	a,#0x80
-	cjne	a,_bufPeek_j_1_26,00124$
+	movx	a,@dptr
+	mov	r7,a
+	cjne	r7,#0x80,00124$
 	sjmp	00125$
 00124$:
-	pop	ar4
-	pop	ar1
-	pop	ar0
+	pop	ar7
+	pop	ar6
 	sjmp	00102$
 00125$:
-	pop	ar4
-	pop	ar1
-	pop	ar0
+	pop	ar7
+	pop	ar6
 	C$util_buffer.c$142$2$27 ==.
 ;	util_buffer.c:142: j = 0;
-	mov	_bufPeek_j_1_26,#0x00
+	mov	dptr,#_bufPeek_j_1_26
+	clr	a
+	movx	@dptr,a
 00102$:
 	C$util_buffer.c$143$2$27 ==.
 ;	util_buffer.c:143: i++;
-	inc	_bufPeek_i_1_26
+	inc	_bufPeek_sloc2_1_0
 	sjmp	00104$
 00106$:
 	C$util_buffer.c$147$1$26 ==.
 ;	util_buffer.c:147: halIntUnlock( s );
-	mov	dpl,_bufPeek_s_1_26
-	mov	dph,(_bufPeek_s_1_26 + 1)
+	mov	dpl,r6
+	mov	dph,r7
 	lcall	_halIntUnlock
 	C$util_buffer.c$148$1$26 ==.
 ;	util_buffer.c:148: return i;
-	mov	dpl,_bufPeek_i_1_26
+	mov	dpl,_bufPeek_sloc2_1_0
 	C$util_buffer.c$149$1$26 ==.
 	XG$bufPeek$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'bufNumBytes'
 ;------------------------------------------------------------
-;pBuf                      Allocated to registers r5 r6 r7 
+;pBuf                      Allocated with name '_bufNumBytes_pBuf_1_28'
 ;------------------------------------------------------------
 	G$bufNumBytes$0$0 ==.
 	C$util_buffer.c$161$1$26 ==.
@@ -1993,11 +2167,28 @@ _bufPeek:
 ;	 function bufNumBytes
 ;	-----------------------------------------
 _bufNumBytes:
-	mov	r5,dpl
-	mov	r6,dph
 	mov	r7,b
+	mov	r6,dph
+	mov	a,dpl
+	mov	dptr,#_bufNumBytes_pBuf_1_28
+	movx	@dptr,a
+	mov	a,r6
+	inc	dptr
+	movx	@dptr,a
+	mov	a,r7
+	inc	dptr
+	movx	@dptr,a
 	C$util_buffer.c$162$1$29 ==.
 ;	util_buffer.c:162: return pBuf->nBytes;
+	mov	dptr,#_bufNumBytes_pBuf_1_28
+	movx	a,@dptr
+	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
 	mov	a,#0x80
 	add	a,r5
 	mov	r5,a

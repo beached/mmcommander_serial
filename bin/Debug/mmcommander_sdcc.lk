@@ -1,0 +1,31 @@
+-muwx
+-i bin\Debug\mmcommander_sdcc.hex
+-M
+-Y
+-y
+-b HOME = 0x0000
+-b XSEG = 0x0001
+-b PSEG = 0x0001
+-b ISEG = 0x0000
+-b BSEG = 0x0000
+-k C:\Program Files (x86)\sdcc\lib
+-k C:\Program Files\SDCC\bin\..\lib\large
+-l mcs51
+-l libsdcc
+-l libint
+-l liblong
+-l libfloat
+obj\Debug\clock.rel
+obj\Debug\crc_4b6b.rel
+obj\Debug\hal_board.rel
+obj\Debug\hal_int.rel
+obj\Debug\hal_mcu.rel
+obj\Debug\hal_uart.rel
+obj\Debug\init.rel
+obj\Debug\interrupts.rel
+obj\Debug\medtronicRF.rel
+obj\Debug\MMCommander.rel
+obj\Debug\txFilter.rel
+obj\Debug\util_buffer.rel
+
+-e

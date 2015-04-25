@@ -1,13 +1,5 @@
 M:MMCommander
 F:G$main$0$0({2}DF,SI:S),C,0,0,0,0,0
-T:FMMCommander$__00000000[({0}S:S$dteRate$0$0({4}SL:U),Z,0,0)({4}S:S$charFormat$0$0({1}SC:U),Z,0,0)({5}S:S$parityType$0$0({1}SC:U),Z,0,0)({6}S:S$dataBits$0$0({1}SC:U),Z,0,0)]
-S:LMMCommander.main$dataPacket$1$34({256}DA256d,SC:S),E,0,0
-S:LMMCommander.main$repPacket$1$34({3}DA3d,SC:S),E,0,0
-S:LMMCommander.main$dataErr$1$34({1}SC:S),R,0,0,[r7]
-S:LMMCommander.main$dataLength$1$34({2}SI:U),E,0,0
-S:LMMCommander.main$i$1$34({1}SC:S),E,0,0
-S:LMMCommander.main$repeatedMessage$1$34({1}SC:S),R,0,0,[r6]
-S:LMMCommander.main$sloc0$1$0({3}DG,SC:U),E,0,0
 S:G$MDMCTRL0H$0$0({1}SC:U),F,0,0
 S:G$SYNC1$0$0({1}SC:U),F,0,0
 S:G$SYNC0$0$0({1}SC:U),F,0,0
@@ -213,6 +205,12 @@ S:G$uartTxBuffer$0$0({128}DA128d,SC:S),F,0,0
 S:G$uartTxLength$0$0({2}SI:S),F,0,0
 S:G$uartTxIndex$0$0({2}SI:S),F,0,0
 S:G$uartRxIndex$0$0({2}SI:S),F,0,0
+S:LMMCommander.main$dataPacket$1$32({256}DA256d,SC:S),F,0,0
+S:LMMCommander.main$repPacket$1$32({3}DA3d,SC:S),F,0,0
+S:LMMCommander.main$dataErr$1$32({1}SC:S),F,0,0
+S:LMMCommander.main$dataLength$1$32({2}SI:U),F,0,0
+S:LMMCommander.main$i$1$32({1}SC:S),F,0,0
+S:LMMCommander.main$repeatedMessage$1$32({1}SC:S),F,0,0
 S:G$P0$0$0({1}SC:U),I,0,0
 S:G$SP$0$0({1}SC:U),I,0,0
 S:G$DPL0$0$0({1}SC:U),I,0,0
@@ -466,6 +464,4 @@ S:G$halUartWrite$0$0({2}DF,SI:U),C,0,0
 S:G$halUartRead$0$0({2}DF,SI:U),C,0,0
 S:G$halUartGetNumRxBytes$0$0({2}DF,SI:U),C,0,0
 S:G$halUartEnableRxFlow$0$0({2}DF,SV:S),C,0,0
-S:G$usbUartInit$0$0({2}DF,SV:S),C,0,0
-S:G$usbUartProcess$0$0({2}DF,SV:S),C,0,0
 S:G$main$0$0({2}DF,SI:S),C,0,0

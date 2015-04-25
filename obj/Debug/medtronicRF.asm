@@ -1,10 +1,10 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ANSI-C Compiler
 ; Version 3.4.0 #8981 (Apr  5 2014) (MINGW64)
-; This file was generated Fri Apr 24 20:01:27 2015
+; This file was generated Sat Apr 25 00:05:13 2015
 ;--------------------------------------------------------
 	.module medtronicRF
-	.optsdcc -mmcs51 --model-small
+	.optsdcc -mmcs51 --model-large
 	
 ;--------------------------------------------------------
 ; Public variables in this module
@@ -16,7 +16,6 @@
 	.globl _halUartGetNumRxBytes
 	.globl _halUartRead
 	.globl _halUartWrite
-	.globl _usbUartProcess
 	.globl _decode4b6b
 	.globl _encode4b6b
 	.globl _crc16
@@ -247,6 +246,9 @@
 	.globl _DPL0
 	.globl _SP
 	.globl _P0
+	.globl _receiveMedtronicMessage_PARM_2
+	.globl _sendMedtronicMessage_PARM_3
+	.globl _sendMedtronicMessage_PARM_2
 	.globl _X_P2DIR
 	.globl _X_P1DIR
 	.globl _X_P0DIR
@@ -447,9 +449,6 @@
 	.globl _SYNC0
 	.globl _SYNC1
 	.globl _MDMCTRL0H
-	.globl _receiveMedtronicMessage_PARM_2
-	.globl _sendMedtronicMessage_PARM_3
-	.globl _sendMedtronicMessage_PARM_2
 	.globl _sendMedtronicMessage
 	.globl _receiveMedtronicMessage
 	.globl _usbReceiveData
@@ -922,36 +921,15 @@ _MODE	=	0x00ff
 ; internal ram data
 ;--------------------------------------------------------
 	.area DSEG    (DATA)
-LmedtronicRF.sendMedtronicMessage$length$1$26==.
-_sendMedtronicMessage_PARM_2:
-	.ds 2
-LmedtronicRF.sendMedtronicMessage$times$1$26==.
-_sendMedtronicMessage_PARM_3:
-	.ds 2
-LmedtronicRF.receiveMedtronicMessage$length$1$30==.
-_receiveMedtronicMessage_PARM_2:
-	.ds 3
-LmedtronicRF.receiveMedtronicMessage$message$1$30==.
-_receiveMedtronicMessage_message_1_30:
-	.ds 3
-LmedtronicRF.receiveMedtronicMessage$calcCRC$1$31==.
-_receiveMedtronicMessage_calcCRC_1_31:
-	.ds 1
-LmedtronicRF.receiveMedtronicMessage$calcCRC16$1$31==.
-_receiveMedtronicMessage_calcCRC16_1_31:
-	.ds 2
 LmedtronicRF.receiveMedtronicMessage$sloc0$1$0==.
 _receiveMedtronicMessage_sloc0_1_0:
-	.ds 2
-LmedtronicRF.usbReceiveData$tempData$1$39==.
-_usbReceiveData_tempData_1_39:
-	.ds 128
-LmedtronicRF.usbReceiveData$nBytes$1$39==.
-_usbReceiveData_nBytes_1_39:
-	.ds 2
-LmedtronicRF.usbReceiveData$i$1$39==.
-_usbReceiveData_i_1_39:
-	.ds 2
+	.ds 3
+LmedtronicRF.receiveMedtronicMessage$sloc1$1$0==.
+_receiveMedtronicMessage_sloc1_1_0:
+	.ds 1
+LmedtronicRF.receiveMedtronicMessage$sloc2$1$0==.
+_receiveMedtronicMessage_sloc2_1_0:
+	.ds 3
 ;--------------------------------------------------------
 ; overlayable items in internal ram 
 ;--------------------------------------------------------
@@ -1382,9 +1360,42 @@ _rfMessage:
 FmedtronicRF$rfLength$0$0==.
 _rfLength:
 	.ds 2
+FmedtronicRF$txCalcCRC$0$0==.
+_txCalcCRC:
+	.ds 2
+FmedtronicRF$txCalcCRC16$0$0==.
+_txCalcCRC16:
+	.ds 2
+FmedtronicRF$txLength$0$0==.
+_txLength:
+	.ds 1
+FmedtronicRF$txTimes$0$0==.
+_txTimes:
+	.ds 2
 FmedtronicRF$lastData$0$0==.
 _lastData:
 	.ds 1
+LmedtronicRF.sendMedtronicMessage$length$1$24==.
+_sendMedtronicMessage_PARM_2:
+	.ds 2
+LmedtronicRF.sendMedtronicMessage$times$1$24==.
+_sendMedtronicMessage_PARM_3:
+	.ds 2
+LmedtronicRF.sendMedtronicMessage$message$1$24==.
+_sendMedtronicMessage_message_1_24:
+	.ds 3
+LmedtronicRF.receiveMedtronicMessage$length$1$28==.
+_receiveMedtronicMessage_PARM_2:
+	.ds 3
+LmedtronicRF.receiveMedtronicMessage$message$1$28==.
+_receiveMedtronicMessage_message_1_28:
+	.ds 3
+LmedtronicRF.usbReceiveData$tempData$1$37==.
+_usbReceiveData_tempData_1_37:
+	.ds 128
+LmedtronicRF.usbReceiveData$readBytes$1$37==.
+_usbReceiveData_readBytes_1_37:
+	.ds 2
 ;--------------------------------------------------------
 ; absolute external ram data
 ;--------------------------------------------------------
@@ -1424,13 +1435,13 @@ _lastData:
 ;------------------------------------------------------------
 ;length                    Allocated with name '_sendMedtronicMessage_PARM_2'
 ;times                     Allocated with name '_sendMedtronicMessage_PARM_3'
-;message                   Allocated to registers r5 r6 r7 
-;i                         Allocated to registers r2 r3 
-;j                         Allocated to registers r4 r5 
+;message                   Allocated with name '_sendMedtronicMessage_message_1_24'
+;i                         Allocated with name '_sendMedtronicMessage_i_1_25'
+;j                         Allocated with name '_sendMedtronicMessage_j_1_25'
 ;------------------------------------------------------------
 	G$sendMedtronicMessage$0$0 ==.
-	C$medtronicRF.c$24$0$0 ==.
-;	medtronicRF.c:24: void sendMedtronicMessage( char *message, unsigned int length, int times ) {
+	C$medtronicRF.c$23$0$0 ==.
+;	medtronicRF.c:23: void sendMedtronicMessage( char *message, unsigned int length, int times ) {
 ;	-----------------------------------------
 ;	 function sendMedtronicMessage
 ;	-----------------------------------------
@@ -1443,25 +1454,64 @@ _sendMedtronicMessage:
 	ar2 = 0x02
 	ar1 = 0x01
 	ar0 = 0x00
-	mov	r5,dpl
-	mov	r6,dph
 	mov	r7,b
-	C$medtronicRF.c$28$1$27 ==.
-;	medtronicRF.c:28: encode4b6b( message, length, rfMessage, &rfLength );
-	mov	_encode4b6b_PARM_3,#_rfMessage
-	mov	(_encode4b6b_PARM_3 + 1),#(_rfMessage >> 8)
-	mov	(_encode4b6b_PARM_3 + 2),#0x00
-	mov	_encode4b6b_PARM_4,#_rfLength
-	mov	(_encode4b6b_PARM_4 + 1),#(_rfLength >> 8)
-	mov	(_encode4b6b_PARM_4 + 2),#0x00
-	mov	_encode4b6b_PARM_2,_sendMedtronicMessage_PARM_2
-	mov	(_encode4b6b_PARM_2 + 1),(_sendMedtronicMessage_PARM_2 + 1)
+	mov	r6,dph
+	mov	a,dpl
+	mov	dptr,#_sendMedtronicMessage_message_1_24
+	movx	@dptr,a
+	mov	a,r6
+	inc	dptr
+	movx	@dptr,a
+	mov	a,r7
+	inc	dptr
+	movx	@dptr,a
+	C$medtronicRF.c$27$1$25 ==.
+;	medtronicRF.c:27: encode4b6b( message, length, rfMessage, &rfLength );
+	mov	dptr,#_sendMedtronicMessage_message_1_24
+	movx	a,@dptr
+	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
+	mov	dptr,#_sendMedtronicMessage_PARM_2
+	movx	a,@dptr
+	mov	r3,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r4,a
+	mov	dptr,#_encode4b6b_PARM_2
+	mov	a,r3
+	movx	@dptr,a
+	mov	a,r4
+	inc	dptr
+	movx	@dptr,a
+	mov	dptr,#_encode4b6b_PARM_3
+	mov	a,#_rfMessage
+	movx	@dptr,a
+	mov	a,#(_rfMessage >> 8)
+	inc	dptr
+	movx	@dptr,a
+	clr	a
+	inc	dptr
+	movx	@dptr,a
+	mov	dptr,#_encode4b6b_PARM_4
+	mov	a,#_rfLength
+	movx	@dptr,a
+	mov	a,#(_rfLength >> 8)
+	inc	dptr
+	movx	@dptr,a
+	clr	a
+	inc	dptr
+	movx	@dptr,a
 	mov	dpl,r5
 	mov	dph,r6
 	mov	b,r7
 	lcall	_encode4b6b
-	C$medtronicRF.c$29$1$27 ==.
-;	medtronicRF.c:29: PKTLEN = rfLength;
+	C$medtronicRF.c$28$1$25 ==.
+;	medtronicRF.c:28: PKTLEN = rfLength;
 	mov	dptr,#_rfLength
 	movx	a,@dptr
 	mov	r6,a
@@ -1471,231 +1521,288 @@ _sendMedtronicMessage:
 	mov	dptr,#_PKTLEN
 	mov	a,r6
 	movx	@dptr,a
-	C$medtronicRF.c$31$1$27 ==.
-;	medtronicRF.c:31: RFST = RFST_SIDLE;
+	C$medtronicRF.c$30$1$25 ==.
+;	medtronicRF.c:30: RFST = RFST_SIDLE;
 	mov	_RFST,#0x04
-	C$medtronicRF.c$33$1$27 ==.
-;	medtronicRF.c:33: for( j = 0; j < times; j++ ) {
-	mov	r4,#0x00
-	mov	r5,#0x00
+	C$medtronicRF.c$32$1$25 ==.
+;	medtronicRF.c:32: for( j = 0; j < times; j++ ) {
+	mov	dptr,#_sendMedtronicMessage_PARM_3
+	movx	a,@dptr
+	mov	r4,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r5,a
+	mov	r2,#0x00
+	mov	r3,#0x00
 00113$:
 	clr	c
-	mov	a,r4
-	subb	a,_sendMedtronicMessage_PARM_3
-	mov	a,r5
+	mov	a,r2
+	subb	a,r4
+	mov	a,r3
 	xrl	a,#0x80
-	mov	b,(_sendMedtronicMessage_PARM_3 + 1)
+	mov	b,r5
 	xrl	b,#0x80
 	subb	a,b
 	jnc	00108$
-	C$medtronicRF.c$34$2$28 ==.
-;	medtronicRF.c:34: RFST = RFST_STX;
+	C$medtronicRF.c$33$2$26 ==.
+;	medtronicRF.c:33: RFST = RFST_STX;
 	mov	_RFST,#0x03
-	C$medtronicRF.c$35$1$27 ==.
-;	medtronicRF.c:35: for( i = 0; i < rfLength; i++ ) {
-	mov	r2,#0x00
-	mov	r3,#0x00
+	C$medtronicRF.c$34$1$25 ==.
+;	medtronicRF.c:34: for( i = 0; i < rfLength; i++ ) {
+	mov	r0,#0x00
+	mov	r1,#0x00
 00110$:
-	mov	ar0,r2
-	mov	ar1,r3
+	push	ar4
+	push	ar5
+	mov	ar4,r0
+	mov	ar5,r1
 	clr	c
-	mov	a,r0
+	mov	a,r4
 	subb	a,r6
-	mov	a,r1
+	mov	a,r5
 	subb	a,r7
+	pop	ar5
+	pop	ar4
 	jnc	00104$
-	C$medtronicRF.c$36$3$29 ==.
-;	medtronicRF.c:36: while( !RFTXRXIF );
+	C$medtronicRF.c$35$3$27 ==.
+;	medtronicRF.c:35: while( !RFTXRXIF );
 00101$:
 	jnb	_RFTXRXIF,00101$
-	C$medtronicRF.c$37$3$29 ==.
-;	medtronicRF.c:37: TCON &= 0xFD;
+	C$medtronicRF.c$36$3$27 ==.
+;	medtronicRF.c:36: TCON &= 0xFD;
 	anl	_TCON,#0xFD
-	C$medtronicRF.c$38$3$29 ==.
-;	medtronicRF.c:38: RFD = rfMessage[i];
-	mov	a,r2
+	C$medtronicRF.c$37$3$27 ==.
+;	medtronicRF.c:37: RFD = rfMessage[i];
+	mov	a,r0
 	add	a,#_rfMessage
 	mov	dpl,a
-	mov	a,r3
+	mov	a,r1
 	addc	a,#(_rfMessage >> 8)
 	mov	dph,a
 	movx	a,@dptr
 	mov	_RFD,a
-	C$medtronicRF.c$35$2$28 ==.
-;	medtronicRF.c:35: for( i = 0; i < rfLength; i++ ) {
-	inc	r2
-	cjne	r2,#0x00,00110$
-	inc	r3
+	C$medtronicRF.c$34$2$26 ==.
+;	medtronicRF.c:34: for( i = 0; i < rfLength; i++ ) {
+	inc	r0
+	cjne	r0,#0x00,00110$
+	inc	r1
 	sjmp	00110$
 00104$:
-	C$medtronicRF.c$43$1$27 ==.
-;	medtronicRF.c:43: while( --i ) Nop( );
-	mov	r2,#0x00
-	mov	r3,#0x10
+	C$medtronicRF.c$42$1$25 ==.
+;	medtronicRF.c:42: while( --i ) Nop( );
+	mov	r0,#0x00
+	mov	r1,#0x10
 00105$:
-	dec	r2
-	cjne	r2,#0xFF,00145$
-	dec	r3
+	dec	r0
+	cjne	r0,#0xFF,00145$
+	dec	r1
 00145$:
-	mov	a,r2
-	orl	a,r3
+	mov	a,r0
+	orl	a,r1
 	jz	00114$
 	nop 
 	sjmp	00105$
 00114$:
-	C$medtronicRF.c$33$1$27 ==.
-;	medtronicRF.c:33: for( j = 0; j < times; j++ ) {
-	inc	r4
-	cjne	r4,#0x00,00113$
-	inc	r5
+	C$medtronicRF.c$32$1$25 ==.
+;	medtronicRF.c:32: for( j = 0; j < times; j++ ) {
+	inc	r2
+	cjne	r2,#0x00,00113$
+	inc	r3
 	sjmp	00113$
 00108$:
-	C$medtronicRF.c$46$1$27 ==.
-;	medtronicRF.c:46: PKTLEN = 0xFF;
+	C$medtronicRF.c$45$1$25 ==.
+;	medtronicRF.c:45: PKTLEN = 0xFF;
 	mov	dptr,#_PKTLEN
 	mov	a,#0xFF
 	movx	@dptr,a
-	C$medtronicRF.c$47$1$27 ==.
-;	medtronicRF.c:47: RFST = RFST_SIDLE;
+	C$medtronicRF.c$46$1$25 ==.
+;	medtronicRF.c:46: RFST = RFST_SIDLE;
 	mov	_RFST,#0x04
-	C$medtronicRF.c$48$1$27 ==.
-;	medtronicRF.c:48: RFST = RFST_SRX;
+	C$medtronicRF.c$47$1$25 ==.
+;	medtronicRF.c:47: RFST = RFST_SRX;
 	mov	_RFST,#0x02
-	C$medtronicRF.c$49$1$27 ==.
+	C$medtronicRF.c$48$1$25 ==.
 	XG$sendMedtronicMessage$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'receiveMedtronicMessage'
 ;------------------------------------------------------------
-;length                    Allocated with name '_receiveMedtronicMessage_PARM_2'
-;message                   Allocated with name '_receiveMedtronicMessage_message_1_30'
-;i                         Allocated to registers r3 r4 
-;calcCRC                   Allocated with name '_receiveMedtronicMessage_calcCRC_1_31'
-;calcCRC16                 Allocated with name '_receiveMedtronicMessage_calcCRC16_1_31'
 ;sloc0                     Allocated with name '_receiveMedtronicMessage_sloc0_1_0'
+;sloc1                     Allocated with name '_receiveMedtronicMessage_sloc1_1_0'
+;sloc2                     Allocated with name '_receiveMedtronicMessage_sloc2_1_0'
+;length                    Allocated with name '_receiveMedtronicMessage_PARM_2'
+;message                   Allocated with name '_receiveMedtronicMessage_message_1_28'
+;i                         Allocated with name '_receiveMedtronicMessage_i_1_29'
+;calcCRC                   Allocated with name '_receiveMedtronicMessage_calcCRC_1_29'
+;calcCRC16                 Allocated with name '_receiveMedtronicMessage_calcCRC16_1_29'
 ;------------------------------------------------------------
 	G$receiveMedtronicMessage$0$0 ==.
-	C$medtronicRF.c$51$1$27 ==.
-;	medtronicRF.c:51: char receiveMedtronicMessage( char *message, unsigned int *length ) {
+	C$medtronicRF.c$50$1$25 ==.
+;	medtronicRF.c:50: char receiveMedtronicMessage( char *message, unsigned int *length ) {
 ;	-----------------------------------------
 ;	 function receiveMedtronicMessage
 ;	-----------------------------------------
 _receiveMedtronicMessage:
-	mov	_receiveMedtronicMessage_message_1_30,dpl
-	mov	(_receiveMedtronicMessage_message_1_30 + 1),dph
-	mov	(_receiveMedtronicMessage_message_1_30 + 2),b
-	C$medtronicRF.c$56$1$31 ==.
-;	medtronicRF.c:56: RFST = RFST_SIDLE;
+	mov	r7,b
+	mov	r6,dph
+	mov	a,dpl
+	mov	dptr,#_receiveMedtronicMessage_message_1_28
+	movx	@dptr,a
+	mov	a,r6
+	inc	dptr
+	movx	@dptr,a
+	mov	a,r7
+	inc	dptr
+	movx	@dptr,a
+	C$medtronicRF.c$55$1$29 ==.
+;	medtronicRF.c:55: RFST = RFST_SIDLE;
 	mov	_RFST,#0x04
-	C$medtronicRF.c$57$1$31 ==.
-;	medtronicRF.c:57: RFST = RFST_SRX;
+	C$medtronicRF.c$56$1$29 ==.
+;	medtronicRF.c:56: RFST = RFST_SRX;
 	mov	_RFST,#0x02
-	C$medtronicRF.c$59$1$31 ==.
-;	medtronicRF.c:59: PKTLEN = 0xFF;
+	C$medtronicRF.c$58$1$29 ==.
+;	medtronicRF.c:58: PKTLEN = 0xFF;
 	mov	dptr,#_PKTLEN
 	mov	a,#0xFF
 	movx	@dptr,a
-	C$medtronicRF.c$60$1$31 ==.
-;	medtronicRF.c:60: lastData = 0xFF;
+	C$medtronicRF.c$59$1$29 ==.
+;	medtronicRF.c:59: lastData = 0xFF;
 	mov	dptr,#_lastData
 	movx	@dptr,a
-	C$medtronicRF.c$61$2$32 ==.
-;	medtronicRF.c:61: for( i = 0; i < 500 && lastData != 0x00; i++ ) {
-	mov	r3,#0x00
-	mov	r4,#0x00
+	C$medtronicRF.c$60$2$30 ==.
+;	medtronicRF.c:60: for( i = 0; i < 500 && lastData != 0x00; i++ ) {
+	mov	r6,#0x00
+	mov	r7,#0x00
 00117$:
 	clr	c
-	mov	a,r3
+	mov	a,r6
 	subb	a,#0xF4
-	mov	a,r4
+	mov	a,r7
 	subb	a,#0x01
 	jnc	00104$
 	mov	dptr,#_lastData
 	movx	a,@dptr
-	mov	r2,a
+	mov	r5,a
 	jz	00104$
-	C$medtronicRF.c$62$2$32 ==.
-;	medtronicRF.c:62: while( !RFTXRXIF ) {
+	C$medtronicRF.c$61$2$30 ==.
+;	medtronicRF.c:61: while( !RFTXRXIF ) {
 00101$:
-	jb	_RFTXRXIF,00103$
-	C$medtronicRF.c$63$3$33 ==.
-;	medtronicRF.c:63: usbUartProcess( );
-	push	ar4
-	push	ar3
-	lcall	_usbUartProcess
-	C$medtronicRF.c$64$3$33 ==.
-;	medtronicRF.c:64: usbReceiveData( );
-	lcall	_usbReceiveData
-	pop	ar3
-	pop	ar4
-	sjmp	00101$
-00103$:
-	C$medtronicRF.c$66$2$32 ==.
+	jnb	_RFTXRXIF,00101$
+	C$medtronicRF.c$66$2$30 ==.
 ;	medtronicRF.c:66: rfMessage[i] = RFD;
-	mov	a,r3
+	mov	a,r6
 	add	a,#_rfMessage
-	mov	r1,a
-	mov	a,r4
+	mov	r4,a
+	mov	a,r7
 	addc	a,#(_rfMessage >> 8)
-	mov	r2,a
-	mov	dpl,r1
-	mov	dph,r2
+	mov	r5,a
+	mov	dpl,r4
+	mov	dph,r5
 	mov	a,_RFD
 	movx	@dptr,a
-	C$medtronicRF.c$67$2$32 ==.
+	C$medtronicRF.c$67$2$30 ==.
 ;	medtronicRF.c:67: lastData = rfMessage[i];
-	mov	dpl,r1
-	mov	dph,r2
+	mov	dpl,r4
+	mov	dph,r5
 	movx	a,@dptr
-	mov	r1,a
+	mov	r4,a
 	mov	dptr,#_lastData
 	movx	@dptr,a
-	C$medtronicRF.c$68$2$32 ==.
+	C$medtronicRF.c$68$2$30 ==.
 ;	medtronicRF.c:68: TCON &= ~0x02;
-	mov	r2,_TCON
+	mov	r5,_TCON
 	mov	a,#0xFD
-	anl	a,r2
+	anl	a,r5
 	mov	_TCON,a
-	C$medtronicRF.c$61$1$31 ==.
-;	medtronicRF.c:61: for( i = 0; i < 500 && lastData != 0x00; i++ ) {
-	inc	r3
-	cjne	r3,#0x00,00117$
-	inc	r4
+	C$medtronicRF.c$60$1$29 ==.
+;	medtronicRF.c:60: for( i = 0; i < 500 && lastData != 0x00; i++ ) {
+	inc	r6
+	cjne	r6,#0x00,00117$
+	inc	r7
 	sjmp	00117$
 00104$:
-	C$medtronicRF.c$70$1$31 ==.
+	C$medtronicRF.c$70$1$29 ==.
 ;	medtronicRF.c:70: rfLength = i - 1;
-	dec	r3
-	cjne	r3,#0xFF,00156$
-	dec	r4
+	dec	r6
+	cjne	r6,#0xFF,00156$
+	dec	r7
 00156$:
 	mov	dptr,#_rfLength
+	mov	a,r6
+	movx	@dptr,a
+	mov	a,r7
+	inc	dptr
+	movx	@dptr,a
+	C$medtronicRF.c$71$1$29 ==.
+;	medtronicRF.c:71: RFST = RFST_SIDLE;
+	mov	_RFST,#0x04
+	C$medtronicRF.c$73$1$29 ==.
+;	medtronicRF.c:73: decode4b6b( rfMessage, rfLength, message, length );
+	mov	dptr,#_receiveMedtronicMessage_message_1_28
+	movx	a,@dptr
+	mov	r3,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r4,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r5,a
+	mov	dptr,#_receiveMedtronicMessage_PARM_2
+	movx	a,@dptr
+	mov	r0,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r1,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r2,a
+	mov	dptr,#_decode4b6b_PARM_2
+	mov	a,r6
+	movx	@dptr,a
+	mov	a,r7
+	inc	dptr
+	movx	@dptr,a
+	mov	dptr,#_decode4b6b_PARM_3
 	mov	a,r3
 	movx	@dptr,a
 	mov	a,r4
 	inc	dptr
 	movx	@dptr,a
-	C$medtronicRF.c$71$1$31 ==.
-;	medtronicRF.c:71: RFST = RFST_SIDLE;
-	mov	_RFST,#0x04
-	C$medtronicRF.c$73$1$31 ==.
-;	medtronicRF.c:73: decode4b6b( rfMessage, rfLength, message, length );
-	mov	_decode4b6b_PARM_2,r3
-	mov	(_decode4b6b_PARM_2 + 1),r4
-	mov	_decode4b6b_PARM_3,_receiveMedtronicMessage_message_1_30
-	mov	(_decode4b6b_PARM_3 + 1),(_receiveMedtronicMessage_message_1_30 + 1)
-	mov	(_decode4b6b_PARM_3 + 2),(_receiveMedtronicMessage_message_1_30 + 2)
-	mov	_decode4b6b_PARM_4,_receiveMedtronicMessage_PARM_2
-	mov	(_decode4b6b_PARM_4 + 1),(_receiveMedtronicMessage_PARM_2 + 1)
-	mov	(_decode4b6b_PARM_4 + 2),(_receiveMedtronicMessage_PARM_2 + 2)
+	mov	a,r5
+	inc	dptr
+	movx	@dptr,a
+	mov	dptr,#_decode4b6b_PARM_4
+	mov	a,r0
+	movx	@dptr,a
+	mov	a,r1
+	inc	dptr
+	movx	@dptr,a
+	mov	a,r2
+	inc	dptr
+	movx	@dptr,a
 	mov	dptr,#_rfMessage
 	mov	b,#0x00
 	lcall	_decode4b6b
-	C$medtronicRF.c$74$1$31 ==.
+	C$medtronicRF.c$74$1$29 ==.
 ;	medtronicRF.c:74: calcCRC = crc8( message, (*length) - 1 );
-	mov	r2,_receiveMedtronicMessage_PARM_2
-	mov	r3,(_receiveMedtronicMessage_PARM_2 + 1)
-	mov	r4,(_receiveMedtronicMessage_PARM_2 + 2)
+	mov	dptr,#_receiveMedtronicMessage_message_1_28
+	movx	a,@dptr
+	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
+	mov	dptr,#_receiveMedtronicMessage_PARM_2
+	movx	a,@dptr
+	mov	r2,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r3,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r4,a
 	mov	dpl,r2
 	mov	dph,r3
 	mov	b,r4
@@ -1704,80 +1811,99 @@ _receiveMedtronicMessage:
 	inc	dptr
 	lcall	__gptrget
 	mov	r1,a
+	dec	r0
+	cjne	r0,#0xFF,00157$
+	dec	r1
+00157$:
+	mov	dptr,#_crc8_PARM_2
 	mov	a,r0
-	add	a,#0xFF
-	mov	_crc8_PARM_2,a
+	movx	@dptr,a
 	mov	a,r1
-	addc	a,#0xFF
-	mov	(_crc8_PARM_2 + 1),a
-	mov	dpl,_receiveMedtronicMessage_message_1_30
-	mov	dph,(_receiveMedtronicMessage_message_1_30 + 1)
-	mov	b,(_receiveMedtronicMessage_message_1_30 + 2)
+	inc	dptr
+	movx	@dptr,a
+	mov	dpl,r5
+	mov	dph,r6
+	mov	b,r7
 	push	ar4
 	push	ar3
 	push	ar2
 	lcall	_crc8
-	mov	_receiveMedtronicMessage_calcCRC_1_31,dpl
+	mov	_receiveMedtronicMessage_sloc1_1_0,dpl
 	pop	ar2
 	pop	ar3
 	pop	ar4
-	C$medtronicRF.c$76$1$31 ==.
+	C$medtronicRF.c$76$1$29 ==.
 ;	medtronicRF.c:76: if( calcCRC == message[(*length) - 1] ) {
 	mov	dpl,r2
 	mov	dph,r3
 	mov	b,r4
 	lcall	__gptrget
-	mov	_receiveMedtronicMessage_sloc0_1_0,a
+	mov	r5,a
 	inc	dptr
 	lcall	__gptrget
-	mov	(_receiveMedtronicMessage_sloc0_1_0 + 1),a
-	mov	a,_receiveMedtronicMessage_sloc0_1_0
+	mov	r6,a
+	mov	a,r5
 	add	a,#0xFF
 	mov	r0,a
-	mov	a,(_receiveMedtronicMessage_sloc0_1_0 + 1)
+	mov	a,r6
 	addc	a,#0xFF
 	mov	r1,a
+	mov	dptr,#_receiveMedtronicMessage_message_1_28
+	movx	a,@dptr
+	mov	_receiveMedtronicMessage_sloc0_1_0,a
+	inc	dptr
+	movx	a,@dptr
+	mov	(_receiveMedtronicMessage_sloc0_1_0 + 1),a
+	inc	dptr
+	movx	a,@dptr
+	mov	(_receiveMedtronicMessage_sloc0_1_0 + 2),a
 	mov	a,r0
-	add	a,_receiveMedtronicMessage_message_1_30
+	add	a,_receiveMedtronicMessage_sloc0_1_0
 	mov	r0,a
 	mov	a,r1
-	addc	a,(_receiveMedtronicMessage_message_1_30 + 1)
+	addc	a,(_receiveMedtronicMessage_sloc0_1_0 + 1)
 	mov	r1,a
-	mov	r7,(_receiveMedtronicMessage_message_1_30 + 2)
+	mov	r7,(_receiveMedtronicMessage_sloc0_1_0 + 2)
 	mov	dpl,r0
 	mov	dph,r1
 	mov	b,r7
 	lcall	__gptrget
 	mov	r0,a
-	cjne	a,_receiveMedtronicMessage_calcCRC_1_31,00106$
-	C$medtronicRF.c$77$2$34 ==.
+	cjne	a,_receiveMedtronicMessage_sloc1_1_0,00106$
+	C$medtronicRF.c$77$2$32 ==.
 ;	medtronicRF.c:77: return (0);
 	mov	dpl,#0x00
 	ljmp	00119$
 00106$:
-	C$medtronicRF.c$80$1$31 ==.
+	C$medtronicRF.c$80$1$29 ==.
 ;	medtronicRF.c:80: calcCRC16 = crc16( message, (*length) - 2 );
-	mov	a,_receiveMedtronicMessage_sloc0_1_0
+	mov	a,r5
 	add	a,#0xFE
-	mov	_crc16_PARM_2,a
-	mov	a,(_receiveMedtronicMessage_sloc0_1_0 + 1)
+	mov	r5,a
+	mov	a,r6
 	addc	a,#0xFF
-	mov	(_crc16_PARM_2 + 1),a
-	mov	dpl,_receiveMedtronicMessage_message_1_30
-	mov	dph,(_receiveMedtronicMessage_message_1_30 + 1)
-	mov	b,(_receiveMedtronicMessage_message_1_30 + 2)
+	mov	r6,a
+	mov	dptr,#_crc16_PARM_2
+	mov	a,r5
+	movx	@dptr,a
+	mov	a,r6
+	inc	dptr
+	movx	@dptr,a
+	mov	dpl,_receiveMedtronicMessage_sloc0_1_0
+	mov	dph,(_receiveMedtronicMessage_sloc0_1_0 + 1)
+	mov	b,(_receiveMedtronicMessage_sloc0_1_0 + 2)
 	push	ar4
 	push	ar3
 	push	ar2
 	lcall	_crc16
-	mov	_receiveMedtronicMessage_calcCRC16_1_31,dpl
-	mov	(_receiveMedtronicMessage_calcCRC16_1_31 + 1),dph
+	mov	r6,dpl
+	mov	r7,dph
 	pop	ar2
 	pop	ar3
 	pop	ar4
-	C$medtronicRF.c$81$1$31 ==.
+	C$medtronicRF.c$81$1$29 ==.
 ;	medtronicRF.c:81: if( ((char)(calcCRC16 & 0x00FF) == message[(*length) - 1]) &&
-	mov	r1,_receiveMedtronicMessage_calcCRC16_1_31
+	mov	ar1,r6
 	mov	dpl,r2
 	mov	dph,r3
 	mov	b,r4
@@ -1786,319 +1912,353 @@ _receiveMedtronicMessage:
 	inc	dptr
 	lcall	__gptrget
 	mov	r5,a
-	mov	a,r0
-	add	a,#0xFF
-	mov	r6,a
-	mov	a,r5
-	addc	a,#0xFF
-	mov	r7,a
 	push	ar2
 	push	ar3
 	push	ar4
-	mov	a,r6
-	add	a,_receiveMedtronicMessage_message_1_30
-	mov	r6,a
-	mov	a,r7
-	addc	a,(_receiveMedtronicMessage_message_1_30 + 1)
+	mov	a,r0
+	add	a,#0xFF
+	mov	r3,a
+	mov	a,r5
+	addc	a,#0xFF
 	mov	r4,a
-	mov	r7,(_receiveMedtronicMessage_message_1_30 + 2)
-	mov	dpl,r6
+	mov	dptr,#_receiveMedtronicMessage_message_1_28
+	movx	a,@dptr
+	mov	_receiveMedtronicMessage_sloc2_1_0,a
+	inc	dptr
+	movx	a,@dptr
+	mov	(_receiveMedtronicMessage_sloc2_1_0 + 1),a
+	inc	dptr
+	movx	a,@dptr
+	mov	(_receiveMedtronicMessage_sloc2_1_0 + 2),a
+	mov	a,r3
+	add	a,_receiveMedtronicMessage_sloc2_1_0
+	mov	r3,a
+	mov	a,r4
+	addc	a,(_receiveMedtronicMessage_sloc2_1_0 + 1)
+	mov	r4,a
+	mov	r2,(_receiveMedtronicMessage_sloc2_1_0 + 2)
+	mov	dpl,r3
 	mov	dph,r4
-	mov	b,r7
+	mov	b,r2
 	lcall	__gptrget
-	mov	r6,a
+	mov	r3,a
 	mov	a,r1
-	cjne	a,ar6,00159$
-	sjmp	00160$
-00159$:
-	pop	ar4
-	pop	ar3
-	pop	ar2
-	sjmp	00108$
+	cjne	a,ar3,00160$
+	sjmp	00161$
 00160$:
 	pop	ar4
 	pop	ar3
 	pop	ar2
-	C$medtronicRF.c$82$1$31 ==.
-;	medtronicRF.c:82: ((char)((calcCRC16 >> 8) & 0x00FF) == message[(*length) - 2]) ) {
-	push	ar2
-	push	ar3
-	push	ar4
-	mov	r7,(_receiveMedtronicMessage_calcCRC16_1_31 + 1)
-	mov	a,r0
-	add	a,#0xFE
-	mov	r1,a
-	mov	a,r5
-	addc	a,#0xFF
-	mov	r6,a
-	mov	a,r1
-	add	a,_receiveMedtronicMessage_message_1_30
-	mov	r1,a
-	mov	a,r6
-	addc	a,(_receiveMedtronicMessage_message_1_30 + 1)
-	mov	r4,a
-	mov	r6,(_receiveMedtronicMessage_message_1_30 + 2)
-	mov	dpl,r1
-	mov	dph,r4
-	mov	b,r6
-	lcall	__gptrget
-	mov	r1,a
-	mov	a,r7
-	cjne	a,ar1,00161$
-	sjmp	00162$
+	sjmp	00108$
 00161$:
 	pop	ar4
 	pop	ar3
 	pop	ar2
-	sjmp	00108$
+	C$medtronicRF.c$82$1$29 ==.
+;	medtronicRF.c:82: ((char)((calcCRC16 >> 8) & 0x00FF) == message[(*length) - 2]) ) {
+	push	ar2
+	push	ar3
+	push	ar4
+	mov	ar6,r7
+	mov	a,r0
+	add	a,#0xFE
+	mov	r1,a
+	mov	a,r5
+	addc	a,#0xFF
+	mov	r7,a
+	mov	a,r1
+	add	a,_receiveMedtronicMessage_sloc2_1_0
+	mov	r1,a
+	mov	a,r7
+	addc	a,(_receiveMedtronicMessage_sloc2_1_0 + 1)
+	mov	r4,a
+	mov	r7,(_receiveMedtronicMessage_sloc2_1_0 + 2)
+	mov	dpl,r1
+	mov	dph,r4
+	mov	b,r7
+	lcall	__gptrget
+	mov	r1,a
+	mov	a,r6
+	cjne	a,ar1,00162$
+	sjmp	00163$
 00162$:
 	pop	ar4
 	pop	ar3
 	pop	ar2
-	C$medtronicRF.c$83$2$35 ==.
+	sjmp	00108$
+00163$:
+	pop	ar4
+	pop	ar3
+	pop	ar2
+	C$medtronicRF.c$83$2$33 ==.
 ;	medtronicRF.c:83: return (0);
 	mov	dpl,#0x00
 	ljmp	00119$
 00108$:
-	C$medtronicRF.c$86$1$31 ==.
+	C$medtronicRF.c$86$1$29 ==.
 ;	medtronicRF.c:86: calcCRC = crc8( message, (*length) - 2 );
 	mov	a,r0
 	add	a,#0xFE
-	mov	_crc8_PARM_2,a
+	mov	r0,a
 	mov	a,r5
 	addc	a,#0xFF
-	mov	(_crc8_PARM_2 + 1),a
-	mov	dpl,_receiveMedtronicMessage_message_1_30
-	mov	dph,(_receiveMedtronicMessage_message_1_30 + 1)
-	mov	b,(_receiveMedtronicMessage_message_1_30 + 2)
+	mov	r5,a
+	mov	dptr,#_crc8_PARM_2
+	mov	a,r0
+	movx	@dptr,a
+	mov	a,r5
+	inc	dptr
+	movx	@dptr,a
+	mov	dpl,_receiveMedtronicMessage_sloc2_1_0
+	mov	dph,(_receiveMedtronicMessage_sloc2_1_0 + 1)
+	mov	b,(_receiveMedtronicMessage_sloc2_1_0 + 2)
 	push	ar4
 	push	ar3
 	push	ar2
 	lcall	_crc8
-	mov	_receiveMedtronicMessage_calcCRC_1_31,dpl
+	mov	r7,dpl
 	pop	ar2
 	pop	ar3
 	pop	ar4
-	C$medtronicRF.c$88$1$31 ==.
+	C$medtronicRF.c$88$1$29 ==.
 ;	medtronicRF.c:88: if( calcCRC == message[(*length) - 2] ) {
 	mov	dpl,r2
 	mov	dph,r3
 	mov	b,r4
 	lcall	__gptrget
+	mov	r5,a
+	inc	dptr
+	lcall	__gptrget
 	mov	r6,a
-	inc	dptr
-	lcall	__gptrget
-	mov	r7,a
-	mov	a,r6
-	add	a,#0xFE
-	mov	r1,a
-	mov	a,r7
-	addc	a,#0xFF
-	mov	r5,a
-	mov	a,r1
-	add	a,_receiveMedtronicMessage_message_1_30
-	mov	r1,a
-	mov	a,r5
-	addc	a,(_receiveMedtronicMessage_message_1_30 + 1)
-	mov	r0,a
-	mov	r5,(_receiveMedtronicMessage_message_1_30 + 2)
-	mov	dpl,r1
-	mov	dph,r0
-	mov	b,r5
-	lcall	__gptrget
-	mov	r1,a
-	cjne	a,_receiveMedtronicMessage_calcCRC_1_31,00111$
-	C$medtronicRF.c$89$2$36 ==.
-;	medtronicRF.c:89: (*length) = (*length) - 1;
-	mov	a,r6
-	add	a,#0xFF
-	mov	r1,a
-	mov	a,r7
-	addc	a,#0xFF
-	mov	r5,a
-	mov	dpl,r2
-	mov	dph,r3
-	mov	b,r4
-	mov	a,r1
-	lcall	__gptrput
-	inc	dptr
-	mov	a,r5
-	lcall	__gptrput
-	C$medtronicRF.c$90$2$36 ==.
-;	medtronicRF.c:90: return (0);
-	mov	dpl,#0x00
-	ljmp	00119$
-00111$:
-	C$medtronicRF.c$93$1$31 ==.
-;	medtronicRF.c:93: calcCRC16 = crc16( message, (*length) - 3 );
-	mov	a,r6
-	add	a,#0xFD
-	mov	_crc16_PARM_2,a
-	mov	a,r7
-	addc	a,#0xFF
-	mov	(_crc16_PARM_2 + 1),a
-	mov	dpl,_receiveMedtronicMessage_message_1_30
-	mov	dph,(_receiveMedtronicMessage_message_1_30 + 1)
-	mov	b,(_receiveMedtronicMessage_message_1_30 + 2)
-	push	ar4
-	push	ar3
-	push	ar2
-	lcall	_crc16
-	mov	_receiveMedtronicMessage_calcCRC16_1_31,dpl
-	mov	(_receiveMedtronicMessage_calcCRC16_1_31 + 1),dph
-	pop	ar2
-	pop	ar3
-	pop	ar4
-	C$medtronicRF.c$94$1$31 ==.
-;	medtronicRF.c:94: if( ((char)(calcCRC16 & 0x00FF) == message[(*length) - 2]) &&
-	mov	r6,_receiveMedtronicMessage_calcCRC16_1_31
-	mov	dpl,r2
-	mov	dph,r3
-	mov	b,r4
-	lcall	__gptrget
-	mov	r5,a
-	inc	dptr
-	lcall	__gptrget
-	mov	r7,a
 	mov	a,r5
 	add	a,#0xFE
 	mov	r0,a
-	mov	a,r7
+	mov	a,r6
 	addc	a,#0xFF
 	mov	r1,a
 	push	ar2
 	push	ar3
 	push	ar4
 	mov	a,r0
-	add	a,_receiveMedtronicMessage_message_1_30
+	add	a,_receiveMedtronicMessage_sloc0_1_0
 	mov	r0,a
 	mov	a,r1
-	addc	a,(_receiveMedtronicMessage_message_1_30 + 1)
+	addc	a,(_receiveMedtronicMessage_sloc0_1_0 + 1)
 	mov	r1,a
-	mov	r4,(_receiveMedtronicMessage_message_1_30 + 2)
+	mov	r4,(_receiveMedtronicMessage_sloc0_1_0 + 2)
 	mov	dpl,r0
 	mov	dph,r1
 	mov	b,r4
 	lcall	__gptrget
 	mov	r0,a
-	mov	a,r6
-	cjne	a,ar0,00165$
-	sjmp	00166$
+	mov	a,r7
+	cjne	a,ar0,00164$
+	sjmp	00165$
+00164$:
+	pop	ar4
+	pop	ar3
+	pop	ar2
+	sjmp	00111$
 00165$:
 	pop	ar4
 	pop	ar3
 	pop	ar2
-	sjmp	00113$
-00166$:
-	pop	ar4
-	pop	ar3
-	pop	ar2
-	C$medtronicRF.c$95$1$31 ==.
-;	medtronicRF.c:95: ((char)((calcCRC16 >> 8) & 0x00FF) == message[(*length) - 3]) ) {
-	push	ar2
-	push	ar3
-	push	ar4
-	mov	r6,(_receiveMedtronicMessage_calcCRC16_1_31 + 1)
+	C$medtronicRF.c$89$2$34 ==.
+;	medtronicRF.c:89: (*length) = (*length) - 1;
 	mov	a,r5
-	add	a,#0xFD
-	mov	r0,a
-	mov	a,r7
-	addc	a,#0xFF
+	add	a,#0xFF
 	mov	r1,a
-	mov	a,r0
-	add	a,_receiveMedtronicMessage_message_1_30
-	mov	r0,a
-	mov	a,r1
-	addc	a,(_receiveMedtronicMessage_message_1_30 + 1)
-	mov	r1,a
-	mov	r4,(_receiveMedtronicMessage_message_1_30 + 2)
-	mov	dpl,r0
-	mov	dph,r1
-	mov	b,r4
-	lcall	__gptrget
-	mov	r0,a
 	mov	a,r6
-	cjne	a,ar0,00167$
-	sjmp	00168$
-00167$:
-	pop	ar4
-	pop	ar3
-	pop	ar2
-	sjmp	00113$
-00168$:
-	pop	ar4
-	pop	ar3
-	pop	ar2
-	C$medtronicRF.c$96$2$37 ==.
-;	medtronicRF.c:96: (*length) = (*length) - 1;
-	dec	r5
-	cjne	r5,#0xFF,00169$
-	dec	r7
-00169$:
+	addc	a,#0xFF
+	mov	r7,a
 	mov	dpl,r2
 	mov	dph,r3
 	mov	b,r4
-	mov	a,r5
+	mov	a,r1
 	lcall	__gptrput
 	inc	dptr
 	mov	a,r7
 	lcall	__gptrput
-	C$medtronicRF.c$97$2$37 ==.
+	C$medtronicRF.c$90$2$34 ==.
+;	medtronicRF.c:90: return (0);
+	mov	dpl,#0x00
+	ljmp	00119$
+00111$:
+	C$medtronicRF.c$93$1$29 ==.
+;	medtronicRF.c:93: calcCRC16 = crc16( message, (*length) - 3 );
+	mov	a,r5
+	add	a,#0xFD
+	mov	r5,a
+	mov	a,r6
+	addc	a,#0xFF
+	mov	r6,a
+	mov	dptr,#_crc16_PARM_2
+	mov	a,r5
+	movx	@dptr,a
+	mov	a,r6
+	inc	dptr
+	movx	@dptr,a
+	mov	dpl,_receiveMedtronicMessage_sloc2_1_0
+	mov	dph,(_receiveMedtronicMessage_sloc2_1_0 + 1)
+	mov	b,(_receiveMedtronicMessage_sloc2_1_0 + 2)
+	push	ar4
+	push	ar3
+	push	ar2
+	lcall	_crc16
+	mov	r6,dpl
+	mov	r7,dph
+	pop	ar2
+	pop	ar3
+	pop	ar4
+	C$medtronicRF.c$94$1$29 ==.
+;	medtronicRF.c:94: if( ((char)(calcCRC16 & 0x00FF) == message[(*length) - 2]) &&
+	mov	ar1,r6
+	mov	dpl,r2
+	mov	dph,r3
+	mov	b,r4
+	lcall	__gptrget
+	mov	r0,a
+	inc	dptr
+	lcall	__gptrget
+	mov	r5,a
+	push	ar2
+	push	ar3
+	push	ar4
+	mov	a,r0
+	add	a,#0xFE
+	mov	r3,a
+	mov	a,r5
+	addc	a,#0xFF
+	mov	r4,a
+	mov	a,r3
+	add	a,_receiveMedtronicMessage_sloc0_1_0
+	mov	r3,a
+	mov	a,r4
+	addc	a,(_receiveMedtronicMessage_sloc0_1_0 + 1)
+	mov	r4,a
+	mov	r2,(_receiveMedtronicMessage_sloc0_1_0 + 2)
+	mov	dpl,r3
+	mov	dph,r4
+	mov	b,r2
+	lcall	__gptrget
+	mov	r3,a
+	mov	a,r1
+	cjne	a,ar3,00166$
+	sjmp	00167$
+00166$:
+	pop	ar4
+	pop	ar3
+	pop	ar2
+	sjmp	00113$
+00167$:
+	pop	ar4
+	pop	ar3
+	pop	ar2
+	C$medtronicRF.c$95$1$29 ==.
+;	medtronicRF.c:95: ((char)((calcCRC16 >> 8) & 0x00FF) == message[(*length) - 3]) ) {
+	push	ar2
+	push	ar3
+	push	ar4
+	mov	ar6,r7
+	mov	a,r0
+	add	a,#0xFD
+	mov	r1,a
+	mov	a,r5
+	addc	a,#0xFF
+	mov	r7,a
+	mov	a,r1
+	add	a,_receiveMedtronicMessage_sloc2_1_0
+	mov	r1,a
+	mov	a,r7
+	addc	a,(_receiveMedtronicMessage_sloc2_1_0 + 1)
+	mov	r4,a
+	mov	r7,(_receiveMedtronicMessage_sloc2_1_0 + 2)
+	mov	dpl,r1
+	mov	dph,r4
+	mov	b,r7
+	lcall	__gptrget
+	mov	r1,a
+	mov	a,r6
+	cjne	a,ar1,00168$
+	sjmp	00169$
+00168$:
+	pop	ar4
+	pop	ar3
+	pop	ar2
+	sjmp	00113$
+00169$:
+	pop	ar4
+	pop	ar3
+	pop	ar2
+	C$medtronicRF.c$96$2$35 ==.
+;	medtronicRF.c:96: (*length) = (*length) - 1;
+	dec	r0
+	cjne	r0,#0xFF,00170$
+	dec	r5
+00170$:
+	mov	dpl,r2
+	mov	dph,r3
+	mov	b,r4
+	mov	a,r0
+	lcall	__gptrput
+	inc	dptr
+	mov	a,r5
+	lcall	__gptrput
+	C$medtronicRF.c$97$2$35 ==.
 ;	medtronicRF.c:97: return (0);
 	mov	dpl,#0x00
 	sjmp	00119$
 00113$:
-	C$medtronicRF.c$100$1$31 ==.
+	C$medtronicRF.c$100$1$29 ==.
 ;	medtronicRF.c:100: crc16Init( );
 	lcall	_crc16Init
-	C$medtronicRF.c$101$1$31 ==.
+	C$medtronicRF.c$101$1$29 ==.
 ;	medtronicRF.c:101: return(1);
 	mov	dpl,#0x01
 00119$:
-	C$medtronicRF.c$102$1$31 ==.
+	C$medtronicRF.c$102$1$29 ==.
 	XG$receiveMedtronicMessage$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'usbReceiveData'
 ;------------------------------------------------------------
-;tempData                  Allocated with name '_usbReceiveData_tempData_1_39'
-;tmpCRC16                  Allocated to registers r6 r7 
-;nBytes                    Allocated with name '_usbReceiveData_nBytes_1_39'
-;readBytes                 Allocated to registers r2 r3 
-;i                         Allocated with name '_usbReceiveData_i_1_39'
+;tempData                  Allocated with name '_usbReceiveData_tempData_1_37'
+;tmpCRC16                  Allocated with name '_usbReceiveData_tmpCRC16_1_37'
+;nBytes                    Allocated with name '_usbReceiveData_nBytes_1_37'
+;readBytes                 Allocated with name '_usbReceiveData_readBytes_1_37'
+;i                         Allocated with name '_usbReceiveData_i_1_37'
 ;------------------------------------------------------------
 	G$usbReceiveData$0$0 ==.
-	C$medtronicRF.c$104$1$31 ==.
+	C$medtronicRF.c$104$1$29 ==.
 ;	medtronicRF.c:104: void usbReceiveData( void ) {
 ;	-----------------------------------------
 ;	 function usbReceiveData
 ;	-----------------------------------------
 _usbReceiveData:
-	C$medtronicRF.c$111$1$39 ==.
+	C$medtronicRF.c$111$1$37 ==.
 ;	medtronicRF.c:111: nBytes = halUartGetNumRxBytes( );
 	lcall	_halUartGetNumRxBytes
-	mov	_usbReceiveData_nBytes_1_39,dpl
-	mov	(_usbReceiveData_nBytes_1_39 + 1),dph
-	C$medtronicRF.c$112$2$40 ==.
+	mov	r6,dpl
+	mov	r7,dph
+	C$medtronicRF.c$112$2$38 ==.
 ;	medtronicRF.c:112: for( i = 0; i < nBytes; i = i + 48 ) {
-	clr	a
-	mov	_usbReceiveData_i_1_39,a
-	mov	(_usbReceiveData_i_1_39 + 1),a
+	mov	r4,#0x00
+	mov	r5,#0x00
 00143$:
 	clr	c
-	mov	a,_usbReceiveData_i_1_39
-	subb	a,_usbReceiveData_nBytes_1_39
-	mov	a,(_usbReceiveData_i_1_39 + 1)
-	subb	a,(_usbReceiveData_nBytes_1_39 + 1)
+	mov	a,r4
+	subb	a,r6
+	mov	a,r5
+	subb	a,r7
 	jnc	00104$
-	C$medtronicRF.c$113$2$40 ==.
+	C$medtronicRF.c$113$2$38 ==.
 ;	medtronicRF.c:113: if( nBytes - i > 48 ) readBytes = 48;
-	mov	a,_usbReceiveData_nBytes_1_39
+	mov	a,r6
 	clr	c
-	subb	a,_usbReceiveData_i_1_39
+	subb	a,r4
 	mov	r2,a
-	mov	a,(_usbReceiveData_nBytes_1_39 + 1)
-	subb	a,(_usbReceiveData_i_1_39 + 1)
+	mov	a,r7
+	subb	a,r5
 	mov	r3,a
 	clr	c
 	mov	a,#0x30
@@ -2106,326 +2266,88 @@ _usbReceiveData:
 	clr	a
 	subb	a,r3
 	jnc	00102$
-	mov	r2,#0x30
-	mov	r3,#0x00
+	mov	dptr,#_usbReceiveData_readBytes_1_37
+	mov	a,#0x30
+	movx	@dptr,a
+	clr	a
+	inc	dptr
+	movx	@dptr,a
 	sjmp	00103$
 00102$:
-	C$medtronicRF.c$114$2$40 ==.
+	C$medtronicRF.c$114$2$38 ==.
 ;	medtronicRF.c:114: else readBytes = nBytes - i;
-	mov	a,_usbReceiveData_nBytes_1_39
+	mov	dptr,#_usbReceiveData_readBytes_1_37
+	mov	a,r6
 	clr	c
-	subb	a,_usbReceiveData_i_1_39
-	mov	r2,a
-	mov	a,(_usbReceiveData_nBytes_1_39 + 1)
-	subb	a,(_usbReceiveData_i_1_39 + 1)
-	mov	r3,a
+	subb	a,r4
+	movx	@dptr,a
+	mov	a,r7
+	subb	a,r5
+	inc	dptr
+	movx	@dptr,a
 00103$:
-	C$medtronicRF.c$115$2$40 ==.
+	C$medtronicRF.c$115$1$37 ==.
 ;	medtronicRF.c:115: halUartRead( (uint8_t *)&tempData[i], readBytes );
-	mov	a,_usbReceiveData_i_1_39
-	add	a,#_usbReceiveData_tempData_1_39
-	mov	r5,a
-	mov	r6,#0x00
-	mov	r7,#0x40
-	mov	_halUartRead_PARM_2,r2
-	mov	(_halUartRead_PARM_2 + 1),r3
-	mov	dpl,r5
-	mov	dph,r6
-	mov	b,r7
+	push	ar6
+	push	ar7
+	mov	a,r4
+	add	a,#_usbReceiveData_tempData_1_37
+	mov	r2,a
+	mov	a,r5
+	addc	a,#(_usbReceiveData_tempData_1_37 >> 8)
+	mov	r1,a
+	mov	r3,#0x00
+	mov	dptr,#_usbReceiveData_readBytes_1_37
+	movx	a,@dptr
+	mov	r0,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
+	mov	dptr,#_halUartRead_PARM_2
+	mov	a,r0
+	movx	@dptr,a
+	mov	a,r7
+	inc	dptr
+	movx	@dptr,a
+	mov	dpl,r2
+	mov	dph,r1
+	mov	b,r3
+	push	ar7
+	push	ar6
+	push	ar5
+	push	ar4
 	lcall	_halUartRead
-	C$medtronicRF.c$116$2$40 ==.
-;	medtronicRF.c:116: usbUartProcess( );
-	lcall	_usbUartProcess
-	C$medtronicRF.c$112$1$39 ==.
+	pop	ar4
+	pop	ar5
+	pop	ar6
+	pop	ar7
+	C$medtronicRF.c$112$1$37 ==.
 ;	medtronicRF.c:112: for( i = 0; i < nBytes; i = i + 48 ) {
 	mov	a,#0x30
-	add	a,_usbReceiveData_i_1_39
-	mov	_usbReceiveData_i_1_39,a
+	add	a,r4
+	mov	r4,a
 	clr	a
-	addc	a,(_usbReceiveData_i_1_39 + 1)
-	mov	(_usbReceiveData_i_1_39 + 1),a
+	addc	a,r5
+	mov	r5,a
+	pop	ar7
+	pop	ar6
 	sjmp	00143$
 00104$:
-	C$medtronicRF.c$119$1$39 ==.
-;	medtronicRF.c:119: for( i = 0; i < nBytes; i++ ) {
-	clr	a
-	mov	_usbReceiveData_i_1_39,a
-	mov	(_usbReceiveData_i_1_39 + 1),a
+	C$medtronicRF.c$120$1$37 ==.
+;	medtronicRF.c:120: for( i = 0; i < nBytes; i++ ) {
+	mov	r4,#0x00
+	mov	r5,#0x00
 00146$:
 	clr	c
-	mov	a,_usbReceiveData_i_1_39
-	subb	a,_usbReceiveData_nBytes_1_39
-	mov	a,(_usbReceiveData_i_1_39 + 1)
-	subb	a,(_usbReceiveData_nBytes_1_39 + 1)
+	mov	a,r4
+	subb	a,r6
+	mov	a,r5
+	subb	a,r7
 	jc	00208$
 	ljmp	00148$
 00208$:
-	C$medtronicRF.c$121$2$41 ==.
-;	medtronicRF.c:121: uartRxBuffer[uartRxIndex] = tempData[i];
-	mov	dptr,#_uartRxIndex
-	movx	a,@dptr
-	mov	r4,a
-	inc	dptr
-	movx	a,@dptr
-	mov	r5,a
-	mov	a,r4
-	add	a,#_uartRxBuffer
-	mov	dpl,a
-	mov	a,r5
-	addc	a,#(_uartRxBuffer >> 8)
-	mov	dph,a
-	mov	a,_usbReceiveData_i_1_39
-	add	a,#_usbReceiveData_tempData_1_39
-	mov	r1,a
-	mov	a,@r1
-	movx	@dptr,a
-	C$medtronicRF.c$123$2$41 ==.
-;	medtronicRF.c:123: if( uartRxIndex == 0 ) {
-	mov	dptr,#_uartRxIndex
-	movx	a,@dptr
-	mov	r4,a
-	inc	dptr
-	movx	a,@dptr
-	mov	r5,a
-	orl	a,r4
-	jz	00209$
-	ljmp	00139$
-00209$:
-	C$medtronicRF.c$124$3$42 ==.
-;	medtronicRF.c:124: if( uartRxBuffer[0] == (char)0x01 ) {
-	mov	dptr,#_uartRxBuffer
-	movx	a,@dptr
-	mov	r3,a
-	cjne	r3,#0x01,00118$
-	C$medtronicRF.c$125$4$43 ==.
-;	medtronicRF.c:125: uartRxIndex++;
-	mov	dptr,#_uartRxIndex
-	mov	a,#0x01
-	add	a,r4
-	movx	@dptr,a
-	clr	a
-	addc	a,r5
-	inc	dptr
-	movx	@dptr,a
-	C$medtronicRF.c$126$4$43 ==.
-;	medtronicRF.c:126: txCalcCRC = 0;
-	mov	dptr,#_txCalcCRC
-	clr	a
-	movx	@dptr,a
-	inc	dptr
-	movx	@dptr,a
-	C$medtronicRF.c$127$4$43 ==.
-;	medtronicRF.c:127: txCalcCRC16 = 0;
-	mov	dptr,#_txCalcCRC16
-	movx	@dptr,a
-	inc	dptr
-	movx	@dptr,a
-	C$medtronicRF.c$128$4$43 ==.
-;	medtronicRF.c:128: enableTimerInt( );
-	lcall	_enableTimerInt
-	ljmp	00147$
-00118$:
-	C$medtronicRF.c$129$3$42 ==.
-;	medtronicRF.c:129: } else if( uartRxBuffer[0] == (char)0x81 ) {
-	cjne	r3,#0x81,00115$
-	C$medtronicRF.c$130$4$44 ==.
-;	medtronicRF.c:130: uartRxIndex++;
-	mov	dptr,#_uartRxIndex
-	mov	a,#0x01
-	add	a,r4
-	movx	@dptr,a
-	clr	a
-	addc	a,r5
-	inc	dptr
-	movx	@dptr,a
-	C$medtronicRF.c$131$4$44 ==.
-;	medtronicRF.c:131: txCalcCRC = 1;
-	mov	dptr,#_txCalcCRC
-	mov	a,#0x01
-	movx	@dptr,a
-	clr	a
-	inc	dptr
-	movx	@dptr,a
-	C$medtronicRF.c$132$4$44 ==.
-;	medtronicRF.c:132: txCalcCRC16 = 0;
-	mov	dptr,#_txCalcCRC16
-	movx	@dptr,a
-	inc	dptr
-	movx	@dptr,a
-	C$medtronicRF.c$133$4$44 ==.
-;	medtronicRF.c:133: enableTimerInt( );
-	lcall	_enableTimerInt
-	ljmp	00147$
-00115$:
-	C$medtronicRF.c$134$3$42 ==.
-;	medtronicRF.c:134: } else if( uartRxBuffer[0] == (char)0xC1 ) {
-	cjne	r3,#0xC1,00112$
-	C$medtronicRF.c$135$4$45 ==.
-;	medtronicRF.c:135: uartRxIndex++;
-	mov	dptr,#_uartRxIndex
-	mov	a,#0x01
-	add	a,r4
-	movx	@dptr,a
-	clr	a
-	addc	a,r5
-	inc	dptr
-	movx	@dptr,a
-	C$medtronicRF.c$136$4$45 ==.
-;	medtronicRF.c:136: txCalcCRC = 0;
-	mov	dptr,#_txCalcCRC
-	clr	a
-	movx	@dptr,a
-	inc	dptr
-	movx	@dptr,a
-	C$medtronicRF.c$137$4$45 ==.
-;	medtronicRF.c:137: txCalcCRC16 = 1;
-	mov	dptr,#_txCalcCRC16
-	inc	a
-	movx	@dptr,a
-	clr	a
-	inc	dptr
-	movx	@dptr,a
-	C$medtronicRF.c$138$4$45 ==.
-;	medtronicRF.c:138: enableTimerInt( );
-	lcall	_enableTimerInt
-	ljmp	00147$
-00112$:
-	C$medtronicRF.c$139$3$42 ==.
-;	medtronicRF.c:139: } else if( (uartRxBuffer[0] == (char)0x03) ||
-	cjne	r3,#0x03,00216$
-	sjmp	00107$
-00216$:
-	C$medtronicRF.c$140$3$42 ==.
-;	medtronicRF.c:140: (uartRxBuffer[0] == (char)0x13) ) {
-	cjne	r3,#0x13,00108$
-00107$:
-	C$medtronicRF.c$141$4$46 ==.
-;	medtronicRF.c:141: txFilterEnabled = 1;
-	mov	dptr,#_txFilterEnabled
-	mov	a,#0x01
-	movx	@dptr,a
-	C$medtronicRF.c$142$4$46 ==.
-;	medtronicRF.c:142: P1_1 = 0;
-	clr	_P1_1
-	C$medtronicRF.c$143$4$46 ==.
-;	medtronicRF.c:143: uartRxBuffer[0] = (char)0x03;
-	mov	dptr,#_uartRxBuffer
-	mov	a,#0x03
-	movx	@dptr,a
-	C$medtronicRF.c$144$4$46 ==.
-;	medtronicRF.c:144: halUartWrite( (uint8_t const *)uartRxBuffer, 1 );
-	mov	_halUartWrite_PARM_2,#0x01
-	mov	(_halUartWrite_PARM_2 + 1),#0x00
-	mov	dptr,#_uartRxBuffer
-	mov	b,#0x00
-	lcall	_halUartWrite
-	ljmp	00147$
-00108$:
-	C$medtronicRF.c$145$3$42 ==.
-;	medtronicRF.c:145: } else if( uartRxBuffer[0] == (char)0x00 ) {
-	mov	a,r3
-	jz	00219$
-	ljmp	00147$
-00219$:
-	C$medtronicRF.c$146$4$47 ==.
-;	medtronicRF.c:146: uartRxBuffer[0] = _MMCOMMANDER_VERSION_;
-	mov	dptr,#_uartRxBuffer
-	mov	a,#0x57
-	movx	@dptr,a
-	C$medtronicRF.c$147$4$47 ==.
-;	medtronicRF.c:147: halUartWrite( (uint8_t const *)uartRxBuffer, 1 );
-	mov	_halUartWrite_PARM_2,#0x01
-	mov	(_halUartWrite_PARM_2 + 1),#0x00
-	mov	dptr,#_uartRxBuffer
-	mov	b,#0x00
-	lcall	_halUartWrite
-	ljmp	00147$
-00139$:
-	C$medtronicRF.c$149$2$41 ==.
-;	medtronicRF.c:149: } else if( uartRxIndex == 1 ) {
-	cjne	r4,#0x01,00136$
-	cjne	r5,#0x00,00136$
-	C$medtronicRF.c$150$3$48 ==.
-;	medtronicRF.c:150: txLength = uartRxBuffer[1];
-	mov	dptr,#(_uartRxBuffer + 0x0001)
-	movx	a,@dptr
-	mov	dptr,#_txLength
-	movx	@dptr,a
-	C$medtronicRF.c$151$3$48 ==.
-;	medtronicRF.c:151: uartRxIndex++;
-	mov	dptr,#_uartRxIndex
-	mov	a,#0x01
-	add	a,r4
-	movx	@dptr,a
-	clr	a
-	addc	a,r5
-	inc	dptr
-	movx	@dptr,a
-	C$medtronicRF.c$152$3$48 ==.
-;	medtronicRF.c:152: resetTimerCounter( );
-	lcall	_resetTimerCounter
-	ljmp	00147$
-00136$:
-	C$medtronicRF.c$153$2$41 ==.
-;	medtronicRF.c:153: } else if( uartRxIndex == 2 ) {
-	cjne	r4,#0x02,00133$
-	cjne	r5,#0x00,00133$
-	C$medtronicRF.c$154$3$49 ==.
-;	medtronicRF.c:154: txTimes = uartRxBuffer[2];
-	mov	dptr,#(_uartRxBuffer + 0x0002)
-	movx	a,@dptr
-	mov	r3,a
-	mov	dptr,#_txTimes
-	movx	@dptr,a
-	mov	a,r3
-	rlc	a
-	subb	a,acc
-	inc	dptr
-	movx	@dptr,a
-	C$medtronicRF.c$155$3$49 ==.
-;	medtronicRF.c:155: uartRxIndex++;
-	mov	dptr,#_uartRxIndex
-	mov	a,#0x01
-	add	a,r4
-	movx	@dptr,a
-	clr	a
-	addc	a,r5
-	inc	dptr
-	movx	@dptr,a
-	C$medtronicRF.c$156$3$49 ==.
-;	medtronicRF.c:156: resetTimerCounter( );
-	lcall	_resetTimerCounter
-	ljmp	00147$
-00133$:
-	C$medtronicRF.c$157$2$41 ==.
-;	medtronicRF.c:157: } else if( uartRxIndex > 2 ) {
-	clr	c
-	mov	a,#0x02
-	subb	a,r4
-	mov	a,#(0x00 ^ 0x80)
-	mov	b,r5
-	xrl	b,#0x80
-	subb	a,b
-	jc	00224$
-	ljmp	00147$
-00224$:
-	C$medtronicRF.c$158$3$50 ==.
-;	medtronicRF.c:158: resetTimerCounter( );
-	lcall	_resetTimerCounter
-	C$medtronicRF.c$159$3$50 ==.
-;	medtronicRF.c:159: if( uartRxIndex == (txLength + 2) ) {
-	mov	dptr,#_txLength
-	movx	a,@dptr
-	mov	r5,a
-	rlc	a
-	subb	a,acc
-	mov	r4,a
-	mov	a,#0x02
-	add	a,r5
-	mov	r5,a
-	clr	a
-	addc	a,r4
-	mov	r4,a
+	C$medtronicRF.c$122$2$39 ==.
+;	medtronicRF.c:122: uartRxBuffer[uartRxIndex] = tempData[i];
 	mov	dptr,#_uartRxIndex
 	movx	a,@dptr
 	mov	r2,a
@@ -2433,234 +2355,42 @@ _usbReceiveData:
 	movx	a,@dptr
 	mov	r3,a
 	mov	a,r2
-	cjne	a,ar5,00225$
+	add	a,#_uartRxBuffer
+	mov	r2,a
 	mov	a,r3
-	cjne	a,ar4,00225$
-	sjmp	00226$
-00225$:
-	ljmp	00128$
-00226$:
-	C$medtronicRF.c$160$4$51 ==.
-;	medtronicRF.c:160: stopTimerInt( );
-	lcall	_stopTimerInt
-	C$medtronicRF.c$161$4$51 ==.
-;	medtronicRF.c:161: if( txCalcCRC == 1 ) {
-	mov	dptr,#_txCalcCRC
-	movx	a,@dptr
-	mov	r4,a
-	inc	dptr
-	movx	a,@dptr
-	mov	r5,a
-	cjne	r4,#0x01,00121$
-	cjne	r5,#0x00,00121$
-	C$medtronicRF.c$162$5$52 ==.
-;	medtronicRF.c:162: uartRxBuffer[++uartRxIndex] = crc8( &uartRxBuffer[3], (int)txLength );
-	mov	dptr,#_uartRxIndex
-	movx	a,@dptr
-	add	a,#0x01
-	movx	@dptr,a
-	inc	dptr
-	movx	a,@dptr
-	addc	a,#0x00
-	movx	@dptr,a
-	mov	dptr,#_uartRxIndex
-	movx	a,@dptr
-	mov	r4,a
-	inc	dptr
-	movx	a,@dptr
-	mov	r5,a
-	mov	a,r4
-	add	a,#_uartRxBuffer
-	mov	r4,a
-	mov	a,r5
 	addc	a,#(_uartRxBuffer >> 8)
-	mov	r5,a
-	mov	dptr,#_txLength
-	movx	a,@dptr
-	mov	r7,a
-	mov	_crc8_PARM_2,r7
-	rlc	a
-	subb	a,acc
-	mov	(_crc8_PARM_2 + 1),a
-	mov	dptr,#(_uartRxBuffer + 0x0003)
-	mov	b,#0x00
-	push	ar5
-	push	ar4
-	lcall	_crc8
-	mov	r7,dpl
-	pop	ar4
-	pop	ar5
-	mov	dpl,r4
-	mov	dph,r5
-	mov	a,r7
-	movx	@dptr,a
-	C$medtronicRF.c$163$5$52 ==.
-;	medtronicRF.c:163: txLength++;
-	mov	dptr,#_txLength
-	movx	a,@dptr
-	add	a,#0x01
-	movx	@dptr,a
-00121$:
-	C$medtronicRF.c$165$4$51 ==.
-;	medtronicRF.c:165: if( txCalcCRC16 == 1 ) {
-	mov	dptr,#_txCalcCRC16
-	movx	a,@dptr
-	mov	r6,a
-	inc	dptr
-	movx	a,@dptr
-	mov	r7,a
-	cjne	r6,#0x01,00123$
-	cjne	r7,#0x00,00123$
-	C$medtronicRF.c$166$5$53 ==.
-;	medtronicRF.c:166: tmpCRC16 = crc16( &uartRxBuffer[3], (int)txLength );
-	mov	dptr,#_txLength
-	movx	a,@dptr
-	mov	r7,a
-	mov	_crc16_PARM_2,r7
-	rlc	a
-	subb	a,acc
-	mov	(_crc16_PARM_2 + 1),a
-	mov	dptr,#(_uartRxBuffer + 0x0003)
-	mov	b,#0x00
-	lcall	_crc16
-	mov	r6,dpl
-	mov	r7,dph
-	C$medtronicRF.c$167$5$53 ==.
-;	medtronicRF.c:167: uartRxBuffer[++uartRxIndex] = (char)((tmpCRC16 >> 8) & 0x00FF);
-	mov	dptr,#_uartRxIndex
-	movx	a,@dptr
-	add	a,#0x01
-	movx	@dptr,a
-	inc	dptr
-	movx	a,@dptr
-	addc	a,#0x00
-	movx	@dptr,a
-	mov	dptr,#_uartRxIndex
-	movx	a,@dptr
-	mov	r4,a
-	inc	dptr
-	movx	a,@dptr
-	mov	r5,a
+	mov	r3,a
 	mov	a,r4
-	add	a,#_uartRxBuffer
+	add	a,#_usbReceiveData_tempData_1_37
 	mov	dpl,a
 	mov	a,r5
-	addc	a,#(_uartRxBuffer >> 8)
+	addc	a,#(_usbReceiveData_tempData_1_37 >> 8)
 	mov	dph,a
-	mov	ar5,r7
-	mov	a,r5
+	movx	a,@dptr
+	mov	r1,a
+	mov	dpl,r2
+	mov	dph,r3
 	movx	@dptr,a
-	C$medtronicRF.c$168$5$53 ==.
-;	medtronicRF.c:168: uartRxBuffer[++uartRxIndex] = (char)(tmpCRC16 & 0x00FF);
+	C$medtronicRF.c$124$2$39 ==.
+;	medtronicRF.c:124: if( uartRxIndex == 0 ) {
 	mov	dptr,#_uartRxIndex
 	movx	a,@dptr
-	add	a,#0x01
-	movx	@dptr,a
+	mov	r2,a
 	inc	dptr
 	movx	a,@dptr
-	addc	a,#0x00
-	movx	@dptr,a
-	mov	dptr,#_uartRxIndex
-	movx	a,@dptr
-	mov	r4,a
-	inc	dptr
-	movx	a,@dptr
-	mov	r5,a
-	mov	a,r4
-	add	a,#_uartRxBuffer
-	mov	dpl,a
-	mov	a,r5
-	addc	a,#(_uartRxBuffer >> 8)
-	mov	dph,a
-	mov	a,r6
-	movx	@dptr,a
-	C$medtronicRF.c$169$5$53 ==.
-;	medtronicRF.c:169: txLength += 2;
-	mov	dptr,#_txLength
-	movx	a,@dptr
-	mov	r7,a
-	add	a,#0x02
-	movx	@dptr,a
-00123$:
-	C$medtronicRF.c$172$4$51 ==.
-;	medtronicRF.c:172: if( txFilter( &uartRxBuffer[3], txLength ) == 0 ) {
-	mov	dptr,#_txLength
-	movx	a,@dptr
-	mov	r7,a
-	mov	_txFilter_PARM_2,r7
-	rlc	a
-	subb	a,acc
-	mov	(_txFilter_PARM_2 + 1),a
-	mov	dptr,#(_uartRxBuffer + 0x0003)
-	mov	b,#0x00
-	lcall	_txFilter
-	mov	a,dpl
-	jnz	00125$
-	C$medtronicRF.c$173$5$54 ==.
-;	medtronicRF.c:173: sendMedtronicMessage( &uartRxBuffer[3], txLength, txTimes );
-	mov	dptr,#_txLength
-	movx	a,@dptr
-	mov	r7,a
-	mov	_sendMedtronicMessage_PARM_2,r7
-	rlc	a
-	subb	a,acc
-	mov	(_sendMedtronicMessage_PARM_2 + 1),a
-	mov	dptr,#_txTimes
-	movx	a,@dptr
-	mov	_sendMedtronicMessage_PARM_3,a
-	inc	dptr
-	movx	a,@dptr
-	mov	(_sendMedtronicMessage_PARM_3 + 1),a
-	mov	dptr,#(_uartRxBuffer + 0x0003)
-	mov	b,#0x00
-	lcall	_sendMedtronicMessage
-	C$medtronicRF.c$174$5$54 ==.
-;	medtronicRF.c:174: crc16Init( );
-	lcall	_crc16Init
-	C$medtronicRF.c$175$5$54 ==.
-;	medtronicRF.c:175: halUartWrite( (uint8_t const *)uartRxBuffer, 3 );
-	mov	_halUartWrite_PARM_2,#0x03
-	mov	(_halUartWrite_PARM_2 + 1),#0x00
+	mov	r3,a
+	orl	a,r2
+	jz	00209$
+	ljmp	00139$
+00209$:
+	C$medtronicRF.c$125$3$40 ==.
+;	medtronicRF.c:125: if( uartRxBuffer[0] == (char)0x01 ) {
 	mov	dptr,#_uartRxBuffer
-	mov	b,#0x00
-	lcall	_halUartWrite
-	C$medtronicRF.c$176$5$54 ==.
-;	medtronicRF.c:176: uartRxIndex = 0;
-	mov	dptr,#_uartRxIndex
-	clr	a
-	movx	@dptr,a
-	inc	dptr
-	movx	@dptr,a
-	sjmp	00147$
-00125$:
-	C$medtronicRF.c$178$5$55 ==.
-;	medtronicRF.c:178: uartRxBuffer[1] = 0x00;
-	mov	dptr,#(_uartRxBuffer + 0x0001)
-	clr	a
-	movx	@dptr,a
-	C$medtronicRF.c$179$5$55 ==.
-;	medtronicRF.c:179: uartRxBuffer[2] = 0x00;
-	mov	dptr,#(_uartRxBuffer + 0x0002)
-	movx	@dptr,a
-	C$medtronicRF.c$180$5$55 ==.
-;	medtronicRF.c:180: halUartWrite( (uint8_t const *)uartRxBuffer, 3 );
-	mov	_halUartWrite_PARM_2,#0x03
-;	1-genFromRTrack replaced	mov	(_halUartWrite_PARM_2 + 1),#0x00
-	mov	(_halUartWrite_PARM_2 + 1),a
-	mov	dptr,#_uartRxBuffer
-	mov	b,#0x00
-	lcall	_halUartWrite
-	C$medtronicRF.c$181$5$55 ==.
-;	medtronicRF.c:181: uartRxIndex = 0;
-	mov	dptr,#_uartRxIndex
-	clr	a
-	movx	@dptr,a
-	inc	dptr
-	movx	@dptr,a
-	sjmp	00147$
-00128$:
-	C$medtronicRF.c$184$4$56 ==.
-;	medtronicRF.c:184: uartRxIndex++;
+	movx	a,@dptr
+	mov	r1,a
+	cjne	r1,#0x01,00118$
+	C$medtronicRF.c$126$4$41 ==.
+;	medtronicRF.c:126: uartRxIndex++;
 	mov	dptr,#_uartRxIndex
 	mov	a,#0x01
 	add	a,r2
@@ -2669,17 +2399,647 @@ _usbReceiveData:
 	addc	a,r3
 	inc	dptr
 	movx	@dptr,a
-00147$:
-	C$medtronicRF.c$119$1$39 ==.
-;	medtronicRF.c:119: for( i = 0; i < nBytes; i++ ) {
-	inc	_usbReceiveData_i_1_39
+	C$medtronicRF.c$127$4$41 ==.
+;	medtronicRF.c:127: txCalcCRC = 0;
+	mov	dptr,#_txCalcCRC
 	clr	a
-	cjne	a,_usbReceiveData_i_1_39,00232$
-	inc	(_usbReceiveData_i_1_39 + 1)
+	movx	@dptr,a
+	inc	dptr
+	movx	@dptr,a
+	C$medtronicRF.c$128$4$41 ==.
+;	medtronicRF.c:128: txCalcCRC16 = 0;
+	mov	dptr,#_txCalcCRC16
+	movx	@dptr,a
+	inc	dptr
+	movx	@dptr,a
+	C$medtronicRF.c$129$4$41 ==.
+;	medtronicRF.c:129: enableTimerInt( );
+	push	ar7
+	push	ar6
+	push	ar5
+	push	ar4
+	lcall	_enableTimerInt
+	pop	ar4
+	pop	ar5
+	pop	ar6
+	pop	ar7
+	ljmp	00147$
+00118$:
+	C$medtronicRF.c$130$3$40 ==.
+;	medtronicRF.c:130: } else if( uartRxBuffer[0] == (char)0x81 ) {
+	cjne	r1,#0x81,00115$
+	C$medtronicRF.c$131$4$42 ==.
+;	medtronicRF.c:131: uartRxIndex++;
+	mov	dptr,#_uartRxIndex
+	mov	a,#0x01
+	add	a,r2
+	movx	@dptr,a
+	clr	a
+	addc	a,r3
+	inc	dptr
+	movx	@dptr,a
+	C$medtronicRF.c$132$4$42 ==.
+;	medtronicRF.c:132: txCalcCRC = 1;
+	mov	dptr,#_txCalcCRC
+	mov	a,#0x01
+	movx	@dptr,a
+	clr	a
+	inc	dptr
+	movx	@dptr,a
+	C$medtronicRF.c$133$4$42 ==.
+;	medtronicRF.c:133: txCalcCRC16 = 0;
+	mov	dptr,#_txCalcCRC16
+	movx	@dptr,a
+	inc	dptr
+	movx	@dptr,a
+	C$medtronicRF.c$134$4$42 ==.
+;	medtronicRF.c:134: enableTimerInt( );
+	push	ar7
+	push	ar6
+	push	ar5
+	push	ar4
+	lcall	_enableTimerInt
+	pop	ar4
+	pop	ar5
+	pop	ar6
+	pop	ar7
+	ljmp	00147$
+00115$:
+	C$medtronicRF.c$135$3$40 ==.
+;	medtronicRF.c:135: } else if( uartRxBuffer[0] == (char)0xC1 ) {
+	cjne	r1,#0xC1,00112$
+	C$medtronicRF.c$136$4$43 ==.
+;	medtronicRF.c:136: uartRxIndex++;
+	mov	dptr,#_uartRxIndex
+	mov	a,#0x01
+	add	a,r2
+	movx	@dptr,a
+	clr	a
+	addc	a,r3
+	inc	dptr
+	movx	@dptr,a
+	C$medtronicRF.c$137$4$43 ==.
+;	medtronicRF.c:137: txCalcCRC = 0;
+	mov	dptr,#_txCalcCRC
+	clr	a
+	movx	@dptr,a
+	inc	dptr
+	movx	@dptr,a
+	C$medtronicRF.c$138$4$43 ==.
+;	medtronicRF.c:138: txCalcCRC16 = 1;
+	mov	dptr,#_txCalcCRC16
+	inc	a
+	movx	@dptr,a
+	clr	a
+	inc	dptr
+	movx	@dptr,a
+	C$medtronicRF.c$139$4$43 ==.
+;	medtronicRF.c:139: enableTimerInt( );
+	push	ar7
+	push	ar6
+	push	ar5
+	push	ar4
+	lcall	_enableTimerInt
+	pop	ar4
+	pop	ar5
+	pop	ar6
+	pop	ar7
+	ljmp	00147$
+00112$:
+	C$medtronicRF.c$140$3$40 ==.
+;	medtronicRF.c:140: } else if( (uartRxBuffer[0] == (char)0x03) ||
+	cjne	r1,#0x03,00216$
+	sjmp	00107$
+00216$:
+	C$medtronicRF.c$141$3$40 ==.
+;	medtronicRF.c:141: (uartRxBuffer[0] == (char)0x13) ) {
+	cjne	r1,#0x13,00108$
+00107$:
+	C$medtronicRF.c$142$4$44 ==.
+;	medtronicRF.c:142: txFilterEnabled = 1;
+	mov	dptr,#_txFilterEnabled
+	mov	a,#0x01
+	movx	@dptr,a
+	C$medtronicRF.c$143$4$44 ==.
+;	medtronicRF.c:143: P1_1 = 0;
+	clr	_P1_1
+	C$medtronicRF.c$144$4$44 ==.
+;	medtronicRF.c:144: uartRxBuffer[0] = (char)0x03;
+	mov	dptr,#_uartRxBuffer
+	mov	a,#0x03
+	movx	@dptr,a
+	C$medtronicRF.c$145$4$44 ==.
+;	medtronicRF.c:145: halUartWrite( (uint8_t const *)uartRxBuffer, 1 );
+	mov	dptr,#_halUartWrite_PARM_2
+	mov	a,#0x01
+	movx	@dptr,a
+	clr	a
+	inc	dptr
+	movx	@dptr,a
+	mov	dptr,#_uartRxBuffer
+	mov	b,#0x00
+	push	ar7
+	push	ar6
+	push	ar5
+	push	ar4
+	lcall	_halUartWrite
+	pop	ar4
+	pop	ar5
+	pop	ar6
+	pop	ar7
+	ljmp	00147$
+00108$:
+	C$medtronicRF.c$146$3$40 ==.
+;	medtronicRF.c:146: } else if( uartRxBuffer[0] == (char)0x00 ) {
+	mov	a,r1
+	jz	00219$
+	ljmp	00147$
+00219$:
+	C$medtronicRF.c$147$4$45 ==.
+;	medtronicRF.c:147: uartRxBuffer[0] = _MMCOMMANDER_VERSION_;
+	mov	dptr,#_uartRxBuffer
+	mov	a,#0x57
+	movx	@dptr,a
+	C$medtronicRF.c$148$4$45 ==.
+;	medtronicRF.c:148: halUartWrite( (uint8_t const *)uartRxBuffer, 1 );
+	mov	dptr,#_halUartWrite_PARM_2
+	mov	a,#0x01
+	movx	@dptr,a
+	clr	a
+	inc	dptr
+	movx	@dptr,a
+	mov	dptr,#_uartRxBuffer
+	mov	b,#0x00
+	push	ar7
+	push	ar6
+	push	ar5
+	push	ar4
+	lcall	_halUartWrite
+	pop	ar4
+	pop	ar5
+	pop	ar6
+	pop	ar7
+	ljmp	00147$
+00139$:
+	C$medtronicRF.c$150$2$39 ==.
+;	medtronicRF.c:150: } else if( uartRxIndex == 1 ) {
+	cjne	r2,#0x01,00136$
+	cjne	r3,#0x00,00136$
+	C$medtronicRF.c$151$3$46 ==.
+;	medtronicRF.c:151: txLength = uartRxBuffer[1];
+	mov	dptr,#(_uartRxBuffer + 0x0001)
+	movx	a,@dptr
+	mov	dptr,#_txLength
+	movx	@dptr,a
+	C$medtronicRF.c$152$3$46 ==.
+;	medtronicRF.c:152: uartRxIndex++;
+	mov	dptr,#_uartRxIndex
+	mov	a,#0x01
+	add	a,r2
+	movx	@dptr,a
+	clr	a
+	addc	a,r3
+	inc	dptr
+	movx	@dptr,a
+	C$medtronicRF.c$153$3$46 ==.
+;	medtronicRF.c:153: resetTimerCounter( );
+	push	ar7
+	push	ar6
+	push	ar5
+	push	ar4
+	lcall	_resetTimerCounter
+	pop	ar4
+	pop	ar5
+	pop	ar6
+	pop	ar7
+	ljmp	00147$
+00136$:
+	C$medtronicRF.c$154$2$39 ==.
+;	medtronicRF.c:154: } else if( uartRxIndex == 2 ) {
+	cjne	r2,#0x02,00133$
+	cjne	r3,#0x00,00133$
+	C$medtronicRF.c$155$3$47 ==.
+;	medtronicRF.c:155: txTimes = uartRxBuffer[2];
+	mov	dptr,#(_uartRxBuffer + 0x0002)
+	movx	a,@dptr
+	mov	r1,a
+	mov	dptr,#_txTimes
+	movx	@dptr,a
+	mov	a,r1
+	rlc	a
+	subb	a,acc
+	inc	dptr
+	movx	@dptr,a
+	C$medtronicRF.c$156$3$47 ==.
+;	medtronicRF.c:156: uartRxIndex++;
+	mov	dptr,#_uartRxIndex
+	mov	a,#0x01
+	add	a,r2
+	movx	@dptr,a
+	clr	a
+	addc	a,r3
+	inc	dptr
+	movx	@dptr,a
+	C$medtronicRF.c$157$3$47 ==.
+;	medtronicRF.c:157: resetTimerCounter( );
+	push	ar7
+	push	ar6
+	push	ar5
+	push	ar4
+	lcall	_resetTimerCounter
+	pop	ar4
+	pop	ar5
+	pop	ar6
+	pop	ar7
+	ljmp	00147$
+00133$:
+	C$medtronicRF.c$158$2$39 ==.
+;	medtronicRF.c:158: } else if( uartRxIndex > 2 ) {
+	clr	c
+	mov	a,#0x02
+	subb	a,r2
+	mov	a,#(0x00 ^ 0x80)
+	mov	b,r3
+	xrl	b,#0x80
+	subb	a,b
+	jc	00224$
+	ljmp	00147$
+00224$:
+	C$medtronicRF.c$159$3$48 ==.
+;	medtronicRF.c:159: resetTimerCounter( );
+	push	ar7
+	push	ar6
+	push	ar5
+	push	ar4
+	lcall	_resetTimerCounter
+	pop	ar4
+	pop	ar5
+	pop	ar6
+	pop	ar7
+	C$medtronicRF.c$160$3$48 ==.
+;	medtronicRF.c:160: if( uartRxIndex == (txLength + 2) ) {
+	mov	dptr,#_txLength
+	movx	a,@dptr
+	mov	r3,a
+	rlc	a
+	subb	a,acc
+	mov	r2,a
+	mov	a,#0x02
+	add	a,r3
+	mov	r3,a
+	clr	a
+	addc	a,r2
+	mov	r2,a
+	mov	dptr,#_uartRxIndex
+	movx	a,@dptr
+	mov	r0,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r1,a
+	mov	a,r0
+	cjne	a,ar3,00225$
+	mov	a,r1
+	cjne	a,ar2,00225$
+	sjmp	00226$
+00225$:
+	ljmp	00128$
+00226$:
+	C$medtronicRF.c$161$4$49 ==.
+;	medtronicRF.c:161: stopTimerInt( );
+	push	ar7
+	push	ar6
+	push	ar5
+	push	ar4
+	lcall	_stopTimerInt
+	pop	ar4
+	pop	ar5
+	pop	ar6
+	pop	ar7
+	C$medtronicRF.c$162$4$49 ==.
+;	medtronicRF.c:162: if( txCalcCRC == 1 ) {
+	mov	dptr,#_txCalcCRC
+	movx	a,@dptr
+	mov	r2,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r3,a
+	cjne	r2,#0x01,00121$
+	cjne	r3,#0x00,00121$
+	C$medtronicRF.c$163$1$37 ==.
+;	medtronicRF.c:163: uartRxBuffer[++uartRxIndex] = crc8( &uartRxBuffer[3], (int)txLength );
+	push	ar4
+	push	ar5
+	mov	dptr,#_uartRxIndex
+	movx	a,@dptr
+	add	a,#0x01
+	movx	@dptr,a
+	inc	dptr
+	movx	a,@dptr
+	addc	a,#0x00
+	movx	@dptr,a
+	mov	dptr,#_uartRxIndex
+	movx	a,@dptr
+	mov	r2,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r3,a
+	mov	a,r2
+	add	a,#_uartRxBuffer
+	mov	r2,a
+	mov	a,r3
+	addc	a,#(_uartRxBuffer >> 8)
+	mov	r3,a
+	mov	dptr,#_txLength
+	movx	a,@dptr
+	mov	r5,a
+	mov	dptr,#_crc8_PARM_2
+	movx	@dptr,a
+	mov	a,r5
+	rlc	a
+	subb	a,acc
+	inc	dptr
+	movx	@dptr,a
+	mov	dptr,#(_uartRxBuffer + 0x0003)
+	mov	b,#0x00
+	push	ar7
+	push	ar6
+	push	ar4
+	push	ar3
+	push	ar2
+	lcall	_crc8
+	mov	r5,dpl
+	pop	ar2
+	pop	ar3
+	pop	ar4
+	pop	ar6
+	pop	ar7
+	mov	dpl,r2
+	mov	dph,r3
+	mov	a,r5
+	movx	@dptr,a
+	C$medtronicRF.c$164$5$50 ==.
+;	medtronicRF.c:164: txLength++;
+	mov	dptr,#_txLength
+	movx	a,@dptr
+	add	a,#0x01
+	movx	@dptr,a
+	C$medtronicRF.c$120$1$37 ==.
+;	medtronicRF.c:120: for( i = 0; i < nBytes; i++ ) {
+	pop	ar5
+	pop	ar4
+	C$medtronicRF.c$164$4$49 ==.
+;	medtronicRF.c:164: txLength++;
+00121$:
+	C$medtronicRF.c$166$4$49 ==.
+;	medtronicRF.c:166: if( txCalcCRC16 == 1 ) {
+	mov	dptr,#_txCalcCRC16
+	movx	a,@dptr
+	mov	r2,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r3,a
+	cjne	r2,#0x01,00229$
+	cjne	r3,#0x00,00229$
+	sjmp	00230$
+00229$:
+	ljmp	00123$
+00230$:
+	C$medtronicRF.c$167$1$37 ==.
+;	medtronicRF.c:167: tmpCRC16 = crc16( &uartRxBuffer[3], (int)txLength );
+	push	ar4
+	push	ar5
+	mov	dptr,#_txLength
+	movx	a,@dptr
+	mov	r3,a
+	mov	dptr,#_crc16_PARM_2
+	movx	@dptr,a
+	mov	a,r3
+	rlc	a
+	subb	a,acc
+	inc	dptr
+	movx	@dptr,a
+	mov	dptr,#(_uartRxBuffer + 0x0003)
+	mov	b,#0x00
+	push	ar7
+	push	ar6
+	push	ar5
+	push	ar4
+	lcall	_crc16
+	mov	r2,dpl
+	mov	r3,dph
+	pop	ar4
+	pop	ar5
+	pop	ar6
+	pop	ar7
+	C$medtronicRF.c$168$5$51 ==.
+;	medtronicRF.c:168: uartRxBuffer[++uartRxIndex] = (char)((tmpCRC16 >> 8) & 0x00FF);
+	mov	dptr,#_uartRxIndex
+	movx	a,@dptr
+	add	a,#0x01
+	movx	@dptr,a
+	inc	dptr
+	movx	a,@dptr
+	addc	a,#0x00
+	movx	@dptr,a
+	mov	dptr,#_uartRxIndex
+	movx	a,@dptr
+	mov	r4,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r5,a
+	mov	a,r4
+	add	a,#_uartRxBuffer
+	mov	dpl,a
+	mov	a,r5
+	addc	a,#(_uartRxBuffer >> 8)
+	mov	dph,a
+	mov	ar5,r3
+	mov	a,r5
+	movx	@dptr,a
+	C$medtronicRF.c$169$5$51 ==.
+;	medtronicRF.c:169: uartRxBuffer[++uartRxIndex] = (char)(tmpCRC16 & 0x00FF);
+	mov	dptr,#_uartRxIndex
+	movx	a,@dptr
+	add	a,#0x01
+	movx	@dptr,a
+	inc	dptr
+	movx	a,@dptr
+	addc	a,#0x00
+	movx	@dptr,a
+	mov	dptr,#_uartRxIndex
+	movx	a,@dptr
+	mov	r4,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r5,a
+	mov	a,r4
+	add	a,#_uartRxBuffer
+	mov	dpl,a
+	mov	a,r5
+	addc	a,#(_uartRxBuffer >> 8)
+	mov	dph,a
+	mov	r3,#0x00
+	mov	a,r2
+	movx	@dptr,a
+	C$medtronicRF.c$170$5$51 ==.
+;	medtronicRF.c:170: txLength += 2;
+	mov	dptr,#_txLength
+	movx	a,@dptr
+	add	a,#0x02
+	movx	@dptr,a
+	C$medtronicRF.c$120$1$37 ==.
+;	medtronicRF.c:120: for( i = 0; i < nBytes; i++ ) {
+	pop	ar5
+	pop	ar4
+	C$medtronicRF.c$170$4$49 ==.
+;	medtronicRF.c:170: txLength += 2;
+00123$:
+	C$medtronicRF.c$173$4$49 ==.
+;	medtronicRF.c:173: if( txFilter( &uartRxBuffer[3], txLength ) == 0 ) {
+	mov	dptr,#_txLength
+	movx	a,@dptr
+	mov	r3,a
+	mov	dptr,#_txFilter_PARM_2
+	movx	@dptr,a
+	mov	a,r3
+	rlc	a
+	subb	a,acc
+	inc	dptr
+	movx	@dptr,a
+	mov	dptr,#(_uartRxBuffer + 0x0003)
+	mov	b,#0x00
+	push	ar7
+	push	ar6
+	push	ar5
+	push	ar4
+	lcall	_txFilter
+	mov	a,dpl
+	pop	ar4
+	pop	ar5
+	pop	ar6
+	pop	ar7
+	jnz	00125$
+	C$medtronicRF.c$174$1$37 ==.
+;	medtronicRF.c:174: sendMedtronicMessage( &uartRxBuffer[3], txLength, txTimes );
+	push	ar4
+	push	ar5
+	mov	dptr,#_txLength
+	movx	a,@dptr
+	mov	r3,a
+	rlc	a
+	subb	a,acc
+	mov	r2,a
+	mov	dptr,#_txTimes
+	movx	a,@dptr
+	mov	r4,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r5,a
+	mov	dptr,#_sendMedtronicMessage_PARM_2
+	mov	a,r3
+	movx	@dptr,a
+	mov	a,r2
+	inc	dptr
+	movx	@dptr,a
+	mov	dptr,#_sendMedtronicMessage_PARM_3
+	mov	a,r4
+	movx	@dptr,a
+	mov	a,r5
+	inc	dptr
+	movx	@dptr,a
+	mov	dptr,#(_uartRxBuffer + 0x0003)
+	mov	b,#0x00
+	push	ar7
+	push	ar6
+	push	ar5
+	push	ar4
+	lcall	_sendMedtronicMessage
+	C$medtronicRF.c$175$5$52 ==.
+;	medtronicRF.c:175: crc16Init( );
+	lcall	_crc16Init
+	C$medtronicRF.c$176$5$52 ==.
+;	medtronicRF.c:176: halUartWrite( (uint8_t const *)uartRxBuffer, 3 );
+	mov	dptr,#_halUartWrite_PARM_2
+	mov	a,#0x03
+	movx	@dptr,a
+	clr	a
+	inc	dptr
+	movx	@dptr,a
+	mov	dptr,#_uartRxBuffer
+	mov	b,#0x00
+	lcall	_halUartWrite
+	pop	ar4
+	pop	ar5
+	pop	ar6
+	pop	ar7
+	C$medtronicRF.c$177$5$52 ==.
+;	medtronicRF.c:177: uartRxIndex = 0;
+	mov	dptr,#_uartRxIndex
+	clr	a
+	movx	@dptr,a
+	inc	dptr
+	movx	@dptr,a
+	pop	ar5
+	pop	ar4
+	sjmp	00147$
+00125$:
+	C$medtronicRF.c$179$5$53 ==.
+;	medtronicRF.c:179: uartRxBuffer[1] = 0x00;
+	mov	dptr,#(_uartRxBuffer + 0x0001)
+	clr	a
+	movx	@dptr,a
+	C$medtronicRF.c$180$5$53 ==.
+;	medtronicRF.c:180: uartRxBuffer[2] = 0x00;
+	mov	dptr,#(_uartRxBuffer + 0x0002)
+	movx	@dptr,a
+	C$medtronicRF.c$181$5$53 ==.
+;	medtronicRF.c:181: halUartWrite( (uint8_t const *)uartRxBuffer, 3 );
+	mov	dptr,#_halUartWrite_PARM_2
+	mov	a,#0x03
+	movx	@dptr,a
+	clr	a
+	inc	dptr
+	movx	@dptr,a
+	mov	dptr,#_uartRxBuffer
+	mov	b,#0x00
+	push	ar7
+	push	ar6
+	push	ar5
+	push	ar4
+	lcall	_halUartWrite
+	pop	ar4
+	pop	ar5
+	pop	ar6
+	pop	ar7
+	C$medtronicRF.c$182$5$53 ==.
+;	medtronicRF.c:182: uartRxIndex = 0;
+	mov	dptr,#_uartRxIndex
+	clr	a
+	movx	@dptr,a
+	inc	dptr
+	movx	@dptr,a
+	sjmp	00147$
+00128$:
+	C$medtronicRF.c$185$4$54 ==.
+;	medtronicRF.c:185: uartRxIndex++;
+	mov	dptr,#_uartRxIndex
+	mov	a,#0x01
+	add	a,r0
+	movx	@dptr,a
+	clr	a
+	addc	a,r1
+	inc	dptr
+	movx	@dptr,a
+00147$:
+	C$medtronicRF.c$120$1$37 ==.
+;	medtronicRF.c:120: for( i = 0; i < nBytes; i++ ) {
+	inc	r4
+	cjne	r4,#0x00,00232$
+	inc	r5
 00232$:
 	ljmp	00146$
 00148$:
-	C$medtronicRF.c$188$1$39 ==.
+	C$medtronicRF.c$189$1$37 ==.
 	XG$usbReceiveData$0$0 ==.
 	ret
 	.area CSEG    (CODE)

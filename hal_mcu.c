@@ -102,6 +102,7 @@ void halMcuWaitMs( uint16_t msec ) {
 * @return      none
 */
 void halMcuSetLowPowerMode( uint8_t mode ) {
+    mode;
 	// comment: not yet implemented
 	//HAL_ASSERT(FALSE);
 }

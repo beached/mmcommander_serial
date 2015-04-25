@@ -1,10 +1,10 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ANSI-C Compiler
 ; Version 3.4.0 #8981 (Apr  5 2014) (MINGW64)
-; This file was generated Fri Apr 24 20:01:27 2015
+; This file was generated Sat Apr 25 00:05:13 2015
 ;--------------------------------------------------------
 	.module interrupts
-	.optsdcc -mmcs51 --model-small
+	.optsdcc -mmcs51 --model-large
 	
 ;--------------------------------------------------------
 ; Public variables in this module
@@ -924,9 +924,6 @@ bits:
 ; internal ram data
 ;--------------------------------------------------------
 	.area DSEG    (DATA)
-Linterrupts.PORT1_ISR$txString$1$27==.
-_PORT1_ISR_txString_1_27:
-	.ds 2
 ;--------------------------------------------------------
 ; overlayable items in internal ram 
 ;--------------------------------------------------------
@@ -1351,6 +1348,15 @@ G$X_P1DIR$0$0 == 0xdffe
 _X_P1DIR	=	0xdffe
 G$X_P2DIR$0$0 == 0xdfff
 _X_P2DIR	=	0xdfff
+Linterrupts.PORT1_ISR$j$1$25==.
+_PORT1_ISR_j_1_25:
+	.ds 2
+Linterrupts.PORT1_ISR$modeChange$1$25==.
+_PORT1_ISR_modeChange_1_25:
+	.ds 2
+Linterrupts.PORT1_ISR$txString$1$25==.
+_PORT1_ISR_txString_1_25:
+	.ds 2
 ;--------------------------------------------------------
 ; absolute external ram data
 ;--------------------------------------------------------
@@ -1388,14 +1394,14 @@ _X_P2DIR	=	0xdfff
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'PORT1_ISR'
 ;------------------------------------------------------------
-;i                         Allocated to registers r2 r3 
-;j                         Allocated to registers r4 r5 
-;modeChange                Allocated to registers r6 r7 
-;txString                  Allocated with name '_PORT1_ISR_txString_1_27'
+;i                         Allocated with name '_PORT1_ISR_i_1_25'
+;j                         Allocated with name '_PORT1_ISR_j_1_25'
+;modeChange                Allocated with name '_PORT1_ISR_modeChange_1_25'
+;txString                  Allocated with name '_PORT1_ISR_txString_1_25'
 ;------------------------------------------------------------
 	G$PORT1_ISR$0$0 ==.
-	C$interrupts.c$14$0$0 ==.
-;	interrupts.c:14: void PORT1_ISR( void ) __interrupt( P1INT_VECTOR ) {
+	C$interrupts.c$13$0$0 ==.
+;	interrupts.c:13: void PORT1_ISR( void ) __interrupt( P1INT_VECTOR ) {
 ;	-----------------------------------------
 ;	 function PORT1_ISR
 ;	-----------------------------------------
@@ -1423,107 +1429,144 @@ _PORT1_ISR:
 	push	(0+0)
 	push	psw
 	mov	psw,#0x00
-	C$interrupts.c$21$1$27 ==.
-;	interrupts.c:21: P1IFG = 0;
+	C$interrupts.c$20$1$25 ==.
+;	interrupts.c:20: P1IFG = 0;
 	mov	_P1IFG,#0x00
-	C$interrupts.c$22$1$27 ==.
-;	interrupts.c:22: IRCON2 &= 0xF7;
+	C$interrupts.c$21$1$25 ==.
+;	interrupts.c:21: IRCON2 &= 0xF7;
 	anl	_IRCON2,#0xF7
-	C$interrupts.c$24$1$27 ==.
-;	interrupts.c:24: modeChange = 1;
-	mov	r6,#0x01
-	mov	r7,#0x00
-	C$interrupts.c$25$1$27 ==.
-;	interrupts.c:25: for( j = 0; j < 0x20; j++ ) {
-	mov	r4,#0x00
-	mov	r5,#0x00
-	C$interrupts.c$26$1$27 ==.
-;	interrupts.c:26: for( i = 0; i < 0xFFFF; i++ ) Nop( );
+	C$interrupts.c$23$1$25 ==.
+;	interrupts.c:23: modeChange = 1;
+	mov	dptr,#_PORT1_ISR_modeChange_1_25
+	mov	a,#0x01
+	movx	@dptr,a
+	clr	a
+	inc	dptr
+	movx	@dptr,a
+	C$interrupts.c$24$1$25 ==.
+;	interrupts.c:24: for( j = 0; j < 0x20; j++ ) {
+	mov	dptr,#_PORT1_ISR_j_1_25
+	movx	@dptr,a
+	inc	dptr
+	movx	@dptr,a
+	C$interrupts.c$25$1$25 ==.
+;	interrupts.c:25: for( i = 0; i < 0xFFFF; i++ ) Nop( );
 00117$:
-	mov	r2,#0xFF
-	mov	r3,#0xFF
+	mov	r6,#0xFF
+	mov	r7,#0xFF
 00112$:
 	nop 
-	dec	r2
-	cjne	r2,#0xFF,00139$
-	dec	r3
+	dec	r6
+	cjne	r6,#0xFF,00139$
+	dec	r7
 00139$:
-	mov	a,r2
-	orl	a,r3
+	mov	a,r6
+	orl	a,r7
 	jnz	00112$
-	C$interrupts.c$27$2$28 ==.
-;	interrupts.c:27: if( P1_2 == 1 ) {
+	C$interrupts.c$26$2$26 ==.
+;	interrupts.c:26: if( P1_2 == 1 ) {
 	jnb	_P1_2,00114$
-	C$interrupts.c$28$3$29 ==.
-;	interrupts.c:28: modeChange = 0;
-	mov	r6,#0x00
-	mov	r7,#0x00
-	C$interrupts.c$29$3$29 ==.
-;	interrupts.c:29: j = 0x20;
-	mov	r4,#0x20
-	mov	r5,#0x00
+	C$interrupts.c$27$3$27 ==.
+;	interrupts.c:27: modeChange = 0;
+	mov	dptr,#_PORT1_ISR_modeChange_1_25
+	clr	a
+	movx	@dptr,a
+	inc	dptr
+	movx	@dptr,a
+	C$interrupts.c$28$3$27 ==.
+;	interrupts.c:28: j = 0x20;
+	mov	dptr,#_PORT1_ISR_j_1_25
+	mov	a,#0x20
+	movx	@dptr,a
+	clr	a
+	inc	dptr
+	movx	@dptr,a
 00114$:
-	C$interrupts.c$25$1$27 ==.
-;	interrupts.c:25: for( j = 0; j < 0x20; j++ ) {
-	inc	r4
-	cjne	r4,#0x00,00142$
-	inc	r5
-00142$:
+	C$interrupts.c$24$1$25 ==.
+;	interrupts.c:24: for( j = 0; j < 0x20; j++ ) {
+	mov	dptr,#_PORT1_ISR_j_1_25
+	movx	a,@dptr
+	add	a,#0x01
+	movx	@dptr,a
+	inc	dptr
+	movx	a,@dptr
+	addc	a,#0x00
+	movx	@dptr,a
+	mov	dptr,#_PORT1_ISR_j_1_25
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
 	clr	c
-	mov	a,r4
+	mov	a,r6
 	subb	a,#0x20
-	mov	a,r5
+	mov	a,r7
 	xrl	a,#0x80
 	subb	a,#0x80
 	jc	00117$
-	C$interrupts.c$33$1$27 ==.
-;	interrupts.c:33: if( modeChange == 1 ) {
+	C$interrupts.c$32$1$25 ==.
+;	interrupts.c:32: if( modeChange == 1 ) {
+	mov	dptr,#_PORT1_ISR_modeChange_1_25
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r7,a
 	cjne	r6,#0x01,00109$
 	cjne	r7,#0x00,00109$
-	C$interrupts.c$34$2$30 ==.
-;	interrupts.c:34: if( txFilterEnabled == 1 ) {
+	C$interrupts.c$33$2$28 ==.
+;	interrupts.c:33: if( txFilterEnabled == 1 ) {
 	mov	dptr,#_txFilterEnabled
 	movx	a,@dptr
 	mov	r7,a
 	cjne	r7,#0x01,00106$
-	C$interrupts.c$35$3$31 ==.
-;	interrupts.c:35: txFilterEnabled = 0;
+	C$interrupts.c$34$3$29 ==.
+;	interrupts.c:34: txFilterEnabled = 0;
 	mov	dptr,#_txFilterEnabled
 	clr	a
 	movx	@dptr,a
-	C$interrupts.c$36$3$31 ==.
-;	interrupts.c:36: P1_1 = 1;
+	C$interrupts.c$35$3$29 ==.
+;	interrupts.c:35: P1_1 = 1;
 	setb	_P1_1
-	C$interrupts.c$37$3$31 ==.
-;	interrupts.c:37: txString[0] = 0x13;
-	mov	_PORT1_ISR_txString_1_27,#0x13
+	C$interrupts.c$36$3$29 ==.
+;	interrupts.c:36: txString[0] = 0x13;
+	mov	dptr,#_PORT1_ISR_txString_1_25
+	mov	a,#0x13
+	movx	@dptr,a
 	sjmp	00107$
 00106$:
-	C$interrupts.c$39$3$32 ==.
-;	interrupts.c:39: txFilterEnabled = 1;
+	C$interrupts.c$38$3$30 ==.
+;	interrupts.c:38: txFilterEnabled = 1;
 	mov	dptr,#_txFilterEnabled
 	mov	a,#0x01
 	movx	@dptr,a
-	C$interrupts.c$40$3$32 ==.
-;	interrupts.c:40: P1_1 = 0;
+	C$interrupts.c$39$3$30 ==.
+;	interrupts.c:39: P1_1 = 0;
 	clr	_P1_1
-	C$interrupts.c$41$3$32 ==.
-;	interrupts.c:41: txString[0] = 0x03;
-	mov	_PORT1_ISR_txString_1_27,#0x03
+	C$interrupts.c$40$3$30 ==.
+;	interrupts.c:40: txString[0] = 0x03;
+	mov	dptr,#_PORT1_ISR_txString_1_25
+	mov	a,#0x03
+	movx	@dptr,a
 00107$:
-	C$interrupts.c$43$2$30 ==.
-;	interrupts.c:43: halUartWrite( (uint8_t const *)txString, 1 );
-	mov	_halUartWrite_PARM_2,#0x01
-	mov	(_halUartWrite_PARM_2 + 1),#0x00
-	mov	dptr,#_PORT1_ISR_txString_1_27
-	mov	b,#0x40
+	C$interrupts.c$42$2$28 ==.
+;	interrupts.c:42: halUartWrite( (uint8_t const *)txString, 1 );
+	mov	dptr,#_halUartWrite_PARM_2
+	mov	a,#0x01
+	movx	@dptr,a
+	clr	a
+	inc	dptr
+	movx	@dptr,a
+	mov	dptr,#_PORT1_ISR_txString_1_25
+	mov	b,#0x00
 	lcall	_halUartWrite
 00109$:
-	C$interrupts.c$47$1$27 ==.
-;	interrupts.c:47: P1IFG = 0;
+	C$interrupts.c$46$1$25 ==.
+;	interrupts.c:46: P1IFG = 0;
 	mov	_P1IFG,#0x00
-	C$interrupts.c$48$1$27 ==.
-;	interrupts.c:48: IRCON2 &= ~0x04;
+	C$interrupts.c$47$1$25 ==.
+;	interrupts.c:47: IRCON2 &= ~0x04;
 	mov	r7,_IRCON2
 	mov	a,#0xFB
 	anl	a,r7
@@ -1542,52 +1585,52 @@ _PORT1_ISR:
 	pop	b
 	pop	acc
 	pop	bits
-	C$interrupts.c$49$1$27 ==.
+	C$interrupts.c$48$1$25 ==.
 	XG$PORT1_ISR$0$0 ==.
 	reti
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'enablePushButtonInt'
 ;------------------------------------------------------------
 	G$enablePushButtonInt$0$0 ==.
-	C$interrupts.c$51$1$27 ==.
-;	interrupts.c:51: void enablePushButtonInt( void ) {
+	C$interrupts.c$50$1$25 ==.
+;	interrupts.c:50: void enablePushButtonInt( void ) {
 ;	-----------------------------------------
 ;	 function enablePushButtonInt
 ;	-----------------------------------------
 _enablePushButtonInt:
-	C$interrupts.c$53$1$34 ==.
-;	interrupts.c:53: P1_0 = 0;
+	C$interrupts.c$52$1$32 ==.
+;	interrupts.c:52: P1_0 = 0;
 	clr	_P1_0
-	C$interrupts.c$54$1$34 ==.
-;	interrupts.c:54: txFilterEnabled = 1;
+	C$interrupts.c$53$1$32 ==.
+;	interrupts.c:53: txFilterEnabled = 1;
 	mov	dptr,#_txFilterEnabled
 	mov	a,#0x01
 	movx	@dptr,a
-	C$interrupts.c$57$1$34 ==.
-;	interrupts.c:57: P1IFG = 0;
+	C$interrupts.c$56$1$32 ==.
+;	interrupts.c:56: P1IFG = 0;
 	mov	_P1IFG,#0x00
-	C$interrupts.c$58$1$34 ==.
-;	interrupts.c:58: IRCON2 &= 0xF7;
+	C$interrupts.c$57$1$32 ==.
+;	interrupts.c:57: IRCON2 &= 0xF7;
 	anl	_IRCON2,#0xF7
-	C$interrupts.c$61$1$34 ==.
-;	interrupts.c:61: PICTL |= 0x02;
+	C$interrupts.c$60$1$32 ==.
+;	interrupts.c:60: PICTL |= 0x02;
 	orl	_PICTL,#0x02
-	C$interrupts.c$64$1$34 ==.
-;	interrupts.c:64: P1IEN = 0x04;
+	C$interrupts.c$63$1$32 ==.
+;	interrupts.c:63: P1IEN = 0x04;
 	mov	_P1IEN,#0x04
-	C$interrupts.c$65$1$34 ==.
-;	interrupts.c:65: EA = 1; IEN2 |= IEN2_P1IE;
+	C$interrupts.c$64$1$32 ==.
+;	interrupts.c:64: EA = 1; IEN2 |= IEN2_P1IE;
 	setb	_EA
 	orl	_IEN2,#0x10
-	C$interrupts.c$66$1$34 ==.
+	C$interrupts.c$65$1$32 ==.
 	XG$enablePushButtonInt$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'TIMER1_ISR'
 ;------------------------------------------------------------
 	G$TIMER1_ISR$0$0 ==.
-	C$interrupts.c$68$1$34 ==.
-;	interrupts.c:68: void TIMER1_ISR( void ) __interrupt( T1_VECTOR ) {
+	C$interrupts.c$67$1$32 ==.
+;	interrupts.c:67: void TIMER1_ISR( void ) __interrupt( T1_VECTOR ) {
 ;	-----------------------------------------
 ;	 function TIMER1_ISR
 ;	-----------------------------------------
@@ -1598,20 +1641,20 @@ _TIMER1_ISR:
 	push	ar7
 	push	psw
 	mov	psw,#0x00
-	C$interrupts.c$70$1$36 ==.
-;	interrupts.c:70: T1CTL &= 0xFC;
+	C$interrupts.c$69$1$34 ==.
+;	interrupts.c:69: T1CTL &= 0xFC;
 	anl	_T1CTL,#0xFC
-	C$interrupts.c$73$1$36 ==.
-;	interrupts.c:73: P1IFG = 0;
+	C$interrupts.c$72$1$34 ==.
+;	interrupts.c:72: P1IFG = 0;
 	mov	_P1IFG,#0x00
-	C$interrupts.c$74$1$36 ==.
-;	interrupts.c:74: IRCON &= ~0x02;
+	C$interrupts.c$73$1$34 ==.
+;	interrupts.c:73: IRCON &= ~0x02;
 	mov	r7,_IRCON
 	mov	a,#0xFD
 	anl	a,r7
 	mov	_IRCON,a
-	C$interrupts.c$77$1$36 ==.
-;	interrupts.c:77: uartRxIndex = 0;
+	C$interrupts.c$76$1$34 ==.
+;	interrupts.c:76: uartRxIndex = 0;
 	mov	dptr,#_uartRxIndex
 	clr	a
 	movx	@dptr,a
@@ -1622,7 +1665,7 @@ _TIMER1_ISR:
 	pop	dph
 	pop	dpl
 	pop	acc
-	C$interrupts.c$81$1$36 ==.
+	C$interrupts.c$80$1$34 ==.
 	XG$TIMER1_ISR$0$0 ==.
 	reti
 ;	eliminated unneeded push/pop b
@@ -1630,79 +1673,79 @@ _TIMER1_ISR:
 ;Allocation info for local variables in function 'stopTimerInt'
 ;------------------------------------------------------------
 	G$stopTimerInt$0$0 ==.
-	C$interrupts.c$83$1$36 ==.
-;	interrupts.c:83: void stopTimerInt( void ) {
+	C$interrupts.c$82$1$34 ==.
+;	interrupts.c:82: void stopTimerInt( void ) {
 ;	-----------------------------------------
 ;	 function stopTimerInt
 ;	-----------------------------------------
 _stopTimerInt:
-	C$interrupts.c$85$1$38 ==.
-;	interrupts.c:85: T1CTL &= 0xFC;
+	C$interrupts.c$84$1$36 ==.
+;	interrupts.c:84: T1CTL &= 0xFC;
 	anl	_T1CTL,#0xFC
-	C$interrupts.c$88$1$38 ==.
-;	interrupts.c:88: T1CNTL = 0x00;
+	C$interrupts.c$87$1$36 ==.
+;	interrupts.c:87: T1CNTL = 0x00;
 	mov	_T1CNTL,#0x00
-	C$interrupts.c$91$1$38 ==.
-;	interrupts.c:91: IEN1 &= ~0x02;
+	C$interrupts.c$90$1$36 ==.
+;	interrupts.c:90: IEN1 &= ~0x02;
 	mov	r7,_IEN1
 	mov	a,#0xFD
 	anl	a,r7
 	mov	_IEN1,a
-	C$interrupts.c$92$1$38 ==.
+	C$interrupts.c$91$1$36 ==.
 	XG$stopTimerInt$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'resetTimerCounter'
 ;------------------------------------------------------------
 	G$resetTimerCounter$0$0 ==.
-	C$interrupts.c$94$1$38 ==.
-;	interrupts.c:94: void resetTimerCounter( void ) {
+	C$interrupts.c$93$1$36 ==.
+;	interrupts.c:93: void resetTimerCounter( void ) {
 ;	-----------------------------------------
 ;	 function resetTimerCounter
 ;	-----------------------------------------
 _resetTimerCounter:
-	C$interrupts.c$95$1$40 ==.
-;	interrupts.c:95: T1CNTL = 0x00;
+	C$interrupts.c$94$1$38 ==.
+;	interrupts.c:94: T1CNTL = 0x00;
 	mov	_T1CNTL,#0x00
-	C$interrupts.c$96$1$40 ==.
+	C$interrupts.c$95$1$38 ==.
 	XG$resetTimerCounter$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'enableTimerInt'
 ;------------------------------------------------------------
 	G$enableTimerInt$0$0 ==.
-	C$interrupts.c$98$1$40 ==.
-;	interrupts.c:98: void enableTimerInt( void ) {
+	C$interrupts.c$97$1$38 ==.
+;	interrupts.c:97: void enableTimerInt( void ) {
 ;	-----------------------------------------
 ;	 function enableTimerInt
 ;	-----------------------------------------
 _enableTimerInt:
-	C$interrupts.c$100$1$42 ==.
-;	interrupts.c:100: T1CTL &= 0xFC;
+	C$interrupts.c$99$1$40 ==.
+;	interrupts.c:99: T1CTL &= 0xFC;
 	anl	_T1CTL,#0xFC
-	C$interrupts.c$103$1$42 ==.
-;	interrupts.c:103: T1CC0H = 0x7F;
+	C$interrupts.c$102$1$40 ==.
+;	interrupts.c:102: T1CC0H = 0x7F;
 	mov	_T1CC0H,#0x7F
-	C$interrupts.c$104$1$42 ==.
-;	interrupts.c:104: T1CC0L = 0xFF;
+	C$interrupts.c$103$1$40 ==.
+;	interrupts.c:103: T1CC0L = 0xFF;
 	mov	_T1CC0L,#0xFF
-	C$interrupts.c$107$1$42 ==.
-;	interrupts.c:107: T1CNTL = 0x00;
+	C$interrupts.c$106$1$40 ==.
+;	interrupts.c:106: T1CNTL = 0x00;
 	mov	_T1CNTL,#0x00
-	C$interrupts.c$110$1$42 ==.
-;	interrupts.c:110: T1CCTL0 = 0x44;
+	C$interrupts.c$109$1$40 ==.
+;	interrupts.c:109: T1CCTL0 = 0x44;
 	mov	_T1CCTL0,#0x44
-	C$interrupts.c$113$1$42 ==.
-;	interrupts.c:113: IRCON &= ~0x02;
+	C$interrupts.c$112$1$40 ==.
+;	interrupts.c:112: IRCON &= ~0x02;
 	mov	r7,_IRCON
 	mov	a,#0xFD
 	anl	a,r7
 	mov	_IRCON,a
-	C$interrupts.c$116$1$42 ==.
-;	interrupts.c:116: EA = 1; IEN1 |= 0x02;
+	C$interrupts.c$115$1$40 ==.
+;	interrupts.c:115: EA = 1; IEN1 |= 0x02;
 	setb	_EA
 	orl	_IEN1,#0x02
-	C$interrupts.c$117$1$42 ==.
+	C$interrupts.c$116$1$40 ==.
 	XG$enableTimerInt$0$0 ==.
 	ret
 	.area CSEG    (CODE)

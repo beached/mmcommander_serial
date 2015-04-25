@@ -1,19 +1,17 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ANSI-C Compiler
 ; Version 3.4.0 #8981 (Apr  5 2014) (MINGW64)
-; This file was generated Fri Apr 24 20:03:56 2015
+; This file was generated Sat Apr 25 00:05:13 2015
 ;--------------------------------------------------------
 	.module MMCommander
-	.optsdcc -mmcs51 --model-small
+	.optsdcc -mmcs51 --model-large
 	
 ;--------------------------------------------------------
 ; Public variables in this module
 ;--------------------------------------------------------
 	.globl _main
-	.globl _usbUartProcess
 	.globl _halUartWrite
 	.globl _halUartInit
-	.globl _usbReceiveData
 	.globl _receiveMedtronicMessage
 	.globl _enablePushButtonInt
 	.globl _initGlobals
@@ -920,21 +918,6 @@ _MODE	=	0x00ff
 ; internal ram data
 ;--------------------------------------------------------
 	.area DSEG    (DATA)
-LMMCommander.main$dataPacket$1$34==.
-_main_dataPacket_1_34:
-	.ds 256
-LMMCommander.main$repPacket$1$34==.
-_main_repPacket_1_34:
-	.ds 3
-LMMCommander.main$dataLength$1$34==.
-_main_dataLength_1_34:
-	.ds 2
-LMMCommander.main$i$1$34==.
-_main_i_1_34:
-	.ds 1
-LMMCommander.main$sloc0$1$0==.
-_main_sloc0_1_0:
-	.ds 3
 ;--------------------------------------------------------
 ; overlayable items in internal ram 
 ;--------------------------------------------------------
@@ -1381,6 +1364,18 @@ _uartTxIndex::
 G$uartRxIndex$0$0==.
 _uartRxIndex::
 	.ds 2
+LMMCommander.main$dataPacket$1$32==.
+_main_dataPacket_1_32:
+	.ds 256
+LMMCommander.main$repPacket$1$32==.
+_main_repPacket_1_32:
+	.ds 3
+LMMCommander.main$dataLength$1$32==.
+_main_dataLength_1_32:
+	.ds 2
+LMMCommander.main$repeatedMessage$1$32==.
+_main_repeatedMessage_1_32:
+	.ds 1
 ;--------------------------------------------------------
 ; absolute external ram data
 ;--------------------------------------------------------
@@ -1435,17 +1430,16 @@ __sdcc_program_startup:
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'main'
 ;------------------------------------------------------------
-;dataPacket                Allocated with name '_main_dataPacket_1_34'
-;repPacket                 Allocated with name '_main_repPacket_1_34'
-;dataErr                   Allocated to registers r7 
-;dataLength                Allocated with name '_main_dataLength_1_34'
-;i                         Allocated with name '_main_i_1_34'
-;repeatedMessage           Allocated to registers r6 
-;sloc0                     Allocated with name '_main_sloc0_1_0'
+;dataPacket                Allocated with name '_main_dataPacket_1_32'
+;repPacket                 Allocated with name '_main_repPacket_1_32'
+;dataErr                   Allocated with name '_main_dataErr_1_32'
+;dataLength                Allocated with name '_main_dataLength_1_32'
+;i                         Allocated with name '_main_i_1_32'
+;repeatedMessage           Allocated with name '_main_repeatedMessage_1_32'
 ;------------------------------------------------------------
 	G$main$0$0 ==.
-	C$MMCommander.c$39$0$0 ==.
-;	MMCommander.c:39: int main( void ) {
+	C$MMCommander.c$38$0$0 ==.
+;	MMCommander.c:38: int main( void ) {
 ;	-----------------------------------------
 ;	 function main
 ;	-----------------------------------------
@@ -1458,218 +1452,267 @@ _main:
 	ar2 = 0x02
 	ar1 = 0x01
 	ar0 = 0x00
-	C$MMCommander.c$43$1$0 ==.
-;	MMCommander.c:43: unsigned int dataLength = 0;
+	C$MMCommander.c$42$1$0 ==.
+;	MMCommander.c:42: unsigned int dataLength = 0;
+	mov	dptr,#_main_dataLength_1_32
 	clr	a
-	mov	_main_dataLength_1_34,a
-	mov	(_main_dataLength_1_34 + 1),a
-	C$MMCommander.c$48$1$34 ==.
-;	MMCommander.c:48: initGlobals( );
+	movx	@dptr,a
+	inc	dptr
+	movx	@dptr,a
+	C$MMCommander.c$47$1$32 ==.
+;	MMCommander.c:47: initGlobals( );
 	lcall	_initGlobals
-	C$MMCommander.c$49$1$34 ==.
-;	MMCommander.c:49: configureIO( );
+	C$MMCommander.c$48$1$32 ==.
+;	MMCommander.c:48: configureIO( );
 	lcall	_configureIO
-	C$MMCommander.c$50$1$34 ==.
-;	MMCommander.c:50: configureOsc( );
+	C$MMCommander.c$49$1$32 ==.
+;	MMCommander.c:49: configureOsc( );
 	lcall	_configureOsc
-	C$MMCommander.c$51$1$34 ==.
-;	MMCommander.c:51: crc16Init( );
+	C$MMCommander.c$50$1$32 ==.
+;	MMCommander.c:50: crc16Init( );
 	lcall	_crc16Init
-	C$MMCommander.c$52$1$34 ==.
-;	MMCommander.c:52: configureMedtronicRFMode( );
+	C$MMCommander.c$51$1$32 ==.
+;	MMCommander.c:51: configureMedtronicRFMode( );
 	lcall	_configureMedtronicRFMode
-	C$MMCommander.c$53$1$34 ==.
-;	MMCommander.c:53: enablePushButtonInt( );
+	C$MMCommander.c$52$1$32 ==.
+;	MMCommander.c:52: enablePushButtonInt( );
 	lcall	_enablePushButtonInt
-	C$MMCommander.c$54$1$34 ==.
-;	MMCommander.c:54: halUartInit( HAL_UART_BAUDRATE_57600, 0 );
-	mov	_halUartInit_PARM_2,#0x00
+	C$MMCommander.c$53$1$32 ==.
+;	MMCommander.c:53: halUartInit( HAL_UART_BAUDRATE_57600, 0 );
+	mov	dptr,#_halUartInit_PARM_2
+	clr	a
+	movx	@dptr,a
 	mov	dpl,#0x05
 	lcall	_halUartInit
-	C$MMCommander.c$57$1$34 ==.
-;	MMCommander.c:57: while( 1 ) {
+	C$MMCommander.c$56$1$32 ==.
+;	MMCommander.c:56: while( 1 ) {
 00122$:
-	C$MMCommander.c$58$2$35 ==.
-;	MMCommander.c:58: dataErr = receiveMedtronicMessage( dataPacket, &dataLength );
-	mov	_receiveMedtronicMessage_PARM_2,#_main_dataLength_1_34
-	mov	(_receiveMedtronicMessage_PARM_2 + 1),#0x00
-	mov	(_receiveMedtronicMessage_PARM_2 + 2),#0x40
-	mov	dptr,#_main_dataPacket_1_34
-	mov	b,#0x40
+	C$MMCommander.c$57$2$33 ==.
+;	MMCommander.c:57: dataErr = receiveMedtronicMessage( dataPacket, &dataLength );
+	mov	dptr,#_receiveMedtronicMessage_PARM_2
+	mov	a,#_main_dataLength_1_32
+	movx	@dptr,a
+	mov	a,#(_main_dataLength_1_32 >> 8)
+	inc	dptr
+	movx	@dptr,a
+	clr	a
+	inc	dptr
+	movx	@dptr,a
+	mov	dptr,#_main_dataPacket_1_32
+	mov	b,#0x00
 	lcall	_receiveMedtronicMessage
 	mov	r7,dpl
-	C$MMCommander.c$59$2$35 ==.
-;	MMCommander.c:59: if( dataLength > 0 ) {
-	mov	a,_main_dataLength_1_34
-	orl	a,(_main_dataLength_1_34 + 1)
+	C$MMCommander.c$58$2$33 ==.
+;	MMCommander.c:58: if( dataLength > 0 ) {
+	mov	dptr,#_main_dataLength_1_32
+	movx	a,@dptr
+	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	orl	a,r5
 	jz	00122$
-	C$MMCommander.c$60$3$36 ==.
-;	MMCommander.c:60: repeatedMessage = 0;
-	mov	r6,#0x00
-	C$MMCommander.c$62$3$36 ==.
-;	MMCommander.c:62: (dataErr == ((uartTxBuffer[0] >> 7) & 0x01)) &&
+	C$MMCommander.c$59$3$34 ==.
+;	MMCommander.c:59: repeatedMessage = 0;
+	mov	dptr,#_main_repeatedMessage_1_32
+	clr	a
+	movx	@dptr,a
+	C$MMCommander.c$61$3$34 ==.
+;	MMCommander.c:61: (dataErr == ((uartTxBuffer[0] >> 7) & 0x01)) &&
 	mov	dptr,#_uartTxBuffer
 	movx	a,@dptr
 	rl	a
 	anl	a,#0x01
-	mov	r5,a
+	mov	r4,a
 	mov	a,r7
-	cjne	a,ar5,00105$
-	C$MMCommander.c$63$3$36 ==.
-;	MMCommander.c:63: (dataLength == (uartTxLength - 2))
+	cjne	a,ar4,00105$
+	C$MMCommander.c$62$3$34 ==.
+;	MMCommander.c:62: (dataLength == (uartTxLength - 2))
 	mov	dptr,#_uartTxLength
+	movx	a,@dptr
+	mov	r3,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r4,a
+	mov	a,r3
+	add	a,#0xFE
+	mov	r3,a
+	mov	a,r4
+	addc	a,#0xFF
+	mov	r4,a
+	mov	a,r5
+	cjne	a,ar3,00105$
+	mov	a,r6
+	cjne	a,ar4,00105$
+	C$MMCommander.c$64$4$35 ==.
+;	MMCommander.c:64: repeatedMessage = 1;
+	mov	dptr,#_main_repeatedMessage_1_32
+	mov	a,#0x01
+	movx	@dptr,a
+	C$MMCommander.c$65$1$32 ==.
+;	MMCommander.c:65: for( i = 0; i < dataLength; i++ ) {
+	mov	r6,#0x00
+00125$:
+	mov	dptr,#_main_dataLength_1_32
 	movx	a,@dptr
 	mov	r4,a
 	inc	dptr
 	movx	a,@dptr
 	mov	r5,a
-	mov	a,r4
-	add	a,#0xFE
-	mov	r4,a
-	mov	a,r5
-	addc	a,#0xFF
-	mov	r5,a
-	mov	a,r4
-	cjne	a,_main_dataLength_1_34,00105$
-	mov	a,r5
-	cjne	a,(_main_dataLength_1_34 + 1),00105$
-	C$MMCommander.c$65$4$37 ==.
-;	MMCommander.c:65: repeatedMessage = 1;
-	mov	r6,#0x01
-	C$MMCommander.c$66$1$34 ==.
-;	MMCommander.c:66: for( i = 0; i < dataLength; i++ ) {
-	mov	r5,#0x00
-00125$:
-	mov	a,r5
-	mov	r3,a
+	mov	a,r6
+	mov	r2,a
 	rlc	a
 	subb	a,acc
-	mov	r4,a
+	mov	r3,a
 	clr	c
+	mov	a,r2
+	subb	a,r4
 	mov	a,r3
-	subb	a,_main_dataLength_1_34
-	mov	a,r4
-	subb	a,(_main_dataLength_1_34 + 1)
+	subb	a,r5
 	jnc	00105$
-	C$MMCommander.c$67$5$38 ==.
-;	MMCommander.c:67: if( dataPacket[i] != uartTxBuffer[i + 2] ) {
-	mov	a,r5
-	add	a,#_main_dataPacket_1_34
-	mov	r1,a
-	mov	ar4,@r1
+	C$MMCommander.c$66$5$36 ==.
+;	MMCommander.c:66: if( dataPacket[i] != uartTxBuffer[i + 2] ) {
+	mov	a,r6
+	add	a,#_main_dataPacket_1_32
+	mov	dpl,a
+	clr	a
+	addc	a,#(_main_dataPacket_1_32 >> 8)
+	mov	dph,a
+	movx	a,@dptr
+	mov	r5,a
 	mov	a,#0x02
-	add	a,r5
+	add	a,r6
 	add	a,#_uartTxBuffer
 	mov	dpl,a
 	clr	a
 	addc	a,#(_uartTxBuffer >> 8)
 	mov	dph,a
 	movx	a,@dptr
-	mov	r3,a
-	mov	a,r4
-	cjne	a,ar3,00184$
+	mov	r4,a
+	mov	a,r5
+	cjne	a,ar4,00184$
 	sjmp	00126$
 00184$:
-	C$MMCommander.c$68$6$39 ==.
-;	MMCommander.c:68: repeatedMessage = 0;
-	mov	r6,#0x00
-	C$MMCommander.c$69$6$39 ==.
-;	MMCommander.c:69: break;
+	C$MMCommander.c$67$6$37 ==.
+;	MMCommander.c:67: repeatedMessage = 0;
+	mov	dptr,#_main_repeatedMessage_1_32
+	clr	a
+	movx	@dptr,a
+	C$MMCommander.c$68$6$37 ==.
+;	MMCommander.c:68: break;
 	sjmp	00105$
 00126$:
-	C$MMCommander.c$66$4$37 ==.
-;	MMCommander.c:66: for( i = 0; i < dataLength; i++ ) {
-	inc	r5
+	C$MMCommander.c$65$4$35 ==.
+;	MMCommander.c:65: for( i = 0; i < dataLength; i++ ) {
+	inc	r6
 	sjmp	00125$
 00105$:
-	C$MMCommander.c$74$3$36 ==.
-;	MMCommander.c:74: if( repeatedMessage == 1 ) {
+	C$MMCommander.c$73$3$34 ==.
+;	MMCommander.c:73: if( repeatedMessage == 1 ) {
+	mov	dptr,#_main_repeatedMessage_1_32
+	movx	a,@dptr
+	mov	r6,a
 	cjne	r6,#0x01,00117$
-	C$MMCommander.c$75$4$40 ==.
-;	MMCommander.c:75: repPacket[0] = 0x04;
-	mov	_main_repPacket_1_34,#0x04
-	C$MMCommander.c$76$4$40 ==.
-;	MMCommander.c:76: halUartWrite( (uint8_t const *)repPacket, 1 );
-	mov	_halUartWrite_PARM_2,#0x01
-	mov	(_halUartWrite_PARM_2 + 1),#0x00
-	mov	dptr,#_main_repPacket_1_34
-	mov	b,#0x40
+	C$MMCommander.c$74$4$38 ==.
+;	MMCommander.c:74: repPacket[0] = 0x04;
+	mov	dptr,#_main_repPacket_1_32
+	mov	a,#0x04
+	movx	@dptr,a
+	C$MMCommander.c$75$4$38 ==.
+;	MMCommander.c:75: halUartWrite( (uint8_t const *)repPacket, 1 );
+	mov	dptr,#_halUartWrite_PARM_2
+	mov	a,#0x01
+	movx	@dptr,a
+	clr	a
+	inc	dptr
+	movx	@dptr,a
+	mov	dptr,#_main_repPacket_1_32
+	mov	b,#0x00
 	lcall	_halUartWrite
-	C$MMCommander.c$77$4$40 ==.
-;	MMCommander.c:77: usbUartProcess( );
-	lcall	_usbUartProcess
-	C$MMCommander.c$78$4$40 ==.
-;	MMCommander.c:78: usbReceiveData( );
-	lcall	_usbReceiveData
 	ljmp	00122$
 00117$:
-	C$MMCommander.c$80$4$41 ==.
+	C$MMCommander.c$80$4$39 ==.
 ;	MMCommander.c:80: if( dataErr == 0 ) {
 	mov	a,r7
 	jnz	00109$
-	C$MMCommander.c$81$5$42 ==.
+	C$MMCommander.c$81$5$40 ==.
 ;	MMCommander.c:81: uartTxBuffer[0] = 0x02;
 	mov	dptr,#_uartTxBuffer
 	mov	a,#0x02
 	movx	@dptr,a
 	sjmp	00110$
 00109$:
-	C$MMCommander.c$83$5$43 ==.
+	C$MMCommander.c$83$5$41 ==.
 ;	MMCommander.c:83: uartTxBuffer[0] = 0x82;
 	mov	dptr,#_uartTxBuffer
 	mov	a,#0x82
 	movx	@dptr,a
 00110$:
-	C$MMCommander.c$85$4$41 ==.
+	C$MMCommander.c$85$4$39 ==.
 ;	MMCommander.c:85: uartTxBuffer[1] = dataLength;
-	mov	r7,_main_dataLength_1_34
+	mov	dptr,#_main_dataLength_1_32
+	movx	a,@dptr
+	mov	r6,a
+	inc	dptr
+	movx	a,@dptr
 	mov	dptr,#(_uartTxBuffer + 0x0001)
-	mov	a,r7
+	mov	a,r6
 	movx	@dptr,a
-	C$MMCommander.c$86$1$34 ==.
+	C$MMCommander.c$86$1$32 ==.
 ;	MMCommander.c:86: for( i = 0; i < dataLength; i++ ) uartTxBuffer[i + 2] = dataPacket[i];
 	mov	r7,#0x00
 00128$:
-	mov	a,r7
+	mov	dptr,#_main_dataLength_1_32
+	movx	a,@dptr
 	mov	r5,a
+	inc	dptr
+	movx	a,@dptr
+	mov	r6,a
+	mov	a,r7
+	mov	r3,a
 	rlc	a
 	subb	a,acc
-	mov	r6,a
+	mov	r4,a
 	clr	c
-	mov	a,r5
-	subb	a,_main_dataLength_1_34
-	mov	a,r6
-	subb	a,(_main_dataLength_1_34 + 1)
+	mov	a,r3
+	subb	a,r5
+	mov	a,r4
+	subb	a,r6
 	jnc	00111$
 	mov	a,#0x02
 	add	a,r7
 	add	a,#_uartTxBuffer
-	mov	dpl,a
+	mov	r3,a
 	clr	a
 	addc	a,#(_uartTxBuffer >> 8)
-	mov	dph,a
+	mov	r4,a
 	mov	a,r7
-	add	a,#_main_dataPacket_1_34
-	mov	r1,a
-	mov	a,@r1
-	mov	r6,a
+	add	a,#_main_dataPacket_1_32
+	mov	dpl,a
+	clr	a
+	addc	a,#(_main_dataPacket_1_32 >> 8)
+	mov	dph,a
+	movx	a,@dptr
+	mov	r2,a
+	mov	dpl,r3
+	mov	dph,r4
 	movx	@dptr,a
 	inc	r7
 	sjmp	00128$
 00111$:
-	C$MMCommander.c$87$4$41 ==.
+	C$MMCommander.c$87$4$39 ==.
 ;	MMCommander.c:87: uartTxLength = dataLength + 2;
 	mov	dptr,#_uartTxLength
 	mov	a,#0x02
-	add	a,_main_dataLength_1_34
+	add	a,r5
 	movx	@dptr,a
 	clr	a
-	addc	a,(_main_dataLength_1_34 + 1)
+	addc	a,r6
 	inc	dptr
 	movx	@dptr,a
-	C$MMCommander.c$88$1$34 ==.
+	C$MMCommander.c$88$1$32 ==.
 ;	MMCommander.c:88: for( i = 0; i < uartTxLength; i = i + 48 ) {
-	mov	_main_i_1_34,#0x00
+	mov	r7,#0x00
 00131$:
 	mov	dptr,#_uartTxLength
 	movx	a,@dptr
@@ -1677,15 +1720,15 @@ _main:
 	inc	dptr
 	movx	a,@dptr
 	mov	r6,a
-	mov	a,_main_i_1_34
-	mov	_main_sloc0_1_0,a
+	mov	a,r7
+	mov	r3,a
 	rlc	a
 	subb	a,acc
-	mov	(_main_sloc0_1_0 + 1),a
+	mov	r4,a
 	clr	c
-	mov	a,_main_sloc0_1_0
+	mov	a,r3
 	subb	a,r5
-	mov	a,(_main_sloc0_1_0 + 1)
+	mov	a,r4
 	xrl	a,#0x80
 	mov	b,r6
 	xrl	b,#0x80
@@ -1693,76 +1736,78 @@ _main:
 	jc	00189$
 	ljmp	00122$
 00189$:
-	C$MMCommander.c$89$5$44 ==.
+	C$MMCommander.c$89$5$42 ==.
 ;	MMCommander.c:89: if( uartTxLength - i > 48 ) {
 	mov	a,r5
 	clr	c
-	subb	a,_main_sloc0_1_0
-	mov	r2,a
+	subb	a,r3
+	mov	r1,a
 	mov	a,r6
-	subb	a,(_main_sloc0_1_0 + 1)
-	mov	r7,a
+	subb	a,r4
+	mov	r2,a
 	clr	c
 	mov	a,#0x30
-	subb	a,r2
+	subb	a,r1
 	mov	a,#(0x00 ^ 0x80)
-	mov	b,r7
+	mov	b,r2
 	xrl	b,#0x80
 	subb	a,b
 	jnc	00113$
-	C$MMCommander.c$90$6$45 ==.
+	C$MMCommander.c$90$6$43 ==.
 ;	MMCommander.c:90: halUartWrite( (uint8_t const *)&uartTxBuffer[i], 48 );
-	mov	a,_main_i_1_34
+	mov	a,r7
 	add	a,#_uartTxBuffer
-	mov	r2,a
+	mov	r1,a
 	clr	a
 	addc	a,#(_uartTxBuffer >> 8)
-	mov	r7,a
-	mov	_main_sloc0_1_0,r2
-	mov	(_main_sloc0_1_0 + 1),r7
-	mov	(_main_sloc0_1_0 + 2),#0x00
-	mov	_halUartWrite_PARM_2,#0x30
-	mov	(_halUartWrite_PARM_2 + 1),#0x00
-	mov	dpl,_main_sloc0_1_0
-	mov	dph,(_main_sloc0_1_0 + 1)
-	mov	b,(_main_sloc0_1_0 + 2)
+	mov	r0,a
+	mov	r2,#0x00
+	mov	dptr,#_halUartWrite_PARM_2
+	mov	a,#0x30
+	movx	@dptr,a
+	clr	a
+	inc	dptr
+	movx	@dptr,a
+	mov	dpl,r1
+	mov	dph,r0
+	mov	b,r2
+	push	ar7
 	lcall	_halUartWrite
-	C$MMCommander.c$91$6$45 ==.
-;	MMCommander.c:91: usbUartProcess( );
-	lcall	_usbUartProcess
-	C$MMCommander.c$92$6$45 ==.
-;	MMCommander.c:92: usbReceiveData( );
-	lcall	_usbReceiveData
+	pop	ar7
 	sjmp	00132$
 00113$:
-	C$MMCommander.c$94$6$46 ==.
-;	MMCommander.c:94: halUartWrite( (uint8_t const *)&uartTxBuffer[i], uartTxLength - i );
-	mov	a,_main_i_1_34
+	C$MMCommander.c$95$6$44 ==.
+;	MMCommander.c:95: halUartWrite( (uint8_t const *)&uartTxBuffer[i], uartTxLength - i );
+	mov	a,r7
 	add	a,#_uartTxBuffer
-	mov	r2,a
+	mov	r1,a
 	clr	a
 	addc	a,#(_uartTxBuffer >> 8)
-	mov	r4,a
-	mov	r7,#0x00
+	mov	r0,a
+	mov	r2,#0x00
+	mov	dptr,#_halUartWrite_PARM_2
 	mov	a,r5
 	clr	c
-	subb	a,_main_sloc0_1_0
-	mov	_halUartWrite_PARM_2,a
+	subb	a,r3
+	movx	@dptr,a
 	mov	a,r6
-	subb	a,(_main_sloc0_1_0 + 1)
-	mov	(_halUartWrite_PARM_2 + 1),a
-	mov	dpl,r2
-	mov	dph,r4
-	mov	b,r7
+	subb	a,r4
+	inc	dptr
+	movx	@dptr,a
+	mov	dpl,r1
+	mov	dph,r0
+	mov	b,r2
+	push	ar7
 	lcall	_halUartWrite
+	pop	ar7
 00132$:
-	C$MMCommander.c$88$4$41 ==.
+	C$MMCommander.c$88$4$39 ==.
 ;	MMCommander.c:88: for( i = 0; i < uartTxLength; i = i + 48 ) {
 	mov	a,#0x30
-	add	a,_main_i_1_34
-	mov	_main_i_1_34,a
+	add	a,r7
+	mov	r7,a
 	ljmp	00131$
-	C$MMCommander.c$100$1$34 ==.
+	C$MMCommander.c$101$1$32 ==.
 	XG$main$0$0 ==.
 	ret
 	.area CSEG    (CODE)

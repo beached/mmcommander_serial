@@ -12,8 +12,11 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="5" />
 				<Option compiler="sdcc" />
+				<Option projectCompilerOptionsRelation="2" />
 				<Compiler>
+					<Add option="--out-fmt-ihx" />
 					<Add option="-mmcs51" />
+					<Add option="--verbose" />
 					<Add option="--debug" />
 				</Compiler>
 			</Target>
@@ -23,7 +26,9 @@
 				<Option object_output="obj/Release/" />
 				<Option type="5" />
 				<Option compiler="sdcc" />
+				<Option projectCompilerOptionsRelation="0" />
 				<Compiler>
+					<Add option="--out-fmt-ihx" />
 					<Add option="-mmcs51" />
 					<Add option="--opt-code-size" />
 				</Compiler>
@@ -33,6 +38,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="cc1110.h" />
+		<Unit filename="clock.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="clock.h" />
 		<Unit filename="common.h" />
 		<Unit filename="configuration.h" />
 		<Unit filename="constants.h" />
@@ -41,9 +50,24 @@
 		</Unit>
 		<Unit filename="crc_4b6b.h" />
 		<Unit filename="globals.h" />
+		<Unit filename="hal_assert.h" />
+		<Unit filename="hal_board.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="hal_board.h" />
 		<Unit filename="hal_cc8051.h" />
 		<Unit filename="hal_defs.h" />
+		<Unit filename="hal_int.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="hal_int.h" />
+		<Unit filename="hal_led.h" />
+		<Unit filename="hal_mcu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="hal_mcu.h" />
 		<Unit filename="hal_types.h" />
+		<Unit filename="hal_uart.h" />
 		<Unit filename="init.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -61,37 +85,16 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="txFilter.h" />
-		<Unit filename="usb/others/clock.c">
+		<Unit filename="util_buffer.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="usb/others/clock.h" />
-		<Unit filename="usb/others/hal_assert.h" />
-		<Unit filename="usb/others/hal_board.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="usb/others/hal_board.h" />
-		<Unit filename="usb/others/hal_int.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="usb/others/hal_int.h" />
-		<Unit filename="usb/others/hal_led.h" />
-		<Unit filename="usb/others/hal_mcu.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="usb/others/hal_mcu.h" />
-		<Unit filename="usb/others/hal_uart.h" />
-		<Unit filename="usb/others/hal_uart_usb.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="usb/others/util_buffer.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="usb/others/util_buffer.h" />
+		<Unit filename="util_buffer.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
 			<debugger />
 			<lib_finder disable_auto="1" />
+			<editor_config active="1" use_tabs="1" tab_indents="1" tab_width="4" indent="4" eol_mode="0" />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

@@ -8,158 +8,201 @@ Symbol Table
     .__.CPU.                                                    =  000000 L
     .__.H$L.                                                    =  000001 L
     A                                                           =  0000E0 L
- 17 A$interrupts$1411                                              000000 GR
- 17 A$interrupts$1412                                              000002 GR
- 17 A$interrupts$1413                                              000004 GR
- 17 A$interrupts$1414                                              000006 GR
- 17 A$interrupts$1415                                              000008 GR
- 17 A$interrupts$1416                                              00000A GR
- 17 A$interrupts$1417                                              00000C GR
- 17 A$interrupts$1418                                              00000E GR
- 17 A$interrupts$1419                                              000010 GR
- 17 A$interrupts$1420                                              000012 GR
- 17 A$interrupts$1421                                              000014 GR
- 17 A$interrupts$1422                                              000016 GR
- 17 A$interrupts$1423                                              000018 GR
- 17 A$interrupts$1424                                              00001A GR
- 17 A$interrupts$1425                                              00001C GR
- 17 A$interrupts$1428                                              00001F GR
- 17 A$interrupts$1431                                              000022 GR
- 17 A$interrupts$1434                                              000025 GR
- 17 A$interrupts$1435                                              000027 GR
- 17 A$interrupts$1438                                              000029 GR
- 17 A$interrupts$1439                                              00002B GR
- 17 A$interrupts$1443                                              00002D GR
- 17 A$interrupts$1444                                              00002F GR
- 17 A$interrupts$1446                                              000031 GR
- 17 A$interrupts$1447                                              000032 GR
- 17 A$interrupts$1448                                              000033 GR
- 17 A$interrupts$1449                                              000036 GR
- 17 A$interrupts$1451                                              000037 GR
- 17 A$interrupts$1452                                              000038 GR
- 17 A$interrupts$1453                                              000039 GR
- 17 A$interrupts$1456                                              00003B GR
- 17 A$interrupts$1459                                              00003E GR
- 17 A$interrupts$1460                                              000040 GR
- 17 A$interrupts$1463                                              000042 GR
- 17 A$interrupts$1464                                              000044 GR
- 17 A$interrupts$1468                                              000046 GR
- 17 A$interrupts$1469                                              000047 GR
- 17 A$interrupts$1470                                              00004A GR
- 17 A$interrupts$1472                                              00004B GR
- 17 A$interrupts$1473                                              00004C GR
- 17 A$interrupts$1474                                              00004D GR
- 17 A$interrupts$1475                                              00004F GR
- 17 A$interrupts$1476                                              000050 GR
- 17 A$interrupts$1477                                              000052 GR
- 17 A$interrupts$1478                                              000054 GR
- 17 A$interrupts$1481                                              000056 GR
- 17 A$interrupts$1482                                              000059 GR
- 17 A$interrupts$1485                                              00005C GR
- 17 A$interrupts$1486                                              00005F GR
- 17 A$interrupts$1487                                              000060 GR
+ 17 A$interrupts$1417                                              000000 GR
+ 17 A$interrupts$1418                                              000002 GR
+ 17 A$interrupts$1419                                              000004 GR
+ 17 A$interrupts$1420                                              000006 GR
+ 17 A$interrupts$1421                                              000008 GR
+ 17 A$interrupts$1422                                              00000A GR
+ 17 A$interrupts$1423                                              00000C GR
+ 17 A$interrupts$1424                                              00000E GR
+ 17 A$interrupts$1425                                              000010 GR
+ 17 A$interrupts$1426                                              000012 GR
+ 17 A$interrupts$1427                                              000014 GR
+ 17 A$interrupts$1428                                              000016 GR
+ 17 A$interrupts$1429                                              000018 GR
+ 17 A$interrupts$1430                                              00001A GR
+ 17 A$interrupts$1431                                              00001C GR
+ 17 A$interrupts$1434                                              00001F GR
+ 17 A$interrupts$1437                                              000022 GR
+ 17 A$interrupts$1440                                              000025 GR
+ 17 A$interrupts$1441                                              000028 GR
+ 17 A$interrupts$1442                                              00002A GR
+ 17 A$interrupts$1443                                              00002B GR
+ 17 A$interrupts$1444                                              00002C GR
+ 17 A$interrupts$1445                                              00002D GR
+ 17 A$interrupts$1448                                              00002E GR
+ 17 A$interrupts$1449                                              000031 GR
+ 17 A$interrupts$1450                                              000032 GR
+ 17 A$interrupts$1451                                              000033 GR
+ 17 A$interrupts$1455                                              000034 GR
+ 17 A$interrupts$1456                                              000036 GR
+ 17 A$interrupts$1458                                              000038 GR
+ 17 A$interrupts$1459                                              000039 GR
+ 17 A$interrupts$1460                                              00003A GR
+ 17 A$interrupts$1461                                              00003D GR
+ 17 A$interrupts$1463                                              00003E GR
+ 17 A$interrupts$1464                                              00003F GR
+ 17 A$interrupts$1465                                              000040 GR
+ 17 A$interrupts$1468                                              000042 GR
+ 17 A$interrupts$1471                                              000045 GR
+ 17 A$interrupts$1472                                              000048 GR
+ 17 A$interrupts$1473                                              000049 GR
+ 17 A$interrupts$1474                                              00004A GR
+ 17 A$interrupts$1475                                              00004B GR
+ 17 A$interrupts$1478                                              00004C GR
+ 17 A$interrupts$1479                                              00004F GR
+ 17 A$interrupts$1480                                              000051 GR
+ 17 A$interrupts$1481                                              000052 GR
+ 17 A$interrupts$1482                                              000053 GR
+ 17 A$interrupts$1483                                              000054 GR
+ 17 A$interrupts$1487                                              000055 GR
+ 17 A$interrupts$1488                                              000058 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 2.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 17 A$interrupts$1488                                              000061 GR
- 17 A$interrupts$1491                                              000064 GR
- 17 A$interrupts$1492                                              000067 GR
- 17 A$interrupts$1493                                              000068 GR
- 17 A$interrupts$1496                                              000069 GR
- 17 A$interrupts$1499                                              00006B GR
- 17 A$interrupts$1500                                              00006E GR
- 17 A$interrupts$1504                                              000070 GR
- 17 A$interrupts$1505                                              000073 GR
- 17 A$interrupts$1506                                              000075 GR
- 17 A$interrupts$1509                                              000076 GR
+ 17 A$interrupts$1489                                              000059 GR
+ 17 A$interrupts$1490                                              00005B GR
+ 17 A$interrupts$1491                                              00005C GR
+ 17 A$interrupts$1492                                              00005D GR
+ 17 A$interrupts$1493                                              00005E GR
+ 17 A$interrupts$1494                                              000060 GR
+ 17 A$interrupts$1495                                              000061 GR
+ 17 A$interrupts$1496                                              000064 GR
+ 17 A$interrupts$1497                                              000065 GR
+ 17 A$interrupts$1498                                              000066 GR
+ 17 A$interrupts$1499                                              000067 GR
+ 17 A$interrupts$1500                                              000068 GR
+ 17 A$interrupts$1501                                              000069 GR
+ 17 A$interrupts$1502                                              00006A GR
+ 17 A$interrupts$1503                                              00006B GR
+ 17 A$interrupts$1504                                              00006D GR
+ 17 A$interrupts$1505                                              00006E GR
+ 17 A$interrupts$1506                                              000070 GR
+ 17 A$interrupts$1507                                              000072 GR
+ 17 A$interrupts$1510                                              000074 GR
+ 17 A$interrupts$1511                                              000077 GR
  17 A$interrupts$1512                                              000078 GR
- 17 A$interrupts$1516                                              00007B GR
- 17 A$interrupts$1517                                              00007E GR
- 17 A$interrupts$1518                                              000081 GR
- 17 A$interrupts$1519                                              000084 GR
- 17 A$interrupts$1520                                              000087 GR
- 17 A$interrupts$1524                                              00008A GR
+ 17 A$interrupts$1513                                              000079 GR
+ 17 A$interrupts$1514                                              00007A GR
+ 17 A$interrupts$1515                                              00007B GR
+ 17 A$interrupts$1516                                              00007C GR
+ 17 A$interrupts$1517                                              00007F GR
+ 17 A$interrupts$1520                                              000082 GR
+ 17 A$interrupts$1521                                              000085 GR
+ 17 A$interrupts$1522                                              000086 GR
+ 17 A$interrupts$1523                                              000087 GR
+ 17 A$interrupts$1526                                              00008A GR
  17 A$interrupts$1527                                              00008D GR
- 17 A$interrupts$1528                                              00008F GR
- 17 A$interrupts$1529                                              000091 GR
- 17 A$interrupts$1530                                              000092 GR
- 17 A$interrupts$1531                                              000094 GR
- 17 A$interrupts$1532                                              000096 GR
- 17 A$interrupts$1533                                              000098 GR
- 17 A$interrupts$1534                                              00009A GR
- 17 A$interrupts$1535                                              00009C GR
- 17 A$interrupts$1536                                              00009E GR
- 17 A$interrupts$1537                                              0000A0 GR
- 17 A$interrupts$1538                                              0000A2 GR
- 17 A$interrupts$1539                                              0000A4 GR
- 17 A$interrupts$1540                                              0000A6 GR
- 17 A$interrupts$1541                                              0000A8 GR
- 17 A$interrupts$1542                                              0000AA GR
- 17 A$interrupts$1543                                              0000AC GR
- 17 A$interrupts$1544                                              0000AE GR
- 17 A$interrupts$1547                                              0000B0 GR
- 17 A$interrupts$1560                                              0000B1 GR
- 17 A$interrupts$1563                                              0000B3 GR
- 17 A$interrupts$1564                                              0000B6 GR
- 17 A$interrupts$1565                                              0000B8 GR
- 17 A$interrupts$1568                                              0000B9 GR
- 17 A$interrupts$1571                                              0000BC GR
- 17 A$interrupts$1574                                              0000BF GR
- 17 A$interrupts$1577                                              0000C2 GR
- 17 A$interrupts$1580                                              0000C5 GR
- 17 A$interrupts$1581                                              0000C7 GR
- 17 A$interrupts$1584                                              0000CA GR
- 17 A$interrupts$1595                                              0000CB GR
- 17 A$interrupts$1596                                              0000CD GR
- 17 A$interrupts$1597                                              0000CF GR
- 17 A$interrupts$1598                                              0000D1 GR
- 17 A$interrupts$1599                                              0000D3 GR
- 17 A$interrupts$1600                                              0000D5 GR
- 17 A$interrupts$1603                                              0000D8 GR
+ 17 A$interrupts$1528                                              00008E GR
+ 17 A$interrupts$1531                                              00008F GR
+ 17 A$interrupts$1534                                              000091 GR
+ 17 A$interrupts$1535                                              000094 GR
+ 17 A$interrupts$1536                                              000096 GR
+ 17 A$interrupts$1537                                              000097 GR
+ 17 A$interrupts$1541                                              000099 GR
+ 17 A$interrupts$1542                                              00009C GR
+ 17 A$interrupts$1543                                              00009E GR
+ 17 A$interrupts$1546                                              00009F GR
+ 17 A$interrupts$1549                                              0000A1 GR
+ 17 A$interrupts$1550                                              0000A4 GR
+ 17 A$interrupts$1551                                              0000A6 GR
+ 17 A$interrupts$1555                                              0000A7 GR
+ 17 A$interrupts$1556                                              0000AA GR
+ 17 A$interrupts$1557                                              0000AC GR
+ 17 A$interrupts$1558                                              0000AD GR
+ 17 A$interrupts$1559                                              0000AE GR
+ 17 A$interrupts$1560                                              0000AF GR
+ 17 A$interrupts$1561                                              0000B0 GR
+ 17 A$interrupts$1562                                              0000B3 GR
+ 17 A$interrupts$1563                                              0000B6 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 3.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 17 A$interrupts$1606                                              0000DB GR
- 17 A$interrupts$1609                                              0000DE GR
- 17 A$interrupts$1610                                              0000E0 GR
- 17 A$interrupts$1611                                              0000E2 GR
- 17 A$interrupts$1612                                              0000E3 GR
- 17 A$interrupts$1615                                              0000E5 GR
- 17 A$interrupts$1616                                              0000E8 GR
- 17 A$interrupts$1617                                              0000E9 GR
- 17 A$interrupts$1618                                              0000EA GR
- 17 A$interrupts$1619                                              0000EB GR
- 17 A$interrupts$1620                                              0000EC GR
- 17 A$interrupts$1621                                              0000EE GR
- 17 A$interrupts$1622                                              0000F0 GR
- 17 A$interrupts$1623                                              0000F2 GR
- 17 A$interrupts$1624                                              0000F4 GR
- 17 A$interrupts$1627                                              0000F6 GR
- 17 A$interrupts$1641                                              0000F7 GR
- 17 A$interrupts$1644                                              0000FA GR
- 17 A$interrupts$1647                                              0000FD GR
- 17 A$interrupts$1648                                              0000FF GR
- 17 A$interrupts$1649                                              000101 GR
- 17 A$interrupts$1650                                              000102 GR
- 17 A$interrupts$1653                                              000104 GR
- 17 A$interrupts$1666                                              000105 GR
- 17 A$interrupts$1669                                              000108 GR
- 17 A$interrupts$1682                                              000109 GR
- 17 A$interrupts$1685                                              00010C GR
- 17 A$interrupts$1688                                              00010F GR
- 17 A$interrupts$1691                                              000112 GR
- 17 A$interrupts$1694                                              000115 GR
- 17 A$interrupts$1697                                              000118 GR
- 17 A$interrupts$1698                                              00011A GR
- 17 A$interrupts$1699                                              00011C GR
- 17 A$interrupts$1700                                              00011D GR
- 17 A$interrupts$1703                                              00011F GR
- 17 A$interrupts$1704                                              000121 GR
- 17 A$interrupts$1707                                              000124 GR
+ 17 A$interrupts$1567                                              0000B9 GR
+ 17 A$interrupts$1570                                              0000BC GR
+ 17 A$interrupts$1571                                              0000BE GR
+ 17 A$interrupts$1572                                              0000C0 GR
+ 17 A$interrupts$1573                                              0000C1 GR
+ 17 A$interrupts$1574                                              0000C3 GR
+ 17 A$interrupts$1575                                              0000C5 GR
+ 17 A$interrupts$1576                                              0000C7 GR
+ 17 A$interrupts$1577                                              0000C9 GR
+ 17 A$interrupts$1578                                              0000CB GR
+ 17 A$interrupts$1579                                              0000CD GR
+ 17 A$interrupts$1580                                              0000CF GR
+ 17 A$interrupts$1581                                              0000D1 GR
+ 17 A$interrupts$1582                                              0000D3 GR
+ 17 A$interrupts$1583                                              0000D5 GR
+ 17 A$interrupts$1584                                              0000D7 GR
+ 17 A$interrupts$1585                                              0000D9 GR
+ 17 A$interrupts$1586                                              0000DB GR
+ 17 A$interrupts$1587                                              0000DD GR
+ 17 A$interrupts$1590                                              0000DF GR
+ 17 A$interrupts$1603                                              0000E0 GR
+ 17 A$interrupts$1606                                              0000E2 GR
+ 17 A$interrupts$1607                                              0000E5 GR
+ 17 A$interrupts$1608                                              0000E7 GR
+ 17 A$interrupts$1611                                              0000E8 GR
+ 17 A$interrupts$1614                                              0000EB GR
+ 17 A$interrupts$1617                                              0000EE GR
+ 17 A$interrupts$1620                                              0000F1 GR
+ 17 A$interrupts$1623                                              0000F4 GR
+ 17 A$interrupts$1624                                              0000F6 GR
+ 17 A$interrupts$1627                                              0000F9 GR
+ 17 A$interrupts$1638                                              0000FA GR
+ 17 A$interrupts$1639                                              0000FC GR
+ 17 A$interrupts$1640                                              0000FE GR
+ 17 A$interrupts$1641                                              000100 GR
+ 17 A$interrupts$1642                                              000102 GR
+ 17 A$interrupts$1643                                              000104 GR
+ 17 A$interrupts$1646                                              000107 GR
+ 17 A$interrupts$1649                                              00010A GR
+ 17 A$interrupts$1652                                              00010D GR
+ 17 A$interrupts$1653                                              00010F GR
+ 17 A$interrupts$1654                                              000111 GR
+ 17 A$interrupts$1655                                              000112 GR
+ 17 A$interrupts$1658                                              000114 GR
+ 17 A$interrupts$1659                                              000117 GR
+ 17 A$interrupts$1660                                              000118 GR
+ 17 A$interrupts$1661                                              000119 GR
+ 17 A$interrupts$1662                                              00011A GR
+ 17 A$interrupts$1663                                              00011B GR
+ 17 A$interrupts$1664                                              00011D GR
+ 17 A$interrupts$1665                                              00011F GR
+ 17 A$interrupts$1666                                              000121 GR
+ 17 A$interrupts$1667                                              000123 GR
+ 17 A$interrupts$1670                                              000125 GR
+ 17 A$interrupts$1684                                              000126 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 4.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 A$interrupts$1687                                              000129 GR
+ 17 A$interrupts$1690                                              00012C GR
+ 17 A$interrupts$1691                                              00012E GR
+ 17 A$interrupts$1692                                              000130 GR
+ 17 A$interrupts$1693                                              000131 GR
+ 17 A$interrupts$1696                                              000133 GR
+ 17 A$interrupts$1709                                              000134 GR
+ 17 A$interrupts$1712                                              000137 GR
+ 17 A$interrupts$1725                                              000138 GR
+ 17 A$interrupts$1728                                              00013B GR
+ 17 A$interrupts$1731                                              00013E GR
+ 17 A$interrupts$1734                                              000141 GR
+ 17 A$interrupts$1737                                              000144 GR
+ 17 A$interrupts$1740                                              000147 GR
+ 17 A$interrupts$1741                                              000149 GR
+ 17 A$interrupts$1742                                              00014B GR
+ 17 A$interrupts$1743                                              00014C GR
+ 17 A$interrupts$1746                                              00014E GR
+ 17 A$interrupts$1747                                              000150 GR
+ 17 A$interrupts$1750                                              000153 GR
     A.0                                                         =  0000E0 L
     A.1                                                         =  0000E1 L
     A.2                                                         =  0000E2 L
@@ -178,11 +221,6 @@ Symbol Table
     ACC.5                                                       =  0000E5 L
     ACC.6                                                       =  0000E6 L
     ACC.7                                                       =  0000E7 L
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 4.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     B                                                           =  0000F0 L
     B.0                                                         =  0000F0 L
     B.1                                                         =  0000F1 L
@@ -192,64 +230,64 @@ Symbol Table
     B.5                                                         =  0000F5 L
     B.6                                                         =  0000F6 L
     B.7                                                         =  0000F7 L
- 17 C$interrupts.c$100$1$42                                     =  000109 GR
- 17 C$interrupts.c$103$1$42                                     =  00010C GR
- 17 C$interrupts.c$104$1$42                                     =  00010F GR
- 17 C$interrupts.c$107$1$42                                     =  000112 GR
- 17 C$interrupts.c$110$1$42                                     =  000115 GR
- 17 C$interrupts.c$113$1$42                                     =  000118 GR
- 17 C$interrupts.c$116$1$42                                     =  00011F GR
- 17 C$interrupts.c$117$1$42                                     =  000124 GR
- 17 C$interrupts.c$14$0$0                                       =  000000 GR
- 17 C$interrupts.c$21$1$27                                      =  00001F GR
- 17 C$interrupts.c$22$1$27                                      =  000022 GR
- 17 C$interrupts.c$24$1$27                                      =  000025 GR
- 17 C$interrupts.c$25$1$27                                      =  000046 GR
- 17 C$interrupts.c$26$1$27                                      =  00002D GR
- 17 C$interrupts.c$27$2$28                                      =  00003B GR
- 17 C$interrupts.c$28$3$29                                      =  00003E GR
- 17 C$interrupts.c$29$3$29                                      =  000042 GR
- 17 C$interrupts.c$33$1$27                                      =  000056 GR
- 17 C$interrupts.c$34$2$30                                      =  00005C GR
- 17 C$interrupts.c$35$3$31                                      =  000064 GR
- 17 C$interrupts.c$36$3$31                                      =  000069 GR
- 17 C$interrupts.c$37$3$31                                      =  00006B GR
- 17 C$interrupts.c$39$3$32                                      =  000070 GR
- 17 C$interrupts.c$40$3$32                                      =  000076 GR
- 17 C$interrupts.c$41$3$32                                      =  000078 GR
- 17 C$interrupts.c$43$2$30                                      =  00007B GR
- 17 C$interrupts.c$47$1$27                                      =  00008A GR
- 17 C$interrupts.c$48$1$27                                      =  00008D GR
- 17 C$interrupts.c$49$1$27                                      =  0000B0 GR
- 17 C$interrupts.c$51$1$27                                      =  0000B1 GR
- 17 C$interrupts.c$53$1$34                                      =  0000B1 GR
- 17 C$interrupts.c$54$1$34                                      =  0000B3 GR
- 17 C$interrupts.c$57$1$34                                      =  0000B9 GR
- 17 C$interrupts.c$58$1$34                                      =  0000BC GR
- 17 C$interrupts.c$61$1$34                                      =  0000BF GR
- 17 C$interrupts.c$64$1$34                                      =  0000C2 GR
- 17 C$interrupts.c$65$1$34                                      =  0000C5 GR
- 17 C$interrupts.c$66$1$34                                      =  0000CA GR
- 17 C$interrupts.c$68$1$34                                      =  0000CB GR
- 17 C$interrupts.c$70$1$36                                      =  0000D8 GR
- 17 C$interrupts.c$73$1$36                                      =  0000DB GR
- 17 C$interrupts.c$74$1$36                                      =  0000DE GR
- 17 C$interrupts.c$77$1$36                                      =  0000E5 GR
- 17 C$interrupts.c$81$1$36                                      =  0000F6 GR
- 17 C$interrupts.c$83$1$36                                      =  0000F7 GR
- 17 C$interrupts.c$85$1$38                                      =  0000F7 GR
+ 17 C$interrupts.c$102$1$40                                     =  00013B GR
+ 17 C$interrupts.c$103$1$40                                     =  00013E GR
+ 17 C$interrupts.c$106$1$40                                     =  000141 GR
+ 17 C$interrupts.c$109$1$40                                     =  000144 GR
+ 17 C$interrupts.c$112$1$40                                     =  000147 GR
+ 17 C$interrupts.c$115$1$40                                     =  00014E GR
+ 17 C$interrupts.c$116$1$40                                     =  000153 GR
+ 17 C$interrupts.c$13$0$0                                       =  000000 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 5.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 17 C$interrupts.c$88$1$38                                      =  0000FA GR
- 17 C$interrupts.c$91$1$38                                      =  0000FD GR
- 17 C$interrupts.c$92$1$38                                      =  000104 GR
- 17 C$interrupts.c$94$1$38                                      =  000105 GR
- 17 C$interrupts.c$95$1$40                                      =  000105 GR
- 17 C$interrupts.c$96$1$40                                      =  000108 GR
- 17 C$interrupts.c$98$1$40                                      =  000109 GR
+ 17 C$interrupts.c$20$1$25                                      =  00001F GR
+ 17 C$interrupts.c$21$1$25                                      =  000022 GR
+ 17 C$interrupts.c$23$1$25                                      =  000025 GR
+ 17 C$interrupts.c$24$1$25                                      =  000055 GR
+ 17 C$interrupts.c$25$1$25                                      =  000034 GR
+ 17 C$interrupts.c$26$2$26                                      =  000042 GR
+ 17 C$interrupts.c$27$3$27                                      =  000045 GR
+ 17 C$interrupts.c$28$3$27                                      =  00004C GR
+ 17 C$interrupts.c$32$1$25                                      =  000074 GR
+ 17 C$interrupts.c$33$2$28                                      =  000082 GR
+ 17 C$interrupts.c$34$3$29                                      =  00008A GR
+ 17 C$interrupts.c$35$3$29                                      =  00008F GR
+ 17 C$interrupts.c$36$3$29                                      =  000091 GR
+ 17 C$interrupts.c$38$3$30                                      =  000099 GR
+ 17 C$interrupts.c$39$3$30                                      =  00009F GR
+ 17 C$interrupts.c$40$3$30                                      =  0000A1 GR
+ 17 C$interrupts.c$42$2$28                                      =  0000A7 GR
+ 17 C$interrupts.c$46$1$25                                      =  0000B9 GR
+ 17 C$interrupts.c$47$1$25                                      =  0000BC GR
+ 17 C$interrupts.c$48$1$25                                      =  0000DF GR
+ 17 C$interrupts.c$50$1$25                                      =  0000E0 GR
+ 17 C$interrupts.c$52$1$32                                      =  0000E0 GR
+ 17 C$interrupts.c$53$1$32                                      =  0000E2 GR
+ 17 C$interrupts.c$56$1$32                                      =  0000E8 GR
+ 17 C$interrupts.c$57$1$32                                      =  0000EB GR
+ 17 C$interrupts.c$60$1$32                                      =  0000EE GR
+ 17 C$interrupts.c$63$1$32                                      =  0000F1 GR
+ 17 C$interrupts.c$64$1$32                                      =  0000F4 GR
+ 17 C$interrupts.c$65$1$32                                      =  0000F9 GR
+ 17 C$interrupts.c$67$1$32                                      =  0000FA GR
+ 17 C$interrupts.c$69$1$34                                      =  000107 GR
+ 17 C$interrupts.c$72$1$34                                      =  00010A GR
+ 17 C$interrupts.c$73$1$34                                      =  00010D GR
+ 17 C$interrupts.c$76$1$34                                      =  000114 GR
+ 17 C$interrupts.c$80$1$34                                      =  000125 GR
+ 17 C$interrupts.c$82$1$34                                      =  000126 GR
+ 17 C$interrupts.c$84$1$36                                      =  000126 GR
+ 17 C$interrupts.c$87$1$36                                      =  000129 GR
+ 17 C$interrupts.c$90$1$36                                      =  00012C GR
+ 17 C$interrupts.c$91$1$36                                      =  000133 GR
+ 17 C$interrupts.c$93$1$36                                      =  000134 GR
+ 17 C$interrupts.c$94$1$38                                      =  000134 GR
+ 17 C$interrupts.c$95$1$38                                      =  000137 GR
+ 17 C$interrupts.c$97$1$38                                      =  000138 GR
+ 17 C$interrupts.c$99$1$40                                      =  000138 GR
     CPRL2                                                       =  0000C8 L
     CT2                                                         =  0000C9 L
     CY                                                          =  0000D7 L
@@ -260,6 +298,11 @@ Symbol Table
     ET0                                                         =  0000A9 L
     ET1                                                         =  0000AB L
     ET2                                                         =  0000AD L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 6.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     EX0                                                         =  0000A8 L
     EX1                                                         =  0000AA L
     EXEN2                                                       =  0000CB L
@@ -298,11 +341,6 @@ Symbol Table
     G$B_5$0$0                                                   =  0000F5 G
     G$B_6$0$0                                                   =  0000F6 G
     G$B_7$0$0                                                   =  0000F7 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 6.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     G$CHANNR$0$0                                                =  00DF06 G
     G$CLKCON$0$0                                                =  0000C6 G
     G$CY$0$0                                                    =  0000D7 G
@@ -320,6 +358,11 @@ Symbol Table
     G$DPH1$0$0                                                  =  000085 G
     G$DPL0$0$0                                                  =  000082 G
     G$DPL1$0$0                                                  =  000084 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 7.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     G$DPS$0$0                                                   =  000092 G
     G$EA$0$0                                                    =  0000AF G
     G$ENCCS$0$0                                                 =  0000B3 G
@@ -358,11 +401,6 @@ Symbol Table
     G$I2SDATH$0$0                                               =  00DF43 G
     G$I2SDATL$0$0                                               =  00DF42 G
     G$I2SSTAT$0$0                                               =  00DF45 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 7.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     G$I2SWCNT$0$0                                               =  00DF44 G
     G$IEN0$0$0                                                  =  0000A8 G
     G$IEN1$0$0                                                  =  0000B8 G
@@ -380,6 +418,11 @@ Symbol Table
     G$MARCSTATE$0$0                                             =  00DF3B G
     G$MCSM0$0$0                                                 =  00DF14 G
     G$MCSM1$0$0                                                 =  00DF13 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 8.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     G$MCSM2$0$0                                                 =  00DF12 G
     G$MDMCFG0$0$0                                               =  00DF10 G
     G$MDMCFG1$0$0                                               =  00DF0F G
@@ -418,11 +461,6 @@ Symbol Table
     G$P1_0$0$0                                                  =  000090 G
     G$P1_1$0$0                                                  =  000091 G
     G$P1_2$0$0                                                  =  000092 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 8.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     G$P1_3$0$0                                                  =  000093 G
     G$P1_4$0$0                                                  =  000094 G
     G$P1_5$0$0                                                  =  000095 G
@@ -440,6 +478,11 @@ Symbol Table
     G$P2_3$0$0                                                  =  0000A3 G
     G$P2_4$0$0                                                  =  0000A4 G
     G$P2_5$0$0                                                  =  0000A5 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 9.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     G$P2_6$0$0                                                  =  0000A6 G
     G$P2_7$0$0                                                  =  0000A7 G
     G$PARTNUM$0$0                                               =  00DF36 G
@@ -478,11 +521,6 @@ Symbol Table
     G$SLAVE$0$0                                                 =  0000FD G
     G$SLEEP$0$0                                                 =  0000BE G
     G$SP$0$0                                                    =  000081 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 9.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     G$STIE$0$0                                                  =  0000AD G
     G$STIF$0$0                                                  =  0000C7 G
     G$SYNC0$0$0                                                 =  00DF01 G
@@ -500,6 +538,11 @@ Symbol Table
     G$T1CNTL$0$0                                                =  0000E2 G
     G$T1CTL$0$0                                                 =  0000E4 G
     G$T1IE$0$0                                                  =  0000B9 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 10.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     G$T1IF$0$0                                                  =  0000C1 G
     G$T2CT$0$0                                                  =  00009C G
     G$T2CTL$0$0                                                 =  00009E G
@@ -532,17 +575,12 @@ Symbol Table
     G$TEST0$0$0                                                 =  00DF25 G
     G$TEST1$0$0                                                 =  00DF24 G
     G$TEST2$0$0                                                 =  00DF23 G
- 17 G$TIMER1_ISR$0$0                                            =  0000CB GR
+ 17 G$TIMER1_ISR$0$0                                            =  0000FA GR
     G$TIMIF$0$0                                                 =  0000D8 G
     G$TX_BYTE$0$0                                               =  0000F9 G
     G$U0BAUD$0$0                                                =  0000C2 G
     G$U0CSR$0$0                                                 =  000086 G
     G$U0DBUF$0$0                                                =  0000C1 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 10.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     G$U0GCR$0$0                                                 =  0000C5 G
     G$U0UCR$0$0                                                 =  0000C4 G
     G$U1BAUD$0$0                                                =  0000FA G
@@ -560,6 +598,11 @@ Symbol Table
     G$VERSION$0$0                                               =  00DF37 G
     G$WDCTL$0$0                                                 =  0000C9 G
     G$WDTIF$0$0                                                 =  0000EC G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 11.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     G$WORCTRL$0$0                                               =  0000A2 G
     G$WOREVT0$0$0                                               =  0000A3 G
     G$WOREVT1$0$0                                               =  0000A4 G
@@ -598,11 +641,6 @@ Symbol Table
     G$X_P1IEN$0$0                                               =  00DF8D G
     G$X_P1IFG$0$0                                               =  00DF8A G
     G$X_P1INP$0$0                                               =  00DFF6 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 11.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     G$X_P1SEL$0$0                                               =  00DFF4 G
     G$X_P2DIR$0$0                                               =  00DFFF G
     G$X_P2IFG$0$0                                               =  00DF8B G
@@ -620,6 +658,11 @@ Symbol Table
     G$X_T1CC0H$0$0                                              =  00DFDB G
     G$X_T1CC0L$0$0                                              =  00DFDA G
     G$X_T1CC1H$0$0                                              =  00DFDD G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 12.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     G$X_T1CC1L$0$0                                              =  00DFDC G
     G$X_T1CC2H$0$0                                              =  00DFDF G
     G$X_T1CC2L$0$0                                              =  00DFDE G
@@ -658,11 +701,6 @@ Symbol Table
     G$X_WDCTL$0$0                                               =  00DFC9 G
     G$X_WORCTRL$0$0                                             =  00DFA2 G
     G$X_WOREVT0$0$0                                             =  00DFA3 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 12.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     G$X_WOREVT1$0$0                                             =  00DFA4 G
     G$X_WORIRQ$0$0                                              =  00DFA1 G
     G$X_WORTIME0$0$0                                            =  00DFA5 G
@@ -680,6 +718,11 @@ Symbol Table
     G$_NA_IP0$0$0                                               =  00DFA9 G
     G$_NA_IP1$0$0                                               =  00DFB9 G
     G$_NA_IRCON$0$0                                             =  00DFC0 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 13.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     G$_NA_IRCON2$0$0                                            =  00DFE8 G
     G$_NA_P0$0$0                                                =  00DF80 G
     G$_NA_P1$0$0                                                =  00DF90 G
@@ -718,11 +761,6 @@ Symbol Table
     G$_X_SFR95$0$0                                              =  00DF95 G
     G$_X_SFR96$0$0                                              =  00DF96 G
     G$_X_SFR97$0$0                                              =  00DF97 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 13.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     G$_X_SFR99$0$0                                              =  00DF99 G
     G$_X_SFR9F$0$0                                              =  00DF9F G
     G$_X_SFRA7$0$0                                              =  00DFA7 G
@@ -732,14 +770,19 @@ Symbol Table
     G$_X_SFRBF$0$0                                              =  00DFBF G
     G$_X_SFRC3$0$0                                              =  00DFC3 G
     G$_X_SFRC8$0$0                                              =  00DFC8 G
- 17 G$enablePushButtonInt$0$0                                   =  0000B1 GR
- 17 G$enableTimerInt$0$0                                        =  000109 GR
- 17 G$resetTimerCounter$0$0                                     =  000105 GR
- 17 G$stopTimerInt$0$0                                          =  0000F7 GR
+ 17 G$enablePushButtonInt$0$0                                   =  0000E0 GR
+ 17 G$enableTimerInt$0$0                                        =  000138 GR
+ 17 G$resetTimerCounter$0$0                                     =  000134 GR
+ 17 G$stopTimerInt$0$0                                          =  000126 GR
     IE                                                          =  0000A8 L
     IE.0                                                        =  0000A8 L
     IE.1                                                        =  0000A9 L
     IE.2                                                        =  0000AA L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 14.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     IE.3                                                        =  0000AB L
     IE.4                                                        =  0000AC L
     IE.5                                                        =  0000AD L
@@ -757,7 +800,9 @@ Symbol Table
     IP.5                                                        =  0000BD L
     IT0                                                         =  000088 L
     IT1                                                         =  00008A L
-  6 Linterrupts.PORT1_ISR$txString$1$27                         =  000000 GR
+  B Linterrupts.PORT1_ISR$j$1$25                                =  000000 GR
+  B Linterrupts.PORT1_ISR$modeChange$1$25                       =  000002 GR
+  B Linterrupts.PORT1_ISR$txString$1$25                         =  000004 GR
     OV                                                          =  0000D2 L
     P                                                           =  0000D0 L
     P0                                                          =  000080 L
@@ -778,11 +823,6 @@ Symbol Table
     P1.5                                                        =  000095 L
     P1.6                                                        =  000096 L
     P1.7                                                        =  000097 L
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 14.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     P2                                                          =  0000A0 L
     P2.0                                                        =  0000A0 L
     P2.1                                                        =  0000A1 L
@@ -798,6 +838,11 @@ Symbol Table
     P3.2                                                        =  0000B2 L
     P3.3                                                        =  0000B3 L
     P3.4                                                        =  0000B4 L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 15.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     P3.5                                                        =  0000B5 L
     P3.6                                                        =  0000B6 L
     P3.7                                                        =  0000B7 L
@@ -838,11 +883,6 @@ Symbol Table
     SCON.7                                                      =  00009F L
     SM0                                                         =  00009F L
     SM1                                                         =  00009E L
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 15.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     SM2                                                         =  00009D L
     SP                                                          =  000081 L
     T2CON                                                       =  0000C8 L
@@ -858,6 +898,11 @@ Symbol Table
     TCLK                                                        =  0000CC L
     TCON                                                        =  000088 L
     TCON.0                                                      =  000088 L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 16.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     TCON.1                                                      =  000089 L
     TCON.2                                                      =  00008A L
     TCON.3                                                      =  00008B L
@@ -880,12 +925,12 @@ Symbol Table
     TR1                                                         =  00008E L
     TR2                                                         =  0000CA L
     TXD                                                         =  0000B1 L
- 17 XG$PORT1_ISR$0$0                                            =  0000B0 GR
- 17 XG$TIMER1_ISR$0$0                                           =  0000F6 GR
- 17 XG$enablePushButtonInt$0$0                                  =  0000CA GR
- 17 XG$enableTimerInt$0$0                                       =  000124 GR
- 17 XG$resetTimerCounter$0$0                                    =  000108 GR
- 17 XG$stopTimerInt$0$0                                         =  000104 GR
+ 17 XG$PORT1_ISR$0$0                                            =  0000DF GR
+ 17 XG$TIMER1_ISR$0$0                                           =  000125 GR
+ 17 XG$enablePushButtonInt$0$0                                  =  0000F9 GR
+ 17 XG$enableTimerInt$0$0                                       =  000153 GR
+ 17 XG$resetTimerCounter$0$0                                    =  000137 GR
+ 17 XG$stopTimerInt$0$0                                         =  000133 GR
     _AC                                                         =  0000D6 G
     _ACC                                                        =  0000E0 G
     _ACC_0                                                      =  0000E0 G
@@ -898,11 +943,6 @@ Symbol Table
     _ACC_7                                                      =  0000E7 G
     _ACTIVE                                                     =  0000F8 G
     _ADCCFG                                                     =  0000F2 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 16.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     _ADCCON1                                                    =  0000B4 G
     _ADCCON2                                                    =  0000B5 G
     _ADCCON3                                                    =  0000B6 G
@@ -918,6 +958,11 @@ Symbol Table
     _BSCFG                                                      =  00DF16 G
     _B_0                                                        =  0000F0 G
     _B_1                                                        =  0000F1 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 17.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     _B_2                                                        =  0000F2 G
     _B_3                                                        =  0000F3 G
     _B_4                                                        =  0000F4 G
@@ -958,11 +1003,6 @@ Symbol Table
     _FE                                                         =  0000FC G
     _FOCCFG                                                     =  00DF15 G
     _FREND0                                                     =  00DF1B G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 17.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     _FREND1                                                     =  00DF1A G
     _FREQ0                                                      =  00DF0B G
     _FREQ1                                                      =  00DF0A G
@@ -978,6 +1018,11 @@ Symbol Table
     _FWT                                                        =  0000AB G
     _I2SCFG0                                                    =  00DF40 G
     _I2SCFG1                                                    =  00DF41 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 18.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     _I2SCLKF0                                                   =  00DF46 G
     _I2SCLKF1                                                   =  00DF47 G
     _I2SCLKF2                                                   =  00DF48 G
@@ -1018,11 +1063,6 @@ Symbol Table
     _P0DIR                                                      =  0000FD G
     _P0IE                                                       =  0000BD G
     _P0IF                                                       =  0000C5 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 18.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     _P0IFG                                                      =  000089 G
     _P0INP                                                      =  00008F G
     _P0SEL                                                      =  0000F3 G
@@ -1038,6 +1078,11 @@ Symbol Table
     _P1DIR                                                      =  0000FE G
     _P1IEN                                                      =  00008D G
     _P1IF                                                       =  0000EB G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 19.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     _P1IFG                                                      =  00008A G
     _P1INP                                                      =  0000F6 G
     _P1SEL                                                      =  0000F4 G
@@ -1078,14 +1123,11 @@ Symbol Table
     _PKTCTRL0                                                   =  00DF04 G
     _PKTCTRL1                                                   =  00DF03 G
     _PKTLEN                                                     =  00DF02 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 19.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     _PKTSTATUS                                                  =  00DF3C G
  17 _PORT1_ISR                                                     000000 GR
-  6 _PORT1_ISR_txString_1_27                                       000000 R
+  B _PORT1_ISR_j_1_25                                              000000 R
+  B _PORT1_ISR_modeChange_1_25                                     000002 R
+  B _PORT1_ISR_txString_1_25                                       000004 R
     _PSW                                                        =  0000D0 G
     _RE                                                         =  0000FE G
     _RFD                                                        =  0000D9 G
@@ -1096,6 +1138,11 @@ Symbol Table
     _RFTXRXIF                                                   =  000089 G
     _RNDH                                                       =  0000BD G
     _RNDL                                                       =  0000BC G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 20.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     _RS0                                                        =  0000D3 G
     _RS1                                                        =  0000D4 G
     _RSSI                                                       =  00DF3A G
@@ -1138,11 +1185,6 @@ Symbol Table
     _T3CTL                                                      =  0000CB G
     _T3IE                                                       =  0000BB G
     _T3IF                                                       =  0000C3 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 20.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     _T3OVFIF                                                    =  0000D8 G
     _T4CC0                                                      =  0000ED G
     _T4CC1                                                      =  0000EF G
@@ -1156,10 +1198,15 @@ Symbol Table
     _T4IF                                                       =  0000C4 G
     _T4OVFIF                                                    =  0000DB G
     _TCON                                                       =  000088 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 21.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     _TEST0                                                      =  00DF25 G
     _TEST1                                                      =  00DF24 G
     _TEST2                                                      =  00DF23 G
- 17 _TIMER1_ISR                                                    0000CB GR
+ 17 _TIMER1_ISR                                                    0000FA GR
     _TIMIF                                                      =  0000D8 G
     _TX_BYTE                                                    =  0000F9 G
     _U0BAUD                                                     =  0000C2 G
@@ -1198,11 +1245,6 @@ Symbol Table
     _X_DMA0CFGH                                                 =  00DFD5 G
     _X_DMA0CFGL                                                 =  00DFD4 G
     _X_DMA1CFGH                                                 =  00DFD3 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 21.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     _X_DMA1CFGL                                                 =  00DFD2 G
     _X_DMAARM                                                   =  00DFD6 G
     _X_DMAIRQ                                                   =  00DFD1 G
@@ -1216,6 +1258,11 @@ Symbol Table
     _X_FWDATA                                                   =  00DFAF G
     _X_FWT                                                      =  00DFAB G
     _X_MEMCTR                                                   =  00DFC7 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 22.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     _X_MPAGE                                                    =  00DF93 G
     _X_P0DIR                                                    =  00DFFD G
     _X_P0IFG                                                    =  00DF89 G
@@ -1258,11 +1305,6 @@ Symbol Table
     _X_T3CC1                                                    =  00DFCF G
     _X_T3CCTL0                                                  =  00DFCC G
     _X_T3CCTL1                                                  =  00DFCE G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 22.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     _X_T3CNT                                                    =  00DFCA G
     _X_T3CTL                                                    =  00DFCB G
     _X_T4CC0                                                    =  00DFED G
@@ -1276,6 +1318,11 @@ Symbol Table
     _X_U0CSR                                                    =  00DF86 G
     _X_U0DBUF                                                   =  00DFC1 G
     _X_U0GCR                                                    =  00DFC5 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 23.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     _X_U0UCR                                                    =  00DFC4 G
     _X_U1BAUD                                                   =  00DFFA G
     _X_U1CSR                                                    =  00DFF8 G
@@ -1318,11 +1365,6 @@ Symbol Table
     __SFR96                                                     =  000096 G
     __SFR97                                                     =  000097 G
     __SFR99                                                     =  000099 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 23.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     __SFR9F                                                     =  00009F G
     __SFRA7                                                     =  0000A7 G
     __SFRAA                                                     =  0000AA G
@@ -1336,6 +1378,11 @@ Symbol Table
     __XREGDF21                                                  =  00DF21 G
     __XREGDF22                                                  =  00DF22 G
     __XREGDF26                                                  =  00DF26 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 24.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     __XREGDF32                                                  =  00DF32 G
     __XREGDF33                                                  =  00DF33 G
     __XREGDF34                                                  =  00DF34 G
@@ -1354,12 +1401,12 @@ Symbol Table
     __X_SFRBF                                                   =  00DFBF G
     __X_SFRC3                                                   =  00DFC3 G
     __X_SFRC8                                                   =  00DFC8 G
- 17 _enablePushButtonInt                                           0000B1 GR
- 17 _enableTimerInt                                                000109 GR
+ 17 _enablePushButtonInt                                           0000E0 GR
+ 17 _enableTimerInt                                                000138 GR
     _halUartWrite                                                  ****** GX
     _halUartWrite_PARM_2                                           ****** GX
- 17 _resetTimerCounter                                             000105 GR
- 17 _stopTimerInt                                                  0000F7 GR
+ 17 _resetTimerCounter                                             000134 GR
+ 17 _stopTimerInt                                                  000126 GR
     _txFilterEnabled                                               ****** GX
     _uartRxIndex                                                   ****** GX
     a                                                           =  0000E0 L
@@ -1378,11 +1425,6 @@ Symbol Table
     acc.2                                                       =  0000E2 L
     acc.3                                                       =  0000E3 L
     acc.4                                                       =  0000E4 L
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 24.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     acc.5                                                       =  0000E5 L
     acc.6                                                       =  0000E6 L
     acc.7                                                       =  0000E7 L
@@ -1396,6 +1438,11 @@ Symbol Table
     ar7                                                         =  000007 
     b                                                           =  0000F0 L
     b.0                                                         =  0000F0 L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 25.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     b.1                                                         =  0000F1 L
     b.2                                                         =  0000F2 L
     b.3                                                         =  0000F3 L
@@ -1438,11 +1485,6 @@ Symbol Table
     ie0                                                         =  000089 L
     ie1                                                         =  00008B L
     int0                                                        =  0000B2 L
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 25.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     int1                                                        =  0000B3 L
     ip                                                          =  0000B8 L
     ip.0                                                        =  0000B8 L
@@ -1456,6 +1498,11 @@ Symbol Table
     ov                                                          =  0000D2 L
     p                                                           =  0000D0 L
     p0                                                          =  000080 L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 26.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     p0.0                                                        =  000080 L
     p0.1                                                        =  000081 L
     p0.2                                                        =  000082 L
@@ -1498,11 +1545,6 @@ Symbol Table
     psw.1                                                       =  0000D1 L
     psw.2                                                       =  0000D2 L
     psw.3                                                       =  0000D3 L
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 26.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     psw.4                                                       =  0000D4 L
     psw.5                                                       =  0000D5 L
     psw.6                                                       =  0000D6 L
@@ -1516,6 +1558,11 @@ Symbol Table
     rcap2h                                                      =  0000CB L
     rcap2l                                                      =  0000CA L
     rclk                                                        =  0000CD L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 27.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     ren                                                         =  00009C L
     ri                                                          =  000098 L
     rs0                                                         =  0000D3 L
@@ -1558,11 +1605,6 @@ Symbol Table
     tf0                                                         =  00008D L
     tf1                                                         =  00008F L
     tf2                                                         =  0000CF L
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 27.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     th0                                                         =  00008C L
     th1                                                         =  00008D L
     th2                                                         =  0000CD L
@@ -1588,12 +1630,12 @@ Area Table
    3 RSEG1                                      size      0   flags    8
    4 REG_BANK_0                                 size      8   flags    4
    5 BIT_BANK                                   size      1   flags    4
-   6 DSEG                                       size      2   flags    0
+   6 DSEG                                       size      0   flags    0
    7 ISEG                                       size      0   flags    0
    8 IABS                                       size      0   flags    8
    9 BSEG                                       size      0   flags   80
    A PSEG                                       size      0   flags   50
-   B XSEG                                       size      0   flags   40
+   B XSEG                                       size      6   flags   40
    C XABS                                       size      0   flags   48
    D XISEG                                      size      0   flags   40
    E HOME                                       size      0   flags   20
@@ -1605,7 +1647,7 @@ Area Table
   14 GSINIT5                                    size      0   flags   20
   15 GSINIT                                     size      0   flags   20
   16 GSFINAL                                    size      0   flags   20
-  17 CSEG                                       size    125   flags   20
+  17 CSEG                                       size    154   flags   20
   18 CONST                                      size      0   flags   20
   19 XINIT                                      size      0   flags   20
   1A CABS                                       size      0   flags   28

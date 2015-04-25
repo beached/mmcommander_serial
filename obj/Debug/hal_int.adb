@@ -203,6 +203,8 @@ S:G$X_U1GCR$0$0({1}SC:U),F,0,0
 S:G$X_P0DIR$0$0({1}SC:U),F,0,0
 S:G$X_P1DIR$0$0({1}SC:U),F,0,0
 S:G$X_P2DIR$0$0({1}SC:U),F,0,0
+S:Lhal_int.halIntLock$key$1$16({2}SI:U),F,0,0
+S:Lhal_int.halIntUnlock$key$1$18({2}SI:U),F,0,0
 S:G$P0$0$0({1}SC:U),I,0,0
 S:G$SP$0$0({1}SC:U),I,0,0
 S:G$DPL0$0$0({1}SC:U),I,0,0

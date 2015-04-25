@@ -4,7 +4,6 @@ F:G$halMcuWaitUs$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$halMcuWaitMs$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$halMcuSetLowPowerMode$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$halMcuReset$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lhal_mcu.halMcuWaitMs$msec$1$15({2}SI:U),R,0,0,[r6,r7]
 S:G$MDMCTRL0H$0$0({1}SC:U),F,0,0
 S:G$SYNC1$0$0({1}SC:U),F,0,0
 S:G$SYNC0$0$0({1}SC:U),F,0,0
@@ -205,6 +204,10 @@ S:G$X_U1GCR$0$0({1}SC:U),F,0,0
 S:G$X_P0DIR$0$0({1}SC:U),F,0,0
 S:G$X_P1DIR$0$0({1}SC:U),F,0,0
 S:G$X_P2DIR$0$0({1}SC:U),F,0,0
+S:Lhal_mcu.halMcuWaitUs$usec$1$12({2}SI:U),F,0,0
+S:Lhal_mcu.halMcuWaitMs$msec$1$15({2}SI:U),F,0,0
+S:Lhal_mcu.halMcuSetLowPowerMode$mode$1$18({1}SC:U),F,0,0
+S:Lhal_mcu.halMcuReset$WDT_INTERVAL_MSEC_2$1$21({1}SC:U),F,0,0
 S:G$P0$0$0({1}SC:U),I,0,0
 S:G$SP$0$0({1}SC:U),I,0,0
 S:G$DPL0$0$0({1}SC:U),I,0,0
