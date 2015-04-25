@@ -1,0 +1,109 @@
+# depslib dependency file v1.0
+1429919610 source:c:\devel\repos\mmcommander_sdcc\crc_4b6b.c
+	"crc_4b6b.h"
+	"common.h"
+
+1429919618 c:\devel\repos\mmcommander_sdcc\crc_4b6b.h
+
+1429919649 c:\devel\repos\mmcommander_sdcc\common.h
+
+1429920512 source:c:\devel\repos\mmcommander_sdcc\init.c
+	"init.h"
+	"common.h"
+	"hal_types.h"
+	"hal_defs.h"
+	"hal_cc8051.h"
+	"ioCCxx10_bitdef.h"
+	"cc1110.h"
+	"constants.h"
+	"globals.h"
+	"configuration.h"
+	"common.h"
+
+1429919623 c:\devel\repos\mmcommander_sdcc\init.h
+
+1429923627 c:\devel\repos\mmcommander_sdcc\hal_types.h
+	<stdint.h>
+	<intrins.h>
+	"windows.h"
+
+1429923684 c:\devel\repos\mmcommander_sdcc\hal_defs.h
+
+1429919620 c:\devel\repos\mmcommander_sdcc\hal_cc8051.h
+	"hal_types.h"
+	"hal_defs.h"
+
+1429919625 c:\devel\repos\mmcommander_sdcc\ioccxx10_bitdef.h
+
+1429919648 c:\devel\repos\mmcommander_sdcc\cc1110.h
+	<compiler.h>
+
+1429919617 c:\devel\repos\mmcommander_sdcc\constants.h
+
+1429921722 c:\devel\repos\mmcommander_sdcc\globals.h
+	"hal_types.h"
+	"constants.h"
+
+1429919616 c:\devel\repos\mmcommander_sdcc\configuration.h
+
+1429923024 source:c:\devel\repos\mmcommander_sdcc\interrupts.c
+	"interrupts.h"
+	"common.h"
+	"globals.h"
+	"ioCCxx10_bitdef.h"
+	"cc1110.h"
+	"crc_4b6b.h"
+	"interrupts.h"
+	"medtronicRF.h"
+	"usb/class_cdc/usb_uart.h"
+	"usb/others/hal_uart.h"
+	"txFilter.h"
+
+1429919624 c:\devel\repos\mmcommander_sdcc\interrupts.h
+
+1429919626 c:\devel\repos\mmcommander_sdcc\medtronicrf.h
+
+1429923024 c:\devel\repos\mmcommander_sdcc\usb\class_cdc\usb_uart.h
+	<stdint.h>
+
+1429923684 c:\devel\repos\mmcommander_sdcc\usb\others\hal_uart.h
+	"../../hal_types.h"
+
+1429919627 c:\devel\repos\mmcommander_sdcc\txfilter.h
+
+1429923278 source:c:\devel\repos\mmcommander_sdcc\medtronicrf.c
+	"common.h"
+	"ioCCxx10_bitdef.h"
+	"cc1110.h"
+	"medtronicRF.h"
+	"crc_4b6b.h"
+	"constants.h"
+	"globals.h"
+	"usb/class_cdc/usb_uart.h"
+	"usb/others/hal_uart.h"
+	"txFilter.h"
+	"configuration.h"
+	"interrupts.h"
+	<stdint.h>
+
+1429923394 source:c:\devel\repos\mmcommander_sdcc\mmcommander.c
+	"crc_4b6b.h"
+	"init.h"
+	"constants.h"
+	"interrupts.h"
+	"medtronicRF.h"
+	"usb/others/hal_board.h"
+	"usb/others/hal_uart.h"
+	"usb/class_cdc/usb_uart.h"
+	"configuration.h"
+
+1429923835 c:\devel\repos\mmcommander_sdcc\usb\others\hal_board.h
+	"../../hal_types.h"
+	"../../hal_defs.h"
+	"../../cc1110.h"
+	"../../hal_cc8051.h"
+	"usb_uart.h"
+
+1429924087 source:c:\devel\repos\mmcommander_sdcc\txfilter.c
+	"configuration.h"
+
