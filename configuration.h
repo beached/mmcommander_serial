@@ -1,5 +1,4 @@
-#ifndef _CONFIGURATION_H_
-#define _CONFIGURATION_H_
+#pragma once
 
 // The _USA_FREQUENCY_MODE_ must be set to 1 if you are planning to use
 // this interface in the US and must be set to 0 in Europe and Asia. When set
@@ -37,4 +36,3 @@
 // The version number is defined here for identification purposes.
 #define _MMCOMMANDER_VERSION_ 87
 
-#endif

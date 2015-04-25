@@ -1,3 +1,4 @@
+#pragma once
 /***********************************************************************************
 
   Filename:     util_buffer.h
@@ -5,8 +6,7 @@
   Description:  Ringbuffer interface
 
   ***********************************************************************************/
-#ifndef UTIL_BUFFER_H
-#define UTIL_BUFFER_H
+
 
 /***********************************************************************************
 * INCLUDES
@@ -51,8 +51,6 @@ uint8_t bufPut( ringBuf_t *pBuf, const uint8_t *pData, uint8_t n );
 uint8_t bufGet( ringBuf_t *pBuf, uint8_t *pData, uint8_t n );
 uint8_t bufPeek( ringBuf_t *pBuf, uint8_t *pData, uint8_t nBytes );
 uint8_t bufNumBytes( ringBuf_t *pBuf );
-
-#endif
 
 
 /***********************************************************************************

@@ -1,12 +1,10 @@
+#pragma once
 /***********************************************************************************
   Filename:     hal_assert.h
 
   Description:  Assert functionality header file
 
   ***********************************************************************************/
-
-#ifndef HAL_ASSERT_H
-#define HAL_ASSERT_H
 
 #include "hal_defs.h"
 
@@ -51,4 +49,3 @@ void halAssertHandler( void );
   Should you have any questions regarding your right to use this Software,
   contact Texas Instruments Incorporated at www.TI.com.
   ***********************************************************************************/
-#endif

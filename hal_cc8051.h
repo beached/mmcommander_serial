@@ -1,11 +1,9 @@
+#pragma once
 /******************************************************************************
 	Filename: hal_cc8051.h
 
 	Copyright 2007 Texas Instruments, Inc.
 	******************************************************************************/
-
-#ifndef HAL_CC8051_H
-#define HAL_CC8051_H
 
 /******************************************************************************
  * INCLUDES
@@ -119,4 +117,3 @@
   Should you have any questions regarding your right to use this Software,
   contact Texas Instruments Incorporated at www.TI.com.
   ***********************************************************************************/
-#endif

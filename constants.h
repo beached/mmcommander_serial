@@ -1,5 +1,4 @@
-#ifndef _CONSTANTS_H_
-#define _CONSTANTS_H_
+#pragma once
 
 /***********************************************************************************
 * CONSTANTS
@@ -33,5 +32,3 @@
 // Baudrate = 57.6 kbps (U0BAUD.BAUD_M = 34, U0GCR.BAUD_E = 11)
 #define UART_BAUD_M  34
 #define UART_BAUD_E  11
-
-#endif

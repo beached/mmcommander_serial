@@ -1,5 +1,4 @@
-#ifndef _INIT_H_
-#define _INIT_H_
+#pragma once
 
 void configureIO( void );
 void configureOsc( void );
@@ -8,4 +7,3 @@ void configureMedtronicRFMode( void );
 void initGlobals( void );
 void configureTimeOutTimer( void );
 
-#endif
