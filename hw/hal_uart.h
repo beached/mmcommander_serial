@@ -48,7 +48,25 @@ extern "C" {
 	uint16_t halUartGetNumRxBytes( void );
 	void   halUartEnableRxFlow( uint8_t enable );
 
+	void uart0_send(uint8_t* tx_buffer, uint16_t tx_buffer_len );
+	void uart1_send(uint8_t* tx_buffer, uint16_t tx_buffer_len );
+	void uart_map_port( uint8_t uart_port_alt, uint8_t uart_num );
+	void uart0_init_bitrate( uint8_t uart_baud_m, uint8_t uart_baud_e );
+	void uart1_init_bitrate( uint8_t uart_baud_m, uint8_t uart_baud_e );
 
+	typedef struct {
+		 uint8_t uartNum : 1; // UART peripheral number (0 or 1)
+		 uint8_t START : 1; // Start bit level (low/high)
+		 uint8_t STOP : 1; // Stop bit level (low/high)
+		 uint8_t SPB : 1; // Stop bits (0 => 1, 1 => 2)
+		 uint8_t PARITY : 1; // Parity control (enable/disable)
+		 uint8_t BIT9 : 1; // 9 bit enable (8bit / 9bit)
+		 uint8_t D9 : 1; // 9th bit level or Parity type
+		 uint8_t FLOW : 1; // HW Flow Control (enable/disable)
+		 uint8_t ORDER : 1; // Data bit order(LSB/MSB first)
+	} UART_PROT_CONFIG;
+
+	void uart_init_protocol( UART_PROT_CONFIG* uart_prot_config );
 #ifdef  __cplusplus
 }
 #endif
