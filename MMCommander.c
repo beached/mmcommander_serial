@@ -47,7 +47,7 @@ int main( void ) {
 	init_globals( );
 	configure_io( );
 	configure_osc( );
-	crc16Init( );
+	crc16_init( );
 	configure_medtronic_rf_mode( );
 	enable_push_button_int( );
 	hal_uart_init( HAL_UART_BAUDRATE_57600, 0 );

@@ -48,8 +48,8 @@ extern "C" {
 	uint16_t hal_uart_get_num_rx_bytes( void );
 	void hal_uart_enable_rx_flow( uint8_t enable );
 
-	void uart0_send(uint8_t* tx_buffer, uint16_t tx_buffer_len );
-	void uart1_send(uint8_t* tx_buffer, uint16_t tx_buffer_len );
+	void uart0_send(uint8_t const * const tx_buffer, uint16_t tx_buffer_len );
+	void uart1_send(uint8_t const * const tx_buffer, uint16_t tx_buffer_len );
 	void uart_map_port( uint8_t uart_port_alt, uint8_t uart_num );
 	void uart0_init_bitrate( uint8_t uart_baud_m, uint8_t uart_baud_e );
 	void uart1_init_bitrate( uint8_t uart_baud_m, uint8_t uart_baud_e );

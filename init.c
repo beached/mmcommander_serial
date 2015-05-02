@@ -75,7 +75,6 @@ void configure_medtronic_rf_mode( void ) {
 	RFTXRXIE = 0;
 }
 
-
 void init_globals( void ) {
 	uint8_t i = 0;
 

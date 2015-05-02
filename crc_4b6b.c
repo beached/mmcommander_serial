@@ -21,7 +21,7 @@ uint8_t crc8( uint8_t *message, uint16_t nBytes ) {
 	return remainder;
 }
 
-void crc16Init( void ) {
+void crc16_init( void ) {
 	uint16_t i = 0;
 	uint16_t j = 0;
 	uint16_t crc = 0;

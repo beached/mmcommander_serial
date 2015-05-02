@@ -25,7 +25,7 @@ void hal_uart_enable_rx_flow( uint8_t enable ) {
 	// TODO
 }
 
-void uart0_send( uint8_t* tx_buffer, uint16_t tx_buffer_len ) {
+void uart0_send( uint8_t const * const tx_buffer, uint16_t tx_buffer_len ) {
 	uint16_t tx_buffer_idx = 0;
 	UTX0IF = FALSE;
 	for( tx_buffer_idx = 0; tx_buffer_idx < tx_buffer_len; tx_buffer_idx++ ) {
@@ -35,7 +35,7 @@ void uart0_send( uint8_t* tx_buffer, uint16_t tx_buffer_len ) {
 	}
 }
 
-void uart1_send( uint8_t* tx_buffer, uint16_t tx_buffer_len ) {
+void uart1_send( uint8_t const * const tx_buffer, uint16_t tx_buffer_len ) {
 	uint16_t tx_buffer_idx = 0;
 	UTX1IF = FALSE;
 	for( tx_buffer_idx = 0; tx_buffer_idx < tx_buffer_len; tx_buffer_idx++ ) {

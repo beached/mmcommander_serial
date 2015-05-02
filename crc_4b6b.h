@@ -3,7 +3,7 @@
 #include <stdint.h>
 
 uint8_t crc8( uint8_t *message, uint16_t nBytes );
-void crc16Init( void );
+void crc16_init( void );
 int16_t crc16( uint8_t *message, uint16_t nBytes );
 uint8_t get_4b6b_symbol( uint8_t inSymbol );
 uint8_t decode_4b6b_symbol( uint8_t inSymbol, uint8_t *outSymbol );
