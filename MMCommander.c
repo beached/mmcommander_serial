@@ -25,11 +25,11 @@
 * GLOBAL VARIABLES
 */
 
-uint8_t __xdata uartRxBuffer[SIZE_OF_UART_RX_BUFFER];
-uint8_t __xdata uartTxBuffer[SIZE_OF_UART_TX_BUFFER];
-uint16_t __xdata uartTxLength;
-int16_t __xdata uartTxIndex;
-int16_t __xdata uartRxIndex;
+uint8_t __xdata uart_rx_buffer[SIZE_OF_UART_RX_BUFFER];
+uint8_t __xdata uart_tx_buffer[SIZE_OF_UART_TX_BUFFER];
+uint16_t __xdata uart_tx_length;
+int16_t __xdata uart_tx_index;
+int16_t __xdata uart_rx_index;
 
 /******************************************************************************
 * MAIN FUNCTION
@@ -44,25 +44,25 @@ int main( void ) {
 	uint8_t repeatedMessage = 0;
 
 	/* Configure system */
-	initGlobals( );
-	configureIO( );
-	configureOsc( );
+	init_globals( );
+	configure_io( );
+	configure_osc( );
 	crc16Init( );
-	configureMedtronicRFMode( );
-	enablePushButtonInt( );
-	halUartInit( HAL_UART_BAUDRATE_57600, 0 );
+	configure_medtronic_rf_mode( );
+	enable_push_button_int( );
+	hal_uart_init( HAL_UART_BAUDRATE_57600, 0 );
 
 	/* Reception loop */
 	while( TRUE ) {
-		dataErr = receiveMedtronicMessage( dataPacket, &dataLength );
+		dataErr = receive_medtronic_message( dataPacket, &dataLength );
 		if( dataLength > 0 ) {
 			repeatedMessage = 0;
 			if( (_REPEATED_COMMAND_ENABLED_ == 1) &&
-				(dataErr == ((uartTxBuffer[0] >> 7) & 0x01)) &&
-				(dataLength == (uartTxLength - 2)) ) {
+				(dataErr == ((uart_tx_buffer[0] >> 7) & 0x01)) &&
+				(dataLength == (uart_tx_length - 2)) ) {
 				repeatedMessage = 1;
 				for( i = 0; i < dataLength; i++ ) {
-					if( dataPacket[i] != uartTxBuffer[i + 2] ) {
+					if( dataPacket[i] != uart_tx_buffer[i + 2] ) {
 						repeatedMessage = 0;
 						break;
 					}
@@ -71,27 +71,27 @@ int main( void ) {
 
 			if( repeatedMessage == 1 ) {
 				repPacket[0] = 0x04;
-				halUartWrite( (uint8_t const *)repPacket, 1 );
+				hal_uart_write( (uint8_t const *)repPacket, 1 );
 				// TODO
 				//usbUartProcess( );
-				//usbReceiveData( );
+				//usb_receive_data( );
 			} else {
 				if( dataErr == 0 ) {
-					uartTxBuffer[0] = 0x02;
+					uart_tx_buffer[0] = 0x02;
 				} else {
-					uartTxBuffer[0] = 0x82;
+					uart_tx_buffer[0] = 0x82;
 				}
-				uartTxBuffer[1] = dataLength;
-				for( i = 0; i < dataLength; i++ ) uartTxBuffer[i + 2] = dataPacket[i];
-				uartTxLength = dataLength + 2;
-				for( i = 0; i < uartTxLength; i = i + 48 ) {
-					if( uartTxLength - i > 48 ) {
-						halUartWrite( (uint8_t const *)&uartTxBuffer[i], 48 );
+				uart_tx_buffer[1] = dataLength;
+				for( i = 0; i < dataLength; i++ ) uart_tx_buffer[i + 2] = dataPacket[i];
+				uart_tx_length = dataLength + 2;
+				for( i = 0; i < uart_tx_length; i = i + 48 ) {
+					if( uart_tx_length - i > 48 ) {
+						hal_uart_write( (uint8_t const *)&uart_tx_buffer[i], 48 );
 						// TODO
 						//usbUartProcess( );
-						//usbReceiveData( );
+						//usb_receive_data( );
 					} else {
-						halUartWrite( (uint8_t const *)&uartTxBuffer[i], uartTxLength - i );
+						hal_uart_write( (uint8_t const *)&uart_tx_buffer[i], uart_tx_length - i );
 					}
 				}
 			}

@@ -2,8 +2,8 @@
 
 #include <stdint.h>
 
-void sendMedtronicMessage( uint8_t *message, uint16_t length, int16_t times );
-uint8_t receiveMedtronicMessage( uint8_t *message, uint16_t *length );
-void usbReceiveData( void );
+void send_medtronic_message( uint8_t *message, uint16_t length, int16_t times );
+uint8_t receive_medtronic_message( uint8_t *message, uint16_t *length );
+void usb_receive_data( void );
 
 #pragma once

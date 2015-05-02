@@ -1,25 +1,25 @@
 #include "configuration.h"
 #include <stdint.h>
 
-uint8_t __xdata txFilterEnabled;
+uint8_t __xdata tx_filter_enabled;
 #if _TX_ENABLE_ == 0
-uint8_t txFilter( uint8_t *message, uint16_t length ) {
+uint8_t tx_filter( uint8_t *message, uint16_t length ) {
 	message;
 	length;
 	return 1;
 }
 #elif _TX_FILTER_ENABLE_ == 0
-uint8_t txFilter( uint8_t *message, uint16_t length ) {
+uint8_t tx_filter( uint8_t *message, uint16_t length ) {
 	message;
 	length;
 	return 0;
 }
 #else
 
-uint8_t txFilter( uint8_t *message, uint16_t length ) {
+uint8_t tx_filter( uint8_t *message, uint16_t length ) {
 	if( length < 1 ) return 0;
 
-	if( txFilterEnabled == 1 ) {
+	if( tx_filter_enabled == 1 ) {
 		// We won't allow glucometer readings
 		if( message[0] == 0xA5u ) return 1;
 

@@ -6,7 +6,7 @@
 #include "constants.h"
 #include "globals.h"
 #include "hw/hal_uart.h"
-#include "txFilter.h"
+#include "txfilter.h"
 #include "configuration.h"
 #include "interrupts.h"
 #include <stdint.h>
@@ -14,17 +14,17 @@
 // Globals
 static uint8_t __xdata rfMessage[512];
 static uint16_t __xdata rfLength;
-static int16_t __xdata txCalcCRC;
-static int16_t __xdata txCalcCRC16;
-static uint8_t __xdata txLength;
-static int16_t __xdata txTimes;
+static int16_t __xdata tx_calc_crc;
+static int16_t __xdata tx_calc_crc16;
+static uint8_t __xdata tx_length;
+static int16_t __xdata tx_times;
 static uint8_t __xdata lastData;
 
-void sendMedtronicMessage( uint8_t *message, uint16_t length, int16_t times ) {
+void send_medtronic_message( uint8_t *message, uint16_t length, int16_t times ) {
 	int16_t i = 0;
 	int16_t j = 0;
 
-	encode4b6b( message, length, rfMessage, &rfLength );
+	encode_4b6b( message, length, rfMessage, &rfLength );
 	PKTLEN = rfLength;
 
 	RFST = RFST_SIDLE;
@@ -49,7 +49,7 @@ void sendMedtronicMessage( uint8_t *message, uint16_t length, int16_t times ) {
 	RFST = RFST_SRX;
 }
 
-uint8_t receiveMedtronicMessage( uint8_t *message, uint16_t *length ) {
+uint8_t receive_medtronic_message( uint8_t *message, uint16_t *length ) {
 	uint16_t i = 0;
 	uint8_t calcCRC = 0;
 	uint16_t calcCRC16 = 0;
@@ -63,7 +63,7 @@ uint8_t receiveMedtronicMessage( uint8_t *message, uint16_t *length ) {
 		while( !RFTXRXIF ) {
 			// TODO Add generic rx/tx uart code
 			//usbUartProcess( );
-			//usbReceiveData( );
+			//usb_receive_data( );
 		}
 		rfMessage[i] = RFD;
 		lastData = rfMessage[i];
@@ -72,7 +72,7 @@ uint8_t receiveMedtronicMessage( uint8_t *message, uint16_t *length ) {
 	rfLength = i - 1;
 	RFST = RFST_SIDLE;
 
-	decode4b6b( rfMessage, rfLength, message, length );
+	decode_4b6b( rfMessage, rfLength, message, length );
 	calcCRC = crc8( message, (*length) - 1 );
 
 	if( calcCRC == message[(*length) - 1] ) {

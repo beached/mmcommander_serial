@@ -7,7 +7,7 @@
 #include "interrupts.h"
 #include "medtronicRF.h"
 #include "hw/hal_uart.h"
-#include "txFilter.h"
+#include "txfilter.h"
 
 // Globals
 void PORT1_ISR( void ) __interrupt( P1INT_VECTOR ) {
@@ -30,16 +30,16 @@ void PORT1_ISR( void ) __interrupt( P1INT_VECTOR ) {
 	}
 
 	if( modeChange == 1 ) {
-		if( txFilterEnabled == 1 ) {
-			txFilterEnabled = 0;
+		if( tx_filter_enabled == 1 ) {
+			tx_filter_enabled = 0;
 			P1_1 = 1;
 			txString[0] = 0x13;
 		} else {
-			txFilterEnabled = 1;
+			tx_filter_enabled = 1;
 			P1_1 = 0;
 			txString[0] = 0x03;
 		}
-		halUartWrite( (uint8_t const *)txString, 1 );
+		hal_uart_write( (uint8_t const *)txString, 1 );
 	}
 
 	// Clear Port 1 Interrupt Flag
@@ -47,10 +47,10 @@ void PORT1_ISR( void ) __interrupt( P1INT_VECTOR ) {
 	IRCON2 &= ~0x04;
 }
 
-void enablePushButtonInt( void ) {
+void enable_push_button_int( void ) {
 	// Initialize Filter to enabled.
 	P1_0 = 0;
-	txFilterEnabled = 1;
+	tx_filter_enabled = 1;
 
 	// Clear any pending Port 1 Interrupt Flag (IRCON2.P1IF = 0)
 	P1IFG = 0;
@@ -73,13 +73,13 @@ void TIMER1_ISR( void ) __interrupt( T1_VECTOR ) {
 	IRCON &= ~0x02;
 
 	// Reset state;
-	uartRxIndex = 0;
+	uart_rx_index = 0;
 
 	// Clean interrupts and start Timer 1 in Free Run mode
 	//T1CTL = 0x01;
 }
 
-void stopTimerInt( void ) {
+void stop_timer_int( void ) {
 	// Stop Timer 1
 	T1CTL &= 0xFC;
 
@@ -90,11 +90,11 @@ void stopTimerInt( void ) {
 	IEN1 &= ~0x02;
 }
 
-void resetTimerCounter( void ) {
+void reset_timer_counter( void ) {
 	T1CNTL = 0x00;
 }
 
-void enableTimerInt( void ) {
+void enable_timer_int( void ) {
 	// Stop Timer 1
 	T1CTL &= 0xFC;
 

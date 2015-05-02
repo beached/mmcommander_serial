@@ -107,16 +107,16 @@
 1429924087 source:c:\devel\repos\mmcommander_sdcc\txfilter.c
 	"configuration.h"
 
-1429979227 source:c:\devel\github\mmcommander_serial\crc_4b6b.c
+1430358284 source:c:\devel\github\mmcommander_serial\crc_4b6b.c
 	"crc_4b6b.h"
 	"common.h"
 
-1429975609 c:\devel\github\mmcommander_serial\crc_4b6b.h
+1430358284 c:\devel\github\mmcommander_serial\crc_4b6b.h
 	<stdint.h>
 
 1429919649 c:\devel\github\mmcommander_serial\common.h
 
-1429987357 source:c:\devel\github\mmcommander_serial\init.c
+1430538495 source:c:\devel\github\mmcommander_serial\init.c
 	"init.h"
 	"common.h"
 	"hw/hal_types.h"
@@ -128,7 +128,7 @@
 	"globals.h"
 	"configuration.h"
 
-1429939088 c:\devel\github\mmcommander_serial\init.h
+1430538495 c:\devel\github\mmcommander_serial\init.h
 
 1429923627 c:\devel\github\mmcommander_serial\hal_types.h
 	<stdint.h>
@@ -148,13 +148,13 @@
 
 1429938928 c:\devel\github\mmcommander_serial\constants.h
 
-1429977962 c:\devel\github\mmcommander_serial\globals.h
+1430538495 c:\devel\github\mmcommander_serial\globals.h
 	"hw/hal_types.h"
 	"constants.h"
 
 1429999303 c:\devel\github\mmcommander_serial\configuration.h
 
-1429979252 source:c:\devel\github\mmcommander_serial\interrupts.c
+1430538638 source:c:\devel\github\mmcommander_serial\interrupts.c
 	"interrupts.h"
 	"common.h"
 	"globals.h"
@@ -164,11 +164,11 @@
 	"interrupts.h"
 	"medtronicRF.h"
 	"hw/hal_uart.h"
-	"txFilter.h"
+	"txfilter.h"
 
-1429939088 c:\devel\github\mmcommander_serial\interrupts.h
+1430538495 c:\devel\github\mmcommander_serial\interrupts.h
 
-1429975609 c:\devel\github\mmcommander_serial\medtronicrf.h
+1430538495 c:\devel\github\mmcommander_serial\medtronicrf.h
 	<stdint.h>
 
 1429923024 c:\devel\github\mmcommander_serial\usb\class_cdc\usb_uart.h
@@ -177,7 +177,7 @@
 1429923684 c:\devel\github\mmcommander_serial\usb\others\hal_uart.h
 	"../../hal_types.h"
 
-1429976989 c:\devel\github\mmcommander_serial\txfilter.h
+1430538495 c:\devel\github\mmcommander_serial\txfilter.h
 	<stdint.h>
 
 1429979364 source:c:\devel\github\mmcommander_serial\medtronicrf.c
@@ -374,10 +374,12 @@
 	"../common.h"
 	"clock.h"
 
-1429938196 source:c:\devel\github\mmcommander_serial\hw\hal_uart.c
+1430358124 source:c:\devel\github\mmcommander_serial\hw\hal_uart.c
 	"hal_uart.h"
+	"hal_defs.h"
+	"cc1110.h"
 
-1430029211 c:\devel\github\mmcommander_serial\hw\hal_uart.h
+1430538537 c:\devel\github\mmcommander_serial\hw\hal_uart.h
 	"hal_types.h"
 
 1429979509 source:c:\devel\github\mmcommander_serial\hw\util_buffer.c

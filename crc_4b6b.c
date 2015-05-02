@@ -53,7 +53,7 @@ int16_t crc16( uint8_t *message, uint16_t nBytes ) {
 	return crc;
 }
 
-uint8_t get4b6bsymbol( uint8_t inSymbol ) {
+uint8_t get_4b6b_symbol( uint8_t inSymbol ) {
 	switch( inSymbol ) {
 	case 0x00: return 0x15;
 	case 0x01: return 0x31;
@@ -75,7 +75,7 @@ uint8_t get4b6bsymbol( uint8_t inSymbol ) {
 	}
 }
 
-uint8_t decode4b6bsymbol( uint8_t inSymbol, uint8_t *outSymbol ) {
+uint8_t decode_4b6b_symbol( uint8_t inSymbol, uint8_t *outSymbol ) {
 	switch( inSymbol ) {
 	case 0x15: {*outSymbol = 0x00; return 0; }
 	case 0x31: {*outSymbol = 0x01; return 0; }
@@ -97,7 +97,7 @@ uint8_t decode4b6bsymbol( uint8_t inSymbol, uint8_t *outSymbol ) {
 	}
 }
 
-void encode4b6b( uint8_t *messageIn, uint16_t bytesIn, uint8_t *messageOut, uint16_t *bytesOut ) {
+void encode_4b6b( uint8_t *messageIn, uint16_t bytesIn, uint8_t *messageOut, uint16_t *bytesOut ) {
 	uint16_t i = 0;
 	uint16_t j = 0;
 	int16_t intBuffer = 0;
@@ -114,7 +114,7 @@ void encode4b6b( uint8_t *messageIn, uint16_t bytesIn, uint8_t *messageOut, uint
 		} else {
 			symbol = messageIn[j] & 0x0F;
 		}
-		symbol = get4b6bsymbol( symbol );
+		symbol = get_4b6b_symbol( symbol );
 		intBuffer = (intBuffer << 6) & 0xFFC0;
 		intBuffer = intBuffer | symbol;
 		intBitsAvailable += 6;
@@ -138,7 +138,7 @@ void encode4b6b( uint8_t *messageIn, uint16_t bytesIn, uint8_t *messageOut, uint
 	}
 }
 
-void decode4b6b( uint8_t *messageIn, uint16_t bytesIn, uint8_t *messageOut, uint16_t *bytesOut ) {
+void decode_4b6b( uint8_t *messageIn, uint16_t bytesIn, uint8_t *messageOut, uint16_t *bytesOut ) {
 	uint16_t i = 0;
 	int16_t intBuffer = 0;
 	int16_t intBitsAvailable = 0;
@@ -155,7 +155,7 @@ void decode4b6b( uint8_t *messageIn, uint16_t bytesIn, uint8_t *messageOut, uint
 		while( intBitsAvailable >= 6 ) {
 			symbol = intBuffer >> (intBitsAvailable - 6);
 			symbol &= 0x3F;
-			decode4b6bsymbol( symbol, &symbol );
+			decode_4b6b_symbol( symbol, &symbol );
 			recByte = recByte << 4;
 			recByte &= 0xF0;
 			recByte |= symbol;

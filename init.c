@@ -12,7 +12,7 @@
 /***********************************************************************************
 * LOCAL FUNCTIONS
 */
-void configureIO( void ) {
+void configure_io( void ) {
 	/* Set function of pin to general purpose I/O */
 	P1SEL &= BIT0;
 	P1SEL &= BIT1;
@@ -31,7 +31,7 @@ void configureIO( void ) {
 	P1DIR |= BIT1;
 }
 
-void configureOsc( void ) {
+void configure_osc( void ) {
 	SLEEP &= ~OSC_PD_BIT;     // powering down all oscillators
 	while( !XOSC_STABLE ) { }      // waiting until the oscillator is stable
 	Nop( );
@@ -40,7 +40,7 @@ void configureOsc( void ) {
 	SLEEP |= OSC_PD_BIT;      // powering down the unused oscillator
 }
 
-void configureMedtronicRFMode( void ) {
+void configure_medtronic_rf_mode( void ) {
 	SYNC1 = 0xFF; SYNC0 = 0x00;
 	PKTLEN = 0xFF;
 	PKTCTRL1 = 0x00; PKTCTRL0 = 0x00;
@@ -76,14 +76,14 @@ void configureMedtronicRFMode( void ) {
 }
 
 
-void initGlobals( void ) {
+void init_globals( void ) {
 	uint8_t i = 0;
 
 	for( i = 0; i < SIZE_OF_UART_RX_BUFFER; i++ ) {
-		uartRxBuffer[i] = 0x00;
-		uartTxBuffer[i] = 0x00;
+		uart_rx_buffer[i] = 0x00;
+		uart_tx_buffer[i] = 0x00;
 	}
-	uartTxLength = 0;
-	uartTxIndex = 0;
-	uartRxIndex = 0;
+	uart_tx_length = 0;
+	uart_tx_index = 0;
+	uart_rx_index = 0;
 }
