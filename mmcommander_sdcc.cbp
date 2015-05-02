@@ -39,11 +39,6 @@
 		<Unit filename="MMCommander.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="cc1110.h" />
-		<Unit filename="clock.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="clock.h" />
 		<Unit filename="common.h" />
 		<Unit filename="configuration.h" />
 		<Unit filename="constants.h" />
@@ -52,27 +47,37 @@
 		</Unit>
 		<Unit filename="crc_4b6b.h" />
 		<Unit filename="globals.h" />
-		<Unit filename="hal_assert.h" />
-		<Unit filename="hal_board.c">
+		<Unit filename="hw/cc1110.h" />
+		<Unit filename="hw/clock.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="hal_board.h" />
-		<Unit filename="hal_cc8051.h" />
-		<Unit filename="hal_defs.h" />
-		<Unit filename="hal_int.c">
+		<Unit filename="hw/clock.h" />
+		<Unit filename="hw/hal_assert.h" />
+		<Unit filename="hw/hal_board.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="hal_int.h" />
-		<Unit filename="hal_led.h" />
-		<Unit filename="hal_mcu.c">
+		<Unit filename="hw/hal_board.h" />
+		<Unit filename="hw/hal_cc8051.h" />
+		<Unit filename="hw/hal_defs.h" />
+		<Unit filename="hw/hal_int.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="hal_mcu.h" />
-		<Unit filename="hal_types.h" />
-		<Unit filename="hal_uart.c">
+		<Unit filename="hw/hal_int.h" />
+		<Unit filename="hw/hal_led.h" />
+		<Unit filename="hw/hal_mcu.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="hal_uart.h" />
+		<Unit filename="hw/hal_mcu.h" />
+		<Unit filename="hw/hal_types.h" />
+		<Unit filename="hw/hal_uart.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="hw/hal_uart.h" />
+		<Unit filename="hw/ioCCxx10_bitdef.h" />
+		<Unit filename="hw/util_buffer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="hw/util_buffer.h" />
 		<Unit filename="init.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -81,7 +86,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="interrupts.h" />
-		<Unit filename="ioCCxx10_bitdef.h" />
 		<Unit filename="medtronicRF.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -90,10 +94,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="txFilter.h" />
-		<Unit filename="util_buffer.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="util_buffer.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -25,11 +25,11 @@
 * GLOBAL VARIABLES
 */
 
-uint8_t __xdata uart_rx_buffer[SIZE_OF_UART_RX_BUFFER];
-uint8_t __xdata uart_tx_buffer[SIZE_OF_UART_TX_BUFFER];
 uint16_t __xdata uart_tx_length;
 int16_t __xdata uart_tx_index;
 int16_t __xdata uart_rx_index;
+uint8_t __xdata uart_rx_buffer[SIZE_OF_UART_RX_BUFFER];
+uint8_t __xdata uart_tx_buffer[SIZE_OF_UART_TX_BUFFER];
 
 /******************************************************************************
 * MAIN FUNCTION
@@ -38,10 +38,10 @@ int16_t __xdata uart_rx_index;
 int main( void ) {
 	uint8_t data_packet[256];
 	uint8_t rep_packet[3];
+	uint16_t data_length = 0;
 	uint8_t data_error = 0;
 	uint8_t i = 0;
 	uint8_t repeated_message = 0;
-	uint16_t data_length = 0;
 
 	/* Configure system */
 	init_globals( );
