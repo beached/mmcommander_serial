@@ -12,12 +12,12 @@
 #include <stdint.h>
 
 // Globals
-static uint8_t __xdata rf_message[512];
 static uint16_t __xdata rf_length;
 static int16_t __xdata tx_calc_crc;
 static int16_t __xdata tx_calc_crc16;
-static uint8_t __xdata tx_length;
 static int16_t __xdata tx_times;
+static uint8_t __xdata tx_length;
+static uint8_t __xdata rf_message[512];
 static uint8_t __xdata last_data;
 
 void send_medtronic_message( uint8_t *message, uint16_t length, int16_t times ) {
@@ -51,8 +51,8 @@ void send_medtronic_message( uint8_t *message, uint16_t length, int16_t times ) 
 
 uint8_t receive_medtronic_message( uint8_t *message, uint16_t *length ) {
 	uint16_t i = 0;
-	uint8_t calc_crc = 0;
 	uint16_t calc_crc16 = 0;
+	uint8_t calc_crc = 0;
 
 	RFST = RFST_SIDLE;
 	RFST = RFST_SRX;

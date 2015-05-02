@@ -1,12 +1,12 @@
 #include "crc_4b6b.h"
 #include "common.h"
 
-static int16_t __xdata crc16Tab[256];
+static int16_t __xdata crc16_table[256];
 
 uint8_t crc8( uint8_t *message, uint16_t nBytes ) {
 	uint8_t remainder = 0;
-	uint16_t byte = 0;
 	uint8_t bit = 0;
+	uint16_t byte = 0;
 
 	for( byte = 0; byte < nBytes; ++byte ) {
 		remainder ^= message[byte];
@@ -31,11 +31,14 @@ void crc16_init( void ) {
 		crc = 0;
 		c = ((uint16_t)i) << 8;
 		for( j = 0; j < 8; j++ ) {
-			if( (crc^c) & 0x8000 ) crc = (crc << 1) ^ 0x1021;
-			else                    crc = crc << 1;
+			if( (crc^c) & 0x8000 ) {
+				crc = (crc << 1) ^ 0x1021;
+			} else {
+				crc = crc << 1;
+			}
 			c = c << 1;
 		}
-		crc16Tab[i] = crc;
+		crc16_table[i] = crc;
 	}
 }
 
@@ -48,52 +51,120 @@ int16_t crc16( uint8_t *message, uint16_t nBytes ) {
 	for( i = 0; i < nBytes; i++ ) {
 		short_c = 0x00ff & (uint16_t)message[i];
 		tmp = (crc >> 8) ^ short_c;
-		crc = (crc << 8) ^ crc16Tab[tmp];
+		crc = (crc << 8) ^ crc16_table[tmp];
 	}
 	return crc;
 }
 
 uint8_t get_4b6b_symbol( uint8_t inSymbol ) {
 	switch( inSymbol ) {
-	case 0x00: return 0x15;
-	case 0x01: return 0x31;
-	case 0x02: return 0x32;
-	case 0x03: return 0x23;
-	case 0x04: return 0x34;
-	case 0x05: return 0x25;
-	case 0x06: return 0x26;
-	case 0x07: return 0x16;
-	case 0x08: return 0x1A;
-	case 0x09: return 0x19;
-	case 0x0A: return 0x2A;
-	case 0x0B: return 0x0B;
-	case 0x0C: return 0x2C;
-	case 0x0D: return 0x0D;
-	case 0x0E: return 0x0E;
-	case 0x0F: return 0x1C;
-	default:   return 0x00;
+	case 0x00:
+		return 0x15;
+	case 0x01:
+		return 0x31;
+	case 0x02:
+		return 0x32;
+	case 0x03:
+		return 0x23;
+	case 0x04:
+		return 0x34;
+	case 0x05:
+		return 0x25;
+	case 0x06:
+		return 0x26;
+	case 0x07:
+		return 0x16;
+	case 0x08:
+		return 0x1A;
+	case 0x09:
+		return 0x19;
+	case 0x0A:
+		return 0x2A;
+	case 0x0B:
+		return 0x0B;
+	case 0x0C:
+		return 0x2C;
+	case 0x0D:
+		return 0x0D;
+	case 0x0E:
+		return 0x0E;
+	case 0x0F:
+		return 0x1C;
+	default:
+		return 0x00;
 	}
 }
 
 uint8_t decode_4b6b_symbol( uint8_t inSymbol, uint8_t *outSymbol ) {
 	switch( inSymbol ) {
-	case 0x15: {*outSymbol = 0x00; return 0; }
-	case 0x31: {*outSymbol = 0x01; return 0; }
-	case 0x32: {*outSymbol = 0x02; return 0; }
-	case 0x23: {*outSymbol = 0x03; return 0; }
-	case 0x34: {*outSymbol = 0x04; return 0; }
-	case 0x25: {*outSymbol = 0x05; return 0; }
-	case 0x26: {*outSymbol = 0x06; return 0; }
-	case 0x16: {*outSymbol = 0x07; return 0; }
-	case 0x1A: {*outSymbol = 0x08; return 0; }
-	case 0x19: {*outSymbol = 0x09; return 0; }
-	case 0x2A: {*outSymbol = 0x0A; return 0; }
-	case 0x0B: {*outSymbol = 0x0B; return 0; }
-	case 0x2C: {*outSymbol = 0x0C; return 0; }
-	case 0x0D: {*outSymbol = 0x0D; return 0; }
-	case 0x0E: {*outSymbol = 0x0E; return 0; }
-	case 0x1C: {*outSymbol = 0x0F; return 0; }
-	default:   {*outSymbol = 0x00; return 1; }
+	case 0x15: {
+		*outSymbol = 0x00;
+		return 0;
+	}
+	case 0x31: {
+		*outSymbol = 0x01;
+		return 0;
+	}
+	case 0x32: {
+		*outSymbol = 0x02;
+		return 0;
+	}
+	case 0x23: {
+		*outSymbol = 0x03;
+		return 0;
+	}
+	case 0x34: {
+		*outSymbol = 0x04;
+		return 0;
+	}
+	case 0x25: {
+		*outSymbol = 0x05;
+		return 0;
+	}
+	case 0x26: {
+		*outSymbol = 0x06;
+		return 0;
+	}
+	case 0x16: {
+		*outSymbol = 0x07;
+		return 0;
+	}
+	case 0x1A: {
+		*outSymbol = 0x08;
+		return 0;
+	}
+	case 0x19: {
+		*outSymbol = 0x09;
+		return 0;
+	}
+	case 0x2A: {
+		*outSymbol = 0x0A;
+		return 0;
+	}
+	case 0x0B: {
+		*outSymbol = 0x0B;
+		return 0;
+	}
+	case 0x2C: {
+		*outSymbol = 0x0C;
+		return 0;
+	}
+	case 0x0D: {
+		*outSymbol = 0x0D;
+		return 0;
+	}
+	case 0x0E: {
+		*outSymbol = 0x0E;
+		return 0;
+	}
+	case 0x1C: {
+		*outSymbol = 0x0F;
+		return 0;
+	}
+	default:   {
+		*outSymbol = 0x00;
+		return 1;
+	}
 	}
 }
 
