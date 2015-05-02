@@ -2,28 +2,28 @@
 #include "hal_defs.h"
 #include "cc1110.h"
 
-void hal_uart_init( uint8_t baudrate, uint8_t options ) {
-	// TODO
-}
-
-uint16_t hal_uart_write( const uint8_t* buf, uint16_t length ) {
-	// TODO
-	return 0;
-}
-
-uint16_t hal_uart_read( uint8_t* buf, uint16_t length ) {
-	// TODO
-	return 0;
-}
-
-uint16_t hal_uart_get_num_rx_bytes( void ) {
-	// TODO
-	return 0;
-}
-
-void hal_uart_enable_rx_flow( uint8_t enable ) {
-	// TODO
-}
+//void hal_uart_init( uint8_t baudrate, uint8_t options ) {
+//	// TODO
+//}
+//
+//uint16_t hal_uart_write( const uint8_t* buf, uint16_t length ) {
+//	// TODO
+//	return 0;
+//}
+//
+//uint16_t hal_uart_read( uint8_t* buf, uint16_t length ) {
+//	// TODO
+//	return 0;
+//}
+//
+//uint16_t hal_uart_get_num_rx_bytes( void ) {
+//	// TODO
+//	return 0;
+//}
+//
+//void hal_uart_enable_rx_flow( uint8_t enable ) {
+//	// TODO
+//}
 
 void uart0_send( uint8_t const * const tx_buffer, uint16_t tx_buffer_len ) {
 	uint16_t tx_buffer_idx = 0;

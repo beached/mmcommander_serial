@@ -42,11 +42,11 @@ extern "C" {
 	/***********************************************************************************
 	 * GLOBAL FUNCTIONS
 	 */
-	void hal_uart_init( uint8_t baudrate, uint8_t options );
-	uint16_t hal_uart_write( const uint8_t* buf, uint16_t length );
-	uint16_t hal_uart_read( uint8_t* buf, uint16_t length );
-	uint16_t hal_uart_get_num_rx_bytes( void );
-	void hal_uart_enable_rx_flow( uint8_t enable );
+//	void hal_uart_init( uint8_t baudrate, uint8_t options );
+//	uint16_t hal_uart_write( const uint8_t* buf, uint16_t length );
+//	uint16_t hal_uart_read( uint8_t* buf, uint16_t length );
+//	uint16_t hal_uart_get_num_rx_bytes( void );
+//	void hal_uart_enable_rx_flow( uint8_t enable );
 
 	void uart0_send(uint8_t const * const tx_buffer, uint16_t tx_buffer_len );
 	void uart1_send(uint8_t const * const tx_buffer, uint16_t tx_buffer_len );

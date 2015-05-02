@@ -11,10 +11,10 @@
 
 // Globals
 void PORT1_ISR( void ) __interrupt( P1INT_VECTOR ) {
-	int i = 0;
-	int j = 0;
-	int modeChange = 0;
-	char txString[2] = { 0 };
+	int16_t i = 0;
+	int16_t j = 0;
+	int16_t modeChange = 0;
+	uint8_t tx_string[2] = { 0 };
 
 	// Clear Port 1 Interrupt Flag
 	P1IFG = 0;
@@ -33,13 +33,14 @@ void PORT1_ISR( void ) __interrupt( P1INT_VECTOR ) {
 		if( tx_filter_enabled == 1 ) {
 			tx_filter_enabled = 0;
 			P1_1 = 1;
-			txString[0] = 0x13;
+			tx_string[0] = 0x13;
 		} else {
 			tx_filter_enabled = 1;
 			P1_1 = 0;
-			txString[0] = 0x03;
+			tx_string[0] = 0x03;
 		}
-		hal_uart_write( (uint8_t const *)txString, 1 );
+		// DAW TODO
+		//hal_uart_write( (uint8_t const *)tx_string, 1 );
 	}
 
 	// Clear Port 1 Interrupt Flag
