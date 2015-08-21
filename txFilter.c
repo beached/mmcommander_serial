@@ -1,52 +1,47 @@
 #include "configuration.h"
 #include <stdint.h>
+#include <stddef.h>
+#include <stdbool.h>
 
-uint8_t __xdata tx_filter_enabled;
+bool  txFilterEnabled = true;
+
 #if _TX_ENABLE_ == 0
-uint8_t tx_filter( uint8_t *message, uint16_t length ) {
-	message;
-	length;
-	return 1;
+bool txFilter (uint8_t const * const, size_t const ) {
+  return true;
 }
 #elif _TX_FILTER_ENABLE_ == 0
-uint8_t tx_filter( uint8_t *message, uint16_t length ) {
-	message;
-	length;
-	return 0;
+bool txFilter (uint8_t const * const, size_t const ) {
+  return false;
 }
 #else
+bool txFilter (uint8_t const * const message, size_t const length ) {
+  if( 0 == length ) {
+    return false;
+  }
 
-uint8_t tx_filter( uint8_t *message, uint16_t length ) {
-	if( length < 1 ) return 0;
-
-	if( tx_filter_enabled == 1 ) {
-		// We won't allow glucometer readings
-		if( message[0] == 0xA5u ) return 1;
-
-		// We won't allow enlite sensors readings
-		if( message[0] == 0xAAu ) return 1;
-		if( message[0] == 0xABu ) return 1;
-
-		// When talking to a pump...
-		if( message[0] == 0xA7u ) {
-			// ... ACK messages are allowed
-			if( message[4] == 0x06u ) return 0;
-			// ... reading data is allowed
-			if( message[4] >= 0x70u ) return 0;
-			// ... waking up the pump is allowed
-			if( message[4] == 0x5Du ) return 0;
-			// ... we will allow suspend commands if we configured the
-			//   MedtronicCommander for that purpose.
-			if( (_SUPPORT_SUSPEND_WHEN_FILTERED_ == 1) &&
-				(message[4] == 0x4Du) ) return 0;
-			// ... and any other command will be filtered (by now)
-			return 1;
-		}
-
-		// Other unknown commands will be allowed.
-		return 0;
-	}
-
-	return 0;
+  if( txFilterEnabled ) {
+    switch( message[0] ) {      // Packet Type
+    case 0xA5:  // Glucometre
+    case 0xAA:  // Sensor Warmup - We won't allow enlite sensors readings
+    case 0xAB:  // Sensor Normal
+      return true;
+    case 0xA7:  // Sending message to pump
+      switch( message[4] ) {
+      case 0x06:        // ACK message
+      case 0x70:        // Read Data
+      case 0x5D:        // Wakeup Pump
+#if defined(_SUPPORT_SUSPEND_WHEN_FILTERED_) && _SUPPORT_SUSPEND_WHEN_FILTERED_ == 1
+      case 0x4D:        // Suspend pump, if explicitly configured at compile time
+#endif
+        return false;
+      default:
+        return true;    // Filter all other types
+      }
+    default:
+      return false;     // Allow unknwon packet types through
+    }
+  } else {    // txtFilterEnabled == false
+    return false;
+  }
 }
 #endif

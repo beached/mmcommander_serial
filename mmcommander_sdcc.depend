@@ -396,3 +396,30 @@
 
 1429939088 c:\devel\github\mmcommander_serial\hw\ioccxx10_bitdef.h
 
+1440177351 source:c:\devel\github\mmcommander\src\mmcommander\queues.c
+	"queues.h"
+
+1440177270 c:\devel\github\mmcommander\src\mmcommander\queues.h
+	<stddef.h>
+	<stdint.h>
+	<stdbool.h>
+
+1440183168 source:c:\devel\github\mmcommander\src\mmcommander\crc_4b6b.c
+	<stddef.h>
+	<stdint.h>
+	"crc_4b6b.h"
+	"queues.h"
+	<string.h>
+
+1440176292 c:\devel\github\mmcommander\src\mmcommander\crc_4b6b.h
+	<stddef.h>
+	<stdint.h>
+
+1440182818 source:c:\devel\github\mmcommander\src\mmcommander\txfilter.c
+	"configuration.h"
+	<stdint.h>
+	<stddef.h>
+	<stdbool.h>
+
+1440141132 c:\devel\github\mmcommander\src\mmcommander\configuration.h
+

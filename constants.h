@@ -8,7 +8,7 @@
 #define TICKSPD_BITS      0x38  // bit mask used to check the timer ticks output setting
 #define CLKSPD_BIT        0x03  // bit maks used to check the clock speed
 #define MAIN_OSC_BITS     0x7F  // bit mask used to control the system clock oscillator
-// e.g. ~MAIN_OSC_BITS can be used to start Crystal OSC
+                                // e.g. ~MAIN_OSC_BITS can be used to start Crystal OSC
 
 // Bit masks to check SLEEP register
 #define XOSC_STABLE_BIT   0x40  // bit mask used to check the stability of XOSC

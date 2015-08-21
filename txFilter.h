@@ -1,5 +1,3 @@
 #pragma once
-#include <stdint.h>
 
-uint8_t tx_filter( uint8_t *message, uint16_t length );
-
+bool txFilter (uint8_t const * const message, size_t const length);

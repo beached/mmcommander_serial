@@ -1,9 +1,14 @@
-#pragma once
+#ifndef _MEDTRONICRF_H_
+#define _MEDTRONICRF_H_
 
+#include <stddef.h>
 #include <stdint.h>
+#include <stdbool.h>
 
-void send_medtronic_message( uint8_t *message, uint16_t length, int16_t times );
-uint8_t receive_medtronic_message( uint8_t *message, uint16_t *length );
-void usb_receive_data( void );
+void sendMedtronicMessage (uint8_t const * const message, size_t const length, uint8_t const repeat_count );
 
-#pragma once
+// receiveMedtronicMessage and put it into message with length length.  Returns true on crc error
+bool receiveMedtronicMessage (uint8_t message[], size_t * const length);
+void usbReceiveData (void);
+
+#endif

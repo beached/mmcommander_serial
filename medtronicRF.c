@@ -1,104 +1,220 @@
-#include "common.h"
-#include "hw/ioCCxx10_bitdef.h"
-#include "hw/cc1110.h"
+#include "ioCCxx10_bitdef.h"
+#include "ioCC1110.h"
 #include "medtronicRF.h"
 #include "crc_4b6b.h"
 #include "constants.h"
 #include "globals.h"
-#include "hw/hal_uart.h"
-#include "txfilter.h"
+#include "usb_uart.h"
+#include "hal_uart.h"
+#include "txFilter.h"
 #include "configuration.h"
 #include "interrupts.h"
-#include <stdint.h>
+#include <stdbool.h>
 
 // Globals
-static uint16_t __xdata rf_length;
-static int16_t __xdata tx_calc_crc;
-static int16_t __xdata tx_calc_crc16;
-static int16_t __xdata tx_times;
-static uint8_t __xdata tx_length;
-static uint8_t __xdata rf_message[512];
-static uint8_t __xdata last_data;
+static uint8_t  rfMessage[128] = {0};
+static size_t  rfLength = 0;
 
-void send_medtronic_message( uint8_t *message, uint16_t length, int16_t times ) {
-	int16_t i = 0;
-	int16_t j = 0;
+void sendMedtronicMessage (uint8_t const * const message, size_t const length, uint8_t const repeat_count ) {
+  encode_4b6b(message, length, rfMessage, &rfLength);
+  PKTLEN = rfLength;
 
-	encode_4b6b( message, length, rf_message, &rf_length );
-	PKTLEN = rf_length;
+  stopTimerInt ();
 
-	RFST = RFST_SIDLE;
+  RFST = RFST_SIDLE;
 
-	for( j = 0; j < times; j++ ) {
-		RFST = RFST_STX;
-		for( i = 0; i < rf_length; i++ ) {
-			while( !RFTXRXIF ) { };
-			TCON &= 0xFD;
-			RFD = rf_message[i];
-		}
+  for (size_t j=0; j<repeat_count; j++) {
+    RFST = RFST_STX;
+    for (size_t i=0; i<rfLength; i++) {
+      while (!RFTXRXIF);
+      TCON &= 0xFD;
+      RFD = rfMessage[i];
+    }
 
-		i = 4096;
-		/* Add NOP to avoid that the loop is optimized away */
-		while( --i ) {
-				Nop( );
-		}
-	}
+    for( size_t i=4096; i>0; --i ) {
+      /* Add NOP to avoid that the loop is optimized away */
+      NOP( );
+    }
+  }
+  PKTLEN = 0xFF;
+  RFST = RFST_SIDLE;
+  RFST = RFST_SRX;
 
-	PKTLEN = 0xFF;
-	RFST = RFST_SIDLE;
-	RFST = RFST_SRX;
+  enableTimerInt ();
 }
 
-uint8_t receive_medtronic_message( uint8_t *message, uint16_t *length ) {
-	uint16_t i = 0;
-	uint16_t calc_crc16 = 0;
-	uint8_t calc_crc = 0;
-
-	RFST = RFST_SIDLE;
-	RFST = RFST_SRX;
-
-	PKTLEN = 0xFF;
-	last_data = 0xFF;
-	for( i = 0; i < 500 && last_data != 0; i++ ) {
-		while( !RFTXRXIF ) {
-			// TODO Add generic rx/tx uart code
-			//usbUartProcess( );
-			//usb_receive_data( );
-		}
-		rf_message[i] = RFD;
-		last_data = rf_message[i];
-		TCON &= ~0x02;
-	}
-	rf_length = i - 1;
-	RFST = RFST_SIDLE;
-
-	decode_4b6b( rf_message, rf_length, message, length );
-	calc_crc = crc8( message, (*length) - 1 );
-
-	if( calc_crc == message[(*length) - 1] ) {
-		return 0;
-	}
-
-	calc_crc16 = crc16( message, (*length) - 2 );
-	if( ((uint8_t)(calc_crc16 & 0x00FFu) == message[(*length) - 1]) &&
-		((uint8_t)((calc_crc16 >> 8) & 0x00FFu) == message[(*length) - 2]) ) {
-		return 0;
-	}
-
-	calc_crc = crc8( message, (*length) - 2 );
-
-	if( calc_crc == message[(*length) - 2] ) {
-		(*length) = (*length) - 1;
-		return 0;
-	}
-
-	calc_crc16 = crc16( message, (*length) - 3 );
-	if( ((uint8_t)(calc_crc16 & 0x00FFu) == message[(*length) - 2]) &&
-		((uint8_t)((calc_crc16 >> 8) & 0x00FFu) == message[(*length) - 3]) ) {
-		(*length) = (*length) - 1;
-		return 0;
-	}
-
-	crc16_init( );
-	return 1;
+static bool check_crc8( uint8_t const message[], size_t crc_pos ) {
+  return crc8( message, crc_pos ) == message[crc_pos];
 }
+
+static bool check_crc16( uint8_t const message[], size_t crc_pos ) {
+  uint16_t const calcCRC16 = crc16(message,crc_pos);
+  return ((uint8_t)(calcCRC16 & 0x00FF) == message[crc_pos+1]) && ((uint8_t)(calcCRC16 >> 8) == message[crc_pos]);
+}
+
+
+bool receiveMedtronicMessage (uint8_t message[], size_t * const length) {
+  RFST = RFST_SIDLE;
+  RFST = RFST_SRX;
+  PKTLEN = 0xFF;
+
+  enableTimerInt();
+
+  size_t i = 0;
+  {
+    uint8_t lastData = 0xFF;
+    for( ; i<128 && lastData != 0x00; ++i ) {
+      while (!RFTXRXIF) {
+        usbUartProcess();
+        usbReceiveData();
+        if (RFIF & 0x40) {
+          RFIF &= 0xBF;
+          lastData = 0xFF;
+          i = 0;
+          RFST = RFST_SIDLE;
+          RFST = RFST_SRX;
+          resetTimerCounter();
+        }
+      }
+      stopTimerInt ();
+      rfMessage[i] = RFD;
+      lastData = rfMessage[i];
+      TCON &= ~0x02;
+    }
+  }
+  rfLength = i-1;
+  RFST = RFST_SIDLE;
+
+  //P1_1 = ~P1_1;
+
+  decode_4b6b( rfMessage, rfLength, message, length );
+
+  if( check_crc8( message, *length - 1 ) ) {
+    return false;
+  }
+
+  if( check_crc16( message, *length -2 ) ) {
+    return false;
+  }
+
+  if( check_crc8( message, *length - 2 ) ) {
+    return false;
+  }
+
+  if( check_crc16( message, *length - 3 ) ) {
+    return false;
+  }
+
+  return true;
+}
+
+void usbReceiveData (void) {
+  uint8_t tempData[128] = { 0 };
+  size_t uartRxIndex = 0;
+
+  uint16_t nBytes = halUartGetNumRxBytes();
+
+  for( size_t i=0; i<nBytes; i=i+48) {
+    uint16_t readBytes;
+    if (nBytes-i > 48) {
+      readBytes = 48;
+    } else {
+      readBytes = nBytes-i;
+    }
+    halUartRead( &tempData[i], readBytes);
+    usbUartProcess();
+  }
+
+  bool txCalcCRC8 = false;
+  bool txCalcCRC16 = false;
+  uint8_t txLength = 0;
+  static uint8_t uartRxBuffer[SIZE_OF_UART_RX_BUFFER] = { 0 };
+  uint8_t txTimes = 0;
+
+  for( size_t i=0; i<nBytes; i++) {
+
+    // Read Rx buffer
+    uartRxBuffer[uartRxIndex] = tempData[i];
+
+    switch( uartRxIndex ) {
+    case 0: {
+      switch( uartRxBuffer[0] ) {
+      case 0x01:
+        uartRxIndex++;
+        txCalcCRC8   = false;
+        txCalcCRC16 = false;
+        enableTimerInt();
+        break;
+      case 0x81:
+        uartRxIndex++;
+        txCalcCRC8   = true;
+        txCalcCRC16 = false;
+        enableTimerInt();
+        break;
+      case 0xC1:
+        uartRxIndex++;
+        txCalcCRC8   = false;
+        txCalcCRC16 = true;
+        enableTimerInt();
+        break;
+      case 0x03:
+      case 0x13:
+        txFilterEnabled = true;
+        P1_1 = 0;
+        uartRxBuffer[0] = 0x03;
+        halUartWrite(uartRxBuffer,1);
+        break;
+      case 0x00:
+        uartRxBuffer[0] = _MMCOMMANDER_VERSION_ ;
+        halUartWrite(uartRxBuffer,1);
+        break;
+      }
+      break;
+    }
+    case 1: {
+      txLength = uartRxBuffer[1];
+      uartRxIndex++;
+      resetTimerCounter();
+      break;
+    }
+    case 2: {
+      txTimes = uartRxBuffer[2];
+      uartRxIndex++;
+      resetTimerCounter();
+      break;
+    }
+    default: {
+      resetTimerCounter();
+      if (uartRxIndex == (txLength + 2)) {
+        stopTimerInt();
+        if (txCalcCRC8 ) {
+          uartRxBuffer[++uartRxIndex] = crc8(&uartRxBuffer[3], (size_t)(txLength));
+          txLength++;
+        }
+        if (txCalcCRC16 ) {
+          uint16_t const tmpCRC16 = crc16 (&uartRxBuffer[3],(size_t)(txLength));
+          uartRxBuffer[++uartRxIndex] = (uint8_t)((tmpCRC16 >> 8) & 0x00FF);
+          uartRxBuffer[++uartRxIndex] = (uint8_t)(tmpCRC16 & 0x00FF);
+          txLength += 2;
+        }
+
+        if (txFilter(&uartRxBuffer[3],txLength) == 0) {
+          sendMedtronicMessage(&uartRxBuffer[3],txLength,txTimes);
+          halUartWrite( uartRxBuffer, 3 );
+          uartRxIndex=0;
+        } else {
+          uartRxBuffer[1]=0x00;
+          uartRxBuffer[2]=0x00;
+          halUartWrite( uartRxBuffer, 3 );
+          uartRxIndex=0;
+        }
+      } else {
+        uartRxIndex++;
+      }
+      break;
+    }
+    }
+
+  }
+}
+
