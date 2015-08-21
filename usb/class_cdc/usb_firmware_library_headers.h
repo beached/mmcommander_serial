@@ -18,13 +18,13 @@
 // usb_firmware_library_config.h. The definitions in these files should be adapted to your project.
 
 #include "usb_firmware_library_config.h"
-#include "usb_descriptor.h"
-#include "usb_descriptor_parser.h"
-#include "usb_interrupt.h"
-#include "usb_framework.h"
-#include "usb_reg.h"
-#include "usb_standard_requests.h"
-#include "usb_suspend.h"
+#include "../library/usb_descriptor.h"
+#include "../library/usb_descriptor_parser.h"
+#include "../library/usb_interrupt.h"
+#include "../library/usb_framework.h"
+#include "../library/usb_reg.h"
+#include "../library/usb_standard_requests.h"
+#include "../library/usb_suspend.h"
 
 /*
 +------------------------------------------------------------------------------

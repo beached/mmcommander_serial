@@ -133,8 +133,8 @@
 //@{
 /// USB descriptor markers which the USB Firmware Library imports from the application
 typedef struct {
-    uint8 __code* const pUsbDescStart;           ///< USB descriptor start pointer
-    uint8 __code* const pUsbDescEnd;             ///< USB descriptor end pointer
+    uint8_t __code* const pUsbDescStart;           ///< USB descriptor start pointer
+    uint8_t __code* const pUsbDescEnd;             ///< USB descriptor end pointer
     DESC_LUT_INFO __code* const pUsbDescLut;     ///< Start of USB desc look-up table pointer
     DESC_LUT_INFO __code* const pUsbDescLutEnd;  ///< End of USB desc look-up table pointer
     DBLBUF_LUT_INFO __code* const pUsbDblbufLut; ///< Start of double-buffering look-up table pointer

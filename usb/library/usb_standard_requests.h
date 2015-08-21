@@ -33,7 +33,7 @@
  *
  * To have any practical purpose, "OUT data phase" standard requests need to notify the application of
  * certain events. This is done by passing the event via yet another function hook,
- * \ref usbsrHookProcessEvent(uint8 event, uint8 index). For events related to interfaces and endpoints,
+ * \ref usbsrHookProcessEvent(uint8_t event, uint8_t index). For events related to interfaces and endpoints,
  * the \c index parameter refers to an interface number or the least significant nibble of the endpoint
  * address. The following events can be generated:
  * \li \ref USBSR_EVENT_CONFIGURATION_CHANGING (the device configuration is about to change)
@@ -138,9 +138,9 @@ void usbsrHookClearFeature(void);
 /// Hook which is called when a \ref SET_FEATURE request refers to a an unsupported feature.
 void usbsrHookSetFeature(void);
 /// Hook for modifying a \ref GET_STATUS request before the status value is returned to the PC.
-void usbsrHookModifyGetStatus(uint8 recipient, uint8 index, uint16  *pStatus);
+void usbsrHookModifyGetStatus(uint8_t recipient, uint8_t index, uint16_t  *pStatus);
 /// Hook which is called upon a standard request generated event (unsupported).
-void usbsrHookProcessEvent(uint8 event, uint8 index);
+void usbsrHookProcessEvent(uint8_t event, uint8_t index);
 //@}
 //-------------------------------------------------------------------------------------------------------
 

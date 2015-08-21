@@ -56,7 +56,7 @@ void bufInit(ringBuf_t * const pBuf) {
 uint8_t bufPut(ringBuf_t * const pBuf, uint8_t const * const pData, uint8_t const nBytes) {
     // Critical section start
     uint16_t s = halIntLock();
-    
+
     uint8_t i = 0;
     if (pBuf->nBytes+nBytes < BUF_SIZE) {
       for( ; i<nBytes; ++i ) {
@@ -67,7 +67,7 @@ uint8_t bufPut(ringBuf_t * const pBuf, uint8_t const * const pData, uint8_t cons
         }
       }
       pBuf->nBytes+= i;
-    } 
+    }
     // Critical section end
     halIntUnlock(s);
 
@@ -86,12 +86,12 @@ uint8_t bufPut(ringBuf_t * const pBuf, uint8_t const * const pData, uint8_t cons
 *
 * @return  Bytes actually returned
 */
-uint8_t bufGet(ringBuf_t * const pBuf, uint8 * const pData, uint8 nBytes) {
+uint8_t bufGet(ringBuf_t * const pBuf, uint8_t * const pData, uint8_t nBytes) {
     // Critical section start
     uint16_t s = halIntLock();
 
     uint8_t i= 0;
-    for( ; i<nBytes && i<pBuf->nBytes; ++i ) { 
+    for( ; i<nBytes && i<pBuf->nBytes; ++i ) {
         pData[i]= pBuf->pData[pBuf->iHead];
         pBuf->iHead++;
         if (pBuf->iHead==BUF_SIZE) {
@@ -117,7 +117,7 @@ uint8_t bufGet(ringBuf_t * const pBuf, uint8 * const pData, uint8 nBytes) {
 *
 * @return  Bytes actually returned
 */
-//uint8_t bufPeek(ringBuf_t const * const pBuf, uint8 * const pData, uint8 const nBytes)
+//uint8_t bufPeek(ringBuf_t const * const pBuf, uint8_t * const pData, uint8_t const nBytes)
 //{
 //    uint8_t j= pBuf->iHead;
 //    // Critical section start
@@ -128,8 +128,8 @@ uint8_t bufGet(ringBuf_t * const pBuf, uint8 * const pData, uint8 nBytes) {
 //        j++;
 //        if (j==BUF_SIZE) {
 //            j= 0;
-//        }   
-//    }    
+//        }
+//    }
 //    // Critical section end
 //    halIntUnlock(s);
 //    return i;

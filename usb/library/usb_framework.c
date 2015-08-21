@@ -9,9 +9,10 @@
 /// \addtogroup module_usb_framework
 /// @{
 #define USBFRAMEWORK_C ///< Modifies the behavior of "EXTERN" in usb_framework.h
-#include "usb_firmware_library_headers.h"
-#include "hal_int.h"
-#include "hal_board.h"
+#include "../class_cdc/usb_firmware_library_headers.h"
+#include "../others/hal_int.h"
+#include "../others/hal_board.h"
+#include "../../ioCC1111.h"
 
 // Function pointer used by usbfwSetupHandler()
 static VFPTR __data ProcessFunc;
@@ -77,9 +78,9 @@ void usbfwResetHandler(void)
  */
 void usbfwSetupHandler(void)
 {
-   uint8 controlReg;
-   uint8 bytesNow;
-   uint8 oldEndpoint;
+   uint8_t controlReg;
+   uint8_t bytesNow;
+   uint8_t oldEndpoint;
 
    // Save the old index setting, then select endpoint 0 and fetch the control register
    oldEndpoint = USBFW_GET_SELECTED_ENDPOINT();
@@ -130,7 +131,7 @@ void usbfwSetupHandler(void)
    // Receive SETUP header
    if (usbfwData.ep0Status == EP_IDLE) {
       if (controlReg & USBCS0_OUTPKT_RDY) {
-         usbfwReadFifo(&USBF0, 8, (uint8  *) &usbSetupHeader);
+         usbfwReadFifo(&USBF0, 8, (uint8_t  *) &usbSetupHeader);
 
          // Handle control transfers individually
          ProcessFunc = NULL;
@@ -238,7 +239,7 @@ void usbfwSetupHandler(void)
  */
 void usbfwSetAllEpStatus(EP_STATUS status)
 {
-   uint8 n;
+   uint8_t n;
    for (n = 0; n < sizeof(usbfwData.pEpInStatus); n++)
        usbfwData.pEpInStatus[n] = status;
    for (n = 0; n < sizeof(usbfwData.pEpOutStatus); n++)
@@ -260,9 +261,9 @@ void usbfwSetAllEpStatus(EP_STATUS status)
  * \param[in]       *pData
  *     A pointer to the storage location for the read data (in any memory space)
  */
-void usbfwReadFifo(uint8 volatile  *pFifo, uint8 count, void __generic *pData)
+void usbfwReadFifo(uint8_t volatile  *pFifo, uint8_t count, void /*__generic*/ *pData)
 {
-   uint8 __generic *pTemp = pData;
+   uint8_t /*__generic*/ *pTemp = pData;
    if (count) {
       do {
          *(pTemp++) = *pFifo;
@@ -285,9 +286,9 @@ void usbfwReadFifo(uint8 volatile  *pFifo, uint8 count, void __generic *pData)
  * \param[in]       *pData
  *     A pointer to the data to be written (from any memory space)
  */
-void usbfwWriteFifo(uint8 volatile  *pFifo, uint8 count, void __generic *pData)
+void usbfwWriteFifo(uint8_t volatile  *pFifo, uint8_t count, void /*__generic*/ *pData)
 {
-   uint8 __generic *pTemp = pData;
+   uint8_t /*__generic*/ *pTemp = pData;
    if (count) {
       do {
          *pFifo = *(pTemp++);

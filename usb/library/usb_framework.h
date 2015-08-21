@@ -78,7 +78,7 @@
  * \par Example 1: Endpoint 0 Requests With OUT Data phase
  *
  * \code
- * uint8 pLcdBuffer[358];
+ * uint8_t pLcdBuffer[358];
  *
  * void usbvrHookProcessOut(void) {
  *
@@ -125,7 +125,7 @@
  * \par Example 2: Endpoint 0 Requests With IN Data phase
  *
  * \code
- * uint8 keyBufferPos;
+ * uint8_t keyBufferPos;
  * BOOL blockKeyboard;
  * char pKeyBuffer[150];
  *
@@ -179,8 +179,9 @@
  * at every endpoint 0 interrupt.
  * @{
  */
-#include "hal_defs.h"
+#include "../../hal_defs.h"
 #include "usb_framework_structs.h"
+#include <cc1110.h>
 
 #ifdef EXTERN
    #undef EXTERN
@@ -327,9 +328,9 @@ void usbvrHookProcessIn(void);
 //-------------------------------------------------------------------------------------------------------
 
 // Little endian
-#define LOBYTEPTR(w)  ( (uint8 __generic *)(&(w)) + 1 )
+#define LOBYTEPTR(w)  ( (uint8_t /*__generic*/ *)(&(w)) + 1 )
 // Big endian
-//#define LOBYTEPTR(w)  ( (uint8 __generic *)&(w) )
+//#define LOBYTEPTR(w)  ( (uint8_t /*__generic*/ *)&(w) )
 
 
 
@@ -339,8 +340,8 @@ void usbfwInit(void);
 void usbfwResetHandler(void);
 void usbfwSetupHandler(void);
 void usbfwSetAllEpStatus(EP_STATUS status);
-void usbfwWriteFifo(uint8 volatile  *pFifo, uint8 count, void __generic *pData);
-void usbfwReadFifo(uint8 volatile  *pFifo, uint8 count, void __generic *pData);
+void usbfwWriteFifo(uint8_t volatile  *pFifo, uint8_t count, void /*__generic*/ *pData);
+void usbfwReadFifo(uint8_t volatile  *pFifo, uint8_t count, void /*__generic*/ *pData);
 //-------------------------------------------------------------------------------------------------------
 
 //@}

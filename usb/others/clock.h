@@ -16,21 +16,11 @@
  * INCLUDES
  */
 
-#include "hal_types.h"
 
-// Include chip specific IO definition file
-#if (chip == 2510)
-#include "ioCC2510.h"
-#endif
-#if (chip == 1110)
-#include "ioCC1110.h"
-#endif
-#if (chip == 2511)
-#include "ioCC2511.h"
-#endif
-#if (chip == 1111)
-#include "ioCC1111.h"
-#endif
+//#include "hal_types.h"
+#include <cc1110.h>
+#include "../../ioCC1111.h"
+
 
 
 

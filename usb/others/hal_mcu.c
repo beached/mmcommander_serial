@@ -6,7 +6,7 @@
 ***********************************************************************************/
 
 
-#include "hal_types.h"
+//#include "hal_types.h"
 #include "hal_mcu.h"
 
 #include "clock.h"
@@ -35,7 +35,7 @@ void halMcuInit(void) {
 *
 *              NB! This function is highly dependent on architecture and compiler!
 *
-* @param       uint16 usec - number of microseconds delay
+* @param       uint16_t usec - number of microseconds delay
 *
 * @return      none
 */
@@ -69,7 +69,7 @@ void halMcuWaitUs(uint16_t usec) {
 *
 *              NB! This function is highly dependent on architecture and compiler!
 *
-* @param       uint16 msec - number of milliseconds delay
+* @param       uint16_t msec - number of milliseconds delay
 *
 * @return      none
 */
@@ -89,11 +89,11 @@ void halMcuWaitMs(uint16_t msec) {
 *
 *              NB! This function is highly dependent on architecture and compiler!
 *
-* @param       uint8 mode - power mode
+* @param       uint8_t mode - power mode
 *
 * @return      none
 */
-//void halMcuSetLowPowerMode(uint8 )
+//void halMcuSetLowPowerMode(uint8_t )
 //{
 //  // comment: not yet implemented
 //  //HAL_ASSERT(FALSE);

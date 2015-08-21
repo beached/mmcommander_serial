@@ -87,9 +87,9 @@
 //-------------------------------------------------------------------------------------------------------
 /// USBIRQ internal module data
 /*typedef struct {
-    uint16 eventMask; ///< Bit mask containing all pending events (see the \c USBIRQ_EVENT definitions)
+    uint16_t eventMask; ///< Bit mask containing all pending events (see the \c USBIRQ_EVENT definitions)
     BOOL inSuspend; ///< Is currently in suspend?
-    uint16 irqMask;   ///< USB interrupts to be enabled
+    uint16_t irqMask;   ///< USB interrupts to be enabled
 } USBIRQ_DATA;*/
 #ifdef USBIRQ_DATA_ADDR
     EXTERN __no_init __data USBIRQ_DATA usbirqData @ USBIRQ_DATA_ADDR; ///< USBIRQ internal module data at fixed address
@@ -163,9 +163,9 @@ void usbirqHookProcessEvents(void);
 
 //-------------------------------------------------------------------------------------------------------
 // Function prototypes
-void usbirqInit(uint16 irqMask);
-__near_func __interrupt void usbirqHandler(void);
-__near_func __interrupt void usbirqResumeHandler(void);
+void usbirqInit(uint16_t irqMask);
+//__near_func __interrupt void usbirqHandler(void);
+//__near_func __interrupt void usbirqResumeHandler(void);
 //-------------------------------------------------------------------------------------------------------
 
 

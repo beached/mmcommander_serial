@@ -16,12 +16,12 @@
 #include "usb_firmware_library_headers.h"
 #include "usb_cdc.h"
 #include "usb_uart.h"
-#include "hal_led.h"
+#include "../others/hal_led.h"
 
 /* Global data */
 
 extern CDC_LINE_CODING_STRUCTURE currentLineCoding;
-extern uint16 cdcRTS;
+extern uint16_t cdcRTS;
 
 
 // *********************************************************************************
@@ -50,7 +50,7 @@ void usbcrHookProcessOut(void)
 
       if(usbfwData.ep0Status == EP_IDLE)
       {
-         usbSetupData.pBuffer = (uint8  *) &currentLineCoding;
+         usbSetupData.pBuffer = (uint8_t  *) &currentLineCoding;
          usbfwData.ep0Status = EP_RX;
       }
       else if(usbfwData.ep0Status == EP_RX) { }
@@ -68,7 +68,7 @@ void usbcrHookProcessIn(void)
    if (usbSetupHeader.request == CDC_GET_LINE_CODING) {
       // First the endpoint status is EP_IDLE...
       if (usbfwData.ep0Status == EP_IDLE) {
-         usbSetupData.pBuffer = (uint8  *) &currentLineCoding;
+         usbSetupData.pBuffer = (uint8_t  *) &currentLineCoding;
          usbSetupData.bytesLeft = 7;
          usbfwData.ep0Status = EP_TX;
          // Then the endpoint status is EP_TX (remember: we did that here when setting up the buffer)
@@ -89,11 +89,11 @@ void usbsrHookSetDescriptor(void) { usbfwData.ep0Status = EP_STALL; }
 void usbsrHookSynchFrame(void) { usbfwData.ep0Status = EP_STALL; }
 void usbsrHookClearFeature(void) { usbfwData.ep0Status = EP_STALL; }
 void usbsrHookSetFeature(void) { usbfwData.ep0Status = EP_STALL; }
-void usbsrHookModifyGetStatus(uint8 recipient, uint8 index, uint16  *pStatus) { }
+void usbsrHookModifyGetStatus(uint8_t recipient, uint8_t index, uint16_t  *pStatus) { }
 
 
 // ************************ USB standard request event processing ******************
-void usbsrHookProcessEvent(uint8 event, uint8 index)
+void usbsrHookProcessEvent(uint8_t event, uint8_t index)
 {
    // Process relevant events, one at a time.
    switch (event) {

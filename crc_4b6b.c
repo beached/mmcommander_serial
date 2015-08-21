@@ -38,8 +38,8 @@ static uint8_t get_4b6b_symbol( uint8_t const in_symbol ) {
 }
 
 void encode_4b6b( uint8_t const in_message[], size_t const in_length, uint8_t out_message[], size_t * const out_length ) {
-  static nibble_queue nq;
-  static bit_queue bq;
+  nibble_queue nq;
+  bit_queue bq;
   nibble_queue_init( &nq );
   bit_queue_init( &bq );
 
@@ -78,8 +78,8 @@ static uint8_t decode_symbol( uint8_t symbol ) {
 
 
 void decode_4b6b( uint8_t const message_in[], size_t const message_in_sz, uint8_t message_out[], size_t * const out_length ) {
-	static nibble_queue nq;
-	static bit_queue bq;
+	nibble_queue nq;
+	bit_queue bq;
 	nibble_queue_init( &nq );
 	bit_queue_init( &bq );
 

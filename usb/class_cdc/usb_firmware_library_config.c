@@ -21,8 +21,8 @@
 
 // Declaration of global USB descriptor pointers
 USB_DESCRIPTOR_MARKER usbDescriptorMarker= {
-    (uint8 __code *)&usbDescStart,
-    (uint8 __code *)&usbDescEnd,
+    (uint8_t __code *)&usbDescStart,
+    (uint8_t __code *)&usbDescEnd,
     (DESC_LUT_INFO __code *) &usbDescLut,
     (DESC_LUT_INFO __code *) &usbDescLutEnd,
     (DBLBUF_LUT_INFO __code *) &usbDblbufLut,

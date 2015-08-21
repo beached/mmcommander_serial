@@ -11,7 +11,7 @@
  * INCLUDES
  */
 
-#include "hal_types.h"
+//#include "hal_types.h"
 #include "hal_defs.h"
 
 
@@ -78,7 +78,7 @@
                                                 P##port##DIR |= BM(pin); )
 
 #define MCU_IO_SET_HIGH_PREP(port, pin)     st( P##port##_##pin## = 1; )
-#define MCU_IO_SET_LOW_PREP(port, pin)      st( P##port##_##pin## = 0; )
+#define MCU_IO_SET_LOW_PREP(port, pin)      st( P##port##_##pin##  = 0; )
 
 #define MCU_IO_SET_PREP(port, pin, val)     st( P##port##_##pin## = val; )
 #define MCU_IO_TGL_PREP(port, pin)          st( P##port##_##pin## ^= 1; )

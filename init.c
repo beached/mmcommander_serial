@@ -1,8 +1,8 @@
-#include "hal_types.h"
+//#include "hal_types.h"
 #include "hal_defs.h"
 #include "hal_cc8051.h"
 #include "ioCCxx10_bitdef.h"
-//#include "ioCC1110.h"
+#include <cc1110.h>
 #include "constants.h"
 #include "globals.h"
 #include "configuration.h"
@@ -34,7 +34,7 @@ void configureOsc (void)
 {
   SLEEP &= ~OSC_PD_BIT;     // powering down all oscillators
   while(!XOSC_STABLE);      // waiting until the oscillator is stable
-  asm("NOP");
+  __asm__("NOP");
   CLKCON &= 0xF8;
   CLKCON &= ~MAIN_OSC_BITS; // starting the Crystal Oscillator
   SLEEP |= OSC_PD_BIT;      // powering down the unused oscillator
@@ -48,15 +48,15 @@ void configureMedtronicRFMode (void)
   ADDR = 0x00;
   CHANNR = 0x00;
   FSCTRL1 = 0x06; FSCTRL0 = 0x00;
-  if (_USA_FREQUENCY_MODE_ == 0 ) {
+  #if defined(_USA_FREQUENCY_MODE_) && _USA_FREQUENCY_MODE_ == 0
     FREQ2 = 0x24;
     FREQ1 = 0x2E;
     FREQ0 = 0x38;
-  } else {
+  #else
     FREQ2 = 0x26;
     FREQ1 = 0x30;
     FREQ0 = 0x00;
-  }
+  #endif
   MDMCFG4 = 0x59;
   MDMCFG3 = 0x66;
   MDMCFG2 = 0x33;

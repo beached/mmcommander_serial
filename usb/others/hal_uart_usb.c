@@ -9,7 +9,7 @@
 /***********************************************************************************
 * INCLUDES
 */
-#include "hal_types.h"
+//#include "hal_types.h"
 #include "hal_uart.h"
 #include "hal_board.h"
 #include "util_buffer.h"
@@ -32,7 +32,7 @@
 ringBuf_t rbRxBuf = {0};
 ringBuf_t rbTxBuf = {0};
 
-extern uint8 cdcCTS;
+extern uint8_t cdcCTS;
 
 /************************************************************************************
 * LOCAL VARIABLES
@@ -44,8 +44,8 @@ extern uint8 cdcCTS;
 *
 * @brief   Initalise UART. Supported baudrates are: 38400, 57600 and 115200
 *
-* @param   uint8 baudrate
-*          uint8 options - this parameter is ignored
+* @param   uint8_t baudrate
+*          uint8_t options - this parameter is ignored
 *
 * @return  none
 */
@@ -78,17 +78,17 @@ void halUartInit( void ) {
 *          buffer is emptied by UART TX interrupt ISR
 *
 * @param   uint8* buf - buffer with data to write
-*          uint16 length - number of bytes to write
+*          uint16_t length - number of bytes to write
 *
 * @return  number of bytes written
 */
 uint16_t halUartBufferedWrite(uint8_t const * const buf, uint16_t length) {
-    uint16 n;
-    
+    uint16_t n;
+
     n= 0;
     while ( n < length ) {
-        uint8 i;
-        
+        uint8_t i;
+
         i= bufPut(&rbTxBuf,buf+n,length-n);
         if (i==0) {
             halMcuWaitMs(5);
@@ -98,7 +98,7 @@ uint16_t halUartBufferedWrite(uint8_t const * const buf, uint16_t length) {
         }
         n+= i;
     }
-    
+
     return n; // (bufPut(&rbTxBuf,buf,length));
 }
 
@@ -109,9 +109,9 @@ uint16_t halUartBufferedWrite(uint8_t const * const buf, uint16_t length) {
 * @brief   Write data buffer to UART
 *
 * @param   uint8* buf - buffer with data to write
-*          uint16 length - number of bytes to write
+*          uint16_t length - number of bytes to write
 *
-* @return  uint16 - number of bytes written
+* @return  uint16_t - number of bytes written
 */
 uint16_t halUartWrite(uint8_t * buf, uint16_t length) {
     return halUartBufferedWrite(buf, length);
@@ -124,7 +124,7 @@ uint16_t halUartWrite(uint8_t * buf, uint16_t length) {
 * @brief   Read data from UART Rx buffer
 *
 * @param   uint8* buf - buffer with data to read in to
-*          uint16 length - number of bytes to read
+*          uint16_t length - number of bytes to read
 *
 * @return  none
 */
@@ -152,7 +152,7 @@ uint16_t halUartGetNumRxBytes(void) {
 *
 * @brief   Signal ready/not ready to receive characters on UART
 *
-* @param   uint8 enable - TRUE to signal ready to receive on UART
+* @param   uint8_t enable - TRUE to signal ready to receive on UART
 *                         FALSE to signal not ready to receive on UART
 *
 * @return  none

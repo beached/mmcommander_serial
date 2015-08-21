@@ -9,7 +9,7 @@
  * INCLUDES
  */
 
-#include "hal_types.h"
+//#include "hal_types.h"
 #include "hal_mcu.h"
 #include "hal_board.h"
 

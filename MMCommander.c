@@ -18,9 +18,9 @@ Date:         Dec 24th, 2014
 #include "constants.h"
 #include "interrupts.h"
 #include "medtronicRF.h"
-#include "hal_board.h"
-#include "hal_uart.h"
-#include "usb_uart.h"
+#include "usb/others/hal_board.h"
+#include "usb/others/hal_uart.h"
+#include "usb/class_cdc/usb_uart.h"
 #include "configuration.h"
 #include "algorithm.h"
 #include <stdbool.h>
@@ -61,11 +61,14 @@ int main(void)
 #if defined(_REPEATED_COMMAND_ENABLED_) && _REPEATED_COMMAND_ENABLED_ == 1
       if ((dataErr == ((uartTxBuffer[0]>>7) == 0x01)) && (dataLength == (uartTxLength-2)) ) {
         repeatedMessage = true;
-        for (size_t i=0; i<dataLength; i++) {
-          if (dataPacket[i] != uartTxBuffer[i+2]) {
-            repeatedMessage = false;
-            break;
-          }
+        {
+			size_t i=0;
+			for (; i<dataLength; i++) {
+			  if (dataPacket[i] != uartTxBuffer[i+2]) {
+				repeatedMessage = false;
+				break;
+			  }
+			}
         }
       }
 #endif
@@ -84,14 +87,17 @@ int main(void)
         memcpy( dataPacket, uartTxBuffer + 2, dataLength - 2 );
 
         uartTxLength = dataLength+2;
-        for (size_t i=0; i<uartTxLength; i=i+48) {
-          if (uartTxLength-i > 48) {
-            halUartWrite( &uartTxBuffer[i], 48 );
-            usbUartProcess();
-            usbReceiveData();
-          } else {
-            halUartWrite( &uartTxBuffer[i], uartTxLength-i );
-          }
+        {
+        	size_t i=0;
+			for (; i<uartTxLength; i=i+48) {
+			  if (uartTxLength-i > 48) {
+				halUartWrite( &uartTxBuffer[i], 48 );
+				usbUartProcess();
+				usbReceiveData();
+			  } else {
+				halUartWrite( &uartTxBuffer[i], uartTxLength-i );
+			  }
+			}
         }
       }
     }

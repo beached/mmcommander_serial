@@ -11,6 +11,7 @@
 
 #include <stdint.h>
 #include <stddef.h>
+#include "hal_defs.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -19,36 +20,12 @@ extern "C" {
 /******************************************************************************
  * INCLUDES
  */
-#include "hal_types.h"
+//#include "hal_types.h"
 
 
 /******************************************************************************
  * MACROS
  */
-
-#if (defined __ICC430__) || defined(__MSP430__)
-
-// Use the macros below to reduce function call overhead for common
-// global interrupt control functions
-
-
-#if (defined __ICC430__)
-#define HAL_INT_ON(x)      st( __enable_interrupt(); )
-#define HAL_INT_OFF(x)     st( __disable_interrupt(); )
-#define HAL_INT_LOCK(x)    st( (x) = __get_interrupt_state(); \
-                               __disable_interrupt(); )
-#define HAL_INT_UNLOCK(x)  st( __set_interrupt_state(x); )
-#endif
-
-#if (defined __MSP430__)
-#define HAL_INT_ON(x)      st( _enable_interrupts(); )
-#define HAL_INT_OFF(x)     st( _disable_interrupts(); )
-#define HAL_INT_LOCK(x)    st( (x) = _get_SR_register(); \
-                               _disable_interrupts(); )
-#define HAL_INT_UNLOCK(x)  st( _enable_interrupts(); /*_bis_SR_register(x);*/ )
-#endif
-
-#elif defined __ICC8051__
 
 #define HAL_INT_ON(x)      st( EA = 1; )
 #define HAL_INT_OFF(x)     st( EA = 0; )
@@ -56,26 +33,6 @@ extern "C" {
 #define HAL_INT_UNLOCK(x)  st( EA = (x); )
 
 typedef uint16_t istate_t;
-
-#elif defined WIN32
-
-#define HAL_INT_ON()
-#define HAL_INT_OFF()
-#define HAL_INT_LOCK(x)    st ((x)= 1; )
-#define HAL_INT_UNLOCK(x)
-
-#elif defined __KEIL__
-
-#define HAL_INT_ON(x)      st( EA = 1; )
-#define HAL_INT_OFF(x)     st( EA = 0; )
-#define HAL_INT_LOCK(x)    st( (x) = EA; EA = 0; )
-#define HAL_INT_UNLOCK(x)  st( EA = (x); )
-
-
-
-#else
-#error "Unsupported compiler"
-#endif
 
 
 /******************************************************************************

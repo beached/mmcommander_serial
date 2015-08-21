@@ -10,19 +10,21 @@ Description:  USB Virtual UART implementation.
 /***********************************************************************************
 * INCLUDES
 */
-#include "hal_types.h"
-#include "hal_board.h"
-#include "hal_int.h"
-#include "hal_led.h"
+//#include "hal_types.h"
+#include "../others/hal_board.h"
+#include "../others/hal_int.h"
+#include "../others/hal_led.h"
 
 #include "usb_cdc.h"
 #include "usb_firmware_library_config.h"
 #include "usb_firmware_library_headers.h"
 
 #include "usb_uart.h"
-#include "util_buffer.h"
+#include "../others/util_buffer.h"
 
-
+#include <cc1110.h>
+#include "../../ioCC1111.h"
+#include <stdint.h>
 /***********************************************************************************
 * MACROS and DEFINITIONS
 */
@@ -35,7 +37,6 @@ Description:  USB Virtual UART implementation.
 */
 
 /* Ring buffers defined in hal_uart.c */
-
 extern ringBuf_t rbRxBuf;
 extern ringBuf_t rbTxBuf;
 
@@ -100,8 +101,10 @@ void usbUartInit( void ) {
   usbirqInit(0xFFFF);
 
   // Enable pullup on D+
-  HAL_USB_PULLUP_ENABLE();
-
+  //HAL_USB_PULLUP_ENABLE();
+	//MCU_IO_OUTPUT_PREP(HAL_BOARD_IO_USB_ENABLE_PORT, HAL_BOARD_IO_USB_ENABLE_PIN, 1);
+	//MCU_IO_OUTPUT_PREP(1, 0, 1);
+	st( P1SEL &= ~BM(0); P1_0 = 1; P1DIR |= BM(0); );
   // Enable global interrupts
   halIntOn();
 }
@@ -247,7 +250,7 @@ static void usbOutProcess(void)
 
     // Get length of USB packet, this operation must not be interrupted.
     uint8_t length = USBFW_GET_OUT_ENDPOINT_COUNT_LOW();
-    length+= USBFW_GET_OUT_ENDPOINT_COUNT_HIGH() >> 8;
+   //DAW length += USBFW_GET_OUT_ENDPOINT_COUNT_HIGH() >> 8;
 
     // Calculate number of bytes available in RF buffer; and the number
     // of bytes we may transfer in this operation.

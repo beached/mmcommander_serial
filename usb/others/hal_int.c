@@ -8,7 +8,7 @@
 /***********************************************************************************
 * INCLUDES
 */
-#include "hal_types.h"
+//#include "hal_types.h"
 #include "hal_defs.h"
 #include "hal_int.h"
 #include "hal_board.h"
@@ -55,13 +55,13 @@ void halIntOff(void)
 *
 * @param   none
 *
-* @return  uint16 - current interrupt state
+* @return  uint16_t - current interrupt state
 */
 uint16_t halIntLock(void)
 {
     istate_t key;
-    HAL_INT_LOCK(key);
-    return(key);
+    HAL_INT_LOCK( key );
+    return key ;
 }
 
 

@@ -9,9 +9,9 @@
 /// \addtogroup module_usb_interrupt
 /// @{
 #define USBINTERRUPT_C ///< Modifies the behavior of "EXTERN" in usb_interrupt.h
-#include "usb_firmware_library_headers.h"
-#include "hal_board.h"
-#include "clock.h"
+#include "../class_cdc/usb_firmware_library_headers.h"
+#include "../others/hal_board.h"
+#include "../others/clock.h"
 
 
 /** \brief Initializes the \ref module_usb_interrupt module
@@ -23,7 +23,7 @@
  * \param[in]       irqMask
  *     A bit mask containing USBIRQ_EVENT bits for all events that shall be reported
  */
-void usbirqInit(uint16 irqMask)
+void usbirqInit(uint16_t irqMask)
 {
    // Initialize variables
    usbirqData.eventMask = 0x0000;
@@ -52,10 +52,9 @@ void usbirqInit(uint16 irqMask)
  * Clears the P2 interrupt flag and converts all USB interrupt flags into events.
  * The interrupt also lets \ref usbsuspEnter() break from the suspend loop.
  */
-#pragma vector=P2INT_VECTOR
-__interrupt void usbirqHandler(void)
+void usbirqHandler(void) __interrupt P2INT_VECTOR
 {
-   uint8 usbcif;
+   uint8_t usbcif;
 
    // First make sure that the crystal oscillator is stable
    while (!IS_XOSC_STABLE());
@@ -75,9 +74,9 @@ __interrupt void usbirqHandler(void)
    }
 
    // Record events (keeping existing)
-   usbirqData.eventMask |= (uint16) usbcif;
-   usbirqData.eventMask |= (uint16) USBIIF << 4;
-   usbirqData.eventMask |= (uint16) USBOIF << 9;
+   usbirqData.eventMask |= (uint16_t) usbcif;
+   usbirqData.eventMask |= (uint16_t) USBIIF << 4;
+   usbirqData.eventMask |= (uint16_t) USBOIF << 9;
 
    // If we get a suspend event, we should always enter suspend mode. We must,
    // however be sure that we exit the suspend loop upon resume or reset
@@ -105,10 +104,9 @@ __interrupt void usbirqHandler(void)
  * This routine clears the USB resume interrupt flag, and makes sure that MCU does not return to power
  * mode 1 again until the the suspend loop has been exited.
  */
-#pragma vector = P0INT_VECTOR
-__interrupt void usbirqResumeHandler(void)
+void usbirqResumeHandler(void) __interrupt P0INT_VECTOR
 {
-   uint8 flags;
+   uint8_t flags;
 
    // First make sure that the crystal oscillator is stable
    while (!IS_XOSC_STABLE());

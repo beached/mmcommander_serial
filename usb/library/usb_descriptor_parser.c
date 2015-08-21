@@ -9,7 +9,7 @@
 /// \addtogroup module_usb_descriptor_parser
 /// @{
 #define USBDESCRIPTORPARSER_C ///< Modifies the behavior of "EXTERN" in usb_descriptor_parser.h
-#include "usb_firmware_library_headers.h"
+#include "../class_cdc/usb_firmware_library_headers.h"
 
 //-------------------------------------------------------------------------------------------------------
 // USBDP internal module data
@@ -22,7 +22,7 @@ static USBDP_DATA  usbdpData; ///< USBDP internal module data
 */
 void usbdpInit(void)
 {
-   usbdpData.pDesc = (const uint8 __code *) usbDescriptorMarker.pUsbDescStart;
+   usbdpData.pDesc = (const uint8_t __code *) usbDescriptorMarker.pUsbDescStart;
 } // usbdpInit
 
 
@@ -50,7 +50,7 @@ void usbdpInit(void)
 * \return
 *     A pointer to the wanted descriptor type, or \c NULL if it was not found.
 */
-void __code* usbdpFindNext(uint8 wantedType, uint8 haltAtType)
+void __code* usbdpFindNext(uint8_t wantedType, uint8_t haltAtType)
 {
    void __code *pResult;
    pResult = NULL;
@@ -112,7 +112,7 @@ USB_DEVICE_DESCRIPTOR __code* usbdpGetDeviceDesc(void)
 * \return
 *     A pointer to the \ref USB_DEVICE_DESCRIPTOR, or \c NULL if it was not found.
 */
-USB_CONFIGURATION_DESCRIPTOR __code* usbdpGetConfigurationDesc(uint8 cfgValue, uint8 cfgIndex)
+USB_CONFIGURATION_DESCRIPTOR __code* usbdpGetConfigurationDesc(uint8_t cfgValue, uint8_t cfgIndex)
 {
    USB_CONFIGURATION_DESCRIPTOR __code *pConfigurationDesc;
    usbdpInit();
@@ -154,7 +154,7 @@ USB_CONFIGURATION_DESCRIPTOR __code* usbdpGetConfigurationDesc(uint8 cfgValue, u
 * \return
 *     A pointer to the \ref USB_INTERFACE_DESCRIPTOR, or \c NULL if it was not found.
 */
-USB_INTERFACE_DESCRIPTOR __code* usbdpGetInterfaceDesc(uint8 cfgValue, uint8 intNumber, uint8 altSetting)
+USB_INTERFACE_DESCRIPTOR __code* usbdpGetInterfaceDesc(uint8_t cfgValue, uint8_t intNumber, uint8_t altSetting)
 {
    USB_INTERFACE_DESCRIPTOR __code *pInterfaceDesc;
 
@@ -184,7 +184,7 @@ USB_INTERFACE_DESCRIPTOR __code* usbdpGetInterfaceDesc(uint8 cfgValue, uint8 int
 * \return
 *     A pointer to the \ref USB_INTERFACE_DESCRIPTOR, or \c NULL if it was not found.
 */
-USB_STRING_DESCRIPTOR __code* usbdpGetStringDesc(uint8 strIndex)
+USB_STRING_DESCRIPTOR __code* usbdpGetStringDesc(uint8_t strIndex)
 {
    USB_STRING_DESCRIPTOR __code *pStringDesc;
    usbdpInit();

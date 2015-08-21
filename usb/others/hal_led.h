@@ -15,15 +15,15 @@ extern "C" {
 /***********************************************************************************
 * INCLUDES
 */
-#include "hal_types.h"
+//#include "hal_types.h"
 
 /***********************************************************************************
  * GLOBAL FUNCTIONS
  */
 void halLedInit(void);
-void halLedSet(uint8 led_id);
-void halLedClear(uint8 led_id);
-void halLedToggle(uint8 led_id);
+void halLedSet(uint8_t led_id);
+void halLedClear(uint8_t led_id);
+void halLedToggle(uint8_t led_id);
 
 
 #ifdef  __cplusplus

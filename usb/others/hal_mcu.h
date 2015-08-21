@@ -15,10 +15,10 @@ extern "C" {
 /***********************************************************************************
 * INCLUDES
 */
-#include <hal_types.h>
+//#include <hal_types.h>
 #include <stdint.h>
 #include <stddef.h>
- 
+
 
 /***********************************************************************************
  * CONSTANTS AND DEFINES

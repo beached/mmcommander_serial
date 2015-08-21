@@ -87,8 +87,8 @@
  *     return TRUE if successful or FALSE if remote wakeup is not permitted (by the host).
  * @{
  */
-#include "usb_firmware_library_headers.h"
-
+#include "../class_cdc/usb_firmware_library_headers.h"
+#include "../../defines.h"
 
 //-------------------------------------------------------------------------------------------------------
 // Suspend enter/exit hooks
@@ -98,7 +98,7 @@ extern  VFPTR pFnSuspendExitHook;
 //-------------------------------------------------------------------------------------------------------
 // Function prototypes
 void usbsuspEnter(void);
-uint8 usbsuspDoRemoteWakeup(void);
+uint8_t usbsuspDoRemoteWakeup(void);
 void usbsuspStopPm1(void);
 //-------------------------------------------------------------------------------------------------------
 

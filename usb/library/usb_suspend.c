@@ -8,12 +8,13 @@
 
 /// \addtogroup module_usb_suspend
 /// @{
-#include "usb_firmware_library_headers.h"
-#include "hal_int.h"
-#include "hal_mcu.h"
-#include "hal_board.h"
+#include "../class_cdc/usb_firmware_library_headers.h"
+#include "../others/hal_int.h"
+#include "../others/hal_mcu.h"
+#include "../others/hal_board.h"
+#include "../../ioCC1111.h"
 
-static  uint8 usbsuspEnterXdata[14];
+static  uint8_t usbsuspEnterXdata[14] = { 0 };
 static  VFPTR pUsbsuspEnterXdata = NULL;
 
  VFPTR pFnSuspendEnterHook=  NULL;
@@ -31,8 +32,9 @@ static  VFPTR pUsbsuspEnterXdata = NULL;
  */
 void usbsuspEnter(void)
 {
-   HAL_LED_CLR();
-
+   //HAL_LED_CLR();
+   //MCU_IO_SET_LOW_PREP( HAL_BOARD_IO_LED_PORT, HAL_BOARD_IO_LED_PIN );
+   P1_1  = 0;
    if (pFnSuspendEnterHook!=NULL)
        pFnSuspendEnterHook();
 
@@ -55,7 +57,7 @@ void usbsuspEnter(void)
 
    // while (inSuspend);  / MOV A, inSuspend
    usbsuspEnterXdata[9] = 0xE5;
-   usbsuspEnterXdata[10] = (uint8) ((__data uint8 *) &usbirqData.inSuspend);
+   usbsuspEnterXdata[10] = (uint8_t) ((__data uint8_t *) &usbirqData.inSuspend);
 
    // ... Restart ...     / JNZ -12
    usbsuspEnterXdata[11] = 0x70;
@@ -71,7 +73,7 @@ void usbsuspEnter(void)
    // Call the suspend loop routine from XDATA
    // The routine is in XDATA so that usbsuspExit() wipe out the power-down instruction in the loop (by
    // replacing "MOV PCON, #0x01" with three NOP instructions).
-   pUsbsuspEnterXdata = (VFPTR) ((uint16) usbsuspEnterXdata);
+   pUsbsuspEnterXdata = (VFPTR) ((uint16_t) usbsuspEnterXdata);
    pUsbsuspEnterXdata();
 
    if (pFnSuspendExitHook!=NULL)
@@ -94,7 +96,7 @@ void usbsuspEnter(void)
  *     \c TRUE if the remote wakeup was performed (the privilege had been granted), otherwise \c FALSE
  *     (the device is still in suspend mode).
  */
-uint8 usbsuspDoRemoteWakeup(void)
+uint8_t usbsuspDoRemoteWakeup(void)
 {
 
    // Make sure that it's OK

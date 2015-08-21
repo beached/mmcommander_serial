@@ -1,19 +1,28 @@
 #include "ioCCxx10_bitdef.h"
-#include "ioCC1110.h"
+#include <cc1110.h>
 #include "medtronicRF.h"
 #include "crc_4b6b.h"
 #include "constants.h"
 #include "globals.h"
-#include "usb_uart.h"
-#include "hal_uart.h"
+#include "usb/class_cdc/usb_uart.h"
+#include "usb/others/hal_uart.h"
 #include "txFilter.h"
 #include "configuration.h"
 #include "interrupts.h"
 #include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
 
 // Globals
 static uint8_t  rfMessage[128] = {0};
 static size_t  rfLength = 0;
+
+inline static void delay( uint16_t count ) {
+    for( ; count>0; --count ) {
+      /* Add NOP to avoid that the loop is optimized away */
+      __asm__( "NOP" );
+    }
+}
 
 void sendMedtronicMessage (uint8_t const * const message, size_t const length, uint8_t const repeat_count ) {
   encode_4b6b(message, length, rfMessage, &rfLength);
@@ -22,20 +31,21 @@ void sendMedtronicMessage (uint8_t const * const message, size_t const length, u
   stopTimerInt ();
 
   RFST = RFST_SIDLE;
-
-  for (size_t j=0; j<repeat_count; j++) {
-    RFST = RFST_STX;
-    for (size_t i=0; i<rfLength; i++) {
-      while (!RFTXRXIF);
-      TCON &= 0xFD;
-      RFD = rfMessage[i];
-    }
-
-    for( size_t i=4096; i>0; --i ) {
-      /* Add NOP to avoid that the loop is optimized away */
-      NOP( );
-    }
-  }
+	{
+	  size_t j=0;
+	  for (; j<repeat_count; j++) {
+		RFST = RFST_STX;
+		{
+			size_t i=0;
+			for(; i<rfLength; i++) {
+			  while (!RFTXRXIF);
+			  TCON &= 0xFD;
+			  RFD = rfMessage[i];
+			}
+		}
+		delay( 4096 );
+	  }
+	}
   PKTLEN = 0xFF;
   RFST = RFST_SIDLE;
   RFST = RFST_SRX;
@@ -54,34 +64,33 @@ static bool check_crc16( uint8_t const message[], size_t crc_pos ) {
 
 
 bool receiveMedtronicMessage (uint8_t message[], size_t * const length) {
+    size_t i = 0;
+	uint8_t lastData = 0xFF;
+
   RFST = RFST_SIDLE;
   RFST = RFST_SRX;
   PKTLEN = 0xFF;
 
   enableTimerInt();
 
-  size_t i = 0;
-  {
-    uint8_t lastData = 0xFF;
-    for( ; i<128 && lastData != 0x00; ++i ) {
-      while (!RFTXRXIF) {
-        usbUartProcess();
-        usbReceiveData();
-        if (RFIF & 0x40) {
-          RFIF &= 0xBF;
-          lastData = 0xFF;
-          i = 0;
-          RFST = RFST_SIDLE;
-          RFST = RFST_SRX;
-          resetTimerCounter();
-        }
-      }
-      stopTimerInt ();
-      rfMessage[i] = RFD;
-      lastData = rfMessage[i];
-      TCON &= ~0x02;
-    }
-  }
+	for( ; i<128 && lastData != 0x00; ++i ) {
+	  while (!RFTXRXIF) {
+		usbUartProcess();
+		usbReceiveData();
+		if (RFIF & 0x40) {
+		  RFIF &= 0xBF;
+		  lastData = 0xFF;
+		  i = 0;
+		  RFST = RFST_SIDLE;
+		  RFST = RFST_SRX;
+		  resetTimerCounter();
+		}
+	  }
+	  stopTimerInt ();
+	  rfMessage[i] = RFD;
+	  lastData = rfMessage[i];
+	  TCON &= ~0x02;
+	}
   rfLength = i-1;
   RFST = RFST_SIDLE;
 
@@ -111,10 +120,15 @@ bool receiveMedtronicMessage (uint8_t message[], size_t * const length) {
 void usbReceiveData (void) {
   uint8_t tempData[128] = { 0 };
   size_t uartRxIndex = 0;
-
+  bool txCalcCRC8 = false;
+  bool txCalcCRC16 = false;
+  uint8_t txLength = 0;
+  static uint8_t uartRxBuffer[SIZE_OF_UART_RX_BUFFER] = { 0 };
+  uint8_t txTimes = 0;
   uint16_t nBytes = halUartGetNumRxBytes();
+  size_t i = 0;
 
-  for( size_t i=0; i<nBytes; i=i+48) {
+  for( i=0; i<nBytes; i=i+48) {
     uint16_t readBytes;
     if (nBytes-i > 48) {
       readBytes = 48;
@@ -125,13 +139,9 @@ void usbReceiveData (void) {
     usbUartProcess();
   }
 
-  bool txCalcCRC8 = false;
-  bool txCalcCRC16 = false;
-  uint8_t txLength = 0;
-  static uint8_t uartRxBuffer[SIZE_OF_UART_RX_BUFFER] = { 0 };
-  uint8_t txTimes = 0;
 
-  for( size_t i=0; i<nBytes; i++) {
+
+  for( i=0; i<nBytes; i++) {
 
     // Read Rx buffer
     uartRxBuffer[uartRxIndex] = tempData[i];

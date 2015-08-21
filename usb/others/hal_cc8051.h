@@ -11,8 +11,8 @@
  * INCLUDES
  */
 
-#include <hal_types.h>
-#include <hal_defs.h>
+////#include <hal_types.h>
+#include "hal_defs.h"
 
 
 /******************************************************************************

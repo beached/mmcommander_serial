@@ -11,7 +11,7 @@
 /***********************************************************************************
 * INCLUDES
 */
-#include <hal_types.h>
+//#include <hal_types.h>
 
 /***********************************************************************************
 * CONSTANTS AND DEFINES
@@ -32,10 +32,10 @@
 * TYPEDEFS
 */
 typedef struct {
-    volatile uint8 pData[BUF_SIZE];
-    volatile uint8 nBytes;
-    volatile uint8 iHead;
-    volatile uint8 iTail;
+    volatile uint8_t pData[BUF_SIZE];
+    volatile uint8_t nBytes;
+    volatile uint8_t iHead;
+    volatile uint8_t iTail;
 } ringBuf_t;
 
 /***********************************************************************************
@@ -47,10 +47,10 @@ typedef struct {
 * GLOBAL FUNCTIONS
 */
 void  bufInit(ringBuf_t *pBuf);
-uint8 bufPut(ringBuf_t *pBuf, const uint8 *pData, uint8 n);
-uint8 bufGet(ringBuf_t *pBuf, uint8 *pData, uint8 n);
-uint8 bufPeek(ringBuf_t *pBuf, uint8 *pData, uint8 nBytes);
-uint8 bufNumBytes(ringBuf_t const  * const pBuf);
+uint8_t bufPut(ringBuf_t *pBuf, const uint8_t *pData, uint8_t n);
+uint8_t bufGet(ringBuf_t *pBuf, uint8_t *pData, uint8_t n);
+uint8_t bufPeek(ringBuf_t *pBuf, uint8_t *pData, uint8_t nBytes);
+uint8_t bufNumBytes(ringBuf_t const  * const pBuf);
 
 #endif
 

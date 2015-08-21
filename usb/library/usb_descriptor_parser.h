@@ -15,8 +15,8 @@
  * ENDPOINT and STRING, but also other types that use the standard descriptor format:
  * \code
  * typedef struct {
- *    uint8 bLength;                // Size of this descriptor (in bytes)
- *    uint8 bDescriptorType;        // Descriptor type
+ *    uint8_t bLength;                // Size of this descriptor (in bytes)
+ *    uint8_t bDescriptorType;        // Descriptor type
  *    ...
  * } USB_XXXXXXXX_DESCRIPTOR;
  * \endcode
@@ -80,12 +80,12 @@
 //-------------------------------------------------------------------------------------------------------
 // Function prototypes
 void usbdpInit(void);
-void __code *usbdpFindNext(uint8 wantedType, uint8 haltAtType);
+void __code *usbdpFindNext(uint8_t wantedType, uint8_t haltAtType);
 
 USB_DEVICE_DESCRIPTOR __code* usbdpGetDeviceDesc(void);
-USB_CONFIGURATION_DESCRIPTOR __code* usbdpGetConfigurationDesc(uint8 cfgValue, uint8 cfgIndex);
-USB_INTERFACE_DESCRIPTOR __code* usbdpGetInterfaceDesc(uint8 cfgValue, uint8 intNumber, uint8 altSetting);
-USB_STRING_DESCRIPTOR __code* usbdpGetStringDesc(uint8 strIndex);
+USB_CONFIGURATION_DESCRIPTOR __code* usbdpGetConfigurationDesc(uint8_t cfgValue, uint8_t cfgIndex);
+USB_INTERFACE_DESCRIPTOR __code* usbdpGetInterfaceDesc(uint8_t cfgValue, uint8_t intNumber, uint8_t altSetting);
+USB_STRING_DESCRIPTOR __code* usbdpGetStringDesc(uint8_t strIndex);
 //-------------------------------------------------------------------------------------------------------
 
 

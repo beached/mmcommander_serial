@@ -14,16 +14,9 @@
  * INCLUDES
  */
 
-#include "hal_types.h"
+//#include "hal_types.h"
 #include "hal_defs.h"
-
-#if chip==2511
-#include <ioCC2511.h>
-#elif chip==1111
-#include <ioCC1111.h>
-#else
-#error "chip not defined!"
-#endif
+#include <cc1110.h>
 #include "hal_cc8051.h"
 
 #ifdef USB_UART

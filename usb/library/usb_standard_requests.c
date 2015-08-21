@@ -8,11 +8,11 @@
 
 /// \addtogroup module_usb_standard_requests
 /// @{
-#include "usb_firmware_library_headers.h"
-#include "hal_types.h"
-#include "hal_board.h"
+#include "../class_cdc/usb_firmware_library_headers.h"
+//#include "hal_types.h"
+#include "../others/hal_board.h"
 
-
+#include "../../ioCC1111.h"
 
 /** \brief Processes the \ref GET_STATUS request (returns status for the specified recipient)
  *
@@ -36,8 +36,8 @@
  */
 void usbsrGetStatus(void)
 {
-   uint8 endpoint;
-   static uint16  status;
+   uint8_t endpoint;
+   static uint16_t  status;
 
    // Common sanity check
    if (usbSetupHeader.value || HI_UINT16(usbSetupHeader.index) || (usbSetupHeader.length != 2)) {
@@ -109,7 +109,7 @@ void usbsrGetStatus(void)
 
       if (usbfwData.ep0Status != EP_STALL) {
          // Send it
-         usbSetupData.pBuffer = (uint8 __generic *)&status;
+         usbSetupData.pBuffer = (uint8_t /*__generic*/ *)&status;
          usbSetupData.bytesLeft = 2;
          usbfwData.ep0Status = EP_TX;
       }
@@ -130,9 +130,9 @@ void usbsrGetStatus(void)
  *     TRUE if the selected feature is supported by the USB library. FALSE to indicate that
  *     \ref usbsrHookClearFeature() or \ref usbsrHookSetFeature() must be called.
  */
-static uint8 ChangeFeature(uint8 set)
+static uint8_t ChangeFeature(uint8_t set)
 {
-   uint8 endpoint;
+   uint8_t endpoint;
 
    // Sanity check
    if (usbSetupHeader.length || (usbfwData.usbState != DEV_CONFIGURED) && (usbSetupHeader.index != 0)) {
@@ -304,20 +304,20 @@ void usbsrSetAddress(void)
  */
 void usbsrGetDescriptor(void)
 {
-   uint8 n;
+   uint8_t n;
 
    // Which descriptor?
    switch (HI_UINT16(usbSetupHeader.value)) {
 
    // Device descriptor
    case DESC_TYPE_DEVICE:
-      usbSetupData.pBuffer = (uint8 __code*) usbdpGetDeviceDesc();
+      usbSetupData.pBuffer = (uint8_t __code*) usbdpGetDeviceDesc();
       usbSetupData.bytesLeft = usbSetupData.pBuffer[DESC_LENGTH_IDX];
       break;
 
    // Configuration descriptor
    case DESC_TYPE_CONFIG:
-      usbSetupData.pBuffer = (uint8 __code*) usbdpGetConfigurationDesc(0, LO_UINT16(usbSetupHeader.value));
+      usbSetupData.pBuffer = (uint8_t __code*) usbdpGetConfigurationDesc(0, LO_UINT16(usbSetupHeader.value));
       usbSetupData.bytesLeft = usbSetupData.pBuffer[DESC_CONFIG_LENGTH_LSB_IDX] +
                                usbSetupData.pBuffer[DESC_CONFIG_LENGTH_MSB_IDX] * 256;
       break;
@@ -325,7 +325,7 @@ void usbsrGetDescriptor(void)
    // String descriptor
    case DESC_TYPE_STRING:
       // TODO: Implement language ID
-      usbSetupData.pBuffer = (uint8 __code*) usbdpGetStringDesc(LO_UINT16(usbSetupHeader.value));
+      usbSetupData.pBuffer = (uint8_t __code*) usbdpGetStringDesc(LO_UINT16(usbSetupHeader.value));
       usbSetupData.bytesLeft = usbSetupData.pBuffer[DESC_LENGTH_IDX];
       break;
 
@@ -333,7 +333,7 @@ void usbsrGetDescriptor(void)
    default:
       // Perform a table search (on index and value)
       usbSetupData.pBuffer = NULL;
-      for (n = 0; n < ((uint16)usbDescriptorMarker.pUsbDescLutEnd - (uint16)usbDescriptorMarker.pUsbDescLut) / sizeof(DESC_LUT_INFO); n++) {
+      for (n = 0; n < ((uint16_t)usbDescriptorMarker.pUsbDescLutEnd - (uint16_t)usbDescriptorMarker.pUsbDescLut) / sizeof(DESC_LUT_INFO); n++) {
          if ((usbDescriptorMarker.pUsbDescLut[n].valueMsb == HI_UINT16(usbSetupHeader.value))
              && (usbDescriptorMarker.pUsbDescLut[n].valueLsb == LO_UINT16(usbSetupHeader.value))
              && (usbDescriptorMarker.pUsbDescLut[n].indexMsb == HI_UINT16(usbSetupHeader.index))
@@ -375,10 +375,10 @@ void usbsrGetDescriptor(void)
  */
 static void ConfigureEndpoints(USB_INTERFACE_DESCRIPTOR __code *pInterface)
 {
-   uint8 n;
-   uint16 maxpRegValue;
-   uint8 csRegValue;
-   uint8 endpoint;
+   uint8_t n;
+   uint16_t maxpRegValue;
+   uint8_t csRegValue;
+   uint8_t endpoint;
    USB_ENDPOINT_DESCRIPTOR __code *pEndpoint;
    DBLBUF_LUT_INFO __code *pUsbDblbufLutInfo;
 
@@ -493,7 +493,7 @@ void usbsrGetConfiguration(void)
  */
 void usbsrSetConfiguration(void)
 {
-   uint8 n;
+   uint8_t n;
    USB_CONFIGURATION_DESCRIPTOR __code *pConfiguration;
    USB_INTERFACE_DESCRIPTOR __code *pInterface;
 
