@@ -13,7 +13,7 @@
 
 //-------------------------------------------------------------------------------------------------------
 // USBDP internal module data
-static USBDP_DATA  usbdpData; ///< USBDP internal module data
+static USBDP_DATA __xdata usbdpData; ///< USBDP internal module data
 
 
 /** \brief	Initializes a search

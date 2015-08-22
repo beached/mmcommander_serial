@@ -50,7 +50,7 @@ void usbcrHookProcessOut(void)
 
       if(usbfwData.ep0Status == EP_IDLE)
       {
-         usbSetupData.pBuffer = (uint8_t  *) &currentLineCoding;
+         usbSetupData.pBuffer = (uint8_t __xdata *) &currentLineCoding;
          usbfwData.ep0Status = EP_RX;
       }
       else if(usbfwData.ep0Status == EP_RX) { }
@@ -68,7 +68,7 @@ void usbcrHookProcessIn(void)
    if (usbSetupHeader.request == CDC_GET_LINE_CODING) {
       // First the endpoint status is EP_IDLE...
       if (usbfwData.ep0Status == EP_IDLE) {
-         usbSetupData.pBuffer = (uint8_t  *) &currentLineCoding;
+         usbSetupData.pBuffer = (uint8_t __xdata *) &currentLineCoding;
          usbSetupData.bytesLeft = 7;
          usbfwData.ep0Status = EP_TX;
          // Then the endpoint status is EP_TX (remember: we did that here when setting up the buffer)
@@ -89,7 +89,7 @@ void usbsrHookSetDescriptor(void) { usbfwData.ep0Status = EP_STALL; }
 void usbsrHookSynchFrame(void) { usbfwData.ep0Status = EP_STALL; }
 void usbsrHookClearFeature(void) { usbfwData.ep0Status = EP_STALL; }
 void usbsrHookSetFeature(void) { usbfwData.ep0Status = EP_STALL; }
-void usbsrHookModifyGetStatus(uint8_t recipient, uint8_t index, uint16_t  *pStatus) { }
+void usbsrHookModifyGetStatus(uint8_t recipient, uint8_t index, uint16_t __xdata *pStatus) { }
 
 
 // ************************ USB standard request event processing ******************

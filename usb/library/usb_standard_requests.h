@@ -138,7 +138,7 @@ void usbsrHookClearFeature(void);
 /// Hook which is called when a \ref SET_FEATURE request refers to a an unsupported feature.
 void usbsrHookSetFeature(void);
 /// Hook for modifying a \ref GET_STATUS request before the status value is returned to the PC.
-void usbsrHookModifyGetStatus(uint8_t recipient, uint8_t index, uint16_t  *pStatus);
+void usbsrHookModifyGetStatus(uint8_t recipient, uint8_t index, uint16_t __xdata *pStatus);
 /// Hook which is called upon a standard request generated event (unsupported).
 void usbsrHookProcessEvent(uint8_t event, uint8_t index);
 //@}

@@ -37,7 +37,7 @@
 void usbsrGetStatus(void)
 {
    uint8_t endpoint;
-   static uint16_t  status;
+   static uint16_t __xdata status;
 
    // Common sanity check
    if (usbSetupHeader.value || HI_UINT16(usbSetupHeader.index) || (usbSetupHeader.length != 2)) {

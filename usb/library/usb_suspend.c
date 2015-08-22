@@ -14,11 +14,11 @@
 #include "../others/hal_board.h"
 #include "../../ioCC1111.h"
 
-static  uint8_t usbsuspEnterXdata[14] = { 0 };
-static  VFPTR pUsbsuspEnterXdata = NULL;
+static __xdata uint8_t usbsuspEnterXdata[14] = { 0 };
+static __xdata VFPTR pUsbsuspEnterXdata = NULL;
 
- VFPTR pFnSuspendEnterHook=  NULL;
- VFPTR pFnSuspendExitHook=   NULL;
+ __xdata VFPTR pFnSuspendEnterHook=  NULL;
+ __xdata VFPTR pFnSuspendExitHook=   NULL;
 
 
 

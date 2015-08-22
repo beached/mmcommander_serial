@@ -92,8 +92,8 @@
 
 //-------------------------------------------------------------------------------------------------------
 // Suspend enter/exit hooks
-extern  VFPTR pFnSuspendEnterHook;
-extern  VFPTR pFnSuspendExitHook;
+extern __xdata VFPTR pFnSuspendEnterHook;
+extern __xdata VFPTR pFnSuspendExitHook;
 
 //-------------------------------------------------------------------------------------------------------
 // Function prototypes

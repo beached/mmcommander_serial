@@ -141,7 +141,7 @@ typedef struct {
     DBLBUF_LUT_INFO __code* const pUsbDblbufLutEnd; ///< End of double-buffering look-up table pointer
 } USB_DESCRIPTOR_MARKER;
 
-extern USB_DESCRIPTOR_MARKER  usbDescriptorMarker; ///< USB descriptor marker
+extern USB_DESCRIPTOR_MARKER __xdata usbDescriptorMarker; ///< USB descriptor marker
 
 //-------------------------------------------------------------------------------------------------------
 

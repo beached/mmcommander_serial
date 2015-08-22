@@ -14,8 +14,8 @@
 #include <stdint.h>
 
 // Globals
-static uint8_t  rfMessage[128] = {0};
-static size_t  rfLength = 0;
+static __xdata uint8_t  rfMessage[128] = {0};
+static __xdata size_t  rfLength = 0;
 
 inline static void delay( uint16_t count ) {
     for( ; count>0; --count ) {

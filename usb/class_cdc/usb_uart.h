@@ -33,7 +33,7 @@ typedef struct {
    uint8_t charFormat;
    uint8_t parityType;
    uint8_t dataBits;
-}  CDC_LINE_CODING_STRUCTURE;
+} /*__xdata*/ CDC_LINE_CODING_STRUCTURE;
 
 
 //void usbUartInit(uint32_t baudrate);

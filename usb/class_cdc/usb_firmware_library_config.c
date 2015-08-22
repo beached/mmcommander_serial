@@ -20,7 +20,7 @@
 //-----------------------------------------------------------------------------
 
 // Declaration of global USB descriptor pointers
-USB_DESCRIPTOR_MARKER usbDescriptorMarker= {
+__xdata USB_DESCRIPTOR_MARKER usbDescriptorMarker= {
     (uint8_t __code *)&usbDescStart,
     (uint8_t __code *)&usbDescEnd,
     (DESC_LUT_INFO __code *) &usbDescLut,

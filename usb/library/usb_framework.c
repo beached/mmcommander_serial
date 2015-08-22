@@ -131,7 +131,7 @@ void usbfwSetupHandler(void)
    // Receive SETUP header
    if (usbfwData.ep0Status == EP_IDLE) {
       if (controlReg & USBCS0_OUTPKT_RDY) {
-         usbfwReadFifo(&USBF0, 8, (uint8_t  *) &usbSetupHeader);
+         usbfwReadFifo(&USBF0, 8, (uint8_t __xdata *) &usbSetupHeader);
 
          // Handle control transfers individually
          ProcessFunc = NULL;
@@ -261,7 +261,7 @@ void usbfwSetAllEpStatus(EP_STATUS status)
  * \param[in]       *pData
  *     A pointer to the storage location for the read data (in any memory space)
  */
-void usbfwReadFifo(uint8_t volatile  *pFifo, uint8_t count, void /*__generic*/ *pData)
+void usbfwReadFifo(uint8_t volatile __xdata *pFifo, uint8_t count, void /*__generic*/ *pData)
 {
    uint8_t /*__generic*/ *pTemp = pData;
    if (count) {
@@ -286,7 +286,7 @@ void usbfwReadFifo(uint8_t volatile  *pFifo, uint8_t count, void /*__generic*/ *
  * \param[in]       *pData
  *     A pointer to the data to be written (from any memory space)
  */
-void usbfwWriteFifo(uint8_t volatile  *pFifo, uint8_t count, void /*__generic*/ *pData)
+void usbfwWriteFifo(uint8_t volatile __xdata *pFifo, uint8_t count, void /*__generic*/ *pData)
 {
    uint8_t /*__generic*/ *pTemp = pData;
    if (count) {

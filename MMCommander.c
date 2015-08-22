@@ -37,7 +37,7 @@ Date:         Dec 24th, 2014
 
 int main(void)
 {
-  static uint8_t  uartTxBuffer[SIZE_OF_UART_TX_BUFFER] = { 0 };
+  static __xdata uint8_t  uartTxBuffer[SIZE_OF_UART_TX_BUFFER] = { 0 };
   static uint8_t dataPacket[256] = { 0 };
   static uint8_t repPacket[3] = { 0 };
   bool dataErr = false;

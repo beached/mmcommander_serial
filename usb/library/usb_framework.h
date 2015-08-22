@@ -340,8 +340,8 @@ void usbfwInit(void);
 void usbfwResetHandler(void);
 void usbfwSetupHandler(void);
 void usbfwSetAllEpStatus(EP_STATUS status);
-void usbfwWriteFifo(uint8_t volatile  *pFifo, uint8_t count, void /*__generic*/ *pData);
-void usbfwReadFifo(uint8_t volatile  *pFifo, uint8_t count, void /*__generic*/ *pData);
+void usbfwWriteFifo(uint8_t volatile __xdata *pFifo, uint8_t count, void /*__generic*/ *pData);
+void usbfwReadFifo(uint8_t volatile __xdata *pFifo, uint8_t count, void /*__generic*/ *pData);
 //-------------------------------------------------------------------------------------------------------
 
 //@}

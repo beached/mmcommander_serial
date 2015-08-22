@@ -44,7 +44,7 @@ extern ringBuf_t rbTxBuf;
 /***********************************************************************************
 * GLOBAL VARIABLES
 */
-//static CDC_LINE_CODING_STRUCTURE  currentLineCoding;
+CDC_LINE_CODING_STRUCTURE __xdata currentLineCoding;
 uint16_t cdcRTS = 0;              // Request-To-Send modem control line
 uint8_t  cdcCTS = 0;              // Clear-To-Send   modem control line
 
@@ -52,7 +52,7 @@ uint8_t  cdcCTS = 0;              // Clear-To-Send   modem control line
 /***********************************************************************************
 * LOCAL DATA
 */
-static uint8_t  buffer[USB_MAX_PACKET_SIZE] = {0};
+static uint8_t __xdata buffer[USB_MAX_PACKET_SIZE] = {0};
 static uint8_t oldEndpoint = 0;
 
 

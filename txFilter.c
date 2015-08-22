@@ -3,7 +3,7 @@
 #include <stddef.h>
 #include <stdbool.h>
 
-bool  txFilterEnabled = true;
+__xdata uint8_t txFilterEnabled = true;
 
 #if _TX_ENABLE_ == 0
 bool txFilter (uint8_t const * const, size_t const ) {
