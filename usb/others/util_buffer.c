@@ -117,23 +117,22 @@ uint8_t bufGet(ringBuf_t * const pBuf, uint8_t * const pData, uint8_t nBytes) {
 *
 * @return  Bytes actually returned
 */
-//uint8_t bufPeek(ringBuf_t const * const pBuf, uint8_t * const pData, uint8_t const nBytes)
-//{
-//    uint8_t j= pBuf->iHead;
-//    // Critical section start
-//    uint16_t s = halIntLock();
-//    uint8_t i=0;
-//    for( ; i<nBytes && i<pBuf->nBytes; ++i ) {
-//        pData[i]= pBuf->pData[j];
-//        j++;
-//        if (j==BUF_SIZE) {
-//            j= 0;
-//        }
-//    }
-//    // Critical section end
-//    halIntUnlock(s);
-//    return i;
-//}
+uint8_t bufPeek(ringBuf_t const * const pBuf, uint8_t * const pData, uint8_t const nBytes) {
+    uint8_t j= pBuf->iHead;
+    // Critical section start
+    uint16_t s = halIntLock();
+    uint8_t i=0;
+    for( ; i<nBytes && i<pBuf->nBytes; ++i ) {
+        pData[i]= pBuf->pData[j];
+        j++;
+        if (j==BUF_SIZE) {
+            j= 0;
+        }
+    }
+    // Critical section end
+    halIntUnlock(s);
+    return i;
+}
 
 
 /***********************************************************************************

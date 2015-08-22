@@ -15,7 +15,7 @@
 #include "util_buffer.h"
 #include "hal_int.h"
 #include "hal_mcu.h"
-#include "usb_uart.h"
+#include "../class_cdc/usb_uart.h"
 #include <stdint.h>
 #include <stddef.h>
 #include "hal_uart_usb.h"
@@ -29,8 +29,9 @@
 /************************************************************************************
 * GLOBAL VARIABLES
 */
-ringBuf_t rbRxBuf = {0};
-ringBuf_t rbTxBuf = {0};
+ringBuf_t rbRxBuf = { .pData = {0}, .nBytes = 0, .iHead = 0, .iTail = 0 };
+ringBuf_t rbTxBuf = { .pData = {0}, .nBytes = 0, .iHead = 0, .iTail = 0 };
+
 
 extern uint8_t cdcCTS;
 

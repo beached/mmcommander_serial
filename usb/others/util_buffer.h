@@ -1,27 +1,9 @@
-/***********************************************************************************
+#pragma once
 
-  Filename:     util_buffer.h
+#include <stdint.h>
 
-  Description:  Ringbuffer interface
-
-***********************************************************************************/
-#ifndef UTIL_BUFFER_H
-#define UTIL_BUFFER_H
-
-/***********************************************************************************
-* INCLUDES
-*/
-//#include <hal_types.h>
-
-/***********************************************************************************
-* CONSTANTS AND DEFINES
-*/
 #ifndef BUF_SIZE
-#ifdef WIN32
-#define BUF_SIZE	256
-#else
 #define BUF_SIZE   128
-#endif
 #endif
 
 #if (BUF_SIZE > 256)
@@ -46,14 +28,11 @@ typedef struct {
 /***********************************************************************************
 * GLOBAL FUNCTIONS
 */
-void  bufInit(ringBuf_t *pBuf);
-uint8_t bufPut(ringBuf_t *pBuf, const uint8_t *pData, uint8_t n);
-uint8_t bufGet(ringBuf_t *pBuf, uint8_t *pData, uint8_t n);
-uint8_t bufPeek(ringBuf_t *pBuf, uint8_t *pData, uint8_t nBytes);
-uint8_t bufNumBytes(ringBuf_t const  * const pBuf);
-
-#endif
-
+void  bufInit(ringBuf_t * const pBuf);
+uint8_t bufPut(ringBuf_t * const pBuf, uint8_t const * const pData, uint8_t const nBytes);
+uint8_t bufGet(ringBuf_t * const pBuf, uint8_t * const pData, uint8_t nBytes);
+uint8_t bufPeek(ringBuf_t const * const pBuf, uint8_t * const pData, uint8_t const nBytes);
+uint8_t bufNumBytes(ringBuf_t const * const pBuf);
 
 /***********************************************************************************
   Copyright 2007 Texas Instruments Incorporated. All rights reserved.

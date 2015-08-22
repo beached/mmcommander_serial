@@ -39,22 +39,23 @@ void halMcuInit(void) {
 *
 * @return      none
 */
-#pragma optimize=none
+
+#pragma nogcse
 void halMcuWaitUs(uint16_t usec) {
     usec>>= 1;          // Divide by 2 to achieve better resolution
 
     while(usec > 1)     // compare: ~13 cycles
     {
-        asm("NOP");     // 1 cycle/NOP
-        asm("NOP");
-        asm("NOP");
-        asm("NOP");
-        asm("NOP");
-        asm("NOP");
-        asm("NOP");
-        asm("NOP");
-        asm("NOP");
-        asm("NOP");
+        __asm__("NOP");     // 1 cycle/NOP
+        __asm__("NOP");
+        __asm__("NOP");
+        __asm__("NOP");
+        __asm__("NOP");
+        __asm__("NOP");
+        __asm__("NOP");
+        __asm__("NOP");
+        __asm__("NOP");
+        __asm__("NOP");
 
         usec--;        // decr: ~7 cycles
     }
@@ -73,7 +74,7 @@ void halMcuWaitUs(uint16_t usec) {
 *
 * @return      none
 */
-#pragma optimize=none
+#pragma nogcse
 void halMcuWaitMs(uint16_t msec) {
   while(msec--) {
     halMcuWaitUs(1000);

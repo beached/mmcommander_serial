@@ -477,7 +477,8 @@
 	<stddef.h>
 	"hal_defs.h"
 
-1440189908 c:\devel\github\mmcommander_serial\usb\others\util_buffer.h
+1440206713 c:\devel\github\mmcommander_serial\usb\others\util_buffer.h
+	<stdint.h>
 
 1440196480 c:\devel\github\mmcommander_serial\iocc1111.h
 	"defines.h"
@@ -526,4 +527,25 @@
 1440188497 source:c:\devel\github\mmcommander_serial\usb\others\hal_board.c
 	"hal_mcu.h"
 	"hal_board.h"
+
+1440198046 source:c:\devel\github\mmcommander_serial\usb\others\hal_int.c
+	"hal_defs.h"
+	"hal_int.h"
+	"hal_board.h"
+
+1440202548 source:c:\devel\github\mmcommander_serial\usb\others\hal_mcu.c
+	"hal_mcu.h"
+	"clock.h"
+	<stdbool.h>
+
+1440203354 source:c:\devel\github\mmcommander_serial\usb\others\hal_uart_usb.c
+	"hal_uart.h"
+	"hal_board.h"
+	"util_buffer.h"
+	"hal_int.h"
+	"hal_mcu.h"
+	"../class_cdc/usb_uart.h"
+	<stdint.h>
+	<stddef.h>
+	"hal_uart_usb.h"
 
