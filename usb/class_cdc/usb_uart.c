@@ -81,13 +81,12 @@ static void usbInProcess(void);
 *
 * @return       none
 */
-//void usbUartInit(uint32_t baudrate) {
-void usbUartInit( void ) {
+void usbUartInit(uint32_t baudrate) {
   // Set default line coding.
-//  currentLineCoding.dteRate = baudrate;
-//  currentLineCoding.charFormat = CDC_CHAR_FORMAT_1_STOP_BIT;
-//  currentLineCoding.parityType = CDC_PARITY_TYPE_NONE;
-//  currentLineCoding.dataBits = 8;
+  currentLineCoding.dteRate = baudrate;
+  currentLineCoding.charFormat = CDC_CHAR_FORMAT_1_STOP_BIT;
+  currentLineCoding.parityType = CDC_PARITY_TYPE_NONE;
+  currentLineCoding.dataBits = 8;
 
   // Initialise hardware flow control
   cdcRTS= 0;      // TRUE when DCE connected

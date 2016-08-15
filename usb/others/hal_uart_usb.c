@@ -50,24 +50,22 @@ extern uint8_t cdcCTS;
 *
 * @return  none
 */
-//void halUartInit(uint8_t baudrate ) {
-void halUartInit( void ) {
-   // uint32 baud = 115200;
+void halUartInit(uint8_t baudrate ) {
+   uint32_t baud = 115200;
 
     // Initialize the buffers
     bufInit(&rbRxBuf);
     bufInit(&rbTxBuf);
 
-//    switch (baudrate) {
-//    case HAL_UART_BAUDRATE_38400:
-//        baud= 38400;
-//        break;
-//    case HAL_UART_BAUDRATE_57600:
-//        baud= 57600;
-//        break;
-//    }
-   // usbUartInit(baud);
-    usbUartInit( );
+    switch (baudrate) {
+    case HAL_UART_BAUDRATE_38400:
+        baud= 38400;
+        break;
+    case HAL_UART_BAUDRATE_57600:
+        baud= 57600;
+        break;
+    }
+   usbUartInit(baud);
 
 }
 

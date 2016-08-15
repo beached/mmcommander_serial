@@ -49,8 +49,7 @@ int main(void)
   configureOsc();
   configureMedtronicRFMode();
   enablePushButtonInt();
-  //halUartInit( HAL_UART_BAUDRATE_57600 );
-  halUartInit( );
+  halUartInit( HAL_UART_BAUDRATE_57600 );
 
   /* Reception loop */
   while (true) {

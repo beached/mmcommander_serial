@@ -89,6 +89,7 @@ void usbsrHookSetDescriptor(void) { usbfwData.ep0Status = EP_STALL; }
 void usbsrHookSynchFrame(void) { usbfwData.ep0Status = EP_STALL; }
 void usbsrHookClearFeature(void) { usbfwData.ep0Status = EP_STALL; }
 void usbsrHookSetFeature(void) { usbfwData.ep0Status = EP_STALL; }
+//void usbsrHookModifyGetStatus(uint8_t recipient, uint8_t index, uint16_t __xdata *pStatus) { }
 void usbsrHookModifyGetStatus(uint8_t recipient, uint8_t index, uint16_t __xdata *pStatus) { }
 
 

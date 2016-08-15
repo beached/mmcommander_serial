@@ -36,8 +36,7 @@ typedef struct {
 } /*__xdata*/ CDC_LINE_CODING_STRUCTURE;
 
 
-//void usbUartInit(uint32_t baudrate);
-void usbUartInit(void);
+void usbUartInit(uint32_t baudrate);
 void usbUartProcess(void);
 
 

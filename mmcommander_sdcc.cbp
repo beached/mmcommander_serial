@@ -19,7 +19,7 @@
 					<Add option="-mmcs51" />
 					<Add option="--verbose" />
 					<Add option="--debug" />
-					<Add option="--std-c11" />
+					<Add option="-Dchip=1111" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -34,110 +34,115 @@
 					<Add option="--model-large" />
 					<Add option="-mmcs51" />
 					<Add option="--opt-code-size" />
-					<Add option="--std-c11" />
+					<Add option="-Dchip=1111" />
 				</Compiler>
 			</Target>
 		</Build>
-		<Unit filename="../mmcommander/src/MMCommander/MMCommander.c">
+		<Unit filename="MMCommander.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mmcommander/src/MMCommander/configuration.h" />
-		<Unit filename="../mmcommander/src/MMCommander/constants.h" />
-		<Unit filename="../mmcommander/src/MMCommander/crc_4b6b.c">
+		<Unit filename="algorithm.h" />
+		<Unit filename="bit.h" />
+		<Unit filename="configuration.h" />
+		<Unit filename="constants.h" />
+		<Unit filename="crc_4b6b.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mmcommander/src/MMCommander/crc_4b6b.h" />
-		<Unit filename="../mmcommander/src/MMCommander/globals.h" />
-		<Unit filename="../mmcommander/src/MMCommander/hal_cc8051.h" />
-		<Unit filename="../mmcommander/src/MMCommander/hal_defs.h" />
-		<Unit filename="../mmcommander/src/MMCommander/hal_types.h" />
-		<Unit filename="../mmcommander/src/MMCommander/init.c">
+		<Unit filename="crc_4b6b.h" />
+		<Unit filename="defines.h" />
+		<Unit filename="globals.h" />
+		<Unit filename="hal_cc8051.h" />
+		<Unit filename="hal_defs.h" />
+		<Unit filename="hal_types.h" />
+		<Unit filename="init.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mmcommander/src/MMCommander/init.h" />
-		<Unit filename="../mmcommander/src/MMCommander/interrupts.c">
+		<Unit filename="init.h" />
+		<Unit filename="interrupts.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mmcommander/src/MMCommander/interrupts.h" />
-		<Unit filename="../mmcommander/src/MMCommander/ioCCxx10_bitdef.h" />
-		<Unit filename="../mmcommander/src/MMCommander/medtronicRF.c">
+		<Unit filename="interrupts.h" />
+		<Unit filename="ioCC1110.h" />
+		<Unit filename="ioCC1111.h" />
+		<Unit filename="ioCCxx10_bitdef.h" />
+		<Unit filename="medtronicRF.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mmcommander/src/MMCommander/medtronicRF.h" />
-		<Unit filename="../mmcommander/src/MMCommander/queues.c">
+		<Unit filename="medtronicRF.h" />
+		<Unit filename="queues.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mmcommander/src/MMCommander/queues.h" />
-		<Unit filename="../mmcommander/src/MMCommander/txFilter.c">
+		<Unit filename="queues.h" />
+		<Unit filename="txFilter.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mmcommander/src/MMCommander/txFilter.h" />
-		<Unit filename="../mmcommander/src/MMCommander/usb/class_cdc/usb_cdc.h" />
-		<Unit filename="../mmcommander/src/MMCommander/usb/class_cdc/usb_cdc_hooks.c">
+		<Unit filename="txFilter.h" />
+		<Unit filename="usb/class_cdc/usb_cdc.h" />
+		<Unit filename="usb/class_cdc/usb_cdc_hooks.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mmcommander/src/MMCommander/usb/class_cdc/usb_firmware_library_config.c">
+		<Unit filename="usb/class_cdc/usb_firmware_library_config.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mmcommander/src/MMCommander/usb/class_cdc/usb_firmware_library_config.h" />
-		<Unit filename="../mmcommander/src/MMCommander/usb/class_cdc/usb_firmware_library_headers.h" />
-		<Unit filename="../mmcommander/src/MMCommander/usb/class_cdc/usb_uart.c">
+		<Unit filename="usb/class_cdc/usb_firmware_library_config.h" />
+		<Unit filename="usb/class_cdc/usb_firmware_library_headers.h" />
+		<Unit filename="usb/class_cdc/usb_uart.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mmcommander/src/MMCommander/usb/class_cdc/usb_uart.h" />
-		<Unit filename="../mmcommander/src/MMCommander/usb/library/usb_descriptor.h" />
-		<Unit filename="../mmcommander/src/MMCommander/usb/library/usb_descriptor_parser.c">
+		<Unit filename="usb/class_cdc/usb_uart.h" />
+		<Unit filename="usb/library/usb_descriptor.h" />
+		<Unit filename="usb/library/usb_descriptor_parser.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mmcommander/src/MMCommander/usb/library/usb_descriptor_parser.h" />
-		<Unit filename="../mmcommander/src/MMCommander/usb/library/usb_framework.c">
+		<Unit filename="usb/library/usb_descriptor_parser.h" />
+		<Unit filename="usb/library/usb_framework.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mmcommander/src/MMCommander/usb/library/usb_framework.h" />
-		<Unit filename="../mmcommander/src/MMCommander/usb/library/usb_framework_structs.h" />
-		<Unit filename="../mmcommander/src/MMCommander/usb/library/usb_interrupt.c">
+		<Unit filename="usb/library/usb_framework.h" />
+		<Unit filename="usb/library/usb_framework_structs.h" />
+		<Unit filename="usb/library/usb_interrupt.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mmcommander/src/MMCommander/usb/library/usb_interrupt.h" />
-		<Unit filename="../mmcommander/src/MMCommander/usb/library/usb_reg.h" />
-		<Unit filename="../mmcommander/src/MMCommander/usb/library/usb_standard_requests.c">
+		<Unit filename="usb/library/usb_interrupt.h" />
+		<Unit filename="usb/library/usb_reg.h" />
+		<Unit filename="usb/library/usb_standard_requests.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mmcommander/src/MMCommander/usb/library/usb_standard_requests.h" />
-		<Unit filename="../mmcommander/src/MMCommander/usb/library/usb_suspend.c">
+		<Unit filename="usb/library/usb_standard_requests.h" />
+		<Unit filename="usb/library/usb_suspend.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mmcommander/src/MMCommander/usb/library/usb_suspend.h" />
-		<Unit filename="../mmcommander/src/MMCommander/usb/others/clock.c">
+		<Unit filename="usb/library/usb_suspend.h" />
+		<Unit filename="usb/others/clock.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mmcommander/src/MMCommander/usb/others/clock.h" />
-		<Unit filename="../mmcommander/src/MMCommander/usb/others/hal_assert.h" />
-		<Unit filename="../mmcommander/src/MMCommander/usb/others/hal_board.c">
+		<Unit filename="usb/others/clock.h" />
+		<Unit filename="usb/others/hal_assert.h" />
+		<Unit filename="usb/others/hal_board.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mmcommander/src/MMCommander/usb/others/hal_board.h" />
-		<Unit filename="../mmcommander/src/MMCommander/usb/others/hal_cc8051.h" />
-		<Unit filename="../mmcommander/src/MMCommander/usb/others/hal_defs.h" />
-		<Unit filename="../mmcommander/src/MMCommander/usb/others/hal_int.c">
+		<Unit filename="usb/others/hal_board.h" />
+		<Unit filename="usb/others/hal_cc8051.h" />
+		<Unit filename="usb/others/hal_defs.h" />
+		<Unit filename="usb/others/hal_int.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mmcommander/src/MMCommander/usb/others/hal_int.h" />
-		<Unit filename="../mmcommander/src/MMCommander/usb/others/hal_led.h" />
-		<Unit filename="../mmcommander/src/MMCommander/usb/others/hal_mcu.c">
+		<Unit filename="usb/others/hal_int.h" />
+		<Unit filename="usb/others/hal_led.h" />
+		<Unit filename="usb/others/hal_mcu.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mmcommander/src/MMCommander/usb/others/hal_mcu.h" />
-		<Unit filename="../mmcommander/src/MMCommander/usb/others/hal_types.h" />
-		<Unit filename="../mmcommander/src/MMCommander/usb/others/hal_uart.h" />
-		<Unit filename="../mmcommander/src/MMCommander/usb/others/hal_uart_usb.c">
+		<Unit filename="usb/others/hal_mcu.h" />
+		<Unit filename="usb/others/hal_types.h" />
+		<Unit filename="usb/others/hal_uart.h" />
+		<Unit filename="usb/others/hal_uart_usb.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mmcommander/src/MMCommander/usb/others/hal_uart_usb.h" />
-		<Unit filename="../mmcommander/src/MMCommander/usb/others/util_buffer.c">
+		<Unit filename="usb/others/hal_uart_usb.h" />
+		<Unit filename="usb/others/util_buffer.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mmcommander/src/MMCommander/usb/others/util_buffer.h" />
+		<Unit filename="usb/others/util_buffer.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

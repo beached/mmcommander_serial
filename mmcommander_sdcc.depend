@@ -175,7 +175,7 @@
 	<stdint.h>
 	<stdbool.h>
 
-1440210463 c:\devel\github\mmcommander_serial\usb\class_cdc\usb_uart.h
+1440213429 c:\devel\github\mmcommander_serial\usb\class_cdc\usb_uart.h
 	<stddef.h>
 	<stdint.h>
 
@@ -202,7 +202,7 @@
 	<stddef.h>
 	<stdint.h>
 
-1440207981 source:c:\devel\github\mmcommander_serial\mmcommander.c
+1440213386 source:c:\devel\github\mmcommander_serial\mmcommander.c
 	"crc_4b6b.h"
 	"init.h"
 	"constants.h"
@@ -228,7 +228,7 @@
 	<stddef.h>
 	<stdbool.h>
 
-1440208166 source:c:\devel\github\mmcommander_serial\usb\class_cdc\usb_cdc_hooks.c
+1440210348 source:c:\devel\github\mmcommander_serial\usb\class_cdc\usb_cdc_hooks.c
 	"usb_firmware_library_headers.h"
 	"usb_cdc.h"
 	"usb_uart.h"
@@ -440,7 +440,7 @@
 	<stdint.h>
 	<stdbool.h>
 
-1440172874 c:\devel\github\mmcommander_serial\usb\others\hal_uart_usb.h
+1440213402 c:\devel\github\mmcommander_serial\usb\others\hal_uart_usb.h
 	<stdint.h>
 	<stddef.h>
 
@@ -459,7 +459,7 @@
 1440208667 source:c:\devel\github\mmcommander_serial\usb\class_cdc\usb_firmware_library_config.c
 	"usb_firmware_library_headers.h"
 
-1440208581 source:c:\devel\github\mmcommander_serial\usb\class_cdc\usb_uart.c
+1440213386 source:c:\devel\github\mmcommander_serial\usb\class_cdc\usb_uart.c
 	"../others/hal_board.h"
 	"../others/hal_int.h"
 	"../others/hal_led.h"
@@ -510,7 +510,7 @@
 	"../others/hal_board.h"
 	"../../ioCC1111.h"
 
-1440197696 source:c:\devel\github\mmcommander_serial\usb\library\usb_suspend.c
+1440210203 source:c:\devel\github\mmcommander_serial\usb\library\usb_suspend.c
 	"../class_cdc/usb_firmware_library_headers.h"
 	"../others/hal_int.h"
 	"../others/hal_mcu.h"
@@ -538,7 +538,7 @@
 	"clock.h"
 	<stdbool.h>
 
-1440203354 source:c:\devel\github\mmcommander_serial\usb\others\hal_uart_usb.c
+1440213443 source:c:\devel\github\mmcommander_serial\usb\others\hal_uart_usb.c
 	"hal_uart.h"
 	"hal_board.h"
 	"util_buffer.h"
